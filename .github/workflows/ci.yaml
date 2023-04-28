@@ -22,8 +22,11 @@ jobs:
       - name: Build the website
         run: zola build
 
+      - name: Create ~/.ssh directory
+        run: mkdir -p ~/.ssh/
+
       - name: Scan the host key
-        run: mkdir -p ~/.ssh/ && ssh-keyscan -v -H $DEPLOY_SERVER >> ~/.ssh/known_hosts
+        run: ssh-keyscan -v -H $DEPLOY_SERVER >> ~/.ssh/known_hosts
         env:
           DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
 
