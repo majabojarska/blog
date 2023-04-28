@@ -26,14 +26,16 @@ jobs:
         run: mkdir -p ~/.ssh/
 
       - name: Scan the host key
-        run: ssh-keyscan -v -H $DEPLOY_SERVER >> ~/.ssh/known_hosts
+        run: ssh-keyscan -v -p $SSH_PORT -H $DEPLOY_SERVER >> ~/.ssh/known_hosts
         env:
+          SSH_PORT: ${{ secrets.SSH_PORT }}
           DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
 
       - name: Deploy the website
         run: >-
-          rsync -avx --delete --exclude '.ssh' public/ $DEPLOY_USERNAME@$DEPLOY_SERVER:./
+          rsync -avx -e 'ssh -p $SSH_PORT' --delete --exclude '.ssh' public/ $DEPLOY_USERNAME@$DEPLOY_SERVER:./
         env:
+          SSH_PORT: ${{ secrets.SSH_PORT }}
           DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
           DEPLOY_USERNAME: ${{ secrets.DEPLOY_USERNAME }}
 
