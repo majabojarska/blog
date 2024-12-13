@@ -68,6 +68,7 @@ menu_items = [
 
     # set newtab to true to make the link open in new tab
     {name = "github", url = "https://github.com/majabojarska", newtab = true},
+    {name = "linkedin", url = "https://linkedin.com/in/majabojarska", newtab = true},
 ]
 
 # Whether to show links to earlier and later (aka. higher/lower) posts
