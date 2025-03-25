@@ -1,12 +1,12 @@
 +++
-title = "Placeholder"
-date = 2024-12-13
+title = "Work in progress"
+date = 2025-03-26
 
 [taxonomies]
 tags = ["placeholder"]
 +++
 
-Placeholder text.
+Come back in a while. Planning to post a bit soon!
 
 <!-- more -->
 
