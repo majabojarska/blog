@@ -2,6 +2,9 @@ name: CI
 run-name: Zola blog deployment
 on:
   push:
+    branches:
+      - main
+  workflow_run:
 
 jobs:
   build:
