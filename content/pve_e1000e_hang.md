@@ -14,20 +14,8 @@ Recently I've been seeing my NAS' network interface go down unrecoverably (i.e. 
 
 ## The environment
 
-{% mermaiddiagram() %}
-architecture-beta
-    group api(cloud)[API]
-
-    service db(database)[Database] in api
-    service disk1(disk)[Storage] in api
-    service disk2(disk)[Storage] in api
-    service server(mdi:ethernet)[Server] in api
-
-    db:L -- R:server
-    disk1:T -- B:server
-    disk2:T -- B:db
-
-{% end %}
+{{ image(src="/img/pve_e1000e_hang/environment.svg", alt="Vacuum tube with powered on heater filaments",
+         position="center", style="border-radius: 8px; width: 75%; padding: 16px;") }}
 
 The suspected NAS host is a NixOS VM running on top of [Proxmox VE](https://www.proxmox.com/en/products/proxmox-virtual-environment/overview), which implies there's some virtual network complexity at play. To briefly explain the infrastructure, the VMs are networked to the hypervisor's physical interface via a [linux bridge interface](https://pve.proxmox.com/wiki/Network_Configuration). Logically, it's like a layer 2 switch, allowing to network multiple virtual NICs, via physical hypervisor interfaces, to the underlying lab network.
 
