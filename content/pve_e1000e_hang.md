@@ -25,10 +25,10 @@ These NIC hangups quickly sent me down memory lane. Circa 2021, I was working on
 
 Generally speaking, virtualizing a hardware-oriented device always calls for some trade-offs. Can't run nor test everything in a VM, since there's a boundary, beyond which you can't play pretend anymore (performance or inability to virtualize), or the pretending just stops being reasonably cost-effective (cheaper to use hardware, than build out custom tools enabling further virtualization). For example:
 
-* Mocking DMI table info? Easy.
-* Setting up disks for a software RAID? Easy.
-* Passing through some USB devices? Easy.
-* Getting the virtual NICs to behave exactly the same way as your SFP modules of choice, in a way that's compatible with the purpose-built software? [What color do you want your dragon?](https://knowyourmeme.com/photos/1052192-for-christmas-i-want-a-dragon). Software-side accommodations need to be considered in this situation, e.g. flags that inform the kernel it needs to boot with a slightly different configuration. Likewise, services might need to be mocked, or disabled altogether, due to the inability to satisfy certain hardware requirements. This implies limitationg to virtualized testing, but it's often still far better than nothing, when hardware units are scarce.
+- Mocking DMI table info? Easy.
+- Setting up disks for a software RAID? Easy.
+- Passing through some USB devices? Easy.
+- Getting the virtual NICs to behave exactly the same way as your SFP modules of choice, in a way that's compatible with the purpose-built software? [What color do you want your dragon?](https://knowyourmeme.com/photos/1052192-for-christmas-i-want-a-dragon). Software-side accommodations need to be considered in this situation, e.g. flags that inform the kernel it needs to boot with a slightly different configuration. Likewise, services might need to be mocked, or disabled altogether, due to the inability to satisfy certain hardware requirements. This implies limitationg to virtualized testing, but it's often still far better than nothing, when hardware units are scarce.
 
 Now, back on topic!
 
@@ -42,7 +42,7 @@ By this point, I could reproduce the failure reliably, by saturating the NAS int
 journalctl --dmesg --boot -1
 ```
 
-Looking towards the end, I found a flurry of repeating errors, relating to the `e1000e` network interface:
+Looking towards the end, I found a flurry of repeating errors, relating to the [`e1000e` kernel module](https://www.intel.com/content/www/us/en/support/articles/000005480/ethernet-products.html):
 
 ```raw
 May 25 15:23:30 pve-02 kernel: e1000e 0000:00:19.0 eno1: Detected Hardware Unit Hang:
@@ -68,23 +68,67 @@ May 25 15:23:32 pve-02 systemd-shutdown[1]: Sending SIGTERM to remaining process
 May 25 15:23:32 pve-02 systemd-journald[339]: Received SIGTERM from PID 1 (systemd-shutdow).
 ```
 
-This was rooted in the host's specific hardware and kernel combination, freezing under stress (just like me)! As far as I'm concerned, the VM was irrelevant, it's the traffic that mattered. I quickly logged into the bare-metal NixOS machine to check the exact model of the ethernet controller on board:
+Searching the web for that error shows it's likely caused by a fault in TCP checksum offloading.
+
+Before proceeding, let's compare the NICs and the corresponding configurations across my Linux servers, just to make sure.
+
+### NIC comparison
+
+Here's how I grabbed all of the necessary information:
 
 ```sh
-[maja@m920q:~]$ lspci | grep -i eth
-00:1f.6 Ethernet controller: Intel Corporation Ethernet Connection (7) I219-LM (rev 10)
+# Dump NIC kernel driver and firmware info
+ethtool -i eno1
+
+# Dump PCI devices' info. Requires the controller entry to be found manually.
+lspci -nn -v
 ```
 
-I also checked a different (third) machine, running Proxmox, which happens to virtualize my OPNsense router. This one never failed me either, NIC-wise:
+| Host     | Model              | `e1000e` driver version | Working properly? |
+| -------- | ------------------ | ----------------------- | ----------------- |
+| `m920q`  | `I219-LM (rev 10)` | `6.12.30`               | ✅                |
+| `pve-03` | `I219-V`           | `6.8.12-10-pve`         | ✅                |
+| `pve-02` | `I217-LM (rev 04)` | `6.8.12-10-pve`         | ❌                |
 
-```sh
-root@pve-03:~# lspci | grep -i eth
-00:1f.6 Ethernet controller: Intel Corporation Ethernet Connection (2) I219-V
-```
+The driver version is essentially the OS kernel version, visibly running PVE kernels on the PVE hosts.
 
-Both of these `I219` controllers belong to the [same product family and are roughly the same device](http://www.intel.com/content/www/us/en/embedded/products/networking/ethernet-connection-i219-family-product-brief.html), with `I219-LM` being geared towards server use, due to the added _vPro_ support. I frequently run both at 600+ mbps, and have yet to see them fail. The key conclusion here is that both `I219` controllers are different products from the failing `e1000e`, hence potentially resulting in a different interaction, under the same kernel/OS combination.
+I've also compared the offload feature enablement across these hosts:
 
-## Figuring out the `e1000e` issues
+| feature \ host                 | `m920q`     | `pve-03`    | `pve-02`    |
+| ------------------------------ | ----------- | ----------- | ----------- |
+| `tcp-segmentation-offload`     | on          | off         | off         |
+| `generic-segmentation-offload` | on          | on          | on          |
+| `generic-receive-offload`      | on          | on          | on          |
+| `large-receive-offload`        | off [fixed] | off [fixed] | off [fixed] |
+| `rx-vlan-offload`              | on          | on          | on          |
+| `tx-vlan-offload`              | on          | on          | on          |
+| `l2-fwd-offload`               | off [fixed] | off [fixed] | off [fixed] |
+| `hw-tc-offload`                | off [fixed] | off [fixed] | off [fixed] |
+| `esp-hw-offload`               | off [fixed] | off [fixed] | off [fixed] |
+| `esp-tx-csum-hw-offload`       | off [fixed] | off [fixed] | off [fixed] |
+| `rx-udp_tunnel-port-offload`   | off [fixed] | off [fixed] | off [fixed] |
+| `tls-hw-tx-offload`            | off [fixed] | off [fixed] | off [fixed] |
+| `tls-hw-rx-offload`            | off [fixed] | off [fixed] | off [fixed] |
+| `macsec-hw-offload`            | off [fixed] | off [fixed] | off [fixed] |
+| `hsr-tag-ins-offload`          | off [fixed] | off [fixed] | off [fixed] |
+| `hsr-tag-rm-offload`           | off [fixed] | off [fixed] | off [fixed] |
+| `hsr-fwd-offload`              | off [fixed] | off [fixed] | off [fixed] |
+| `hsr-dup-offload`              | off [fixed] | off [fixed] | off [fixed] |
+
+
+Given that `pve-02` and `pve-03` run the same `e1000e` driver version _and_ offload feature configuration, I believe it's the actual NIC, not the driver or any other OS-side configuration that's at fault.
+
+## The solution
+
+Here are some acceptable workarounds I found:
+
+- [disabling the C1E power state via BIOS;](https://superuser.com/questions/1270723/how-to-fix-eth0-detected-hardware-unit-hang-in-debian-9)
+- [disabling NIC TCP checksum offloading;](https://serverfault.com/questions/616485/e1000e-reset-adapter-unexpectedly-detected-hardware-unit-hang)
+- hoping Intel released a patched firmware update for that specific NIC, before EOL.
+
+All in all I'd prefer not to disable features beneficial to performance and/or the system's efficency. Disabling [TCP checksum offloading](https://wiki.wireshark.org/CaptureSetup/Offloading) would lead to increased CPU overhead. [Disabling C1E might impact core wake up times](https://www.intel.com/content/www/us/en/support/articles/000006619/processors/intel-core-processors.html), leading to worse general performance. However, Intel doesn't seem to have released any firmware patches for this specific NIC, so I've opted to disable the offloading features.
+
+
 
 https://serverfault.com/questions/616485/e1000e-reset-adapter-unexpectedly-detected-hardware-unit-hang
 
@@ -101,6 +145,84 @@ https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10/html/networ
 BEFORE
 
 ```sh
+root@pve-03:~# ethtool -i enp0s31f6
+driver: e1000e
+version: 6.8.12-4-pve
+firmware-version: 0.8-4
+expansion-rom-version:
+bus-info: 0000:00:1f.6
+supports-statistics: yes
+supports-test: yes
+supports-eeprom-access: yes
+supports-register-dump: yes
+supports-priv-flags: yes
+
+root@pve-03:~# lspci -nn -v
+######## SNIP ########
+00:1f.6 Ethernet controller [0200]: Intel Corporation Ethernet Connection (2) I219-V [8086:15b8]
+        Subsystem: Lenovo Ethernet Connection (2) I219-V [17aa:3111]
+        Flags: bus master, fast devsel, latency 0, IRQ 123, IOMMU group 5
+        Memory at f7100000 (32-bit, non-prefetchable) [size=128K]
+        Capabilities: [c8] Power Management version 3
+        Capabilities: [d0] MSI: Enable+ Count=1/1 Maskable- 64bit+
+        Capabilities: [e0] PCI Advanced Features
+        Kernel driver in use: e1000e
+        Kernel modules: e1000e
+######## SNIP ########
+
+root@pve-03:~# ethtool --show-features enp0s31f6 | grep offload
+tcp-segmentation-offload: off
+generic-segmentation-offload: on
+generic-receive-offload: on
+large-receive-offload: off [fixed]
+rx-vlan-offload: on
+tx-vlan-offload: on
+l2-fwd-offload: off [fixed]
+hw-tc-offload: off [fixed]
+esp-hw-offload: off [fixed]
+esp-tx-csum-hw-offload: off [fixed]
+rx-udp_tunnel-port-offload: off [fixed]
+tls-hw-tx-offload: off [fixed]
+tls-hw-rx-offload: off [fixed]
+macsec-hw-offload: off [fixed]
+hsr-tag-ins-offload: off [fixed]
+hsr-tag-rm-offload: off [fixed]
+hsr-fwd-offload: off [fixed]
+hsr-dup-offload: off [fixed]
+
+```
+
+```sh
+root@pve-02:~# ethtool -i eno1
+driver: e1000e
+version: 6.8.12-10-pve
+firmware-version: 0.13-4
+expansion-rom-version:
+bus-info: 0000:00:19.0
+supports-statistics: yes
+supports-test: yes
+supports-eeprom-access: yes
+supports-register-dump: yes
+supports-priv-flags: yes
+
+
+root@pve-02:~# lspci -nn -v
+######## SNIP ########
+00:19.0 Ethernet controller [0200]: Intel Corporation Ethernet Connection I217-LM [8086:153a] (rev 04)
+        DeviceName:  Onboard LAN
+        Subsystem: Dell Ethernet Connection I217-LM [1028:05a4]
+        Flags: bus master, fast devsel, latency 0, IRQ 28, IOMMU group 5
+        Memory at f7c00000 (32-bit, non-prefetchable) [size=128K]
+        Memory at f7c3d000 (32-bit, non-prefetchable) [size=4K]
+        I/O ports at f080 [size=32]
+        Capabilities: [c8] Power Management version 2
+        Capabilities: [d0] MSI: Enable+ Count=1/1 Maskable- 64bit+
+        Capabilities: [e0] PCI Advanced Features
+        Kernel driver in use: e1000e
+        Kernel modules: e1000e
+######## SNIP ########
+
+
 root@pve-02:~# ethtool --show-features eno1 | grep offload
 tcp-segmentation-offload: on
 generic-segmentation-offload: on
@@ -120,6 +242,55 @@ hsr-tag-ins-offload: off [fixed]
 hsr-tag-rm-offload: off [fixed]
 hsr-fwd-offload: off [fixed]
 hsr-dup-offload: off [fixed]
+
+```
+
+```sh
+
+# m920q
+00:1f.6 Ethernet controller [0200]: Intel Corporation Ethernet Connection (7) I219-LM [8086:15bb] (rev 10)
+        DeviceName: Onboard - Ethernet
+        Subsystem: Lenovo Device [17aa:3136]
+        Flags: bus master, fast devsel, latency 0, IRQ 138
+        Memory at cc200000 (32-bit, non-prefetchable) [size=128K]
+        Capabilities: <access denied>
+        Kernel driver in use: e1000e
+        Kernel modules: e1000e
+
+
+ethtool -i eno1
+
+driver: e1000e
+version: 6.12.30
+firmware-version: 0.5-4
+expansion-rom-version:
+bus-info: 0000:00:1f.6
+supports-statistics: yes
+supports-test: yes
+supports-eeprom-access: yes
+supports-register-dump: yes
+supports-priv-flags: yes
+
+[nix-shell:~]$ ethtool --show-features eno1 | grep offload
+tcp-segmentation-offload: on
+generic-segmentation-offload: on
+generic-receive-offload: on
+large-receive-offload: off [fixed]
+rx-vlan-offload: on
+tx-vlan-offload: on
+l2-fwd-offload: off [fixed]
+hw-tc-offload: off [fixed]
+esp-hw-offload: off [fixed]
+esp-tx-csum-hw-offload: off [fixed]
+rx-udp_tunnel-port-offload: off [fixed]
+tls-hw-tx-offload: off [fixed]
+tls-hw-rx-offload: off [fixed]
+macsec-hw-offload: off [fixed]
+hsr-tag-ins-offload: off [fixed]
+hsr-tag-rm-offload: off [fixed]
+hsr-fwd-offload: off [fixed]
+hsr-dup-offload: off [fixed]
+
 ```
 
 Disable offloading opts on post-up
