@@ -1,5 +1,5 @@
 +++
-title = "Solving Intel e1000e NIC hangs on Proxmox VE 8.4-1"
+title = "Solving Intel NIC hangups on Proxmox VE 8.4-1"
 date = 2025-05-25
 
 
@@ -8,27 +8,33 @@ tags = ["proxmox", "networking", "linux"]
 
 +++
 
+{{ image(src="/img/pve_e1000e_hangups/souls_title.webp", alt="Image saying detected hardware unit hang in capital letters, stylized as a Dark Souls III death caption.",
+         position="center", style="border-radius: 8px; width: 100%;") }}
+
+
 Recently I've been seeing my NAS' network interface go down unrecoverably (i.e. until a reboot). The first time I've observed this, I happened to be running some OS upgrades, so I brushed it off as a one-time, wonky interaction with the network interface. However, I've noticed it kept happening from time to time, so I started wondering about the common denominator of all of these events. It would only happen during high network throughput events, which saturated the gigabit link in a sustained fashion, like dumping backups or pulling several GBs of packages. On the other hand, the issue would never reproduce during light loads (network-wise), like tweaking configs over SSH (even during long-lived sessions).
 
 <!-- more -->
 
 ## The environment
 
-{{ image(src="/img/pve_e1000e_hang/environment.svg", alt="Vacuum tube with powered on heater filaments",
+{{ image(src="/img/pve_e1000e_hangups/environment.svg", alt="Vacuum tube with powered on heater filaments",
          position="center", style="border-radius: 8px; width: 75%; padding: 16px;") }}
 
 The suspected NAS host is a NixOS VM running on top of [Proxmox VE](https://www.proxmox.com/en/products/proxmox-virtual-environment/overview), which implies there's some virtual network complexity at play. To briefly explain the infrastructure, the VMs are networked to the hypervisor's physical interface via a [linux bridge interface](https://pve.proxmox.com/wiki/Network_Configuration). Logically, it's like a layer 2 switch, allowing to connect multiple virtual NICs, via physical hypervisor interfaces, to the underlying lab network.
 
 ## Side note about virtualization
 
-These NIC hangups quickly sent me down memory lane. Circa 2021, I was working on building out virtualization infrastructure for testing an embedded Linux device's software in its early stages. The crux of it was that it had several, multi-gigabit NICs, alongside some other, highly sensitive to timing physical interfaces. If I recall correctly, we did eventually have an early hardware prototype in the lab, but it wasn't fit for integrating into a CI pipeline, let alone doing so at scale. The challenge with virtualization here, was that the guest OS was a custom-built Yocto image, designed for the _real thing_.
+These NIC hangups quickly sent me down memory lane. Circa 2021, I was working on building out virtualization infrastructure for testing an embedded Linux device's software in its early stages. The crux of it was that it had several, multi-gigabit NICs, alongside some other physical interfaces, highly sensitive to timing. If I recall correctly, we did eventually have an early hardware prototype in the lab, but it wasn't fit for integrating into a CI pipeline, let alone doing so at scale. The challenge with virtualization here, was that the guest OS was a custom-built Yocto image, designed for the _real thing_.
 
-Generally speaking, virtualizing a hardware-oriented device always calls for some trade-offs. Can't run nor test everything in a VM, since there's a boundary, beyond which you can't play pretend anymore (performance or inability to virtualize), or the pretending just stops being reasonably cost-effective (cheaper to use hardware, than build out custom tools enabling further virtualization). For example:
+Generally speaking, virtualizing a hardware-oriented device always calls for some trade-offs. One cannot simply run nor test everything in a VM, since there's a boundary, beyond which you can't play pretend anymore (performance or inability to virtualize), or the pretending just stops being reasonably cost-effective (cheaper to use hardware, than build out custom tools enabling further virtualization). For example:
 
 - Mocking DMI table info? Easy.
 - Setting up disks for a software RAID? Easy.
 - Passing through some USB devices? Easy.
-- Getting the virtual NICs to behave exactly the same way as your SFP modules of choice, in a way that's compatible with the purpose-built software? [What color do you want your dragon?](https://knowyourmeme.com/photos/1052192-for-christmas-i-want-a-dragon). Software-side accommodations need to be considered in this situation, e.g. flags that inform the kernel it needs to boot with a slightly different configuration. Likewise, services might need to be mocked, or disabled altogether, due to the inability to satisfy certain hardware requirements. This implies limitationg to virtualized testing, but it's often still far better than nothing, when hardware units are scarce.
+- Getting the virtual NICs to behave exactly the same way as your SFP modules of choice, in a way that's compatible with the purpose-built software? [What color do you want your dragon?](https://knowyourmeme.com/photos/1052192-for-christmas-i-want-a-dragon). 
+
+Software-side accommodations eventually need to be considered, e.g. flags that inform the kernel it needs to boot with a slightly different configuration. Likewise, services might need to be mocked, or disabled altogether, due to the inability to satisfy certain hardware requirements. This implies there are some  limitations to virtualized testing environments, but it's often still far better than nothing, when hardware units are scarce.
 
 Now, back on topic!
 
@@ -74,14 +80,40 @@ Before proceeding, let's compare the NICs and the corresponding configurations a
 
 ### NIC driver/configuration comparison
 
-Here's how I grabbed all of the necessary information:
+Here's how I grabbed all of the necessary information from a single host:
 
 ```sh
 # Dump NIC kernel driver and firmware info
-ethtool -i eno1
+root@pve-02:~# ethtool -i eno1
+
+driver: e1000e
+version: 6.8.12-10-pve
+firmware-version: 0.13-4
+expansion-rom-version:
+bus-info: 0000:00:19.0
+supports-statistics: yes
+supports-test: yes
+supports-eeprom-access: yes
+supports-register-dump: yes
+supports-priv-flags: yes
 
 # Dump PCI devices' info. Requires the controller entry to be found manually.
-lspci -nn -v
+root@pve-02:~# lspci -nn -v
+
+######## SNIP ########
+00:19.0 Ethernet controller [0200]: Intel Corporation Ethernet Connection I217-LM [8086:153a] (rev 04)
+        DeviceName:  Onboard LAN
+        Subsystem: Dell Ethernet Connection I217-LM [1028:05a4]
+        Flags: bus master, fast devsel, latency 0, IRQ 28, IOMMU group 5
+        Memory at f7c00000 (32-bit, non-prefetchable) [size=128K]
+        Memory at f7c3d000 (32-bit, non-prefetchable) [size=4K]
+        I/O ports at f080 [size=32]
+        Capabilities: [c8] Power Management version 2
+        Capabilities: [d0] MSI: Enable+ Count=1/1 Maskable- 64bit+
+        Capabilities: [e0] PCI Advanced Features
+        Kernel driver in use: e1000e
+        Kernel modules: e1000e
+######## SNIP ########
 ```
 
 | Host     | Model              | `e1000e` driver version | Working properly? |
@@ -92,7 +124,7 @@ lspci -nn -v
 
 The driver version is essentially the OS kernel version, visibly running PVE kernels on the PVE hosts.
 
-I've also retrieved compared the offload feature enablement across the same hosts, using:
+I've also retrieved the offload feature enablement status across the same hosts, using:
 
 ```sh
 ethtool --show-features <iface_name> | grep offload
@@ -164,6 +196,9 @@ The remainder of the offloading features don't need to be explicitly disabled, s
 ---
 
 That's all for today. Hope you found this helpful!
+
+The title image was generated with this
+[FromSoftware image macro creator](https://rezuaq.be/new-area/image-creator/).
 
 ---
 
