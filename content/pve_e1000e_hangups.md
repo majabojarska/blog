@@ -1,6 +1,6 @@
 +++
 title = "Solving Intel NIC hangups on Proxmox VE 8.4-1"
-date = 2025-05-29
+date = 2025-05-25
 
 
 [taxonomies]
@@ -8,7 +8,7 @@ tags = ["proxmox", "networking", "linux"]
 
 +++
 
-{{ image(src="/img/pve_e1000e_hangups/souls_title.webp", alt="Image saying detected hardware unit hang in capital letters, stylized as a Dark Souls III death caption.",
+{{ image(src="/img/pve_e1000e_hangups/souls_title.webp", alt="Image saying detected hardware unit hang in capital letters, stylized as a Dark Souls III caption.",
          position="center", style="border-radius: 8px; width: 100%;") }}
 
 
