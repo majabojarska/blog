@@ -72,7 +72,7 @@ Searching the web for that error shows it's likely caused by a fault in TCP chec
 
 Before proceeding, let's compare the NICs and the corresponding configurations across my Linux servers, just to make sure.
 
-### NIC comparison
+### NIC driver/configuration comparison
 
 Here's how I grabbed all of the necessary information:
 
@@ -92,55 +92,80 @@ lspci -nn -v
 
 The driver version is essentially the OS kernel version, visibly running PVE kernels on the PVE hosts.
 
-I've also compared the offload feature enablement across these hosts:
+I've also retrieved compared the offload feature enablement across the same hosts, using:
 
-| feature \ host                 | `m920q`     | `pve-03`    | `pve-02`    |
-| ------------------------------ | ----------- | ----------- | ----------- |
-| `tcp-segmentation-offload`     | on          | off         | off         |
-| `generic-segmentation-offload` | on          | on          | on          |
-| `generic-receive-offload`      | on          | on          | on          |
-| `large-receive-offload`        | off [fixed] | off [fixed] | off [fixed] |
-| `rx-vlan-offload`              | on          | on          | on          |
-| `tx-vlan-offload`              | on          | on          | on          |
-| `l2-fwd-offload`               | off [fixed] | off [fixed] | off [fixed] |
-| `hw-tc-offload`                | off [fixed] | off [fixed] | off [fixed] |
-| `esp-hw-offload`               | off [fixed] | off [fixed] | off [fixed] |
-| `esp-tx-csum-hw-offload`       | off [fixed] | off [fixed] | off [fixed] |
-| `rx-udp_tunnel-port-offload`   | off [fixed] | off [fixed] | off [fixed] |
-| `tls-hw-tx-offload`            | off [fixed] | off [fixed] | off [fixed] |
-| `tls-hw-rx-offload`            | off [fixed] | off [fixed] | off [fixed] |
-| `macsec-hw-offload`            | off [fixed] | off [fixed] | off [fixed] |
-| `hsr-tag-ins-offload`          | off [fixed] | off [fixed] | off [fixed] |
-| `hsr-tag-rm-offload`           | off [fixed] | off [fixed] | off [fixed] |
-| `hsr-fwd-offload`              | off [fixed] | off [fixed] | off [fixed] |
-| `hsr-dup-offload`              | off [fixed] | off [fixed] | off [fixed] |
+```sh
+ethtool --show-features <iface_name> | grep offload
+```
 
+| feature \ host                 | `m920q`       | `pve-03`      | `pve-02`      |
+| ------------------------------ | ------------- | ------------- | ------------- |
+| `tcp-segmentation-offload`     | `on`          | `off`         | `on`          |
+| `generic-segmentation-offload` | `on`          | `on`          | `on`          |
+| `generic-receive-offload`      | `on`          | `on`          | `on`          |
+| `large-receive-offload`        | `off [fixed]` | `off [fixed]` | `off [fixed]` |
+| `rx-vlan-offload`              | `on`          | `on`          | `on`          |
+| `tx-vlan-offload`              | `on`          | `on`          | `on`          |
+| `l2-fwd-offload`               | `off [fixed]` | `off [fixed]` | `off [fixed]` |
+| `hw-tc-offload`                | `off [fixed]` | `off [fixed]` | `off [fixed]` |
+| `esp-hw-offload`               | `off [fixed]` | `off [fixed]` | `off [fixed]` |
+| `esp-tx-csum-hw-offload`       | `off [fixed]` | `off [fixed]` | `off [fixed]` |
+| `rx-udp_tunnel-port-offload`   | `off [fixed]` | `off [fixed]` | `off [fixed]` |
+| `tls-hw-tx-offload`            | `off [fixed]` | `off [fixed]` | `off [fixed]` |
+| `tls-hw-rx-offload`            | `off [fixed]` | `off [fixed]` | `off [fixed]` |
+| `macsec-hw-offload`            | `off [fixed]` | `off [fixed]` | `off [fixed]` |
+| `hsr-tag-ins-offload`          | `off [fixed]` | `off [fixed]` | `off [fixed]` |
+| `hsr-tag-rm-offload`           | `off [fixed]` | `off [fixed]` | `off [fixed]` |
+| `hsr-fwd-offload`              | `off [fixed]` | `off [fixed]` | `off [fixed]` |
+| `hsr-dup-offload`              | `off [fixed]` | `off [fixed]` | `off [fixed]` |
 
-Given that `pve-02` and `pve-03` run the same `e1000e` driver version _and_ offload feature configuration, I believe it's the actual NIC, not the driver or any other OS-side configuration that's at fault.
+Given that `pve-02` and `pve-03` run the same `e1000e` driver version, I'm now suspecting it's the `tcp-segmentation-offload` feature that's causing the NIC to fail — that's the only difference in the offload feature configuration between the two hosts. But still, those are two different controllers, so more (different) tweaking might be needed.
 
 ## The solution
 
-Here are some acceptable workarounds I found:
+Here are some potential workarounds I found in relation to my observations:
 
 - [disabling the C1E power state via BIOS;](https://superuser.com/questions/1270723/how-to-fix-eth0-detected-hardware-unit-hang-in-debian-9)
 - [disabling NIC TCP checksum offloading;](https://serverfault.com/questions/616485/e1000e-reset-adapter-unexpectedly-detected-hardware-unit-hang)
-- hoping Intel released a patched firmware update for that specific NIC, before EOL.
+- flashing the NIC with a patched firmware update.
 
-All in all I'd prefer not to disable features beneficial to performance and/or the system's efficency. Disabling [TCP checksum offloading](https://wiki.wireshark.org/CaptureSetup/Offloading) would lead to increased CPU overhead. [Disabling C1E might impact core wake up times](https://www.intel.com/content/www/us/en/support/articles/000006619/processors/intel-core-processors.html), leading to worse general performance. However, Intel doesn't seem to have released any firmware patches for this specific NIC, so I've opted to disable the offloading features.
+All in all I'd prefer not to disable features beneficial to performance and/or the system's efficency. Disabling [TCP checksum offloading](https://wiki.wireshark.org/CaptureSetup/Offloading) would lead to increased CPU overhead. [Disabling C1E might impact core wake up times](https://www.intel.com/content/www/us/en/support/articles/000006619/processors/intel-core-processors.html), leading to worse general performance. However, Intel doesn't seem to have released any firmware patches for this specific NIC before EOL, so I've opted to disable the offending offloading features.
 
+Let's do this piecemeal and start by disabling `tso` first.
 
+```sh
+ethtool --features eno1 tso off
+```
 
-https://serverfault.com/questions/616485/e1000e-reset-adapter-unexpectedly-detected-hardware-unit-hang
+TODO: finish below
 
-https://serverfault.com/questions/193114/linux-e1000e-intel-networking-driver-problems-galore-where-do-i-start
+- figure out if disabling just TSO is enough. Otherwise disable all offloading feats.
 
-https://forum.proxmox.com/threads/intel-nic-e1000e-hardware-unit-hang.106001/
+---
 
-https://www.kernel.org/doc/html/v5.12/networking/segmentation-offloads.html
+It's worth noting the relevant offloading features need to be disabled every time the interface is enabled. On Debian-based systems, this can be achieved using the `post-up` directive in `/etc/network/interfaces`, for example:
 
-https://linux.die.net/man/8/ethtool
+```diff
+auto lo
+iface lo inet loopback
 
-https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10/html/network_troubleshooting_and_performance_tuning/configuring-network-adapter-offload-settings
+iface eno1 inet manual
+>         post-up ethtool --features eno1 tso off
+
+auto vmbr0
+iface vmbr0 inet dhcp
+        bridge-ports eno1
+        bridge-stp off
+        bridge-fd 0
+```
+
+The remainder of the offloading features don't need to be explicitly disabled, since they're unsupported (`off [fixed]`).
+
+---
+
+That's all for today. Hope you found this helpful!
+
+---
 
 BEFORE
 
@@ -242,7 +267,6 @@ hsr-tag-ins-offload: off [fixed]
 hsr-tag-rm-offload: off [fixed]
 hsr-fwd-offload: off [fixed]
 hsr-dup-offload: off [fixed]
-
 ```
 
 ```sh
