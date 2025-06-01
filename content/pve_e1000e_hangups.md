@@ -1,6 +1,6 @@
 +++
 title = "Solving Intel NIC hangups on Proxmox VE 8.4-1"
-date = 2025-05-25
+date = 2025-06-01
 
 
 [taxonomies]
