@@ -4,14 +4,14 @@ date = 2025-06-01
 
 
 [taxonomies]
-tags = ["proxmox", "networking", "linux"]
+tags = ["homelab", "proxmox", "networking", "linux"]
 
 +++
 
 {{ image(src="/img/pve_e1000e_hangups/souls_title.webp", alt="Image saying detected hardware unit hang in capital letters, stylized as a Dark Souls III caption.",
          position="center", style="border-radius: 8px; width: 100%;") }}
 
-Recently I've been seeing my NAS' network interface go down unrecoverably (i.e. until a reboot). The first time I've observed this, I happened to be running some OS upgrades, so I brushed it off as a one-time, wonky interaction with the network interface. However, I've noticed it kept happening from time to time, so I started wondering about the common denominator of all of these events. It would only happen during high network throughput tasks, which saturated the gigabit link in a sustained fashion, like dumping backups or pulling several GBs of packages. On the other hand, the issue would never reproduce during light loads (network-wise), like tweaking configs over SSH (even during long-lived sessions).
+Recently I've been seeing my NAS' network interface go down unrecoverably (i.e. until a reboot). The first time I've observed this, I happened to be running some OS upgrades, so I brushed it off as a one-time, wonky interaction with the network interface. However, I've noticed that it kept happening from time to time, so I started wondering about a common denominator of all of these events. It would only happen during high network throughput tasks, which saturated the gigabit link in a sustained fashion, like dumping backups or pulling several GBs of packages. On the other hand, the issue would never reproduce during light loads (network-wise), like tweaking configs over SSH (even during long-lived sessions).
 
 <!-- more -->
 
@@ -39,7 +39,7 @@ Now, back on topic!
 
 ## Finding the root cause
 
-I happen to have another NixOS machine with an Intel NIC in my lab. It runs bare-metal with the same network configuration, without any hiccups whatsoever, so naturally I suspected the virtual NIC to be the culprit. However, this specific situation was different. Not only the VM, but the PVE hypervisor too, were becoming unreachable — simultaneously, like clockwork. Any attempt to reach the PVE hypervisor, let alone log into the console, resulted in connection failures. This behavior indicated it wasn't the VM's NIC, but rather the hypervisor's NIC that was failing, causing the VM to go dark as a symptom of the broader issue.
+I happen to have another [NixOS](https://nixos.org/) machine with an Intel NIC in my lab. It runs bare-metal with the same network configuration, without any hiccups whatsoever, so naturally I suspected the virtual NIC to be the culprit. However, this specific situation was different. Not only the VM, but the PVE hypervisor too, were becoming unreachable — simultaneously, like clockwork. Any attempt to reach the PVE hypervisor, let alone log into the console, resulted in connection failures. This behavior indicated it wasn't the VM's NIC, but rather the hypervisor's NIC that was failing, causing the VM to go dark as a symptom of the broader issue.
 
 By this point, I could reproduce the failure reliably, by saturating the NAS interface with [iperf](https://iperf.fr/), with the other end of the link running on my router. In retrospect, saturating the hypervisor's interface might've been enough, but at the time I wanted to synthetically simulate the naturally occuring traffic flow _through_ the NAS. Once the hypervisor's interface was trashed, I gracefully power cycled the machine, and started looking at kernel logs from the previous boot:
 
