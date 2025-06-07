@@ -1,5 +1,5 @@
-name: CI
-run-name: Build & deploy
+name: Deploy
+run-name: Deploy
 on:
   push:
     branches:
