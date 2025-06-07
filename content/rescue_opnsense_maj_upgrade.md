@@ -46,7 +46,8 @@ That swap partition size is way overkill for my small homelab, so my first intui
 Here's what I did, in order:
 
 1. Shutdown/stop the OPNsense VM.
-1. Resize (grow) the OS disk. In my case, 2GB of growth would have sufficed just for the upgrade. However, since I'm planning to install some more tools later on, I went with 8GB for good measure.
+1. Restore the backup.
+1. Resize (grow) the OS disk image. In my case, +2GB would have sufficed just for the upgrade. However, since I'm planning to install some more tools later on, I went with +8GB for good measure.
 1. Start the OPNsense VM.
 1. SSH into OPNsense as root/superuser. I had to enable root SSH access for this to work, as I had disabled it after installation. Generally it's a good security practice to prohibit root SSH access, but I temporarily needed it here for obvious reasons.
 1. Growing the disk might have corrupted your GPT, so check it's health first via `gpart show`. If your GPT shows a `[CORRUPT]` label, attempt to recover it with `gpart recover da0` (`da0` being the target disk device). Ensure you're working with a healthy GPT before proceeding to the next step - `gpart` won't let you mutate the GPT if it's corrupted.
@@ -54,6 +55,6 @@ Here's what I did, in order:
 1. Ensure the `freebsd-zfs` partition has grown (`gpart show`).
 1. Grow the `zroot` zpool to the max. available space on the `freebsd-zfs` partition using [`zpool online`](https://linux.die.net/man/8/zpool) . In my case: `zpool online -e zroot da0p4`. Btw. how cool is it that zpools can expand without any downtime?
 1. Ensure the `zroot` pool has grown to use the newly added spac via `zpool list` and optionally `df -h /` .
-1. Perform the OPNsense 25.1 upgrade.
+1. Perform the OPNsense 25.1 upgrade, this time without any issues.
 
-This whole endeavour would've been far more complicated if I couldn't simply grow the disk. In that case I probably would go with the swap shrinking approach.
+This whole endeavour would've been far more complicated if I couldn't simply grow the disk image. In that case I probably would've gone with the swap shrinking approach.
