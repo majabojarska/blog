@@ -24,7 +24,7 @@ jobs:
         run: sudo snap install zola --edge
 
       - name: Build the website
-        run: zola build
+        run: zola build --minify
 
       - name: Create ~/.ssh directory
         run: mkdir -p ~/.ssh/
