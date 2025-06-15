@@ -14,27 +14,35 @@ Living collection of snippets, tips and tricks for [Proxmox VE](https://www.prox
 
 ### Non-subscription software repositories
 
-1. Disable enterprise repository:
+1. Disable the enterprise repository:
 
-   `mv /etc/apt/sources.list.d/pve-enterprise.list /etc/apt/sources.list.d/pve-enterprise.list.disabled`
+   ```sh
+   mv /etc/apt/sources.list.d/pve-enterprise.list /etc/apt/sources.list.d/pve-enterprise.list.disabled
+   ```
 
-1. Disable Ceph repository:
+1. Disable the Ceph repository:
 
    ```sh
    mv /etc/apt/sources.list.d/ceph.list /etc/apt/sources.list.d/ceph.list.disabled
    ```
 
-1. Enable no-subscription repository ([source](https://pve.proxmox.com/wiki/Package_Repositories#sysadmin_no_subscription_repo)):
+1. Enable the no-subscription repository ([source](https://pve.proxmox.com/wiki/Package_Repositories#sysadmin_no_subscription_repo)):
 
-   `echo "deb http://download.proxmox.com/debian/pve bullseye pve-no-subscription" > /etc/apt/sources.list.d/pve-no-subscription.list`
+   ```sh
+   echo "deb http://download.proxmox.com/debian/pve bullseye pve-no-subscription" > /etc/apt/sources.list.d/pve-no-subscription.list
+   ```
 
 1. Upgrade the node:
 
-   `apt update && apt upgrade -y`
+   ```sh
+   apt update && apt upgrade -y
+   ```
 
 1. Remove the subscription notice in the web client. Credits go to [John McLaren](https://johnscs.com/remove-proxmox51-subscription-notice/):
 
-   `sed -Ezi.bak "s/(Ext.Msg.show\(\{\s+title: gettext\('No valid sub)/void\(\{ \/\/\1/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js && systemctl restart pveproxy.service`
+   ```sh
+   sed -Ezi.bak "s/(Ext.Msg.show\(\{\s+title: gettext\('No valid sub)/void\(\{ \/\/\1/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js && systemctl restart pveproxy.service
+   ```
 
 ## User management
 
