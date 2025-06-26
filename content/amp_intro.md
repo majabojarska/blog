@@ -7,10 +7,10 @@ tags = ["electronics", "guitar"]
 +++
 
 {{ image(src="/img/amp/tube_heater_1.webp", alt="Vacuum tube with powered on heater filaments",
-         position="center", style="border-radius: 8px; width: 100%;") }}
+         position="center", style="border-radius: 1em; width: 100%;") }}
 
 <!-- {{ image(src="/img/amp/dso_sine_amplification.webp", alt="Waveforms on an oscilloscope",
-         position="center", style="border-radius: 8px; width: 75%;") }} -->
+         position="center", style="border-radius: 1em; width: 75%;") }} -->
 
 <!-- more -->
 
@@ -30,7 +30,7 @@ Over the past decade I've built and modded guitar pedals, played around with [DA
 ## Starting out
 
 {{ image(src="/img/amp/tube_heater_2.webp", alt="Vacuum tube with powered on heater filaments",
-         position="center", style="border-radius: 8px; width: 75%;") }}
+         position="center", style="border-radius: 1em; width: 75%;") }}
 
 I've drafted some goals and constraints for my design:
 
@@ -54,4 +54,4 @@ I'm working on this project in the open:
 Till' next time!
 
 {{ image(src="/img/amp/prototyping.webp", alt="Simplified pre-amp circuit on a breadboard",
-         position="center", style="border-radius: 8px; width: 75%;") }}
+         position="center", style="border-radius: 1em; width: 75%;") }}
