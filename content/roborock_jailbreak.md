@@ -1,5 +1,5 @@
 +++
-title = "Jailbreaking the Roborock Q7 Max robot vacuum"
+title = "Jailbreaking a Roborock Q7 Max robot vacuum"
 date = 2025-06-26
 
 
