@@ -45,12 +45,14 @@ These have been immensely helpful:
 
 {{ image(src="/img/roborock_jailbreak/board_bot_tpa17.webp", alt="Conformal coating on test point TPA17", position="center", style="border-radius: 1em; width: 100%;") }}
 
-- As one might expect, screw joints on the PCB are connected to common ground.
-- Apart from `TPA17`, there's also a `TP17` test point, don't confuse them.
-- The board is coated in a [conformal coating](https://en.wikipedia.org/wiki/Conformal_coating), to protect it from moisture and liquid damage. You'll need to gently scrape it off to make contact with the test point. A pointy multimeter probe will do just fine.
+- As one might expect, screw joints on the PCB are connected to common ground, just like the pad next to `TP17` (both marked blue).
+- Apart from `TPA17` (marked red), there's also a `TP17` (marked yellow) test point (marked yellow), don't confuse them.
+- The board is coated with a [conformal coating](https://en.wikipedia.org/wiki/Conformal_coating), to protect it from moisture and liquid damage. You'll need to gently scrape it off to make contact with the test point. A pointy multimeter probe will do just fine.
 - The battery needs to be connected for the logic to boot, turns out it's not powered through the host USB connection! I believe the latter is mostly (or only) for UART.
 
 Here are some more pictures of the board to help you identify it:
+
+{{ image(src="/img/roborock_jailbreak/board_top_full.webp", alt="Top of the board, middle section", position="center", style="border-radius: 1em; width: 100%; margin-top: 1em; margin-bottom: 1em;") }}
 
 {{ image(src="/img/roborock_jailbreak/board_top_middle.webp", alt="Top of the board, middle section", position="center", style="border-radius: 1em; width: 100%; margin-top: 1em; margin-bottom: 1em;") }}
 
@@ -118,14 +120,14 @@ From here I just followed the Valetudo Roborock FEL rooting and install guide wi
 
 #### Post-install info
 
-System info
+System info. Given that Linux 3.4 was released on May 20th 2012, it was obsolete long before this vacuum [became available](https://www.nextpit.com/news/roborock-q7-max-plus-midrange-vacuum-robot-comes-spring), yikes!
 
 ```sh
 [root@rockrobo ~]# uname -a
 Linux rockrobo 3.4.39 #1 SMP PREEMPT Fri Dec 23 12:20:10 CST 2022 armv7l GNU/Linux
 ```
 
-State of the filesystem, approximately 120MB of free space left, could fit something fun in here!
+State of the filesystem:
 
 ```sh
 [root@rockrobo ~]# df -h
@@ -146,7 +148,19 @@ tmpfs                   100.0M      3.9M     96.1M   4% /run/shm
 /dev/nandj                1.9M      1.9M         0 100% /mnt/resources/audio_custom
 ```
 
-Listening server sockets
+Approximately 120MB of free space left, could fit something fun in here!
+
+RAM, approximately 90MB left after excluding cache:
+
+```sh
+[root@rockrobo ~]# free
+             total       used       free     shared    buffers     cached
+Mem:        251184     237732      13452          0      10568      66092
+-/+ buffers/cache:     161072      90112
+Swap:            0          0          0
+```
+
+Listening server sockets:
 
 ```sh
 [root@rockrobo ~]# netstat  -plntu
@@ -168,6 +182,29 @@ udp        0      0 127.0.0.1:8053          0.0.0.0:*                           
 udp        0      0 0.0.0.0:40901           0.0.0.0:*                           386/valetudo
 netstat: /proc/net/udp6: No such file or directory
 ```
+
+Binaries:
+
+```sh
+[root@rockrobo ~]# ls /bin
+ash            chown          dnsdomainname  getopt         kill           mknod          netstat        pwd            sleep          umount
+bash           cp             echo           grep           ln             mktemp         nice           rm             su             uname
+busybox        date           egrep          gunzip         lock           mount          pidof          rmdir          sync           vi
+cat            dd             false          gzip           login          mv             ping           run-parts      tar            zcat
+chgrp          df             fgrep          hexdump        ls             nano           ping6          sed            touch
+chmod          dmesg          fsync          hostname       mkdir          netmsg         ps             sh             true
+[root@rockrobo ~]# ls /usr/bin
+[               bzcat           diff            head            less            nslookup        rr_boot_flags   tee             uniq            xz
+[[              clear           dirname         hexdump         logrotate.sh    openssl         rr_try_mount    test            uptime          yes
+adbd            cmp             dropbearkey     htop            lsof            passwd          scp             time            watchdoge.sh
+awk             create_ap       du              iconv           md5sum          pgrep           seq             top             wc
+base64          crontab         env             id              mkfifo          pkill           setsid          tr              wget
+basename        curl            expr            ionice          nano            printf          sort            traceroute      which
+bootring        cut             find            killall         nc              readlink        strings         traceroute6     wpa_passphrase
+bunzip2         dbclient        free            ldd             nohup           reset           tail            uart_test       xargs
+```
+
+It's worth noting there's no package manager, which to be honest I wouldn't expect in a consumer-grade commercial device.
 
 ---
 
