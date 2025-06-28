@@ -2,17 +2,15 @@
 title = "Recovering from disk pressure issues during OPNsense 25.1 major upgrade"
 date = 2025-02-03
 
-
 [taxonomies]
 tags = ["homelab", "proxmox", "networking", "opnsense"]
-
 +++
+
+<!-- more -->
 
 {{ image(src="/img/rescue_opnsense_maj_upgrade/title.webp", alt="Cat yelling at OPNsense logo", position="center", style="border-radius: 1em; width: 100%;") }}
 
 Recently, [OPNsense 25.1 was released](https://forum.opnsense.org/index.php?topic=45460.0) 🎉. Here's how I borked the upgrade and then recovered (with safety belts on).
-
-<!-- more -->
 
 My OPNsense setup already happened to be on the last available `24.X` release, so last evening I sat down to perform the upgrades. The instructions for upgrading from major version 24 say, quote:
 

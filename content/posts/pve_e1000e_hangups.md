@@ -2,18 +2,17 @@
 title = "Solving Intel NIC hangups on Proxmox VE 8.4-1"
 date = 2025-06-01
 
-
 [taxonomies]
 tags = ["homelab", "proxmox", "networking", "linux"]
-
 +++
+
+<!-- more -->
 
 {{ image(src="/img/pve_e1000e_hangups/souls_title.webp", alt="Image saying detected hardware unit hang in capital letters, stylized as a Dark Souls III caption.",
          position="center", style="border-radius: 1em; width: 100%;") }}
 
 Recently I've been seeing my NAS' network interface go down unrecoverably (i.e. until a reboot). The first time I've observed this, I happened to be running some OS upgrades, so I brushed it off as a one-time, wonky interaction with the network interface. However, I've noticed that it kept happening from time to time, so I started wondering about a common denominator of all of these events. It would only happen during high network throughput tasks, which saturated the gigabit link in a sustained fashion, like dumping backups or pulling several GBs of packages. On the other hand, the issue would never reproduce during light loads (network-wise), like tweaking configs over SSH (even during long-lived sessions).
 
-<!-- more -->
 
 ## The environment
 

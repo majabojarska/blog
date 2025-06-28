@@ -6,13 +6,10 @@ date = 2025-04-03
 tags = ["electronics", "guitar"]
 +++
 
+<!-- more -->
+
 {{ image(src="/img/amp/tube_heater_1.webp", alt="Vacuum tube with powered on heater filaments",
          position="center", style="border-radius: 1em; width: 100%;") }}
-
-<!-- {{ image(src="/img/amp/dso_sine_amplification.webp", alt="Waveforms on an oscilloscope",
-         position="center", style="border-radius: 1em; width: 75%;") }} -->
-
-<!-- more -->
 
 Designing and building a guitar amplifier from scratch has been on my mind for a fairly long time now.
 

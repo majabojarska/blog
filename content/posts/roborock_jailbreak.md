@@ -1,16 +1,15 @@
 +++
 title = "Jailbreaking a Roborock Q7 Max robot vacuum"
 date = 2025-06-26
-
+updated = 2025-06-30
 
 [taxonomies]
 tags = ["vacuum", "jailbreak", "valetudo"]
-
 +++
 
-{{ image(src="/img/roborock_jailbreak/title.webp", alt="Cat yelling at OPNsense logo", position="center", style="border-radius: 1em; width: 100%;") }}
-
 <!-- more -->
+
+{{ image(src="/img/roborock_jailbreak/title.webp", alt="Cat yelling at OPNsense logo", position="center", style="border-radius: 1em; width: 100%;") }}
 
 ## The "Why?"
 
