@@ -1,5 +1,5 @@
 +++
-title= "Greetings traveller"
+title= "Hello there"
 template = "homepage.html"
 +++
 
