@@ -1,9 +1,6 @@
-{% extends "apollo/templates/404.html" %} {% block content %}
-<div class="post">
-  <h1 class="post-title">
-    {% block heading %}404. Lost?{% endblock heading %}
-  </h1>
-
+{% extends "apollo/templates/404.html" %} {% block main_content %}
+<main class="centered-header">
+  {{ post_macros::page_header(title="404") }}
   <img
     src="/img/404.webp"
     alt="Luna the cat being floofy"
@@ -15,5 +12,5 @@
     <p>{% block message %}"Meow"{% endblock message %}</p>
     — Luna the Cat
   </blockquote>
-</div>
-{% endblock content %}
+</main>
+{% endblock main_content %}

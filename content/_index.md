@@ -1,8 +1,15 @@
 +++
-title= "Apollo Theme"
+title= "Greetings traveller"
 template = "homepage.html"
 +++
 
-Thanks for checking out this theme!
+I'm Maja, welcome to my digital garden 🌱
 
-Checkout all the [options you can configure](./posts/configuration) and the [example pages](./tags/example/).
+This is where I infodump and grow my ideas.
+
+Currently working on/learning about/tinkering with:
+
+- [Managed Kubernetes solutions](https://www.linode.com/products/kubernetes/)
+- [Designing a guitar amplifier from scratch](https://github.com/majabojarska/bumble-tuby)
+- Learning the [fundamentals of electronics](https://archive.org/details/the-art-of-electronics-3rd-ed-2015_202008)
+- Getting my ham radio license 📻

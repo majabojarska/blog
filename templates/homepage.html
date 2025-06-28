@@ -1,0 +1,7 @@
+{% extends "apollo/templates/homepage.html" %}
+
+{% block main_content %}
+    {# TODO: Make the accent dot a configurable string #}
+    {{ post_macros::home_page(section=section) }}
+
+{% endblock main_content %}
