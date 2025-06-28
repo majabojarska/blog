@@ -8,8 +8,7 @@ tags = ["electronics", "guitar"]
 
 <!-- more -->
 
-{{ image(src="/img/amp/tube_heater_1.webp", alt="Vacuum tube with powered on heater filaments",
-         position="center", style="border-radius: 1em; width: 100%;") }}
+{{ image(src="/img/amp/tube_heater_1.webp", alt="Vacuum tube with powered on heater filaments", position="center") }}
 
 Designing and building a guitar amplifier from scratch has been on my mind for a fairly long time now.
 
@@ -50,5 +49,4 @@ I'm working on this project in the open:
 
 Till' next time!
 
-{{ image(src="/img/amp/prototyping.webp", alt="Simplified pre-amp circuit on a breadboard",
-         position="center", style="border-radius: 1em; width: 75%;") }}
+{{ image(src="/img/amp/prototyping.webp", alt="Simplified pre-amp circuit on a breadboard", position="center") }}

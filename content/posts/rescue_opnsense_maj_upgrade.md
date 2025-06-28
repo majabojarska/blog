@@ -8,7 +8,7 @@ tags = ["homelab", "proxmox", "networking", "opnsense"]
 
 <!-- more -->
 
-{{ image(src="/img/rescue_opnsense_maj_upgrade/title.webp", alt="Cat yelling at OPNsense logo", position="center", style="border-radius: 1em; width: 100%;") }}
+{{ image(src="/img/rescue_opnsense_maj_upgrade/title.webp", alt="Cat yelling at OPNsense logo", position="center") }}
 
 Recently, [OPNsense 25.1 was released](https://forum.opnsense.org/index.php?topic=45460.0) 🎉. Here's how I borked the upgrade and then recovered (with safety belts on).
 
