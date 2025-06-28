@@ -1,5 +1,5 @@
 +++
-title = "Recovering from disk pressure issues during OPNsense 25.1 major upgrade"
+title = "Recovering from disk pressure during OPNsense major upgrade"
 date = 2025-02-03
 
 [taxonomies]
