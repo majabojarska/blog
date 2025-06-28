@@ -1,3 +1,6 @@
+@import "parts/_misc.scss";
+
+
 $bg-0: #fff;
 $bg-1: darken($bg-0, 2%);
 $bg-2: darken($bg-1, 8%);
@@ -21,29 +24,5 @@ $text-1: darken($bg-0, 60%);
   // invert colour on hover for consistency
   .social :hover {
     filter: invert(1);
-  }
-
-  .post-img {
-    display: block;
-    text-align: center;
-
-    a {
-      // Negate theme's color accents
-      border-bottom: 0;
-      &:hover {
-        background-color: transparent;
-      }
-
-      img {
-        max-width: 100%;
-
-        width: 100%;
-        @media screen and (min-width: 768px) {
-          width: 75%;
-        }
-
-        border-radius: 1em;
-      }
-    }
   }
 }
