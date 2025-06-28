@@ -1,0 +1,17 @@
+{% if src %}
+  {% set converted_preview = resize_image(path=src, width=800, op="fit_width", format="webp") %}
+  {% set converted_preview_url = converted_preview.url %}
+  {# The trick is to resize first, which provides the original size for the 1:1 size format conversion #}
+  {% set converted = resize_image(path=src, width=converted_preview.orig_width, height=converted_preview.orig_height, format="webp") %}  
+
+  <div class="post-img">
+  <a href="{{ converted.url }}" target="_blank">
+  
+  <img src="{{ converted_preview.url | safe }}"
+  {% if alt %} alt="{{ alt }}"{% endif %} 
+  {%- if style %} style="{{ style | safe }}" {%- endif %} 
+  decoding="async" loading="lazy"/>
+
+  </a>
+  </div>
+{% endif %}

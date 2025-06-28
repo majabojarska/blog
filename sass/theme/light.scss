@@ -22,4 +22,28 @@ $text-1: darken($bg-0, 60%);
   .social :hover {
     filter: invert(1);
   }
+
+  .post-img {
+    display: block;
+    text-align: center;
+
+    a {
+      // Negate theme's color accents
+      border-bottom: 0;
+      &:hover {
+        background-color: transparent;
+      }
+
+      img {
+        max-width: 100%;
+
+        width: 100%;
+        @media screen and (min-width: 768px) {
+          width: 75%;
+        }
+
+        border-radius: 1em;
+      }
+    }
+  }
 }
