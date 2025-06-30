@@ -4,6 +4,10 @@ date = 2025-04-03
 
 [taxonomies]
 tags = ["electronics", "guitar"]
+
+[extra]
+repo_view = true
+comment = true
 +++
 
 <!-- more -->

@@ -1,7 +1,29 @@
 {% extends "apollo/templates/homepage.html" %}
 
 {% block main_content %}
-    {# TODO: Make the accent dot a configurable string #}
-    {{ post_macros::home_page(section=section) }}
+    <main>
+        <article>
+            <section class="body">
+                <div class="page-header">
+                    {{ section.title }}<span class="primary-color">!</span>
+                </div>
+
+                {{ section.content | safe }}
+            
+            </section>
+        </article>
+    </main>
+    
+    <div class="page-sub-header">
+        Recent posts<span class="primary-color">:</span>
+    </div>
+
+    {% block post_list %}
+        <main class="list">
+            {{ post_macros::list_posts(pages=section.pages) }}
+        </main>
+    {% endblock post_list %}    
+
+
 
 {% endblock main_content %}

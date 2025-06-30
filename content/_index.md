@@ -1,6 +1,13 @@
 +++
 title= "Hello there"
 template = "homepage.html"
+
+sort_by = "date"
+
+insert_anchor_links = "heading"
+
+[extra]
+comment = true
 +++
 
 I'm Maja, welcome to my digital garden 🌱
@@ -13,3 +20,5 @@ Currently working on/learning about/tinkering with:
 - [Designing a guitar amplifier from scratch](https://github.com/majabojarska/bumble-tuby)
 - Learning the [fundamentals of electronics](https://archive.org/details/the-art-of-electronics-3rd-ed-2015_202008)
 - Getting my ham radio license 📻
+
+---
