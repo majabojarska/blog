@@ -5,3 +5,12 @@
 The source code for my personal website.
 
 This website is built on [Zola](https://www.getzola.org/), the static site generator.
+
+---
+
+## To-do topics
+
+- k3s graceful shutdown
+    - https://oranki.net/posts/2025-01-09-graceful-k3s-shutdown/
+- homelab in general
+- 
