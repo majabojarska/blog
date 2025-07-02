@@ -10,7 +10,10 @@ This website is built on [Zola](https://www.getzola.org/), the static site gener
 
 ## To-do topics
 
-- k3s graceful shutdown
-    - https://oranki.net/posts/2025-01-09-graceful-k3s-shutdown/
-- homelab in general
-- 
+- Posts
+  - k3s graceful shutdown
+    - [Oranki net post](https://oranki.net/posts/2025-01-09-graceful-k3s-shutdown/)
+  - homelab in general
+- Meta
+  - Automate `updated` post param updating.
+  - Factor out custom SCSS
