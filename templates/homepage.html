@@ -19,11 +19,19 @@
     </div>
 
     {% block post_list %}
-        <main class="list">
-            {{ post_macros::list_posts(pages=section.pages) }}
+        {% set posts_section = get_section(path="posts/_index.md") %}
+        <main class="post-list">
+            <ul>
+                {% for page in posts_section.pages %}
+                    {% if loop.index <= 5 %} 
+                        {{ post_macros::list_post(page=page) }}
+                    {% endif %}
+                {% endfor -%}
+            </ul>
         </main>
+
     {% endblock post_list %}    
 
-
+    
 
 {% endblock main_content %}
