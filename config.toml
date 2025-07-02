@@ -56,6 +56,7 @@ menu = [
 socials = [
     {name = "github", url = "https://github.com/majabojarska", icon="github", newtab = true},
     {name = "linkedin", url = "https://linkedin.com/in/majabojarska", icon="linkedin", newtab = true},
+    {name = "mastodon", url = "https://mastodon.social/@majabojarska", icon="mastodon", newtab = true},
 ]
 
 stylesheets = [
