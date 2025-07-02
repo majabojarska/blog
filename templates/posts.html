@@ -5,7 +5,7 @@
         <article>
             <section class="body">
                 <div class="page-header">
-                    {{ section.title }}<span class="primary-color">!</span>
+                    {{ section.title }}<span class="primary-color">:</span>
                 </div>
 
                 {{ section.content | safe }}
@@ -14,10 +14,6 @@
         </article>
     </main>
     
-    <div class="page-sub-header">
-        Recent posts
-    </div>
-
     {% block post_list %}
         {% set posts_section = get_section(path="posts/_index.md") %}
         <main class="post-list">
