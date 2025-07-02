@@ -14,4 +14,4 @@ comment = true
 
 ## 2025-07-01
 
-- Ensuring Kubernetes workloads shut down gracefully on my single node cluster.
+- Ensuring Kubernetes workloads shut down gracefully, on my single node cluster, during scheduled backups. I'll make a brief post out of this.
