@@ -21,4 +21,4 @@ Currently working on/learning about/tinkering with:
 - Learning the [fundamentals of electronics](https://archive.org/details/the-art-of-electronics-3rd-ed-2015_202008)
 - Getting my ham radio license 📻
 
----
+Check out my devlog [over here](@/devlog/_index.md)!
