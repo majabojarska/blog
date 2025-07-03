@@ -1,14 +1,14 @@
 +++
-title = "Notes on Proxmox VE"
-date = 2025-01-27
-updated = 2025-06-02
+title = "Proxmox VE Tips & Tricks"
+date = 2025-06-01
+
 [taxonomies]
 tags = ["homelab", "proxmox"]
 +++
 
-<!-- more -->
-
 Living collection of snippets, tips and tricks for [Proxmox VE](https://www.proxmox.com/en/products/proxmox-virtual-environment/overview).
+
+<!-- more -->
 
 ## Post-install
 
