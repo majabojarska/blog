@@ -1,15 +1,16 @@
 +++
 title = "Jailbreaking a Roborock Q7 Max robot vacuum"
 date = 2025-06-26
-updated = 2025-06-30
+
 
 [taxonomies]
 tags = ["vacuum", "jailbreak", "valetudo"]
+
 +++
 
-<!-- more -->
+{{ image(src="/img/roborock_jailbreak/title.webp", alt="Cat yelling at OPNsense logo", position="center", style="border-radius: 1em; width: 100%;") }}
 
-{{ image(src="/img/roborock_jailbreak/title.webp", alt="Robot vacuum in the process of being rooted") }}
+<!-- more -->
 
 ## The "Why?"
 
@@ -42,7 +43,7 @@ These have been immensely helpful:
 
 #### Electrical
 
-{{ image(src="/img/roborock_jailbreak/board_bot_tpa17.webp", alt="Conformal coating on test point TPA17", position="center") }}
+{{ image(src="/img/roborock_jailbreak/board_bot_tpa17.webp", alt="Conformal coating on test point TPA17", position="center", style="border-radius: 1em; width: 100%;") }}
 
 - As one might expect, screw joints on the PCB are connected to common ground, just like the pad next to `TP17` (both marked blue).
 - Apart from `TPA17` (marked red), there's also a `TP17` (marked yellow) test point (marked yellow), don't confuse them.
@@ -51,15 +52,15 @@ These have been immensely helpful:
 
 Here are some more pictures of the board to help you identify it:
 
-{{ image(src="/img/roborock_jailbreak/board_top_full.webp", alt="Top of the board, middle section", position="center") }}
+{{ image(src="/img/roborock_jailbreak/board_top_full.webp", alt="Top of the board, middle section", position="center", style="border-radius: 1em; width: 100%; margin-top: 1em; margin-bottom: 1em;") }}
 
-{{ image(src="/img/roborock_jailbreak/board_top_middle.webp", alt="Top of the board, middle section", position="center") }}
+{{ image(src="/img/roborock_jailbreak/board_top_middle.webp", alt="Top of the board, middle section", position="center", style="border-radius: 1em; width: 100%; margin-top: 1em; margin-bottom: 1em;") }}
 
-{{ image(src="/img/roborock_jailbreak/board_top_middle_2.webp", alt="Top of the board, middle section", position="center") }}
+{{ image(src="/img/roborock_jailbreak/board_top_middle_2.webp", alt="Top of the board, middle section", position="center", style="border-radius: 1em; width: 100%; margin-top: 1em; margin-bottom: 1em;") }}
 
-{{ image(src="/img/roborock_jailbreak/board_top_right.webp", alt="Top of the board, right-hand section", position="center") }}
+{{ image(src="/img/roborock_jailbreak/board_top_right.webp", alt="Top of the board, right-hand section", position="center", style="border-radius: 1em; width: 100%; margin-top: 1em; margin-bottom: 1em;") }}
 
-{{ image(src="/img/roborock_jailbreak/board_top_left.webp", alt="Top of the board, left-hand section", position="center") }}
+{{ image(src="/img/roborock_jailbreak/board_top_left.webp", alt="Top of the board, left-hand section", position="center", style="border-radius: 1em; width: 100%; margin-top: 1em; margin-bottom: 1em;") }}
 
 #### Rooting issues
 
@@ -211,4 +212,4 @@ All in all, the process was fairly straightforward. Nevertheless, I wouldn't rec
 
 To conclude, here's some [neofetch](https://github.com/dylanaraps/neofetch) eye candy 😋:
 
-{{ image(src="/img/roborock_jailbreak/neofetch.webp", alt="Neofetch on the Roborock", position="center") }}
+{{ image(src="/img/roborock_jailbreak/neofetch.webp", alt="Neofetch on the Roborock", position="center", style="border-radius: 1em; width: 100%; margin-top: 1em; margin-bottom: 1em;") }}

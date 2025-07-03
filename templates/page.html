@@ -1,0 +1,21 @@
+{% extends "terminimal/templates/page.html" %} 
+
+{% block content %}
+    <div class="post">
+        {{ post_macros::header(page=page) }}
+        {{ post_macros::content(page=page, summary=false, show_only_description=false) }}
+        {{ post_macros::earlier_later(page=page) }}
+    </div>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+    mermaid.registerIconPacks([
+      {
+        name: 'mdi',
+        loader: () =>
+          fetch('https://unpkg.com/@iconify-json/mdi@1/icons.json').then((res) => res.json()),
+      },
+    ]);
+  </script>
+{% endblock content %}
