@@ -1,0 +1,44 @@
+{% if src %}
+  {%- if src is matching("[.](jpg|jpeg|png|webp)$") -%}
+  
+    {# The trick is to resize first, which provides the original size for the 1:1 size format conversion #}
+    {% set converted_small = resize_image(path=src, width=800, op="fit_width", format="webp") %}
+    
+    {# TODO: Why is the fullsize conversion sometimes generating borked files? #}
+    {# {% set converted_full = resize_image(path=src, width=converted_small.orig_width, height=converted_small.orig_height, format="webp") %}   #}
+    {# {% set url_normal = converted_full.url %} #}
+
+    {% if src is not starting_with("http") %}
+      {# ... then prepend the site's base URL to the image's URL. #}
+      {% set url_normal = config.base_url ~ src %}
+    {% endif %}
+    
+    {% if src is not starting_with("http") %}
+      {# ... then prepend the site's base URL to the image's URL. #}
+      {% set url_normal = config.base_url ~ src %}
+    {% endif %}
+    
+    {% set url_small = converted_small.url %}
+
+  {%- else %}
+    {# Conversion unsupported, just use the source #}
+    
+    {% if src is not starting_with("http") %}
+      {# ... then prepend the site's base URL to the image's URL. #}
+      {% set url_normal = config.base_url ~ src %}
+    {% endif %}
+    
+    {% set url_small = url_normal %}
+  {%- endif %}
+
+  <div class="post-img">
+  <a href="{{ url_normal }}" target="_blank">
+  
+  <img src="{{ url_small | safe }}"
+  {% if alt %} alt="{{ alt }}"{% endif %} 
+  {%- if style %} style="{{ style | safe }}" {%- endif %} 
+  decoding="async" loading="lazy"/>
+
+  </a>
+  </div>
+{% endif %}
