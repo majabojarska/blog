@@ -1,0 +1,11 @@
+{% extends "apollo/templates/homepage.html" %} {% block main_content %}
+<main>
+  <article>
+    <section class="body">
+      <div class="page-header">{{ section.title }}</div>
+
+      {{ section.content | safe }}
+    </section>
+  </article>
+</main>
+{% endblock main_content %}
