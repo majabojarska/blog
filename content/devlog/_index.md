@@ -14,8 +14,10 @@ comment = true
 
 ## 2025-07-07
 
-- ~Slamming my head against a wall~ Setting up Nvidia drivers on Linux for Nvidia RTX4070.
-  - Turns out my HDMI output (singular) just refuses to work with the [proprietary drivers](https://archlinux.org/packages/extra/x86_64/nvidia/) (`575.64.03-2`), whereas the DisplayPort outputs work just fine. No glitches, no tearing, pure bliss.
+- ~Slamming my head against a wall~ Setting up Nvidia drivers on Arch Linux ([btw](https://knowyourmeme.com/memes/btw-i-use-arch)) for Nvidia RTX4070.
+  - Turns out my only HDMI output just refuses to work with the [proprietary drivers](https://archlinux.org/packages/extra/x86_64/nvidia/) (`575.64.03-2`), whereas the DisplayPort outputs work just fine.
+  - Followed the official [Arch Linux guide for Nvidia](https://wiki.archlinux.org/title/NVIDIA), and installed `nvidia`, `nvidia-settings`, `nvidia-utils`.
+  - Running kernel `linux-lts`, which at the time of writing is `6.15.5-arch1-1`.
   - I doubt the HDMI issue is rooted in hardware, since it works just fine in BIOS and when booted with [nouveau](https://nouveau.freedesktop.org/).
 
 ## 2025-07-06
