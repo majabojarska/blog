@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-07-10
+
+- Got my first HF transceiver! I'm learning to operate it at my local radioamaetur club, since I don't have an antenna rig at home (yet).
+
+  {{ image(src="/img/devlog/2025-07-11_xiegu_g90_first_run.webp", alt="Xiegu G90 HF transceiver in operation", position="center") }}
+
 ## 2025-07-08
 
 - Reworking my off-site backup strategy for Kubernetes PVCs.
