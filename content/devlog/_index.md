@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-07-12
+
+- Printed [this Xiegu G90 stand](https://www.printables.com/model/422372-xiegu-g90-knob/comments#makes)
+
+  {{ image(src="/img/devlog/2025-07-12-xiegu-g90-stand.webp", alt="3D printed stand for Xiegu G90", position="center") }}
+
 ## 2025-07-11
 
 - Printing some components for my Xiegu G90 to make it more user-friendly, namely:
