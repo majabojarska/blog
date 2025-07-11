@@ -10,7 +10,7 @@ comment = true
 
 ## 2025-07-12
 
-- Printed [this Xiegu G90 stand](https://www.printables.com/model/422372-xiegu-g90-knob/comments#makes)
+- Printed [this Xiegu G90 stand](https://www.printables.com/model/119835-xiegu-g90-stand-remixed-to-be-stronger-and-sleeker)
 
   {{ image(src="/img/devlog/2025-07-12-xiegu-g90-stand.webp", alt="3D printed stand for Xiegu G90", position="center") }}
 
