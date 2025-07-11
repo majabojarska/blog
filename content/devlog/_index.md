@@ -8,9 +8,20 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-07-11
+
+- Printing some components for my Xiegu G90 to make it more user-friendly, namely:
+  - [speaker redirector](https://www.printables.com/model/1064012-xiegu-g90-speaker-deflector) – the unit's speaker is directed upwards, which is not ideal;
+  - foldable stand – yet to decide on the exact solution.
+- Planning the at-home power supply for my HF transceiver.
+  - During initial tests, the observed current draw at full TX power didn't exceed 4,5A at 13,8V.
+  - The unit's manual recommends a supply of at least 8A.
+  - I hoped to use my bench PSU, but I misremembered it having a current capacity of 10A, while it's actually 5A. This technically might be enough, given the measurements, but a 4,5A load is awfully close to the limit, and I'd rather not run the PSU that hot on a regular basis.
+  - As a long term solution, I've ordered a used 460W server PSU. These are built like tanks and are _very_ cheap – I got mine for just $10. I'm planning to modify it into a 13,8V supply, since HF radios typically operate optimally at that voltage. I'll do a separate write-up on this project once it's finished.
+
 ## 2025-07-10
 
-- Got my first HF transceiver! I'm learning to operate it at my local radioamaetur club, since I don't have an antenna rig at home (yet).
+- Got my first HF transceiver! I'm learning to operate it at my local radioamateur club, since I don't have an antenna rig at home (yet).
 
   {{ image(src="/img/devlog/2025-07-11_xiegu_g90_first_run.webp", alt="Xiegu G90 HF transceiver in operation", position="center") }}
 
