@@ -17,7 +17,7 @@ $medium: 800px;
 
     img {
       border-radius: 1em;
-      
+
       box-sizing: border-box;
       width: 100%;
       max-width: 100%;
@@ -37,4 +37,30 @@ $medium: 800px;
   line-height: 100%;
   font-family: var(--header-font);
   margin: 4rem 0px 1rem 0px;
+}
+
+:root {
+  // Mobile first
+  font-size: 1em;
+
+  .page-header {
+    font-size: 1.75em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 1rem;
+  }
+
+  @media screen and (min-width: $small) {
+    font-size: 1.25em;
+
+    .page-header {
+      font-size: 2em;
+    }
+  }
 }
