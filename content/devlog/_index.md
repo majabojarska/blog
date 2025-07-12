@@ -4,7 +4,6 @@ sort_by = "date"
 template = "devlog.html"
 insert_anchor_links = "heading"
 
-
 [extra]
 comment = true
 +++
