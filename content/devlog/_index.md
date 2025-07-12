@@ -8,11 +8,25 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-07-12
+
+- Planning the jailbreak strategy for my Petlibro PLAF101 pet feeder.
+  - At first glance, ESP8266 seems electrically compatible with the on-board WBR3 module. I'll pursue this avenue, since it would enable the usage of [ESPHome](https://esphome.io/). People have [done it before with other devices](https://www.youtube.com/watch?v=d_HpkIiWC3Y)!
+
+    {{ image(src="img/devlog/2025-07-12-petlibro-pcb.webp", alt="Xiegu G90 HF transceiver in operation", position="center") }}
+
+- Encountered x264 playback issues in VLC after upgrading Arch Linux. It appears the [vlc](https://archlinux.org/packages/extra/x86_64/vlc/) package [moved plugins into optional packages](https://bbs.archlinux.org/viewtopic.php?pid=2250756), which were not explicitly required on my system. Namely the ffmpeg backend plugin, which facilitates x264 decoding.
+  - Minimum viable remediation: `pacman -S vlc-plugin-ffmpeg`.
+  - All-in-one fix for other plugins: `pacman -S vlc-plugins-all`.
+- Printed [this stand](https://www.printables.com/make/2730465) for my Xiegu G90:
+
+  {{ image(src="img/devlog/2025-07-12-xiegu-g90-stand.webp", alt="Xiegu G90 HF transceiver in operation", position="center") }}
+
 ## 2025-07-11
 
-- Printing some components for my Xiegu G90 to make it more user-friendly, namely:
-  - [speaker redirector](https://www.printables.com/model/1064012-xiegu-g90-speaker-deflector) – the unit's speaker is directed upwards, which is not ideal;
-  - foldable stand – yet to decide on the exact solution.
+- Printed a [speaker deflector](https://www.printables.com/model/1064012-xiegu-g90-speaker-deflector) for my Xiegu G90, helps direct the sound towards the operator:
+  {{ image(src="img/devlog/2025-07-11-xiegu-g90-speaker-redirector.webp", alt="Xiegu G90 speaker deflector", position="center") }}
+
 - Planning the at-home power supply for my HF transceiver.
   - During initial tests, the observed current draw at full TX power didn't exceed 4,5A at 13,8V.
   - The unit's manual recommends a supply of at least 8A.
