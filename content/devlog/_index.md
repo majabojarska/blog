@@ -11,7 +11,7 @@ comment = true
 ## 2025-07-12
 
 - Planning the jailbreak strategy for my Petlibro PLAF101 pet feeder.
-  - At first glance, ESP8266 seems electrically compatible with the on-board WBR3 module. I'll pursue this avenue, since it would enable the usage of [ESPHome](https://esphome.io/). People have [done it before with other devices](https://www.youtube.com/watch?v=d_HpkIiWC3Y)!
+  - At first glance, the on-board WBR3 module seems electrically compatible with an ESP8266. I'll pursue this avenue, since it would enable the usage of [ESPHome](https://esphome.io/). Looks like people have [done it before with other devices](https://www.youtube.com/watch?v=d_HpkIiWC3Y)!
 
     {{ image(src="img/devlog/2025-07-12-petlibro-pcb.webp", alt="Xiegu G90 HF transceiver in operation", position="center") }}
 
