@@ -23,7 +23,7 @@
         <main class="post-list">
             <ul>
                 {% for page in posts_section.pages %}
-                    {% if loop.index <= 5 %} 
+                    {% if loop.index <= 10 %} 
                         {{ post_macros::list_post(page=page) }}
                     {% endif %}
                 {% endfor -%}
