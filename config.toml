@@ -1,6 +1,6 @@
 theme = "apollo"
 
-base_url = "https://majabojarska.dev"
+base_url = "https://majabojarska.dev/"
 title = "Maja Bojarska"
 description = "Maja's Devlog"
 compile_sass = true
