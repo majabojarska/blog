@@ -10,9 +10,29 @@ comment = true
 
 ---
 
+## 2025-07-15
+
+## Designing a surface mounted holder for the modded phone
+
+I've decided to surface mount this phone to the glass door of my homelab's rack. Working on a design to enclose the whole device (with the mods).
+
+{{ image(src="img/devlog/2025-07-15-nokia-g22-mount.webp", alt="Nokia G22 mount design in progress", position="center") }}
+
+---
+
+## 2025-07-13
+
+## Modding Nokia G22 to operate without a battery
+
+I wanted a compact homelab dashboard, but didn't want to implement a custom embedded solution from scratch. I'm modding an old, defective smartphone to operate solely on external power.
+
+{{ image(src="img/devlog/2025-07-13-modding-nokia-g22.webp", alt="Nokia G22 mount design in progress", position="center") }}
+
+---
+
 ## 2025-07-12
 
-### Planning the jailbreak strategy for my Petlibro PLAF101 pet feeder.
+### Planning the jailbreak strategy for my Petlibro PLAF101 pet feeder
 
 At first glance, the on-board WBR3 module seems electrically compatible with an ESP8266. I'll pursue this avenue, since it would enable the usage of [ESPHome](https://esphome.io/). Looks like people have [done it before with other devices](https://www.youtube.com/watch?v=d_HpkIiWC3Y)!
 
