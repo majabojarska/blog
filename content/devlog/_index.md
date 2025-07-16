@@ -8,6 +8,19 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-07-15
+
+## Finished the lil' dashboard display
+
+Next up:
+
+- dedicated Grafana dashboard and possibly a [playlist](https://grafana.com/docs/grafana/latest/dashboards/create-manage-playlists/);
+- [Fully Kiosk](https://www.fully-kiosk.com/) browser screen dimming and motion detection configuration.
+
+I'll do a full writeup once I complete this project.
+
+{{ image(src="img/devlog/2025-07-16-nokia-g22-on-rack.webp", alt="Nokia G22 modded to a dashboard display, installed on a small 10″ server rack", position="center") }}
+
 ---
 
 ## 2025-07-15
