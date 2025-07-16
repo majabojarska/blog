@@ -2,6 +2,7 @@
 title = "Notes on amateur radio"
 date = 2025-07-16
 updated = 2025-07-16
+
 [taxonomies]
 tags = ["homelab", "proxmox"]
 +++
