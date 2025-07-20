@@ -9,6 +9,13 @@ comment = true
 +++
 
 
+## 2025-07-20
+
+- Learning shortwave propagation theory.
+- Solving instability issues with USB/SATA adapter on my main homelab server.
+
+---
+
 ## 2025-07-19
 
 ### Modding the server PSU
@@ -16,6 +23,12 @@ comment = true
 Designing a front enclosure for my HSTNS PL-28 server PSU.
 
 {{ image(src="img/devlog/2025-07-19-psu-enclosure.webp", alt="Server PSU enclosure design", position="center") }}
+
+---
+
+## 2025-07-17
+
+Attending an antenna theory workshop at my local radio club ([SP6HACK](https://www.qrz.com/db/SP6HACK)).
 
 ---
 
