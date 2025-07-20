@@ -8,6 +8,17 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+
+## 2025-07-19
+
+### Modding the server PSU
+
+Designing a front enclosure for my HSTNS PL-28 server PSU.
+
+{{ image(src="img/devlog/2025-07-19-psu-enclosure.webp", alt="Server PSU enclosure design", position="center") }}
+
+---
+
 ## 2025-07-16
 
 ## Finished the lil' dashboard display
