@@ -8,11 +8,19 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-07-21
+
+- Studying for my ham radio exam.
+- Ordered replacement parts for my main virt server:
+  - new SSD for the zpool,
+  - new external 2.5" USB3 disk enclosure.
+
+---
 
 ## 2025-07-20
 
 - Learning shortwave propagation theory.
-- Solving instability issues with USB/SATA adapter on my main homelab server.
+- Solving instability issues with USB/SATA adapter on my main virt server.
 
 ---
 
