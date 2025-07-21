@@ -14,6 +14,7 @@ comment = true
 - Ordered replacement parts for my main virt server:
   - new SSD for the zpool,
   - new external 2.5" USB3 disk enclosure.
+- Tweaked blog Zola macros to sort recent posts by update date, instead of creation date. 
 
 ---
 
