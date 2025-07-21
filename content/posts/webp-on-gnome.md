@@ -49,4 +49,4 @@ In case you prefer ImageMagick:
 
 Now you'll get this dialog under _right-click_ → _Scripts_:
 
-{{ image(src="/img/webp-on-gnome/dialog.webp", alt="New WebP conversion dialog in Nautilus") }}
+{{ image(src="img/webp-on-gnome/dialog.webp", alt="New WebP conversion dialog in Nautilus") }}
