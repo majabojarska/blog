@@ -8,20 +8,38 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-07-22
+
+Finally repaired my ZFS storage pool. Turns out the USB3/SATA adapter was acting up, leading to random IO issues, and the disk eventually going offline.
+
+Replacing the adapter solved the issue. This result is in line with the lack of [SMART](https://en.wikipedia.org/wiki/Self-Monitoring%2C_Analysis_and_Reporting_Technology) errors and no bad blocks detected during full-surface read testing without the adapter. If it was the disk at fault, the failures would have occurred in both environments (regardless of the adapter).
+
+{{ image(src="img/devlog/2025-07-22-usb-sata-controller-chip.webp", alt="USB3/SATA controller chip – JMS578", position="center") }}
+
+The original adapter board has a JMicron [JMS578](https://www.jmicron.com/file/download/1013/JMS578_Product+Brief.pdf). Initial analysis shows that adapters using this chip tend to be flaky in terms of power management, disk enumeration, and SMART support. This can be improved by flashing alternative firmware [[1](https://ralimtek.com/posts/2021/jms578/)]. It's certainly an interesting avenue, but it's not a priority to me at the moment.
+
+**Questions:**
+
+- If it _was_ the JMS578 firmware at fault, why didn't this fail earlier?
+- I've seen the same behavior with a different unit of the same exact adapter model, how likely is it that both are defective and exhibiting the same behavior?
+- I've had this hardware setup for almost a year now. Perhaps a recent hypervisor's kernel update caused an interoperability regression?
+
+---
+
 ## 2025-07-21
 
 - Studying for my ham radio exam.
 - Ordered replacement parts for my main virt server:
-  - new SSD for the zpool,
+  - new SSD for the ZFS storage pool,
   - new external 2.5" USB3 disk enclosure.
-- Tweaked blog Zola macros to sort recent posts by update date, instead of creation date. 
+- Tweaked blog Zola macros to sort recent posts by update date, instead of creation date.
 
 ---
 
 ## 2025-07-20
 
 - Learning shortwave propagation theory.
-- Solving instability issues with USB/SATA adapter on my main virt server.
+- Investigating IO instability issues with one ZFS storage pool disk on my main hypervisor.
 
 ---
 
