@@ -1,6 +1,6 @@
 +++
-title = "Converting old smartphone into a server rack display"
-date = 2025-07-22
+title = "Converting an old smartphone into a server rack display"
+date = 2025-07-28
 
 [taxonomies]
 tags = ["hack", "3d-printing", "homelab", "rack", "electronics", "monitoring"]
@@ -10,7 +10,7 @@ tags = ["hack", "3d-printing", "homelab", "rack", "electronics", "monitoring"]
 
 ## The Goal
 
-For a long time now I really wanted to have some kind of physical display for my homelab. One that would tell me how the infrastructure is doing, at a glance. Besides, I _love_ blinkenlights.
+For a long time now, I really wanted to have some kind of physical display for my homelab. One that would tell me how the infrastructure is doing, at a glance. Besides, I _love_ blinkenlights.
 
 Given there's a myriad of solutions to choose from, I began with identifying my requirements:
 
@@ -43,53 +43,47 @@ Initially, I thought the Digitakt simply has a black&white display with a yellow
 
 {{ image(src="img/phone-to-dashboard-conversion/12864-oled-2-42-inch-yellow.webp", alt="12864 display modules", position="center") }}
 
-### System Design – Variant A
+### System Design
+
+#### Variant A
 
 {{ image(src="img/phone-to-dashboard-conversion/embedded-server-client-approach-a.svg", alt="System design - Variant A", position="center") }}
 
-The host machine will be running a Python component (`OLED display server`), that will fetch monitoring data, and draw it on the display.
+The host machine will be running a Python service (`OLED display server`), that will fetch monitoring data, and draw it on the display.
 
 - The host machine will interface with the display via a USB-I²C adapter.
 - The USB-I²C adapter will be implemented by flashing a RP2040 board with I²C adapter firmware [[1](https://github.com/Nicolai-Electronics/rp2040-i2c-interface)]. Alternatively, a pre-made adapter can be purchased.
   - The I²C adapter will implement the [i2c-tiny-usb](https://github.com/harbaum/I2C-Tiny-USB) protocol, to facilitate integration with the [Linux USB project](http://www.linux-usb.org/).
-- The component will utilize the [luma.oled](https://github.com/rm-hull/luma.oled) library to interact with the display(s).
-- The component will fetch the required monitoring data through the network, from a Prometheus server.
+- The service will utilize the [luma.oled](https://github.com/rm-hull/luma.oled) library to interact with the display(s).
+- The service will fetch the required monitoring data through the network, from a Prometheus server.
 
 Pros:
 
 - Centralized implementation of the fetch/draw logic.
 - Fast development cycle.
 - Ease of debugging.
-- Can run anywhere as long as there's network access to the target Prometheus instance.
+- Can run on any host, as long as there's network access to the target Prometheus instance.
 
 Cons:
 
 - Potential inability to drive multiple displays via one RP2040, even though the chip has two I²C buses.
+- The device is not standalone, requires a host to run the Python service.
 
-### System Design – Variant B
+#### Variant B
 
----
+Thin service fetches/sends prometheus data from/to i2c device via UART. The device draws on the multiple displays.
 
-Topics:
+### Variant C
 
-- the idea
-- battery removal
-- phone first attempt, boot loop
-- mock battery voltage, mobo modification
-- testing, initial numbers
-- enclosure design, print
-- 0.2mm clearances
-- 0.6mm nozzle for speed![alt text](image.png)
+Standalone networked device pulls data from Prometheus and draws it on the display.
+Rust, WiFi.
 
-- assembly
-  - total weight
-- installation, velcro
-- software side of things
-- kiosk browser
-  - automation, camera
-- Grafana dashboard
+## Second Approach – Repurposed Smartphone
 
-## Prototype
+### System Design
+
+### Hardware Modifications
+
 
 Power:
 
@@ -103,6 +97,36 @@ Battery 67g
 Phone no bat 141g
 
 velcro
+- battery removal
+- phone first attempt, boot loop
+- mock battery voltage, mobo modification
+- testing, initial numbers
+
+### Enclosure
+
+### Runtime Environment
+
+### Takeaways
+
+---
+
+Topics:
+
+- the idea
+
+- enclosure design, print
+- 0.2mm clearances
+- 0.6mm nozzle for speed![alt text](image.png)
+
+- assembly
+  - total weight
+- installation, velcro
+- software side of things
+- kiosk browser
+  - automation, camera
+- Grafana dashboard
+
+## Prototype
 
 ## What would I do differently now
 
