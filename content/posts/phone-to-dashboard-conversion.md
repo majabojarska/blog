@@ -8,6 +8,18 @@ tags = ["hack", "3d-printing", "homelab", "rack", "electronics", "monitoring"]
 
 <!-- more -->
 
+## The idea
+
+I really wanted to have some kind of display for my homelab. Since my server rack has a 10" form factor, I needed it to be compact, while still being functional.
+
+- relatively small
+- not cover server
+
+{{ image(src="img/phone-to-dashboard-conversion/12864-display-modules.webp", alt="12864 display modules", position="center") }}
+
+
+---
+
 Topics:
 
 - the idea
@@ -17,7 +29,7 @@ Topics:
 - testing, initial numbers
 - enclosure design, print
 - 0.2mm clearances
-- 0.6mm nozzle for speed
+- 0.6mm nozzle for speed![alt text](image.png)
 
 - assembly
   - total weight
@@ -26,13 +38,6 @@ Topics:
 - kiosk browser
   - automation, camera
 - Grafana dashboard
-
-## The idea
-
-I really wanted to have some kind of dashboard display for my homelab. Since my server rack has a 10" form factor:
-
-- relatively small
-- not cover server
 
 ## Prototype
 
@@ -54,3 +59,5 @@ velcro
 - Wider side button access cutouts.
 - Thinner wall in front of the USB-C port
 -
+
+{{ image(src="img/roborock_jailbreak/board_bot_tpa17.webp", alt="Conformal coating on test point TPA17", position="center") }}
