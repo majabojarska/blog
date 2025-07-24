@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-07-24
+
+- Writing a post on how I built my homelab rack display.
+
+---
+
 ## 2025-07-22
 
 Finally repaired my ZFS storage pool. Turns out the USB3/SATA adapter was acting up, leading to random IO issues, and the disk eventually going offline.
