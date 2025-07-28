@@ -8,9 +8,33 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-07-28
+
+Figuring out how to properly drive the motor and detect axis rotation increments. Will need to add more modwires, since the motor definitely was connected to underside pins of the [WBR3](https://developer.tuya.com/en/docs/iot/wbr3-module-datasheet?id=K9dujs2k5nriy), which the [ESP-12E](https://www.snapeda.com/parts/ESP8266-12E/ESP-12E/AI-Thinker/datasheet/) does not have.
+
+{{ image(src="img/devlog/2025-07-28-plaf101-motor-driver.webp", alt="ESPHome logs screenshot depicting button binary sensor events", position="center") }}
+
+---
+
+## 2025-07-27
+
+Flashed ESPHome onto the modded Petlibro PLAF101 board. Configured the basics, mapped out buttons and LEDs.
+
+{{ image(src="img/devlog/2025-07-27-mapping-esphome.webp", alt="ESPHome logs screenshot depicting button binary sensor events", position="center") }}
+
+---
+
+## 2025-07-26
+
+Built a custom [ISP](https://en.wikipedia.org/wiki/In-system_programming) harness for the Petlibro PLAF101 motherboard. Soldered an [ESP-12E](https://www.snapeda.com/parts/ESP8266-12E/ESP-12E/AI-Thinker/datasheet/) module in place of the original [WBR3](https://developer.tuya.com/en/docs/iot/wbr3-module-datasheet?id=K9dujs2k5nriy).
+
+{{ image(src="img/devlog/2025-07-26-plaf101-isp-harness.webp", alt="Custom ISP harness for Petlibro PLAF101 with ESP-12E", position="center") }}
+
+---
+
 ## 2025-07-24
 
-- Writing a post on how I built my homelab rack display.
+Writing a post on how I built my homelab rack display.
 
 ---
 
