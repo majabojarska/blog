@@ -8,6 +8,27 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-07-31
+
+Attended a workshop on ham radio antenna building techniques.
+
+---
+
+## 2025-07-30
+
+Writing a post (continued) on my homelab rack display.
+
+---
+
+## 2025-07-29
+
+Finished rewiring and mapped out the hardware on my modded Petlibro PLAF101. 
+Luna (the kitty) provided valuable feedback throughout the process.
+
+{{ image(src="img/devlog/2025-07-29-plaf101.webp", alt="Modded Petlibro PLAF101 internals", position="center") }}
+
+---
+
 ## 2025-07-28
 
 Figuring out how to properly drive the motor and detect axis rotation increments. Will need to add more modwires, since the motor definitely was connected to underside pins of the [WBR3](https://developer.tuya.com/en/docs/iot/wbr3-module-datasheet?id=K9dujs2k5nriy), which the [ESP-12E](https://www.snapeda.com/parts/ESP8266-12E/ESP-12E/AI-Thinker/datasheet/) does not have.
