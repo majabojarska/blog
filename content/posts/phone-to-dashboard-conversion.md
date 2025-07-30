@@ -113,7 +113,7 @@ Cons:
 
 ## Second Approach – Repurposed Smartphone
 
-The first approach has a significant caveat, in that it requires building (and maintaining) a fully custom display solution. I later remembered I had an old Android phone laying around. The phone was defective, but not in a way that would prevent me from using it as a dashboard.
+The first approach has a significant caveat, in that it requires building (and maintaining) a fully custom display solution. I later remembered I had an old Android phone laying around. The phone was defective, but not in a way that would prevent me from using it as a dashboard. I've decided to pursue this idea instead.
 
 ### System Design
 
@@ -122,10 +122,11 @@ The first approach has a significant caveat, in that it requires building (and m
 The Android phone will run the Grafana in a web browser.
 
 - The web browser of choice will be the [Fully Kiosk](https://www.fully-kiosk.com/) browser. It provides lifecycle automation capabilities unavailable in typical web browsers.
+- Custom dashboards will be made to accomodate the aspect ratio and size of the phone's display.
 
 Pros:
 
-- Android provides nearly all of the necessary facilities out of the box – wireless networking, high-density display, app runtime, touch input, and potentially many more.
+- Android provides nearly all of the necessary facilities out of the box – wireless networking, high-density display, app runtime, and touch input.
 - Highly flexible environment, possible to repurpose in the future.
 
 Cons:
@@ -162,7 +163,7 @@ At this point I did some measurements.
 | Mode of operation                                     | Power (approx.) |
 | ----------------------------------------------------- | --------------- |
 | Boot                                                  | 2.0-5.0W        |
-| Idle, screen off                                      | 0.6W            |
+| Idle, screen off                                      | 0.5W            |
 | Grafana loading in Firefox, screen on, 30% brightness | 1.5W            |
 | Grafana loaded in Firefox, screen on, 30% brightness  | 0.7W            |
 
