@@ -45,11 +45,11 @@ Initially, I thought the Digitakt simply has a black&white display with a yellow
 
 ### System Design
 
-#### Variant A
+#### Variant A – On Host
 
 {{ image(src="img/phone-to-dashboard-conversion/embedded-server-client-approach-a.svg", alt="System design - Variant A", position="center") }}
 
-The host machine will be running a Python service (`OLED display server`), that will fetch monitoring data, and draw it on the display.
+The host machine will run a Python service (`OLED display server`), which will fetch monitoring data, and draw it on the display.
 
 - The host machine will interface with the display via a USB-I²C adapter.
 - The USB-I²C adapter will be implemented by flashing a RP2040 board with I²C adapter firmware [[1](https://github.com/Nicolai-Electronics/rp2040-i2c-interface)]. Alternatively, a pre-made adapter can be purchased.
@@ -69,38 +69,102 @@ Cons:
 - Potential inability to drive multiple displays via one RP2040, even though the chip has two I²C buses.
 - The device is not standalone, requires a host to run the Python service.
 
-#### Variant B
+#### Variant B – Split
 
-Thin service fetches/sends prometheus data from/to i2c device via UART. The device draws on the multiple displays.
+{{ image(src="img/phone-to-dashboard-conversion/embedded-server-client-approach-b.svg", alt="System design - Variant B", position="center") }}
 
-### Variant C
+The host machine will run a lightweight Python service (`Metrics relay`). The service will fetch metrics from Prometheus and relay them to the I2C-capable device (`Display server`) via UART. The device draws on the multiple displays.
 
-Standalone networked device pulls data from Prometheus and draws it on the display.
-Rust, WiFi.
+- Data transfer format between the metrics relay and the display server is irrelevant, as long as both parties support it. [Protocol Buffers](https://protobuf.dev/) could be adopted to facilitate unified data structure definition and serialization.
+
+Pros:
+
+- Multiple displays can be driven using a I2C-capable device. I2C multiplexers can be used to further increase the effective I2C address space.
+
+Cons:
+
+- Application code is scattered across two runtimes.
+  - The development lifecycle will involve two separate deliverables, creating a risk factor of interface drift. In other words, the display server cannot render the user interface without receiving the necessary data in the first place. The metrics relay must satisfy the information requirements of the display server.
+  - Requires extra glue code to link the devices.
+  - Timing concerns arise, and what about communications breakdown (e.g. loose UART connection)?
+  - Data integrity may be compromised.
+- Overall this variant exhibits high complexity, with no clear benefit.
+
+#### Variant C – Standalone
+
+{{ image(src="img/phone-to-dashboard-conversion/embedded-server-client-approach-c.svg", alt="System design - Variant C", position="center") }}
+
+This is an improvement of Variant B, cutting out the middle man.
+
+- An ESP32 will run as a standalone, [Rust–based](https://github.com/esp-rs) embedded system.
+- Network connection will be provided via WiFi.
+- The system will fetch the metrics directly from Prometheus, process the data locally, and render the user interface out to the displays via I2C.
+
+Pros:
+
+- Leverages the pros of variant B, while eliminating its cons, it's a win-win scenario.
+- While clear delineation between frontend (UI) and backend (metrics fetching) logic shall be maintained, this approach is still far simpler than variant B.
+- Simple, unified architecture.
+
+Cons:
+
+- My cat is probably better at Rust than I am, but I can [git gud](https://knowyourmeme.com/memes/git-gud).
+- Can't see any real downsides, this is a really good approach in my opinion.
 
 ## Second Approach – Repurposed Smartphone
 
+The first approach has a significant caveat, in that it requires building (and maintaining) a fully custom display solution. I later remembered I had an old Android phone laying around. The phone was defective, but not in a way that would prevent me from using it as a dashboard.
+
 ### System Design
+
+{{ image(src="img/phone-to-dashboard-conversion/phone-grafana-approach.svg", alt="System design - Second Approach", position="center") }}
+
+The Android phone will run the Grafana in a web browser.
+
+- The web browser of choice will be the [Fully Kiosk](https://www.fully-kiosk.com/) browser. It provides lifecycle automation capabilities unavailable in typical web browsers.
+
+Pros:
+
+- Android provides nearly all of the necessary facilities out of the box – wireless networking, high-density display, app runtime, touch input, and potentially many more.
+- Highly flexible environment, possible to repurpose in the future.
+
+Cons:
+
+- Hardware modifications will be required to adapt the phone to long-term grid power operation.
+  - Battery cell must be removed to prevent [spicy pillows](https://www.reddit.com/r/spicypillows/) and spontaneous combustion.
 
 ### Hardware Modifications
 
+With considerable effort and anxiety about puncturing, I've removed the Lithium-ion battery from the phone. This left me with an empty cavity inside the phone's body to install extra hardware.
 
-Power:
+{{ image(src="img/phone-to-dashboard-conversion/mainboard-raw.webp") }}
 
-- max 5W
-- idle 0.6W
-- active 1.3W
+I've quickly learned that simply removing the battery wasn't sufficient for the phone operate just on USB power. It appears smartphones tend to check their battery upon boot (like a self-test). For this particular phone (Nokia G22), failing the check results in a bootloop.
 
-1n4007
+Inspecting the power connector with a continuity tester proved that the battery connector has just two terminals, and therefore it cannot transmit any data (think serial number, manufacturing date, etc.). An obvious conlusion from this observation, is that the mainboard can only check the battery voltage level at any point in time. This in turn implies the mainboard can be cheated to "think" there's a working battery, by supplying a _battery-like_ voltage on the battery connector.
 
-Battery 67g
-Phone no bat 141g
+By _battery-like_, I mean any voltage within the nominal range of operation for a Lithium-ion battery. That happens to be somewhere between 3.0V and 4.2V. Given USB typically provides ~5.0V, a reference battery voltage could be created with any electronic component exhibiting a stable forward voltage drop of at least ~0.8V, and at most ~2V (assuming an ideal circuit).
 
-velcro
-- battery removal
-- phone first attempt, boot loop
-- mock battery voltage, mobo modification
-- testing, initial numbers
+I've confirmed this hypothesis by soldering two wires to conveniently placed battery test pads, and feeding 4.2V with a lab PSU, while simultaneously providing USB power. The phone booted just fine.
+
+{{ image(src="img/phone-to-dashboard-conversion/mainboard-soldered-wires.webp") }}
+
+Accounting for some voltage drop resulting from the USB cable's own resistance, I've opted for a 1N4007 signal diode, which provides an approx. 0.8-1.0V voltage drop at a current of 0.1-2A.
+
+{{ image(src="img/phone-to-dashboard-conversion/1n4007-forward-voltage-vs-current.webp") }}
+
+To be honest, I'm unsure how the on-board power management system uses the mocked battery. Hopefully, as long as it sees USB power – which is always, in this scenario – it will only use the mocked battery as a voltage reference, to determine whether it should begin a charging cycle. That way, power should be regulated more effectively, by the on-board switching regulators. Conversely, should the majority of current flow through the diode (mocked battery), a considerable amount of the energy would inadvertently be converted into heat. Certainly, the mocked battery cannot be "charged", in the sense of a reverse current flow, due to semiconducting nature of the diode.
+
+At this point I did some measurements.
+
+{{ image(src="img/phone-to-dashboard-conversion/psu-measure-prototype.webp") }}
+
+| Mode of operation                                     | Power (approx.) |
+| ----------------------------------------------------- | --------------- |
+| Boot                                                  | 2.0-5.0W        |
+| Idle, screen off                                      | 0.6W            |
+| Grafana loading in Firefox, screen on, 30% brightness | 1.5W            |
+| Grafana loaded in Firefox, screen on, 30% brightness  | 0.7W            |
 
 ### Enclosure
 
@@ -111,8 +175,6 @@ velcro
 ---
 
 Topics:
-
-- the idea
 
 - enclosure design, print
 - 0.2mm clearances
@@ -142,10 +204,8 @@ Topics:
 {{ image(src="img/phone-to-dashboard-conversion/internal-frame-printing.webp") }}
 {{ image(src="img/phone-to-dashboard-conversion/internal-frame.webp") }}
 {{ image(src="img/phone-to-dashboard-conversion/internal-wiring.webp") }}
-{{ image(src="img/phone-to-dashboard-conversion/mainboard-raw.webp") }}
-{{ image(src="img/phone-to-dashboard-conversion/mainboard-soldered-wires.webp") }}
+
 {{ image(src="img/phone-to-dashboard-conversion/no-enclosure-testing.webp") }}
 {{ image(src="img/phone-to-dashboard-conversion/prototype.webp") }}
-{{ image(src="img/phone-to-dashboard-conversion/psu-measure-prototype.webp") }}
 {{ image(src="img/phone-to-dashboard-conversion/rear-camera-slot.webp") }}
 {{ image(src="img/phone-to-dashboard-conversion/rear-wire.webp") }}
