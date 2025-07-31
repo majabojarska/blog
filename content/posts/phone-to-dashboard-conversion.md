@@ -31,7 +31,7 @@ Given there's a myriad of solutions to choose from, I began with identifying my 
 
 My first idea was to browse through some cheap LCD/OLED display modules available online. One type of small displays I like particularly are dot displays. They tend to evoke a feeling of nostalgia in me, possibly for a world that I never even had a chance to experience. That's because I always imagined William Gibson's netrunners using retrofuturistic displays. You know, nixie tubes, 14-segments, dot matrices, CRTs, and finally large-pixel displays.
 
-My favorite application of Dot displays to date is the [Elektron Digitakt I (2017)](https://www.elektron.se/legacy), whose designers masterfully navigated the limitations of that canvas, to create a user interface that's both informative and mesmerizing alike. My friend happens to have one – I absolutely adore the animations.
+My favorite application of dot displays to date is the [Elektron Digitakt I (2017)](https://www.elektron.se/legacy), whose designers masterfully navigated the limitations of that canvas, to create a user interface that's both informative and mesmerizing alike. My friend happens to have one – I absolutely adore the animations.
 
 {{ image(src="img/phone-to-dashboard-conversion/pexels-egorkomarov-17684555.webp", alt="Elektron Digitakt Dot display", position="center") }}
 
