@@ -10,19 +10,23 @@ comment = true
 
 ## 2025-07-31
 
-Attended a workshop on ham radio antenna building techniques.
+Xiegu G90 comes with a single-fuse power supply cable (positive rail). That's nice of the manufacturer to do, but it's not enough to protect from certain failure modes. To alleviate this risk, I've added another cable ([littel](https://www.littelfuse.com/))fuse, to the ground wire. Don't be fooled by the red insulation – the fuse socket came pre-wired and sealed, so I had to cut a piece of the original black cable out 😉.
+
+{{ image(src="img/devlog/2025-07-31-littelfuse-radio-cable.webp", alt="Added", position="center") }}
+
+K0NR shared a [nice write-up](https://www.k0nr.com/wordpress/2020/03/one-fuse-or-two/) on when and why you might wanna have two fuses (one on each lead), instead of one.
 
 ---
 
 ## 2025-07-30
 
-Writing a post (continued) on my homelab rack display.
+Writing a post on my homelab rack display (continued).
 
 ---
 
 ## 2025-07-29
 
-Finished rewiring and mapped out the hardware on my modded Petlibro PLAF101. 
+Finished rewiring and mapped out the hardware on my modded Petlibro PLAF101.
 Luna (the kitty) provided valuable feedback throughout the process.
 
 {{ image(src="img/devlog/2025-07-29-plaf101.webp", alt="Modded Petlibro PLAF101 internals", position="center") }}
@@ -31,7 +35,7 @@ Luna (the kitty) provided valuable feedback throughout the process.
 
 ## 2025-07-28
 
-Figuring out how to properly drive the motor and detect axis rotation increments. Will need to add more modwires, since the motor definitely was connected to underside pins of the [WBR3](https://developer.tuya.com/en/docs/iot/wbr3-module-datasheet?id=K9dujs2k5nriy), which the [ESP-12E](https://www.snapeda.com/parts/ESP8266-12E/ESP-12E/AI-Thinker/datasheet/) does not have.
+Figuring out how to properly drive the motor and detect axis rotation increments. Will need to add more modwires, since the motor was definitely connected to the underside pins of the [WBR3](https://developer.tuya.com/en/docs/iot/wbr3-module-datasheet?id=K9dujs2k5nriy), which the [ESP-12E](https://www.snapeda.com/parts/ESP8266-12E/ESP-12E/AI-Thinker/datasheet/) does not have.
 
 {{ image(src="img/devlog/2025-07-28-plaf101-motor-driver.webp", alt="ESPHome logs screenshot depicting button binary sensor events", position="center") }}
 
