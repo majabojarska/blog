@@ -158,18 +158,18 @@ I wanted to power the final product using a single USB-C cable. To achieve that,
 
 {{ image(src="img/phone-to-dashboard-conversion/schematic.svg") }}
 
-To be honest, I'm unsure how the on-board power management system uses the mocked battery. I could measure it, but to be honest I don't care much about it, on the condition that the circuit operates safely. Hopefully, as long as it sees USB power – which is always, in this scenario – it will only use the mocked battery as a voltage reference, to determine whether it should begin a charging cycle. That way, voltage should be regulated more efficiently, by the on-board switching regulators. Conversely, should the majority of current flow through the diode (mocked battery), a non-negligible amount of the energy would inadvertently be converted into heat. And finally, the mocked battery certainly cannot be "charged", in the sense of a reverse current flow, due to semiconducting nature of the diode.
+To be honest, I'm unsure how the on-board power management system uses the mocked battery. I could measure it, but I don't care much about it, on the condition that the circuit operates safely. Hopefully, as long as it sees USB power – which is always, in this scenario – it will only use the mocked battery as a voltage reference, to determine whether it should begin a charging cycle. That way, voltage should be regulated more efficiently, by the on-board switching regulators. Conversely, should the majority of current flow through the diode (mocked battery), a non-negligible amount of the energy would inadvertently be converted into heat. And finally, the mocked battery certainly cannot be "charged", in the sense of a reverse current flow, due to the semiconducting nature of the diode.
 
 I've drilled a small 2mm hole in the phone's back cover to route the `VBAT` cable out from the motherboard.
 
 {{ image(src="img/phone-to-dashboard-conversion/internal-wiring.webp") }}
 {{ image(src="img/phone-to-dashboard-conversion/rear-wire.webp") }}
 
-I've soldered the circuit on the tiniest universal PCB ever, and applied hot snot on the wires to relieve potential strain on the solder joints.
+I've soldered the circuit on the tiniest universal PCB ever, and applied hot snot on the wires, to relieve potential strain on the solder joints.
 
 {{ image(src="img/phone-to-dashboard-conversion/no-enclosure-testing.webp") }}
 
-At this point I did some ballpark measurements using my bench PSU, providing a supply of 5V. These values of course are greatly influenced by the phone's configuration, enabled peripherals, and the runtime. The biggest contributing factor was the screen brightness (when enabled).
+At this point I did some ballpark measurements using my bench PSU, providing a supply voltage of 5V. These values of course are greatly influenced by the phone's configuration, enabled peripherals, and the workload. The biggest contributing factor was without doubt the screen brightness (when not in sleep mode).
 
 {{ image(src="img/phone-to-dashboard-conversion/psu-measure-prototype.webp") }}
 
@@ -190,13 +190,13 @@ As for the internals, the enclosure needed to house the electronics and the phon
 
 {{ image(src="img/phone-to-dashboard-conversion/cad-internal-frame.webp") }}
 
-The internal frame had to provide enough backplane thickness, to run the `VBAT` wire into an electronics compartment and leave some space for the camera module that's sticking out of the back. Measuring all of the relevant dimensions with a caliper was the most time consuming task of this design stage. This was yet another day I didn't have to deal with a dead caliper battery, every since I got an analog one – [vernier scale](https://en.wikipedia.org/wiki/Vernier_scale) ftw.
+The internal frame had to provide enough backplane thickness, to run the `VBAT` wire into an electronics compartment and leave some space for the camera module that's sticking out of the back. Measuring all of the relevant dimensions with a caliper was the most time consuming task of this design stage. This was yet another day I didn't have to deal with a dead caliper battery, ever since I got an analog one – [vernier scale](https://en.wikipedia.org/wiki/Vernier_scale) ftw.
 
 {{ image(src="img/phone-to-dashboard-conversion/backside-wire-run.webp") }}
 
 {{ image(src="img/phone-to-dashboard-conversion/internal-frame-printing.webp") }}
 
-The external frame attaches to the internal frame using 8mm M3 bolts, and has a wall-to-wall clearance of 0.2mm, allowing for an easy press-fit without noticeable slack. The bolts thread into M3 threaded heat inserts, installed within the internal frame.
+The external frame attaches to the internal frame using 8mm M3 bolts, and has a wall-to-wall clearance of 0.2mm, allowing for an easy press fit without noticeable slack. The bolts thread into M3 threaded heat inserts, installed within the internal frame.
 
 {{ image(src="img/phone-to-dashboard-conversion/cad-assembly-corner-view.webp") }}
 
