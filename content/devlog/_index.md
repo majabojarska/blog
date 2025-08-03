@@ -8,11 +8,33 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-07-03
+
+Finished building my ham radio power supply, everything is working as intended ♥️.
+
+{{ image(src="img/devlog/2025-08-03-server-psu-test-run.webp", alt="Testing my radio power supply", position="center") }}
+
+I'd still like to do some load testing, to ensure the connectors and wiring are solid, when conducting higher, sustained currents.
+
+## 2025-07-02
+
+Went to the local hackerspace to get some change of scenery at the end of the week. Intended to blog a bit while there, but got [nerd-sniped](https://xkcd.com/356/) by someone else's issues with a Wordpress plugin post-migration. While I was troubleshooting, they made a laser-cut depiction of my cat, Luna.
+
+Shout out to [_wowkdigital_](https://www.instagram.com/wowkdigital/)!
+
+{{ image(src="img/devlog/2025-08-02-laser-cut-cats.webp", alt="Laser cut Luna and some other kitty", position="center") }}
+
+## 2025-07-01
+
+Printed the enclosure for my ham radio power supply, wiring is in progress.
+
+{{ image(src="img/devlog/2025-08-01-server-psu-wip.webp", alt="Work in progress on wiring my custom ham radio power supply", position="center") }}
+
 ## 2025-07-31
 
-Xiegu G90 comes with a single-fuse power supply cable (positive rail). That's nice of the manufacturer to do, but it's not enough to protect from certain failure modes. To alleviate this risk, I've added another cable ([littel](https://www.littelfuse.com/))fuse, to the ground wire. Don't be fooled by the red insulation – the fuse socket came pre-wired and sealed, so I had to cut a piece of the original black cable out 😉.
+Xiegu G90 comes with a single-fuse power supply cable (positive rail). That's nice of the manufacturer to do, but it's not enough to protect from certain failure modes. To alleviate this risk, I've added another ([littel](https://www.littelfuse.com/))fuse, to the ground wire. Don't be fooled by the red insulation – the fuse socket came pre-wired and sealed, so I had to cut a piece of the original black cable out 😉.
 
-{{ image(src="img/devlog/2025-07-31-littelfuse-radio-cable.webp", alt="Added", position="center") }}
+{{ image(src="img/devlog/2025-07-31-littelfuse-radio-cable.webp", alt="Added a second fuse to my Xiegu G90 power supply cable", position="center") }}
 
 K0NR shared a [nice write-up](https://www.k0nr.com/wordpress/2020/03/one-fuse-or-two/) on when and why you might wanna have two fuses (one on each lead), instead of one.
 
