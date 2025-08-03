@@ -190,7 +190,7 @@ As for the internals, the enclosure needed to house the electronics and the phon
 
 {{ image(src="img/phone-to-dashboard-conversion/cad-internal-frame.webp") }}
 
-The internal frame had to provide enough backplane thickness, to run the `VBAT` wire into an electronics compartment and leave some space for the camera module that's sticking out of the back. Measuring was the most time consuming task of this design stage.
+The internal frame had to provide enough backplane thickness, to run the `VBAT` wire into an electronics compartment and leave some space for the camera module that's sticking out of the back. Measuring all of the relevant dimensions with a caliper was the most time consuming task of this design stage. This was yet another day I didn't have to deal with a dead caliper battery, every since I got an analog one – [vernier scale](https://en.wikipedia.org/wiki/Vernier_scale) ftw.
 
 {{ image(src="img/phone-to-dashboard-conversion/backside-wire-run.webp") }}
 
@@ -204,15 +204,15 @@ The external frame attaches to the internal frame using 8mm M3 bolts, and has a 
 
 {{ image(src="img/phone-to-dashboard-conversion/cad-external-frame.webp") }}
 
-The difficult part here was getting the phone's curvature and clearances just right, in order for the screen to be flush with the external frame. I don't have the kind of gear necessary to accurately measure the phone's curvature, so I somewhat eyeballed it. The 3D printer has a limited layer resolution anyway, and any deviation beyond 0.1mm would get [rasterized](https://en.wikipedia.org/wiki/Rasterisation) away by the slicer. 
+The difficult part here was getting the phone's curvature and clearances just right, in order for the screen to be flush with the external frame. I don't have the kind of gear necessary to accurately measure the phone's curvature, so I somewhat eyeballed it. After all, the 3D printer has a lower limit to the effective layer height, so any deviation beyond 0.2mm (approx. layer height) would get [rasterized](https://en.wikipedia.org/wiki/Rasterisation) away by the slicer.
 
 {{ image(src="img/phone-to-dashboard-conversion/cad-screen-curvature.webp") }}
 
-Once both parts were printed, I've installed the heat inserts and the USB-C receptacle. A successful power-on test put a smile on my face 😁.
+Once both frames were printed, I've installed the heat inserts and the USB-C receptacle. A successful power-on test put a huge grin on my face 😁.
 
 {{ image(src="img/phone-to-dashboard-conversion/first-boot-assembly.webp") }}
 
-I've finished the assembly process, attached velcro strips to both surfaces (enclosure, glass door), and found an angled USB-C cable that's fit for purpose.
+I've then finished the assembly process, attached velcro strips to both surfaces (enclosure, glass door), and found an angled USB-C cable fit for purpose.
 
 {{ image(src="img/phone-to-dashboard-conversion/installed-on-rack-door.webp") }}
 
@@ -220,30 +220,28 @@ You can find the complete CAD project on my Onshape profile, [over here](https:/
 
 ### Runtime Environment
 
+Grafana, as a web application, imposes the requirement of running some kind of semi-modern web engine. During development, I just used the good ol' Firefox. However, that's not the best choice in the long run. Just thinking about the way this dashboard will be used, I've come to a couple conclusions regarding typical operation and possible failure modes:
 
+- For the vast majority of time I won't be looking at the dashboard, hence the screen can be turned off to conserve energy.
+- Once the screen is turned off, there must be some trigger mechanism to power it back on, preferably automatic – I don't want to have to touch the screen or press the power button every time I want to see the dashboard.
+- Grafana sessions can expire, how to recover from this state?
+- My Grafana instance can experience downtime, how to recover from a failure to load the site?
+- Grid power can go down, how does the dashboard recover when the power comes back on?
 
-### Takeaways
+With all of the above in mind, I've found the [Fully Kiosk](https://www.fully-kiosk.com/) browser. The free version provides access to all of the features, with the exception that enabling paid features also displays a watermark overlaid on the webview. I've fiddled around with the configuration and here's my final setup:
 
----
+- The Fully Kiosk browser auto-starts on every Android boot.
+  - In terms of a power outage, the phone already automatically boots, whenever connected to USB power. I literally did nothing to get this auto-boot feature, it's just how the on-board power management works I guess.
+- The target URL is set to a specific dashboard dedicated for the rack dashboard.
+- I've created and logged in as a separate user with the Grafana kiosk mode enabled.
+- Sleep (power off the screen) after 30s of user inactivity.
+- Wake up whenever the front camera detects motion. Detection runs at the slowest possible frame rate of 1fps, in order to reduce power consumption.
+- On every wake up event, reload the website. This addresses the concerns of session expiry and server-side downtime. The response time is also pretty quick, since the network traffic is limited to the lab network.
 
-Topics:
+I've ran this setup for a couple of days as a POC, and then purchased the full license. Great value for the price and I appreciate the developers providing the full feature set for testing.
 
-- enclosure design, print
-- 0.2mm clearances
-- 0.6mm nozzle for speed![alt text](image.png)
+### Moving forward
 
-- assembly
-  - total weight
-- installation, velcro
-- software side of things
-- kiosk browser
-  - automation, camera
-- Grafana dashboard
-
-## Prototype
-
-## What would I do differently now
-
-- Wider side button access cutouts.
-- Thinner wall in front of the USB-C port
--
+- Further develop the dedicated dashboard(s), and possibly leverage [Grafana playlists](https://grafana.com/docs/grafana/latest/dashboards/create-manage-playlists/).
+- See if power consumption can be brought down even further by disabling unused Android features, like the GSM modem. This is more for sport and experimentation, rather than power saving, since the device already barely sips electricity in idle mode.
+- Keep exploring the Fully Kiosk browser features, for ways to improve the dashboard's user experience.
