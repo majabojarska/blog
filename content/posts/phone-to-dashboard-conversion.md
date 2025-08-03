@@ -1,6 +1,6 @@
 +++
 title = "Converting an old smartphone into a server rack display"
-date = 2025-07-28
+date = 2025-08-03
 
 [taxonomies]
 tags = ["hack", "3d-printing", "homelab", "rack", "electronics", "monitoring"]
@@ -150,13 +150,26 @@ I've confirmed this hypothesis by soldering two wires to conveniently placed bat
 
 {{ image(src="img/phone-to-dashboard-conversion/mainboard-soldered-wires.webp") }}
 
-Accounting for some voltage drop resulting from the USB cable's own resistance, I've opted for a 1N4007 signal diode, which provides an approx. 0.8-1.0V voltage drop at a current of 0.1-2A.
+Accounting for some voltage drop resulting from the USB cable's own resistance, I've opted for a 1N4007 signal diode, which provides an approx. ~0.6V voltage drop at very low currents (~10mA), and respectively ~1V at 2A ([datasheet](https://www.mouser.com/datasheet/2/149/1N4001-81693.pdf)).
 
 {{ image(src="img/phone-to-dashboard-conversion/1n4007-forward-voltage-vs-current.webp") }}
 
-To be honest, I'm unsure how the on-board power management system uses the mocked battery. Hopefully, as long as it sees USB power – which is always, in this scenario – it will only use the mocked battery as a voltage reference, to determine whether it should begin a charging cycle. That way, power should be regulated more effectively, by the on-board switching regulators. Conversely, should the majority of current flow through the diode (mocked battery), a considerable amount of the energy would inadvertently be converted into heat. Certainly, the mocked battery cannot be "charged", in the sense of a reverse current flow, due to semiconducting nature of the diode.
+I wanted to power the final product using a single USB-C cable. To achieve that, I've used a USB-C receptacle and plug, allowing me to sidechain the supply voltage (`VBUS`) into the battery-mocking diode (`D1`). A USB charger would later connect to the circuit's USB-C receptacle (`J1`), which would then supply voltage to the USB-C plug connected to the phone (`P1`), and the battery mocking diode (`D1`). The diode's negative lead would connect to the battery supply voltage test pad (`VBAT`), completing the power supply circuit. USB data lines are passed through, so the resulting device can still be controlled via [ADB](https://developer.android.com/tools/adb) in the future.
 
-At this point I did some measurements.
+{{ image(src="img/phone-to-dashboard-conversion/schematic.svg") }}
+
+To be honest, I'm unsure how the on-board power management system uses the mocked battery. I could measure it, but to be honest I don't care much about it, on the condition that the circuit operates safely. Hopefully, as long as it sees USB power – which is always, in this scenario – it will only use the mocked battery as a voltage reference, to determine whether it should begin a charging cycle. That way, voltage should be regulated more efficiently, by the on-board switching regulators. Conversely, should the majority of current flow through the diode (mocked battery), a non-negligible amount of the energy would inadvertently be converted into heat. And finally, the mocked battery certainly cannot be "charged", in the sense of a reverse current flow, due to semiconducting nature of the diode.
+
+I've drilled a small 2mm hole in the phone's back cover to route the `VBAT` cable out from the motherboard.
+
+{{ image(src="img/phone-to-dashboard-conversion/internal-wiring.webp") }}
+{{ image(src="img/phone-to-dashboard-conversion/rear-wire.webp") }}
+
+I've soldered the circuit on the tiniest universal PCB ever, and applied hot snot on the wires to relieve potential strain on the solder joints.
+
+{{ image(src="img/phone-to-dashboard-conversion/no-enclosure-testing.webp") }}
+
+At this point I did some ballpark measurements using my bench PSU, providing a supply of 5V. These values of course are greatly influenced by the phone's configuration, enabled peripherals, and the runtime. The biggest contributing factor was the screen brightness (when enabled).
 
 {{ image(src="img/phone-to-dashboard-conversion/psu-measure-prototype.webp") }}
 
@@ -169,7 +182,45 @@ At this point I did some measurements.
 
 ### Enclosure
 
+I wanted the mechanical design to be neat and minimalistic, while preserving the phone's full functionality. When the phone's screen was off, it would blend in seamlessly with the surrounding enclosure and server rack, thanks to the color-matched filament (black, heh).
+
+I planned to mount the dashboard on the external side of my server rack's glass door, providing easy access to the touchscreen, whenever the door is closed. As you've seen above, weight was not a concern, so I figured I'd attach the dashboard to the glass surface with either double-sided tape or velcro – the latter being more forgiving in terms of internal access and repositioning. Both could be easily removed, should I change my mind.
+
+As for the internals, the enclosure needed to house the electronics and the phone itself, without obstructing access to the USB port and the control surfaces (touchscreen, buttons). I opted for a two-part design, consisting of an internal frame, holding the electronics, and an external frame, locking everything into place and providing the minimalistic look.
+
+{{ image(src="img/phone-to-dashboard-conversion/cad-internal-frame.webp") }}
+
+The internal frame had to provide enough backplane thickness, to run the `VBAT` wire into an electronics compartment and leave some space for the camera module that's sticking out of the back. Measuring was the most time consuming task of this design stage.
+
+{{ image(src="img/phone-to-dashboard-conversion/backside-wire-run.webp") }}
+
+{{ image(src="img/phone-to-dashboard-conversion/internal-frame-printing.webp") }}
+
+The external frame attaches to the internal frame using 8mm M3 bolts, and has a wall-to-wall clearance of 0.2mm, allowing for an easy press-fit without noticeable slack. The bolts thread into M3 threaded heat inserts, installed within the internal frame.
+
+{{ image(src="img/phone-to-dashboard-conversion/cad-assembly-corner-view.webp") }}
+
+{{ image(src="img/phone-to-dashboard-conversion/cad-assembly-back.webp") }}
+
+{{ image(src="img/phone-to-dashboard-conversion/cad-external-frame.webp") }}
+
+The difficult part here was getting the phone's curvature and clearances just right, in order for the screen to be flush with the external frame. I don't have the kind of gear necessary to accurately measure the phone's curvature, so I somewhat eyeballed it. The 3D printer has a limited layer resolution anyway, and any deviation beyond 0.1mm would get [rasterized](https://en.wikipedia.org/wiki/Rasterisation) away by the slicer. 
+
+{{ image(src="img/phone-to-dashboard-conversion/cad-screen-curvature.webp") }}
+
+Once both parts were printed, I've installed the heat inserts and the USB-C receptacle. A successful power-on test put a smile on my face 😁.
+
+{{ image(src="img/phone-to-dashboard-conversion/first-boot-assembly.webp") }}
+
+I've finished the assembly process, attached velcro strips to both surfaces (enclosure, glass door), and found an angled USB-C cable that's fit for purpose.
+
+{{ image(src="img/phone-to-dashboard-conversion/installed-on-rack-door.webp") }}
+
+You can find the complete CAD project on my Onshape profile, [over here](https://cad.onshape.com/documents/006f5cd7534ee41b262a6839/w/aebe9b1a8654f90df7d5e258/e/c794cc072ba27d340eb291f8?renderMode=0&uiState=688fbd19b5bdfa3b8f178316).
+
 ### Runtime Environment
+
+
 
 ### Takeaways
 
@@ -196,17 +247,3 @@ Topics:
 - Wider side button access cutouts.
 - Thinner wall in front of the USB-C port
 -
-
-{{ image(src="img/phone-to-dashboard-conversion/backside-wire-run.webp") }}
-{{ image(src="img/phone-to-dashboard-conversion/diode-voltage-drop-measurement.webp") }}
-{{ image(src="img/phone-to-dashboard-conversion/first-boot-assembly.webp") }}
-{{ image(src="img/phone-to-dashboard-conversion/IMG_20250716_211059.webp") }}
-{{ image(src="img/phone-to-dashboard-conversion/installed-on-rack-door.webp") }}
-{{ image(src="img/phone-to-dashboard-conversion/internal-frame-printing.webp") }}
-{{ image(src="img/phone-to-dashboard-conversion/internal-frame.webp") }}
-{{ image(src="img/phone-to-dashboard-conversion/internal-wiring.webp") }}
-
-{{ image(src="img/phone-to-dashboard-conversion/no-enclosure-testing.webp") }}
-{{ image(src="img/phone-to-dashboard-conversion/prototype.webp") }}
-{{ image(src="img/phone-to-dashboard-conversion/rear-camera-slot.webp") }}
-{{ image(src="img/phone-to-dashboard-conversion/rear-wire.webp") }}
