@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-07-04
+
+For years I've used Spotify, but I'm unhappy about where it's headed as a service. I've decided to explore alternative, networked music player alternatives. This obviously poses a big challenge in terms of the library and content curation. Regardless, I'm going to start purchasing physical CDs from artists that I value, and then rip and ingest into my homelab. As a test run, today I've deployed [Jellyfin](https://jellyfin.org/).
+
+---
+
 ## 2025-07-03
 
 Finished building my ham radio power supply, everything is working as intended ♥️.
@@ -15,6 +21,8 @@ Finished building my ham radio power supply, everything is working as intended �
 {{ image(src="img/devlog/2025-08-03-server-psu-test-run.webp", alt="Testing my radio power supply", position="center") }}
 
 I'd still like to do some load testing, to ensure the connectors and wiring are solid, when conducting higher, sustained currents.
+
+---
 
 ## 2025-07-02
 
@@ -24,11 +32,15 @@ Shout out to [_wowkdigital_](https://www.instagram.com/wowkdigital/)!
 
 {{ image(src="img/devlog/2025-08-02-laser-cut-cats.webp", alt="Laser cut Luna and some other kitty", position="center") }}
 
+---
+
 ## 2025-07-01
 
 Printed the enclosure for my ham radio power supply, wiring is in progress.
 
 {{ image(src="img/devlog/2025-08-01-server-psu-wip.webp", alt="Work in progress on wiring my custom ham radio power supply", position="center") }}
+
+---
 
 ## 2025-07-31
 
