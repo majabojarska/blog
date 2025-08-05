@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-07-05
+
+Figuring out Intel iGPU passthrough for QEMU VM on PVE, to facilitate hardware video acceleration for my workloads dealing with video processing.
+
+---
+
 ## 2025-07-04
 
 For years I've used Spotify, but I'm unhappy about where it's headed as a service. I've decided to explore alternative, networked music player alternatives. This obviously poses a big challenge in terms of the library and content curation. Regardless, I'm going to start purchasing physical CDs from artists that I value, and then rip and ingest into my homelab. As a test run, today I've deployed [Jellyfin](https://jellyfin.org/).
