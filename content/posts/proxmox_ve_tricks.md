@@ -29,7 +29,7 @@ Living collection of snippets, tips and tricks for [Proxmox VE](https://www.prox
 1. Enable the no-subscription repository ([source](https://pve.proxmox.com/wiki/Package_Repositories#sysadmin_no_subscription_repo)):
 
    ```sh
-   echo "deb http://download.proxmox.com/debian/pve bullseye pve-no-subscription" > /etc/apt/sources.list.d/pve-no-subscription.list
+   echo "deb http://download.proxmox.com/debian/pve bookworm pve-no-subscription" > /etc/apt/sources.list.d/pve-no-subscription.list
    ```
 
 1. Upgrade the node:
