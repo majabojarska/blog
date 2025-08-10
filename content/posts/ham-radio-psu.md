@@ -18,7 +18,7 @@ Ham radios typically require a power supply of 13,8V at a relatively high curren
 | Icom IC-2730A | 50W      | 13A                        |
 | Yaesu FT-857D | 100W     | 22A                        |
 
-An obvious way to power a radio would be to purchase a purpose-built, ham radio PSU, online. The thing is, these are pricey. At the time of writing, an _Alinco DM-30E_ would run me upwards of 590 PLN. I don't want to spend that kind of money when there's a 10x cheaper alternative, and that's used server PSUs. You can get them for cheap, at anywhere between 300W and 1000W of power. These come from decommisioned datacenter hardware, hence are rugged and widely available. It's also a tried and tested solution in ham radio circles.
+An obvious way to power a radio would be to purchase a purpose-built, ham radio PSU. The thing is, these are pricey. At the time of writing, an _Alinco DM-30E_ would run me upwards of 590 PLN. I don't want to spend that kind of money when there's a 10x cheaper alternative, and that's used server PSUs. You can get them for cheap, at anywhere between 300W and 1000W of power. These come from decommisioned datacenter hardware, hence are rugged and widely available. It's also a tried and tested solution in ham radio circles.
 
 After initial research, I found the HP Enterprise product line PSUs to be the most approachable, given their hackability and availability in my area. They're standardized in terms of the physical footprint and electrical interface ([HPE Common Slot](https://support.hpe.com/connect/s/product?language=en_US&kmpmoid=345072&tab=manuals)), even across multiple hardware generations.
 
