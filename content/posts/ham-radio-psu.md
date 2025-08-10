@@ -30,14 +30,14 @@ I got a _HSTNS-PL28_ 460W unit for just 45 PLN. Per the specification, it can ou
 {{ image(src="img/ham-radio-psu/psu-bare-backside.webp") }}
 {{ image(src="img/ham-radio-psu/psu-bare-connector.webp") }}
 
-The first step was to figure out how to power on the main 12V rail. In a bare-bones shape, when connected to 230V AC, the unit would power on only in the standby sense – fan spin, power LED blinking.
+The first step was to figure out how to power on the main 12V rail. In a bare-bones shape, when connected to 230V AC, the unit would power on only in the standby sense — fan spin, power LED blinking.
 
 I found this HPE Common Slot PSU specification over at the [RCGroups forum](https://www.rcgroups.com/forums/showpost.php?p=36523697&postcount=3709):
 
 {{ image(src="img/ham-radio-psu/hpe-common-slot-psu-pinout.webp") }}
 {{ image(src="img/ham-radio-psu/hpe-common-slot-psu-led-signals.webp") }}
 
-Per the above, pin 33 (top-side, left-most) expects a PSU on/off control signal. I found mixed info on this topic, with the general consensus being that it needs to be pulled high. I tried with a 1kΩ resistor first, across pins 33 and 37 (12VSB). That wasn't enough to achieve power on, so I've tried with a 330Ω instead, which worked just fine.
+Per the above, pin 33 (`PSON#`) expects a PSU on/off control signal. I found mixed info on this topic, with the general consensus being that it needs to be pulled high. I tried with a 1kΩ resistor first, across pins 33 and 37 (`12VSB`). That wasn't enough to achieve power on, so I've tried with a 330Ω instead, which worked just fine.
 
 {{ image(src="img/ham-radio-psu/minimal-power-on-test.webp") }}
 
@@ -47,11 +47,12 @@ I've let the PSU run unloaded for ~10min, throughout which the 12V rail exhibite
 
 ### Requirements
 
+- Power switch (standby/fully on).
+- Standby power indicator (on the front).
 - 2x XT60 receptable, each capable of 10A sustained current.
 - 2x Banana receptable pair (positive, negative), each pair capable of 5A sustained current.
-- Standby power indicator.
-- Power switch (standby/fully active).
 - Digital voltmeter with a ±0.1V precision and accuracy.
+- All of the above I/O interfaces shall be exposed on a single front panel.
 
 ### Electrical
 
