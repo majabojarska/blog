@@ -1,6 +1,6 @@
 +++
 title = "Adapting a HPE server PSU for ham radio purposes"
-date = 2025-08-05
+date = 2025-08-12
 
 [taxonomies]
 tags = ["hack", "3d-printing", "electronics", "ham-radio"]
