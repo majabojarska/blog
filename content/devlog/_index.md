@@ -8,6 +8,22 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+---
+
+## 2025-08-10
+
+Visited [SP6PWT](https://www.qrz.com/db/SP6PWT) Student Radio Club SP6PWT of the Wroclaw University of Science and Technology.
+
+{{ image(src="img/devlog/2025-08-10-sp6pwt.webp", alt="SP6PWT radioamateur club", position="center") }}
+
+---
+
+## 2025-08-07
+
+Learning about [PostGIS](https://postgis.net/) and [Leaflet](https://leafletjs.com/)
+
+---
+
 ## 2025-08-05
 
 Figuring out Intel iGPU passthrough for QEMU VM on PVE, to facilitate hardware video acceleration for my workloads dealing with video processing.
