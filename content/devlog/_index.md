@@ -8,6 +8,10 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-08-11
+
+Deploying the [Arr stack](https://wiki.servarr.com/).
+
 ---
 
 ## 2025-08-10
@@ -15,6 +19,7 @@ comment = true
 Visited [SP6PWT](https://www.qrz.com/db/SP6PWT), the Student Radio Club of the [Wroclaw University of Science and Technology](https://pwr.edu.pl/en/).
 
 {{ image(src="img/devlog/2025-08-10-sp6pwt.webp", alt="SP6PWT radioamateur club", position="center") }}
+{{ image(src="img/devlog/2025-08-10-sp6pwr-antennas.webp", alt="SP6PWT radioamateur club — part of the antenna system", position="center") }}
 
 ---
 
