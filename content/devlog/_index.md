@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-08-12
+
+Deploying [External Secrets Operator](https://external-secrets.io/latest/).
+
+---
+
 ## 2025-08-11
 
 Deploying the [Arr stack](https://wiki.servarr.com/).
