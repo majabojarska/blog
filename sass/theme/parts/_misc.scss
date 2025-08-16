@@ -1,6 +1,14 @@
 $small: 600px;
 $medium: 800px;
 
+$img-border: 0.125em;
+$transition: 0.2s;
+
+a {
+  /* use colored hovering */
+  transition: $transition;
+}
+
 .post-img {
   flex: 1 1 auto;
   text-align: center;
@@ -11,7 +19,7 @@ $medium: 800px;
     &:hover {
       background-color: transparent;
     }
-    
+
     img {
       border-radius: 0.5em;
       // border: 0.125em solid var(--text-0);
@@ -19,6 +27,13 @@ $medium: 800px;
       box-sizing: border-box;
       width: auto;
       max-height: 18em;
+      border: $img-border solid transparent;
+      transition: $transition;
+    }
+
+    img:hover {
+      // border: 0.125em solid var(--primary-color);
+      border: $img-border solid var(--primary-color);
     }
   }
 }
