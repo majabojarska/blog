@@ -4,7 +4,6 @@ $medium: 800px;
 .post-img {
   flex: 1 1 auto;
   text-align: center;
-  max-width: 100%;
 
   a {
     // Negate theme's color accents
@@ -12,22 +11,14 @@ $medium: 800px;
     &:hover {
       background-color: transparent;
     }
-
-    max-width: 100%;
-
+    
     img {
       border-radius: 0.5em;
+      // border: 0.125em solid var(--text-0);
 
       box-sizing: border-box;
-      width: 100%;
-      max-width: 100%;
-
-      @media screen and (min-width: $small) {
-        width: 75%;
-      }
-      @media screen and (min-width: $medium) {
-        width: 60%;
-      }
+      width: auto;
+      max-height: 18em;
     }
   }
 }
