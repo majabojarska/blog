@@ -2,7 +2,7 @@
   {%- if src is matching("[.](jpg|jpeg|png|webp)$") -%}
   
     {# The trick is to resize first, which provides the original size for the 1:1 size format conversion #}
-    {% set converted_small = resize_image(path=src, width=800, op="fit_width", format="webp", quality=95) %}
+    {% set converted_small = resize_image(path=src, width=1000, op="fit_width", format="webp", quality=95) %}
     
     {# TODO: Why is the fullsize conversion sometimes generating borked files? #}
     {% set converted_full = resize_image(path=src, width=converted_small.orig_width, height=converted_small.orig_height, format="webp", quality=100) %}  
