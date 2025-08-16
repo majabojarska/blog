@@ -8,6 +8,17 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-08-16
+
+- Migrated my Kubernetes secrets to [ExternalSecrets](https://external-secrets.io/latest/api/externalsecret/) (tokens, passwords, logins, etc.).
+- Added the [Flannel CNI](https://github.com/flannel-io/flannel) to my Kubernetes cluster.
+- Figuring out a better approach to homelab monitoring.
+  - I'll probably migrate Prometheus and Grafana off of the homelab, onto the cloud VPS. That's where I plan to host my alerting system, so it makes sense to keep things close.
+  - [metrics-server](https://github.com/kubernetes-sigs/metrics-server) is acting up on my cluster, looking into it.
+- Added some nicer CSS transitions to the blog.
+
+---
+
 ## 2025-08-15
 
 Finished deploying [ESO](https://external-secrets.io/latest/) with [Bitwarden integrations](https://external-secrets.io/latest/examples/bitwarden/). That Bitwarden guide is severely outdated, so I'm already planning to improve it.
