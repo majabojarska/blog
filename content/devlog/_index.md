@@ -14,6 +14,8 @@ Finished deploying [ESO](https://external-secrets.io/latest/) with [Bitwarden in
 
 After some initial `NetworkPolicy` shenanigans, I got my first `ExternalSecret` provisioned successfully, from the now Kube-connected Bitwarden Vault. I'm gradually migrating homelab secrets over there.
 
+{{ image(src="img/devlog/2025-08-16-eso-css.webp", alt="ClusterSecretStore K8s resource list", position="center") }}
+
 I'll probably also roll my own Docker image sources (and builds) for the Bitwarden CLI. Currently I've manually built a custom image, based off of [charlesthomas/bitwarden-cli](https://github.com/charlesthomas/bitwarden-cli). I've submitted some improvements to it in the past, but the maintainer generally isn't very responsive. Once I create my own sources from scratch, the image will be exactly how I need it. Can't promise I'll respond quicker, but I'll definitely make time to intake repo activities once or twice per week. Fingers crossed, hehe 🤞.
 
 And finally, since Bitwarden has access to sensitive data, it'd be nice to have the images signed. That's a good opportunity for hands-on experience with [sigstore/cosign](https://github.com/sigstore/cosign).
