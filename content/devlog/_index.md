@@ -12,7 +12,7 @@ comment = true
 
 - Figured out why my K8s metrics server workload started failing recently — this will be a nice short post.
 - Deploying [Homepage](https://gethomepage.dev/).
-- Deploying Grafana on my VPS.
+- Deploying Grafana on my VPS (on [NixOS](https://nixos.org/)). Kudos to [Xe Iaso](https://xeiaso.net/blog/prometheus-grafana-loki-nixos-2020-11-20/) for this guide!
 
 ---
 
