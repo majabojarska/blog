@@ -8,6 +8,14 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-08-17
+
+- Figured out why my K8s metrics server workload started failing recently — this will be a nice short post.
+- Deploying [Homepage](https://gethomepage.dev/).
+- Deploying Grafana on my VPS.
+
+---
+
 ## 2025-08-16
 
 - Migrated my Kubernetes secrets to [ExternalSecrets](https://external-secrets.io/latest/api/externalsecret/) (tokens, passwords, logins, etc.).
