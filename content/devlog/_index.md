@@ -12,6 +12,7 @@ comment = true
 
 - Adding pretty lil' widgets to my [Homepage](https://gethomepage.dev/) instance.
 - Learned about this cool dot matrix printer font, the [EPSON MX-80](https://mw.rat.bz/MX-80/) — courtesy of Michael Walden.
+- Learned about ESO, the project which I've recently deployed to my homelab, is experiencing serious [team capacity issues](https://github.com/external-secrets/external-secrets/issues/5084). I'm seriously considering signing up as a maintainer, but still need to weigh my priorities.
 
 ---
 
