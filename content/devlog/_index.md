@@ -8,6 +8,13 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-08-18
+
+- Adding pretty lil' widgets to my [Homepage](https://gethomepage.dev/) instance.
+- Learned about this cool dot matrix printer font, the [EPSON MX-80](https://mw.rat.bz/MX-80/) — courtesy of Michael Walden.
+
+---
+
 ## 2025-08-17
 
 - Figured out why my K8s metrics server workload started failing recently — this will be a nice short post.
