@@ -17,6 +17,7 @@ Living collection of notes on the topic of amateur radio.
 - [dr2w.de DX propagation conditions](https://dr2w.de/dx-propagation/)
 - [SQ9JDO](https://sq9jdo.com.pl/) — personal page of Andrzej, the Polish [DMR](https://en.wikipedia.org/wiki/Digital_mobile_radio) mastermind.
 - [HamTetra](https://www.hamtetra.com/) — all about Tetra for amateur radio ops.
+- [M17](https://github.com/M17-Project) — free and open-source digital radio protocol for voice and data.
 
 ## Calculators
 
