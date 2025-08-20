@@ -8,6 +8,13 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-08-20
+
+- Adding even more pretty lil' widgets to my Homepage instance.
+- Made a small docs contrib to the Truecharts Homepage Helm chart — [#38666](https://github.com/trueforge-org/truecharts/pull/38666)
+
+---
+
 ## 2025-08-19
 
 - Reworking my [NixOS](https://nixos.wiki/) [iptable](https://linux.die.net/man/8/iptables) firewall rules to accomodate my Kubernetes [metrics-server](https://github.com/kubernetes-sigs/metrics-server) with [Flannel](https://github.com/flannel-io/flannel), on top of [K3s](https://k3s.io/), without the built-in, [kube-router](https://www.kube-router.io/) based [NetworkPolicy](https://kubernetes.io/docs/concepts/services-networking/network-policies/) handling.
