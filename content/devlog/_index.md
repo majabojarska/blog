@@ -10,8 +10,21 @@ comment = true
 
 ## 2025-08-20
 
-- Adding even more pretty lil' widgets to my Homepage instance.
 - Made a small docs contrib to the Truecharts Homepage Helm chart — [#38666](https://github.com/trueforge-org/truecharts/pull/38666)
+- Adding even more pretty lil' widgets to my Homepage instance.
+
+In case you wondered, here's how you can escape environment variable interpolation in [Homepage configs](https://gethomepage.dev/installation/docker/#using-environment-secrets), within Helm manifests:
+
+```yaml
+              - Immich:
+                  icon: immich.svg
+                  href: {{`"{{HOMEPAGE_VAR_IMMICH_URL}}"`}}
+                  widget:
+                    type: immich
+                    url: {{`"{{HOMEPAGE_VAR_IMMICH_URL}}"`}}
+                    key: {{`"{{HOMEPAGE_VAR_IMMICH_API_TOKEN}}"`}}
+                    version: 2
+```
 
 ---
 
