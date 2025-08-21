@@ -10,7 +10,7 @@ comment = true
 
 ## 2025-08-21
 
-Playing around with [Homepage](https://github.com/gethomepage/homepage) sources. Experimenting with feature enhancements for the Tailscale widget. 
+Playing around with [Homepage](https://github.com/gethomepage/homepage) sources. Experimenting with feature enhancements for the [Tailscale widget](https://gethomepage.dev/widgets/services/tailscale/).
 
 ---
 
