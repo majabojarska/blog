@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-08-21
+
+Playing around with [Homepage](https://github.com/gethomepage/homepage) sources. Experimenting with feature enhancements for the Tailscale widget. 
+
+---
+
 ## 2025-08-20
 
 - Made a small docs contrib to the Truecharts Homepage Helm chart — [#38666](https://github.com/trueforge-org/truecharts/pull/38666)
