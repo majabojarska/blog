@@ -8,6 +8,14 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-08-23
+
+- TIL about [exportify](https://github.com/watsonbox/exportify), an export/backup tool for Spotify playlists.
+- Troubleshooting invalid behavior of the [Tailscale widget](https://gethomepage.dev/widgets/services/tailscale/), when multiple instances are spawned in the same group.
+- Filed an issue with the Homepage project, regarding documentation site breakage – [discussions/5707](https://github.com/gethomepage/homepage/discussions/5707).
+
+---
+
 ## 2025-08-21
 
 Playing around with [Homepage](https://github.com/gethomepage/homepage) sources. Experimenting with feature enhancements for the [Tailscale widget](https://gethomepage.dev/widgets/services/tailscale/).
