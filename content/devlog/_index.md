@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-08-24
+
+Today it's just logs, without the dev.
+
+{{ image(src="img/devlog/2025-08-24-forest-logs.webp", alt="Wooden logs in the mountains.", position="center") }}
+
 ## 2025-08-23
 
 - TIL about [exportify](https://github.com/watsonbox/exportify), an export/backup tool for Spotify playlists.
