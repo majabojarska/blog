@@ -8,6 +8,18 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-08-27
+
+- Reading about the music analysis and clustering algorithms in [AudioMuse-AI](https://github.com/NeptuneHub/AudioMuse-AI).
+- Connecting my cloud VPS to the homelab via Tailscale.
+- Deploying a fresh instance of Prometheus and Grafana in the cloud. Used to have these on my K3s cluster, but it's not the best design in case of K3s issues.
+
+## 2025-08-26
+
+Spent the afternoon on 20/40M bands at the SP6PWT radio club. Operated the [Yaesu FT-710](https://www.yaesu.com/product-detail.aspx?Model=FT-710&CatName=HF%20Transceivers/Amplifiers). Made a couple successful QSOs: `IU1RVT`, `SO8DON`, `ED5FS8`, `IT9DOR`.
+
+{{ image(src="img/devlog/2025-08-26-sp6pwt.webp", alt="Making shortwave contacts at the SP6PWT radio club.", position="center") }}
+
 ## 2025-08-24
 
 Today it's just logs, without the dev.
