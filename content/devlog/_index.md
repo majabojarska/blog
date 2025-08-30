@@ -8,11 +8,20 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-08-30
+
+- Doing a bunch of homelab maintenance tasks – checks, backups, upgrades.
+- Upgrading OpenWRT on my [TP-Link Archer C6 v2](https://openwrt.org/toh/tp-link/archer_c6_v2), from old stable [23.05](https://openwrt.org/releases/23.05/start) to [24.10](https://openwrt.org/releases/24.10/start). Reportedly, the 5GHz radio issues are reportedly fixed with [24.10.2](https://openwrt.org/releases/24.10/notes-24.10.2).
+
+---
+
 ## 2025-08-29
 
 Spent the day operating the [HF0CEBULA](https://www.qrz.com/db/HF0CEBULA) special event ham radio station, which was active for the duration of [Cebula Camp 2025](https://cebula.camp/en). I've made approx. 20 QSOs on the 2m band, which I'm quite proud of – the station made even more QSOs in total that day. Ironically, I think there was more interest in the station's operation (and ham radio in general) on-site from the attendees, than remotely, over the ham frequencies. Good times!
 
 {{ image(src="img/devlog/2025-08-29-cebulacamp.webp", alt="HF0CEBULA special event station.", position="center") }}
+
+---
 
 ## 2025-08-27
 
