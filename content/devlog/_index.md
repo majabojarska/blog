@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-08-31
+
+Deploying [Authentik](https://github.com/goauthentik/authentik) as the new, unified authentication solution for my homelab.
+
+---
+
 ## 2025-08-30
 
 - Doing a bunch of homelab maintenance tasks – checks, backups, upgrades.
