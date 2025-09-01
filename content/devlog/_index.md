@@ -8,16 +8,27 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
-## 2025-08-31
+## 2025-09-02
 
 Deploying [Authentik](https://github.com/goauthentik/authentik) as the new, unified authentication solution for my homelab.
+
+---
+
+## 2025-08-31
+
+Playing around with [SSTV](https://en.wikipedia.org/wiki/Slow-scan_television). Only at the audio level for now, yet to transmit the first Luna (the cat) on the amateur bands.
+
+{{ image(src="img/devlog/2025-08-31-luna-sstv-android.webp", alt="Luna pondering upon the network cable tester.", position="center") }}
 
 ---
 
 ## 2025-08-30
 
 - Doing a bunch of homelab maintenance tasks – checks, backups, upgrades.
-- Upgrading OpenWRT on my [TP-Link Archer C6 v2](https://openwrt.org/toh/tp-link/archer_c6_v2), from old stable [23.05](https://openwrt.org/releases/23.05/start) to [24.10](https://openwrt.org/releases/24.10/start). Reportedly, the 5GHz radio issues are reportedly fixed with [24.10.2](https://openwrt.org/releases/24.10/notes-24.10.2).
+- Upgrading OpenWRT on my [TP-Link Archer C6 v2](https://openwrt.org/toh/tp-link/archer_c6_v2), from old stable [23.05](https://openwrt.org/releases/23.05/start) to [24.10](https://openwrt.org/releases/24.10/start). Reportedly, the 5GHz radio issues are fixed with [24.10.2](https://openwrt.org/releases/24.10/notes-24.10.2).
+- Hit this [tailscale issue (#16966)](https://github.com/tailscale/tailscale/issues/16966) on my NixOS setup. Kudos to [@tetov](https://github.com/tetov) for providing [a workaround](https://github.com/tailscale/tailscale/issues/16966#issuecomment-3239543750).
+
+{{ image(src="img/devlog/2025-08-30-rj45-cable-tester.webp", alt="Luna pondering upon the network cable tester.", position="center") }}
 
 ---
 
