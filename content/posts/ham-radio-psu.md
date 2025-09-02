@@ -41,36 +41,77 @@ Per the above, pin 33 (`PSON#`) expects a PSU on/off control signal. I found mix
 
 {{ image(src="img/ham-radio-psu/minimal-power-on-test.webp") }}
 
-I've let the PSU run unloaded for ~10min, throughout which the 12V rail exhibited a stable voltage of ~12.3V. I didn't perform a high-current (>10A) stress test, since I didn't have an appropriate load at my lab. Nevertheless, this proves the concept. Should the PSU fail at high currents, it will be a specific unit's problem, not a problem with the idea per se.
+I've let the PSU run unloaded for ~10min, throughout which the 12V rail exhibited a stable voltage of ~12.3V. I didn't perform a high-current (>10A) stress test, since I didn't have an appropriate load at my lab. Nevertheless, this proves the concept. Should the PSU fail at high currents, it will be a specific unit's problem, not a problem with the idea per se. Overall, the concept was now proven and I started designing the final device.
 
 ## Design
 
 ### Requirements
 
+Here's what I expect from the finished device:
+
 - Power switch (standby/fully on).
 - Standby power indicator (on the front).
-- 2x XT60 receptable, each capable of 10A sustained current.
-- 2x Banana receptable pair (positive, negative), each pair capable of 5A sustained current.
+- 2x XT60 receptable, each capable of 10A – sustained current.
+- 2x banana receptable pair (positive, negative), each pair capable of 5A sustained current.
 - Digital voltmeter with a ±0.1V precision and accuracy.
 - All of the above I/O interfaces shall be exposed on a single front panel.
 
 ### Electrical
 
+For the voltmeter, I found these little modules, for ~3PLN a piece. They're reasonably sized and are quite flexible electrically. With a wide range of operation, allowing anywhere between 2,5V and 30V, they're suitable for just about any hobby electronics project.
+
 {{ image(src="img/ham-radio-psu/voltmeter-module.webp") }}
+
+For the standby power indicator, I went with a yellow, 5mm LED. The mode of operation is simple:
+
+- The LED is connected to `12VSB` via an appropriate voltage dropping resistor.
+- The LED lights up whenever `12VSB` is high. This means it will stay on even when the PSU is fully powered up, but that's fine by me. It's simple and it gets the job done.
+
+For the power switch, I chose a simple, black, rocker switch (ON-OFF). It doesn't stick out much from the enclosure, while still clearly communicating the current state (unlike a push switch/button).
+
+Regarding the XT60 and banana connectors, I just used whatever I already had lying around. All of these are generic, bulk-purchased AliExpress parts.
+
+Here's the complete schematic:
+
+```
+<INSERT SCHEMATIC HERE>
+<INSERT SCHEMATIC HERE>
+<INSERT SCHEMATIC HERE>
+<INSERT SCHEMATIC HERE>
+<INSERT SCHEMATIC HERE>
+```
 
 ### Mechanical
 
 {{ image(src="img/ham-radio-psu/cad-isometric-corner-view.webp") }}
+
+I've designed the enclosure to slide onto the PSU's backside, right where it would mate with the server's PSU socket. Since there's only one bolt available to prevent the enclosure from sliding off of the PSU, I've designed the print to fit the unit with a relatively narrow clearance of 0.1mm. I've later made the fit even more snug with some painter's tape, removing any remaining wiggle room from the equation.
+
 {{ image(src="img/ham-radio-psu/cad-perspective-back.webp") }}
 {{ image(src="img/ham-radio-psu/cad-perspective-front.webp") }}
+
+The front of the enclosure conveniently houses all of the necessary I/O, while the top-side facilitates cooling through air ducts. The spacing between the PCB and the frontplate allows for reasonably convenient maintenance access, with the obvious caveat being the longer cable runs. These become bunched up once the device is assembled, but it looks like there's still some room left for appropriate ventilation. Stress tests will whether that's true later on.
 
 You can find the full Onshape CAD project [over here](https://cad.onshape.com/documents/186bdf1a0111d524a947b540/w/e2b5be03c8dc713116451386/e/d2109c2b51c15bd55eb2ff8c?renderMode=0&uiState=6891221ac752151697f70cb8).
 
 ## Assembly
 
-{{ image(src="img/ham-radio-psu/enclosure-internal-wiring.webp") }}
+With the enclosure printed, I've began soldering and assembling everything together. Here's where I realized I could've (should've) separated the frontplate from the slide-on walls. That's because positioning a M3 nut in place, while holding it from ~10cm away with nose pliers, is a royal pain in the ass. Alas, I've already printed the part and I didn't want to waste the used resources.
+
+If the frontplate was separate, I could assemble the front I/O comfortably, and then mate the frontplate to the enclosure walls with shape constraints and two or more bolts. Comfort of assembly is definitely something to keep in mind for future similar projects.
+
 {{ image(src="img/ham-radio-psu/enclosure-semi-assembled.webp") }}
+{{ image(src="img/ham-radio-psu/enclosure-internal-wiring.webp") }}
 {{ image(src="img/ham-radio-psu/enclosure-wiring-wide.webp") }}
+
+Soldering this was a challenge. The connectors were manageable, but anything on the PCB side was arduous, to say the least. I have a decently powerful soldering station (75W) with a large T12-KF tip, and it still was challenging to solder the power lines. The 12V copper traces are _massive_, they're thick and cover a large area of the PCB. These characteristics result in a large thermal mass, acting like a heat sink. What worked for me is:
+
+1. Use lots of flux.
+1. Pre-heat the copper pad for 30+ seconds.
+1. Apply solder generously while continuously providing more heat.
+1. Dip the pre-soldered wire into the heated solder.
+1. Keep applying heat until the wire begins to wick the solder, meaning it has fused with the solder, hopefully creating a good electrical connection.
+1. Once cooled down, measure the resistance between the copper pad, and the far end of the wire. Seeing a low resistance is not a be-all check, but seeing a high resistance is definitely something to look into.
 
 {{ image(src="img/ham-radio-psu/soldering-top.webp") }}
 
@@ -82,4 +123,12 @@ You can find the full Onshape CAD project [over here](https://cad.onshape.com/do
 
 ### 13,8V output voltage
 
+Reportedly, there's a way to modify the PSU to output a higher voltage, and tune the OVP (overvoltage protection) accordingly.
+
 {{ image(src="img/ham-radio-psu/psu-pcb-smd.webp") }}
+
+Since the Xiegu G90 exhibits roughly the same [ERP](https://en.wikipedia.org/wiki/Effective_radiated_power) on a supply of 12.8V, as on 14.4V ([source – YO3HJV](https://yo3hjv.blogspot.com/2021/07/xiegu-g90-output-power-versus-supply.html)), I haven't pursued any output voltage modifications for my unit. Nevertheless, should you need a higher output voltage, here are some resources I found to get you started:
+
+- [EEVBlog 13,8V mod thread](https://www.eevblog.com/forum/projects/hstns-pl28-to-13-8v-mod/)
+- [YouTube – 15V output voltage mod](https://www.youtube.com/watch?v=eTXfFXV7vOA)
+- [YouTube – Voltage & OVP modding, PCB overview](https://www.youtube.com/watch?v=KuOkziMm1gg)
