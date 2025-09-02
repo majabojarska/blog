@@ -119,6 +119,8 @@ Soldering this was a challenge. The connectors were manageable, but anything on 
 
 {{ image(src="img/ham-radio-psu/radio-test.webp") }}
 
+After confirming the output voltage was stable, I've connected the supply to my Xiegu G90 over one of the XT60 connectors. The radio powered up just fine, and that's about as much as I could do until I get my ham license, since I don't have a 50Ω dummy load to sink transmitter power into.
+
 ## Possible Improvements
 
 ### 13,8V output voltage
@@ -127,7 +129,7 @@ Reportedly, there's a way to modify the PSU to output a higher voltage, and tune
 
 {{ image(src="img/ham-radio-psu/psu-pcb-smd.webp") }}
 
-Since the Xiegu G90 exhibits roughly the same [ERP](https://en.wikipedia.org/wiki/Effective_radiated_power) on a supply of 12.8V, as on 14.4V ([source – YO3HJV](https://yo3hjv.blogspot.com/2021/07/xiegu-g90-output-power-versus-supply.html)), I haven't pursued any output voltage modifications for my unit. Nevertheless, should you need a higher output voltage, here are some resources I found to get you started:
+Since the Xiegu G90 exhibits roughly the same [ERP](https://en.wikipedia.org/wiki/Effective_radiated_power) on a supply of 12.8V, as on 14.4V ([source – YO3HJV](https://yo3hjv.blogspot.com/2021/07/xiegu-g90-output-power-versus-supply.html)), I haven't pursued any output voltage modifications for my unit. Technically there are some ERP differences across supply voltages, but they're negligible and in my opinion not worth the hassle. Nevertheless, should you need a higher output voltage, here are some resources I found to get you started:
 
 - [EEVBlog 13,8V mod thread](https://www.eevblog.com/forum/projects/hstns-pl28-to-13-8v-mod/)
 - [YouTube – 15V output voltage mod](https://www.youtube.com/watch?v=eTXfFXV7vOA)
