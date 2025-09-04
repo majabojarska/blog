@@ -1,6 +1,6 @@
 +++
 title = "Adapting a HPE server PSU for ham radio purposes"
-date = 2025-08-12
+date = 2025-09-04
 
 [taxonomies]
 tags = ["hack", "3d-printing", "electronics", "ham-radio"]
@@ -73,13 +73,7 @@ Regarding the XT60 and banana connectors, I just used whatever I already had lyi
 
 Here's the complete schematic:
 
-```
-<INSERT SCHEMATIC HERE>
-<INSERT SCHEMATIC HERE>
-<INSERT SCHEMATIC HERE>
-<INSERT SCHEMATIC HERE>
-<INSERT SCHEMATIC HERE>
-```
+{{ image(src="img/ham-radio-psu/schematic.webp") }}
 
 ### Mechanical
 
