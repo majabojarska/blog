@@ -8,9 +8,27 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+---
+
+## 2025-09-04
+
+- Rolled out [FreshRSS](https://www.freshrss.org/) and [Miniflux](https://miniflux.app/) to my homelab. I'll be trying both out and will choose the one I like better by next Sunday.
+- Creating graphics for my hackerspace's next SSTV radiosonde event. This one will be themed around the beloved cat that hangs around the workshop, named Komódka (after Commodore 64). Learned a lot of Inkscape today, it'sw pretty neat!
+- Trying to figure out why my Calibre-web instance sometimes just fails to ingest a book.
+
+{{ image(src="img/devlog/2025-09-04-komodka-sstv.webp", alt="Komódka SSTV image.", position="center") }}
+
+---
+
+## 2025-09-03
+
+Trying out the [Nagoya UT-108UV](https://www.nagoya.com.tw/en/product-384544/UT-108UV.html) antenna on 2m and 70cm bands.
+
+---
+
 ## 2025-09-02
 
-Deploying [Authentik](https://github.com/goauthentik/authentik) as the new, unified authentication solution for my homelab.
+Working on the [ham radio PSU post](@/posts/ham-radio-psu.md).
 
 ---
 
