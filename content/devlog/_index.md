@@ -8,6 +8,16 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-09-05
+
+Performed stress testing of my [ham radio PSU](@/posts/ham-radio-psu.md) under thermal vision. Used a 50Ω dummy load to sink the transceiver's antenna output.
+
+{{ image(src="img/devlog/2025-09-05-thermal-dummy-load.webp", alt="Thermal vision view of dummy antenna load.", position="center") }}
+
+The PSU performed well under a continuous ~6A load. Funnily enough, the bright spot on the photo below is a 510Ω resistor, dropping the voltage for the standby status LED. It drops ~10V at 20mA, resulting in 0,2W of total power dissipated as heat. Since it's a 1/4W resistor, it's operating within spec, and the temperature eventually stabilizes around 54°C in room temperature conditions, which is totally safe.
+
+{{ image(src="img/devlog/2025-09-05-thermal-psu.webp", alt="Thermal vision view of my diy ham radio PSU.", position="center") }}
+
 ---
 
 ## 2025-09-04
