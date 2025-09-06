@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-09-06
+
+- Troubleshooting homepage service/widget state issues. Turns out there's a known limitation to service/group name uniqueness – [discussion #5756](https://github.com/gethomepage/homepage/discussions/5756).
+
+---
+
 ## 2025-09-05
 
 Performed stress testing of my [ham radio PSU](@/posts/ham-radio-psu.md) under thermal vision. Used a 50Ω dummy load to sink the transceiver's antenna output.
