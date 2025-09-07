@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-09-07
+
+- Wee infra maintenance. Pulled in the in-flight patch for current Tailscale kernel regression issues in NixOS – [#16966](https://github.com/tailscale/tailscale/issues/16966#issuecomment-3246030218).
+
+---
+
 ## 2025-09-06
 
 - Troubleshooting homepage service/widget state issues. Turns out there's a known limitation in regard to service/group name uniqueness – [discussion #5756](https://github.com/gethomepage/homepage/discussions/5756).
