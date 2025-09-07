@@ -18,6 +18,12 @@ Living collection of notes on the topic of amateur radio.
 - [dr2w.de DX](https://dr2w.de/dx-propagation/)
 - [hf.dxview.org](https://hf.dxview.org/)
 
+## Exam prep
+
+This section covers the Polish ham radio license exams.
+
+- [egzaminKF.pl](https://egzaminkf.pl/home.php) – exam questions, tests, topic-focused guides.
+
 ## CW (morse code)
 
 - [LCWO](https://lcwo.net/main) — Online CW learning site.

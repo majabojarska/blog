@@ -13,6 +13,7 @@ comment = true
 - Troubleshooting homepage service/widget state issues. Turns out there's a known limitation in regard to service/group name uniqueness – [discussion #5756](https://github.com/gethomepage/homepage/discussions/5756).
 - [TIL](https://dynomight.net/links-3/#:~:text=%286%29%20Text%20fragment%20links) you can link to _any_ text on _any_ page, and (most) modern browsers support it! This is a web feature called ["Text fragments"](https://developer.mozilla.org/en-US/docs/Web/URI/Reference/Fragment/Text_fragments). You can even define a suffix/prefix to constrain the query with 🤯!
 - > [Optimize for thinking](https://dynomight.net/paper/#:~:text=Optimize%20for%20thinking)
+
 ---
 
 ## 2025-09-05
