@@ -1,7 +1,7 @@
 +++
 title = "Notes on amateur radio"
 date = 2025-07-16
-updated = 2025-09-02
+updated = 2025-09-10
 
 [taxonomies]
 tags = ["radio", "ham", "antennas"]
@@ -23,6 +23,10 @@ Living collection of notes on the topic of amateur radio.
 This section covers the Polish ham radio license exams.
 
 - [egzaminKF.pl](https://egzaminkf.pl/home.php) – exam questions, tests, topic-focused guides.
+
+## Transceiver theory
+
+- [Superheterodyne receivers](https://www.ire.pw.edu.pl/~wkazubski/Odbiornik1.pdf) (PL 🇵🇱) – dr inż. Wojciech Kazubski, Politechnika Warszawska
 
 ## CW (morse code)
 
