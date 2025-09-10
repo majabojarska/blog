@@ -8,6 +8,35 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-09-10
+
+- Quick homelab maintenance, updates.
+
+---
+
+## 2025-09-09
+
+- Studying for my ham radio exam. It's just a couple weeks away!
+- TIL the `CIVIL` mnemonic for phase differences between current and voltage, in capacitive and inductive resonant circuits. See [this video (16:55)](https://youtu.be/yEG6pKUdIlg?si=2DZxEu1hNm9Ih3CV&t=1015) from EEVblog Dave. TL;DR:
+  - In capacitive (`C`) resonant circuits (`I`), current leads voltage (`V`).
+  - Voltage (`V`) leads current (`I`) in inductive (`L`) resonant circuits.
+
+
+---
+
+## 2025-09-08
+
+- Read this publication: [Federated Systems – Jeremy Rubin (2015)](https://www.mit.edu/~jlrubin/public/pdfs/federation.pdf). Here are my key takeaways:
+  - Federated systems are fully recursive. Each federated system can contain (be composed of) other federated systems.
+  - Composability is king. Aiming to solve a single problem helps make the system composable. See DNS, HTTP, SMTP, XMPP.
+  - Solve large-scale problems centrally, and federate the small-scale ones.
+  - Customizability is desirable, but can break compatibility. If needed, seek to make it composable, and constrain the system to prevent strong divergence between clients.
+  - Interoperability is key, but it's possible to overdo it (_Friendica_ vs _diaspora\*_).
+  - Don't rely on the users' generosity to keep the system afloat, because it can abruptly run short. Have a business model for providers.
+  - McDonald's is actually a federated system (lol).
+
+---
+
 ## 2025-09-07
 
 - Wee infra maintenance. Pulled in the in-flight patch for current Tailscale kernel regression issues in NixOS – [#16966](https://github.com/tailscale/tailscale/issues/16966#issuecomment-3246030218).
