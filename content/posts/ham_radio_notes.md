@@ -1,7 +1,7 @@
 +++
 title = "Notes on amateur radio"
 date = 2025-07-16
-updated = 2025-09-10
+updated = 2025-09-11
 
 [taxonomies]
 tags = ["radio", "ham", "antennas"]
@@ -23,6 +23,7 @@ Living collection of notes on the topic of amateur radio.
 This section covers the Polish ham radio license exams.
 
 - [egzaminKF.pl](https://egzaminkf.pl/home.php) – exam questions, tests, topic-focused guides.
+- [Anki deck – Pytanie Egzaminacyjne Klasa A](https://ankiweb.net/shared/info/1982207399) (by `SP9TEM`)
 
 ## Transceiver theory
 
