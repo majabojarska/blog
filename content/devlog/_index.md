@@ -8,6 +8,14 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-09-11
+
+- Improving my [Homepage](https://gethomepage.dev/) dashboard.
+- Studying for the ham radio exam.
+- Should I try switching to Neovim 🤔?
+
+---
+
 ## 2025-09-10
 
 - Quick homelab maintenance, updates.
@@ -20,7 +28,6 @@ comment = true
 - TIL the `CIVIL` mnemonic for phase differences between current and voltage, in capacitive and inductive resonant circuits. See [this video (16:55)](https://youtu.be/yEG6pKUdIlg?si=2DZxEu1hNm9Ih3CV&t=1015) from EEVblog Dave. TL;DR:
   - In capacitive (`C`) resonant circuits (`I`), current leads voltage (`V`).
   - Voltage (`V`) leads current (`I`) in inductive (`L`) resonant circuits.
-
 
 ---
 
