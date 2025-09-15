@@ -8,6 +8,20 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-09-15
+
+The Tailscale/NixOS issue from [2025-09-07](#2025-09-07) has been [fixed upstream](https://github.com/tailscale/tailscale/issues/16966#issuecomment-3291890894), applied the fix on my infra successfully.
+
+---
+
+## 2025-09-14
+
+Fixing the stuck lidar drive in my robot vacuum. I'll make a short post out of this.
+
+{{ image(src="img/devlog/2025-09-14-lidar.webp", alt="Lidar unit in Roborock Q7 Max.", position="center") }}
+
+---
+
 ## 2025-09-11
 
 - Improving my [Homepage](https://gethomepage.dev/) dashboard.
@@ -46,7 +60,22 @@ comment = true
 
 ## 2025-09-07
 
-- Wee infra maintenance. Pulled in the in-flight patch for current Tailscale kernel regression issues in NixOS – [#16966](https://github.com/tailscale/tailscale/issues/16966#issuecomment-3246030218).
+Wee infra maintenance. Pulled in the in-flight patch for current Tailscale kernel regression issues in NixOS – [#16966](https://github.com/tailscale/tailscale/issues/16966#issuecomment-3239543750):
+
+```nix
+  nixpkgs.overlays = [(_: prev: {
+    tailscale = prev.tailscale.overrideAttrs (old: {
+      checkFlags =
+        builtins.map (
+          flag:
+            if prev.lib.hasPrefix "-skip=" flag
+            then flag + "|^TestGetList$|^TestIgnoreLocallyBoundPorts$|^TestPoller$"
+            else flag
+        )
+        old.checkFlags;
+    });
+  })];
+```
 
 ---
 
