@@ -45,7 +45,7 @@ journalctl --dmesg --boot -1
 
 Looking towards the end, I found a flurry of repeating errors, relating to the [`e1000e` kernel module](https://www.intel.com/content/www/us/en/support/articles/000005480/ethernet-products.html):
 
-```
+```txt
 May 25 15:23:30 pve-02 kernel: e1000e 0000:00:19.0 eno1: Detected Hardware Unit Hang:
                                  TDH                  <61>
                                  TDT                  <90>
