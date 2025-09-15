@@ -2,7 +2,7 @@ theme = "apollo"
 
 base_url = "https://majabojarska.dev/"
 title = "Maja Bojarska"
-description = "Maja's Devlog"
+description = "Maja's engineering blog"
 compile_sass = true
 minify_html = true
 
