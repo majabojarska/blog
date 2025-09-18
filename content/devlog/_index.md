@@ -8,6 +8,35 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-09-18
+
+TIL you can calibrate your oven by using the melting point of sucrose as a temperature reference [[1](https://www.cookingforgeeks.com/blog/posts/the-sweet-way-to-calibrate-your-oven/)].
+
+---
+
+## 2025-09-17
+
+Noticed my Immich instance pulls the smart search ML model sometime after every restart of the ML service Pod. To be precise, the download totals to ~700MB, and is pulled upon receiving the first smart search query, which understandably, requires the ML model to perform the inferencing. 
+
+Turns out that the [chart's default](https://github.com/trueforge-org/truecharts/blob/9ee3083da1c07e3b8048e41fc3dcfe78c8b30057/charts/stable/immich/values.yaml#L73) was to mount the ML cache in an [emptyDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir) volume, which is fresh (and clean) for every new Pod. I've since replaced it with a proper SSD-backed PVC. Now smart search kicks in way faster after an Immich rollout.
+
+While searching about the ML cache, I found Immich's [recommendations for running as a non-root user](https://immich.app/docs/FAQ/#how-can-i-run-immich-as-a-non-root-user). In my case, matplotlib was defaulting to caching its config to `/tmp/...`, since it couldn't write to `/.config`. I've got no more startup warnings after applying the recommendations.
+
+```sh
+[09/18/25 20:57:53] INFO     Starting gunicorn 23.0.0
+[09/18/25 20:57:53] INFO     Listening at: http://[::[]:10003 (8)
+[09/18/25 20:57:53] INFO     Using worker: immich_ml.config.CustomUvicornWorker
+[09/18/25 20:57:53] INFO     Booting worker with pid: 9
+[09/18/25 20:57:58] INFO     Started server process [9[]
+[09/18/25 20:57:58] INFO     Waiting for application startup.
+[09/18/25 20:57:58] INFO     Created in-memory cache with unloading after 300s
+                             of inactivity.
+[09/18/25 20:57:58] INFO     Initialized request thread pool with 5 threads.
+[09/18/25 20:57:58] INFO     Application startup complete.
+```
+
+---
+
 ## 2025-09-15
 
 The Tailscale/NixOS issue from [2025-09-07](#2025-09-07) has been [fixed upstream](https://github.com/tailscale/tailscale/issues/16966#issuecomment-3291890894), applied the fix on my infra successfully.
