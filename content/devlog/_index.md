@@ -20,7 +20,22 @@ Noticed my Immich instance pulls the smart search ML model sometime after every 
 
 Turns out that the [chart's default](https://github.com/trueforge-org/truecharts/blob/9ee3083da1c07e3b8048e41fc3dcfe78c8b30057/charts/stable/immich/values.yaml#L73) was to mount the ML cache in an [emptyDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir) volume, which is fresh (and clean) for every new Pod. I've since replaced it with a proper SSD-backed PVC. Now smart search kicks in way faster after an Immich rollout.
 
-While searching about the ML cache, I found Immich's [recommendations for running as a non-root user](https://immich.app/docs/FAQ/#how-can-i-run-immich-as-a-non-root-user). In my case, matplotlib was defaulting to caching its config to `/tmp/...`, since it couldn't write to `/.config`. I've got no more startup warnings after applying the recommendations.
+While searching about the ML cache, I found Immich's [recommendations for running as a non-root user](https://immich.app/docs/FAQ/#how-can-i-run-immich-as-a-non-root-user). In my case, matplotlib was defaulting to caching its config to `/tmp/...`, since it couldn't write to `/.config`. 
+
+
+```sh
+[09/18/25 21:58:46] WARNING  mkdir -p failed for path /.config/matplotlib:
+                             [Errno 13[] Permission denied: '/.config'
+[09/18/25 21:58:46] WARNING  Matplotlib created a temporary cache directory at
+                             /tmp/matplotlib-urrteabo because there was an issue
+                             with the default path (/.config/matplotlib); it is
+                             highly recommended to set the MPLCONFIGDIR
+                             environment variable to a writable directory, in
+                             particular to speed up the import of Matplotlib and
+                             to better support multiprocessing.
+```
+
+I've got no more startup warnings after applying the recommendations.
 
 ```sh
 [09/18/25 20:57:53] INFO     Starting gunicorn 23.0.0
