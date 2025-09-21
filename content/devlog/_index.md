@@ -10,7 +10,9 @@ comment = true
 
 ## 2025-09-21
 
-Finished my cable hanger. Finally got a place to organize cables without tangling them together.
+Finished my cable hanger. Finally got an easily-accessible place to store cables without tangling them together!
+
+Kudos to _b2vn_ for the [OpenSCAD parametric model](https://www.thingiverse.com/thing:4089728).
 
 {{ image(src="img/devlog/2025-09-21-cable-holder.webp", alt="Cable hanger.", position="center") }}
 
