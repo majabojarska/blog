@@ -8,6 +8,20 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-09-21
+
+Finished my cable hanger. Finally got a place to organize cables without tangling them together.
+
+{{ image(src="img/devlog/2025-09-21-cable-holder.webp", alt="Cable hanger.", position="center") }}
+
+---
+
+## 2025-09-20
+
+Printing [elements](https://www.thingiverse.com/thing:4089728) for my wall-mounted cable hanger.
+
+---
+
 ## 2025-09-18
 
 TIL you can calibrate your oven by using the melting point of sucrose as a temperature reference [[1](https://www.cookingforgeeks.com/blog/posts/the-sweet-way-to-calibrate-your-oven/)].
@@ -16,12 +30,11 @@ TIL you can calibrate your oven by using the melting point of sucrose as a tempe
 
 ## 2025-09-17
 
-Noticed my Immich instance pulls the smart search ML model sometime after every restart of the ML service Pod. To be precise, the download totals to ~700MB, and is pulled upon receiving the first smart search query, which understandably, requires the ML model to perform the inferencing. 
+Noticed my Immich instance pulls the smart search ML model sometime after every restart of the ML service Pod. To be precise, the download totals to ~700MB, and is pulled upon receiving the first smart search query, which understandably, requires the ML model to perform the inferencing.
 
 Turns out that the [chart's default](https://github.com/trueforge-org/truecharts/blob/9ee3083da1c07e3b8048e41fc3dcfe78c8b30057/charts/stable/immich/values.yaml#L73) was to mount the ML cache in an [emptyDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir) volume, which is fresh (and clean) for every new Pod. I've since replaced it with a proper SSD-backed PVC. Now smart search kicks in way faster after an Immich rollout.
 
-While searching about the ML cache, I found Immich's [recommendations for running as a non-root user](https://immich.app/docs/FAQ/#how-can-i-run-immich-as-a-non-root-user). In my case, matplotlib was defaulting to caching its config to `/tmp/...`, since it couldn't write to `/.config`. 
-
+While searching about the ML cache, I found Immich's [recommendations for running as a non-root user](https://immich.app/docs/FAQ/#how-can-i-run-immich-as-a-non-root-user). In my case, matplotlib was defaulting to caching its config to `/tmp/...`, since it couldn't write to `/.config`.
 
 ```sh
 [09/18/25 21:58:46] WARNING  mkdir -p failed for path /.config/matplotlib:
