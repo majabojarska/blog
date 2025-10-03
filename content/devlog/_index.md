@@ -22,7 +22,7 @@ See [commit limiting](https://git-scm.com/docs/git-log#_commit_limiting) docs fo
 
 ## 2025-09-30
 
-Passed my ham radio exam 🎉! The privileges of my license will be the equivalent of the USA FCC General class. 
+Passed my ham radio exam 🎉! The privileges of my license will be the equivalent of the [USA FCC General class](https://www.fcc.gov/wireless/bureau-divisions/mobility-division/amateur-radio-service). 
 
 Thinking about callsigns now.
 
