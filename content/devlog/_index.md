@@ -8,6 +8,26 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-10-01
+
+TIL `git log` supports limiting by date, e.g.:
+
+```sh
+git log --since 'Dec 31 2024' --until '2025-05-01'
+```
+
+See [commit limiting](https://git-scm.com/docs/git-log#_commit_limiting) docs for more details!
+
+---
+
+## 2025-09-30
+
+Passed my ham radio exam 🎉! The privileges of my license will be the equivalent of the USA FCC General class. 
+
+Thinking about callsigns now.
+
+---
+
 ## 2025-09-21
 
 Finished my cable hanger. Finally got an easily-accessible place to store cables without tangling them together!
