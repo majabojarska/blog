@@ -8,6 +8,28 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-10-09
+
+Went to [KCD Warsaw 2025](https://community.cncf.io/events/details/cncf-kcd-warsaw-presents-kcd-warsaw-2025/).
+
+I can recommend the [KubeEdge](https://kubeedge.io/) presentation (once the recording comes out). I still have some reservations in regard to the suitability of using first-class Kubernetes objects for implementing edge device management (think IoT sensors). However, I'll need to educate myself better on the problem domain, before I'm able to form an opinion. Regardless, it was a good presentation!
+
+{{ image(src="img/devlog/2025-10-09-kcd-warsaw-2025-kubeedge.webp", alt="", position="center") }}
+
+Here's my swag haul 😎
+
+{{ image(src="img/devlog/2025-10-09-kcd-warsaw-2025-swag.webp", alt="", position="center") }}
+
+---
+
+## 2025-10-07
+
+Printed and assembled another one [Asometech PD PSU rack mount](https://www.printables.com/model/1301563-asometech-140w-pd-psu-10-rack-mount) for my friend.
+
+{{ image(src="img/devlog/2025-10-07-print-1.webp", alt="3D printed rack mount for PSU", position="center") }}
+
+---
+
 ## 2025-10-01
 
 TIL `git log` supports limiting by date, e.g.:
