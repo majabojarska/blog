@@ -1,7 +1,7 @@
 +++
 title = "Notes on amateur radio"
 date = 2025-07-16
-updated = 2025-09-11
+updated = 2025-10-12
 
 [taxonomies]
 tags = ["radio", "ham", "antennas"]
@@ -17,6 +17,12 @@ Living collection of notes on the topic of amateur radio.
 
 - [dr2w.de DX](https://dr2w.de/dx-propagation/)
 - [hf.dxview.org](https://hf.dxview.org/)
+
+### Special events
+
+- [Parks on the Air](https://docs.pota.app)
+- [Summits on the Air](https://www.sota.org.uk/)
+- [SOTA Atlas](https://sotl.as/about)
 
 ## Exam prep
 
