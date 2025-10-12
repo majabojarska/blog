@@ -8,6 +8,21 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+---
+
+## 2025-10-12
+
+Recently I've upgraded to [Gnome](https://www.gnome.org/) 49 and one my extensions stopped working. However, it looks like it's working just fine once the extension version validation is disabled. Here's how you can change the config:
+```sh
+# Read current
+dconf write /org/gnome/shell/disable-extension-version-validation
+
+# Disable extension version validation
+dconf write /org/gnome/shell/disable-extension-version-validation true
+```
+
+---
+
 ## 2025-10-09
 
 Went to [KCD Warsaw 2025](https://community.cncf.io/events/details/cncf-kcd-warsaw-presents-kcd-warsaw-2025/).
@@ -15,6 +30,10 @@ Went to [KCD Warsaw 2025](https://community.cncf.io/events/details/cncf-kcd-wars
 I can recommend the [KubeEdge](https://kubeedge.io/) presentation (once the recording comes out). I still have some reservations in regard to the suitability of using first-class Kubernetes objects for implementing edge device management (think IoT sensors). However, I'll need to educate myself better on the problem domain, before I'm able to form an opinion. Regardless, it was a good presentation!
 
 {{ image(src="img/devlog/2025-10-09-kcd-warsaw-2025-kubeedge.webp", alt="", position="center") }}
+
+Another talk I found interesting was about [driving a major shift in OpenTelemetry Logs](https://github.com/pellared/otel-logs-talk) by [pellared](https://github.com/pellared). Also TIL about [Slidev](https://sli.dev/) – a markdown-based slide renderer.
+
+{{ image(src="img/devlog/2025-10-09-otel-logs-talk.webp", alt="", position="center") }}
 
 Here's my swag haul 😎
 
