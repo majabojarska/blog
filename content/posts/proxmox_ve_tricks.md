@@ -57,6 +57,10 @@ Delete user from `/etc/pve/user.cfg` and `/etc/pve/priv/shadow.cfg`.
 - Do not enable firewall before configuring it (Default input policy is to `DROP` everyting).
 - Lower-level rules override higher-level rules. For example, datacenter rules are overridden by node rules, if firewall is enabled on the node.
 
+## Storage
+
+- [Passthrough Physical Disk to Virtual Machine (VM)](https://pve.proxmox.com/wiki/Passthrough_Physical_Disk_to_Virtual_Machine_(VM)#List_disk_by-id_with_lsblk)
+
 ## CLI
 
 ### Virtual Machines
