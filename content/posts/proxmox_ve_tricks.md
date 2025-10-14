@@ -1,7 +1,7 @@
 +++
 title = "Notes on Proxmox VE"
 date = 2025-01-27
-updated = 2025-06-02
+updated = 2025-10-14
 [taxonomies]
 tags = ["homelab", "proxmox"]
 +++
