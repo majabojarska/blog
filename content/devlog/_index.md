@@ -8,11 +8,23 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-10-15
+
+Upgraded to [Immich major version 2](https://github.com/immich-app/immich/releases/tag/v2.0.1).
+
+---
+
+## 2025-10-14
+
+- Upgraded my PVE 8.4 nodes [to major version 9](pve.proxmox.com/wiki/Upgrade_from_8_to_9).
+- TIL about [deb822](https://manpages.debian.org/trixie/dpkg-dev/deb822.5.en.html).
+
 ---
 
 ## 2025-10-12
 
 Recently I've upgraded to [Gnome](https://www.gnome.org/) 49 and one my extensions stopped working. However, it looks like it's working just fine once the extension version validation is disabled. Here's how you can change the config:
+
 ```sh
 # Read current
 dconf write /org/gnome/shell/disable-extension-version-validation
@@ -63,7 +75,7 @@ See [commit limiting](https://git-scm.com/docs/git-log#_commit_limiting) docs fo
 
 ## 2025-09-30
 
-Passed my ham radio exam 🎉! The privileges of my license will be the equivalent of the [USA FCC General class](https://www.fcc.gov/wireless/bureau-divisions/mobility-division/amateur-radio-service). 
+Passed my ham radio exam 🎉! The privileges of my license will be the equivalent of the [USA FCC General class](https://www.fcc.gov/wireless/bureau-divisions/mobility-division/amateur-radio-service).
 
 Thinking about callsigns now.
 
