@@ -8,6 +8,24 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-10-17
+
+The UX around adding a GH workflow to required status checks **makes me wanna bite the designer's ankles.**
+
+- The "Add checks" search doesn't list any known (and already executed) GH workflows.
+- You need to search for the job's name for it to appear on the list.
+- Searching for the workflow's name does NOT work. Meaning, I need to match the exact **job name** starting characters in my search query, in order for the job to appear on the list to select from.
+
+{{ image(src="img/devlog/2025-10-17-spongebob-screaming-inside.webp", alt="", position="center") }}
+
+---
+
+## 2025-10-16
+
+Kicked off work on my [Bitwarden CLI Docker image](https://github.com/majabojarska/bitwarden-cli-docker). A [Helm chart](https://github.com/majabojarska/bitwarden-cli-helm) will follow up.
+
+---
+
 ## 2025-10-15
 
 Upgraded to [Immich major version 2](https://github.com/immich-app/immich/releases/tag/v2.0.1).
