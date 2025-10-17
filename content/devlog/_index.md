@@ -10,7 +10,12 @@ comment = true
 
 ## 2025-10-17
 
-The UX around adding a GH workflow to required status checks **makes me wanna bite the designer's ankles.**
+- **The first release of [bitwarden-cli-docker](https://github.com/majabojarska/bitwarden-cli-docker) is out 🎉!**
+- TIL about [asciiflow](asciiflow.com), the ASCII diagramming software.
+
+---
+
+I've been setting up a couple new repos recently, and the UX around adding a GH workflow to required status checks **makes me wanna bite the designer's ankles.**
 
 - The "Add checks" search doesn't list any known (and already executed) GH workflows.
 - You need to search for the job's name for it to appear on the list.
