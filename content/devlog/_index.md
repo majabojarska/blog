@@ -8,10 +8,16 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-10-19
+
+- Working on the Helm chart for Bitwarden CLI – [majabojarska/bitwarden-cli-helm](https://github.com/majabojarska/bitwarden-cli-helm).
+
+---
+
 ## 2025-10-18
 
 - TIL about [glow](https://github.com/charmbracelet/glow), the CLI Markdown renderer.
-- Attended [_End of 10_](https://mobilizon.pl/events/75d89fcd-0af5-4028-a921-0b9cac70468c) at the Wrocław Hackerspace.
+- Attended [_End of 10_](https://mobilizon.pl/events/75d89fcd-0af5-4028-a921-0b9cac70468c) at the [Wrocław Hackerspace](https://hswro.org/).
   Helped a stranger continue using their Win 10 laptop by migrating it to Linux. They opted for [Fedora Gnome edition](https://fedoraproject.org/workstation/) (nice choice!).
 - Learned about [this magnificent application of modern technology](https://meow.camera) (_meow_).
 
