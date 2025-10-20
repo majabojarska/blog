@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-10-20
+
+- Deploying [Renovate](https://docs.renovatebot.com/) onto my homelab.
+
+---
+
 ## 2025-10-19
 
 - Working on the Helm chart for Bitwarden CLI – [majabojarska/bitwarden-cli-helm](https://github.com/majabojarska/bitwarden-cli-helm).
