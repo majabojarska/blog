@@ -15,10 +15,11 @@ This website is built on [Zola](https://www.getzola.org/), the static site gener
     - [Oranki net post](https://oranki.net/posts/2025-01-09-graceful-k3s-shutdown/)
   - homelab in general
   - kube backups
+  - Preprocessing ING CSV for actual
+  - Clock-safe reboot for openwrt
 - Meta
   - Automate `updated` post param updating.
   - Factor out custom SCSS
-
 
 ---
 
