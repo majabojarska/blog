@@ -17,6 +17,7 @@ This website is built on [Zola](https://www.getzola.org/), the static site gener
   - kube backups
   - Preprocessing ING CSV for actual
   - Clock-safe reboot for openwrt
+  - Workflow for adding required status checks in github
 - Meta
   - Automate `updated` post param updating.
   - Factor out custom SCSS
