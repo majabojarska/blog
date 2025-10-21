@@ -10,10 +10,20 @@ comment = true
 
 ## 2025-10-21
 
-- TIL about [The Human Only Public License](https://frederic.vanderessen.com/posts/hopl/).
-- Found this amazing collection of die shot photos over at [happytrees.org](https://happytrees.org/dieshots/). Here's an Intel Xeon MP Gallatin A0 (130nm):
+TIL about [The Human Only Public License](https://frederic.vanderessen.com/posts/hopl/).
 
-    {{ image(src="img/devlog/2025-10-21-die-shot-happytrees-org.webp", alt="", href="https://happytrees.org/dieshots/File:Intel_Xeon_MP_(Gallatin_A0_130nm)2.jpg", position="center") }}
+---
+
+TIL about [topolvm](https://github.com/topolvm/topolvm), a persistent local storage CSI plugin, backed by LVM.
+- Could be considered an alternative to [rancher/local-path-provisioner](https://github.com/rancher/local-path-provisioner) (LPP).
+- It's capacity aware, while LPP is not.
+- (Un)fortunately I run ZFS, and don't intend to switch, while topolvm requires LVM2 on top of ext4, xfs, or btrfs.
+
+---
+
+Found this amazing collection of die shot photos over at [happytrees.org](https://happytrees.org/dieshots/). Here's an Intel Xeon MP Gallatin A0 (130nm) ✨:
+
+{{ image(src="img/devlog/2025-10-21-die-shot-happytrees-org.webp", alt="", href="https://happytrees.org/dieshots/File:Intel_Xeon_MP_(Gallatin_A0_130nm)2.jpg", position="center") }}
 
 ---
 
