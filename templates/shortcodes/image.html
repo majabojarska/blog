@@ -22,7 +22,7 @@
   {%- endif %}
 
   <div class="post-img">
-  <a href="{{ url_normal }}">
+  {% if href %} <a href="{{ href }}"> {% else %} <a href="{{ url_normal }}"> {% endif %}
   
   <img src="{{ url_small | safe }}"
   {% if alt %} alt="{{ alt }}"{% endif %} 

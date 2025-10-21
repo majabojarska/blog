@@ -11,7 +11,9 @@ comment = true
 ## 2025-10-21
 
 - TIL about [The Human Only Public License](https://frederic.vanderessen.com/posts/hopl/).
-- Found this goldmine (silicon mine?) of die shot photos: [happytrees.org](https://happytrees.org/dieshots/)
+- Found this amazing collection of die shot photos over at [happytrees.org](https://happytrees.org/dieshots/). Here's an Intel Xeon MP Gallatin A0 (130nm):
+
+    {{ image(src="img/devlog/2025-10-21-die-shot-happytrees-org.webp", alt="", href="https://happytrees.org/dieshots/File:Intel_Xeon_MP_(Gallatin_A0_130nm)2.jpg", position="center") }}
 
 ---
 
