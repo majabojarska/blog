@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-10-21
+
+TIL about [The Human Only Public License](https://frederic.vanderessen.com/posts/hopl/).
+
+---
+
 ## 2025-10-20
 
 - Deploying [Renovate](https://docs.renovatebot.com/) onto my homelab.
