@@ -10,7 +10,8 @@ comment = true
 
 ## 2025-10-21
 
-TIL about [The Human Only Public License](https://frederic.vanderessen.com/posts/hopl/).
+- TIL about [The Human Only Public License](https://frederic.vanderessen.com/posts/hopl/).
+- Found this goldmine (silicon mine?) of die shot photos: [happytrees.org](https://happytrees.org/dieshots/)
 
 ---
 
@@ -29,9 +30,11 @@ TIL about [The Human Only Public License](https://frederic.vanderessen.com/posts
 ## 2025-10-18
 
 - TIL about [glow](https://github.com/charmbracelet/glow), the CLI Markdown renderer.
+- Learned about [this magnificent application of modern technology](https://meow.camera) (_meow_).
 - Attended [_End of 10_](https://mobilizon.pl/events/75d89fcd-0af5-4028-a921-0b9cac70468c) at the [Wrocław Hackerspace](https://hswro.org/).
   Helped a stranger continue using their Win 10 laptop by migrating it to Linux. They opted for [Fedora Gnome edition](https://fedoraproject.org/workstation/) (nice choice!).
-- Learned about [this magnificent application of modern technology](https://meow.camera) (_meow_).
+
+{{ image(src="img/devlog/2025-10-18-hs-wro.webp", alt="", position="center") }}
 
 ---
 
