@@ -8,6 +8,28 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-10-22
+
+TIL OPNsense can not only work in [HA mode](https://docs.opnsense.org/manual/hacarp.html) (fail-over) via [CARP](https://en.wikipedia.org/wiki/Common_Address_Redundancy_Protocol), but it also ensures there's only one [PPP](https://en.wikipedia.org/wiki/Point-to-Point_Protocol) interface actively connected at any given time (the master). I happen to be authenticating into my ISP's uplink via [PPPoE](https://en.wikipedia.org/wiki/Point-to-Point_Protocol_over_Ethernet), which qualifies as a derivative of PPP.
+
+The way I'm currently prepared for a fail-over, is by having a relatively recent clone of my main OPNsense VM on a second hypervisor, sitting offline. It's ready to power up within a couple minutes, in case the current one fails. Reworking this to a setup base on the native HA capabilities will definitely save me some work.
+
+---
+
+Shout out to [stakater/Reloader](https://github.com/stakater/Reloader), which triggers automatic K8s workload rollouts, whenever any of the referenced `Secrets` or `ConfigMaps` are updated.
+
+Per the docs, you just need to add this annotation to your workload (not to be confused with the Pod template):
+
+```yaml
+kind: Deployment
+metadata:
+  name: my-app
+  annotations:
+    reloader.stakater.com/auto: "true"
+```
+
+Supports more granular triggers if needed (kind, name).
+
 ## 2025-10-21
 
 TIL about [The Human Only Public License](https://frederic.vanderessen.com/posts/hopl/).
@@ -15,6 +37,7 @@ TIL about [The Human Only Public License](https://frederic.vanderessen.com/posts
 ---
 
 TIL about [topolvm](https://github.com/topolvm/topolvm), a persistent local storage CSI plugin, backed by LVM.
+
 - Could be considered an alternative to [rancher/local-path-provisioner](https://github.com/rancher/local-path-provisioner) (LPP).
 - It's capacity aware, while LPP is not.
 - (Un)fortunately I run ZFS, and don't intend to switch, while topolvm requires LVM2 on top of ext4, xfs, or btrfs.
