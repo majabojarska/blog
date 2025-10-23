@@ -8,6 +8,13 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-10-23
+
+Deployed [ArchiveBox](https://github.com/ArchiveBox/ArchiveBox) onto my homelab and then removed it after I saw how half-baked this software is.
+Great idea, but the implementation needs more work, and the project seems to be barely maintaned at this point.
+
+---
+
 ## 2025-10-22
 
 TIL OPNsense can not only work in [HA mode](https://docs.opnsense.org/manual/hacarp.html) (fail-over) via [CARP](https://en.wikipedia.org/wiki/Common_Address_Redundancy_Protocol), but it also ensures there's only one [PPP](https://en.wikipedia.org/wiki/Point-to-Point_Protocol) interface actively connected at any given time (the master). I happen to be authenticating into my ISP's uplink via [PPPoE](https://en.wikipedia.org/wiki/Point-to-Point_Protocol_over_Ethernet), which qualifies as a derivative of PPP.
