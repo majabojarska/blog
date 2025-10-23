@@ -8,10 +8,16 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+---
+
 ## 2025-10-23
 
+Researching Rust web frameworks for a simple backend project. Figured I'd use this as an opportunity to learn some Rust. [tokio-rs/axum](https://github.com/tokio-rs/axum) and [tamasfe/aide](https://github.com/tamasfe/aide) look promising.
+
+---
+
 Deployed [ArchiveBox](https://github.com/ArchiveBox/ArchiveBox) onto my homelab and then removed it after I saw how half-baked this software is.
-Great idea, but the implementation needs more work, and the project seems to be barely maintaned at this point.
+Great idea, but the implementation needs more work, and the project seems to be barely maintained at this point.
 
 ---
 
