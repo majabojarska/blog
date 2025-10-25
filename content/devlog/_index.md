@@ -8,6 +8,18 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-10-25
+
+- TIL [foundObjects/pve-nag-buster](https://github.com/foundObjects/pve-nag-buster/)
+- TIL The US military used turd-shaped seismic intrusion detectors, equipped with VHF and/or UHF transmitters [1](https://radiomuseum.org/r/military_seismic_intrusion_detector_sid_radio_transmitter.html).
+
+---
+
+## 2025-10-24
+
+- Bootstrapped my Rust REST API project.
+- Watching [Rust Talks by No Boilerplate](https://www.youtube.com/playlist?list=PLZaoyhMXgBzoM9bfb5pyUOT3zjnaDdSEP).
+
 ---
 
 ## 2025-10-23
