@@ -8,6 +8,13 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-10-26
+
+- Working (pro-bono) on documenting the server infrastructure of [Hackerspace Wrocław](https://hswro.org/).
+- Printing yet another [Asometech PD PSU rack mount](https://www.printables.com/model/1301563-asometech-140w-pd-psu-10-rack-mount) for my friend.
+
+---
+
 ## 2025-10-25
 
 - TIL [foundObjects/pve-nag-buster](https://github.com/foundObjects/pve-nag-buster/)
