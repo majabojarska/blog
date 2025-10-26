@@ -13,6 +13,7 @@ comment = true
 - Working (pro-bono) on documenting the server infrastructure of [Hackerspace Wrocław](https://hswro.org/).
 - Printing yet another [Asometech PD PSU rack mount](https://www.printables.com/model/1301563-asometech-140w-pd-psu-10-rack-mount) for my friend.
 - Reading [OPNsense CARP configuration docs](https://docs.opnsense.org/manual/how-tos/carp.html). I'm coming to the conclusion this is too much of a hassle for my homelabbing needs. I'll just stick with keeping backups on a secondary hypervisor, should my main hypervisor fail, bringing the OPNsense guest VM down with it.
+- Deployed [n8n](https://n8n.io/) to my homelab.
 
 Here's a cat picture:
 
