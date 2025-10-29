@@ -10,7 +10,7 @@ comment = true
 
 ## 2025-10-29
 
-- TIL about Python [MappingProxyType](https://docs.python.org/3/library/types.html#types.MappingProxyType), as a way to make a tidy, actually read-only, dict-like objects.
+TIL about Python [MappingProxyType](https://docs.python.org/3/library/types.html#types.MappingProxyType), as a way to make tidy, actually read-only, dict-like objects.
 
 ---
 
