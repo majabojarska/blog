@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-10-29
+
+- TIL about Python [MappingProxyType](https://docs.python.org/3/library/types.html#types.MappingProxyType), as a way to make a tidy, actually read-only, dict-like objects.
+
+---
+
 ## 2025-10-26
 
 - Working (pro-bono) on documenting the server infrastructure of [Hackerspace Wrocław](https://hswro.org/).
