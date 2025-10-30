@@ -264,11 +264,11 @@ Read-only access times at ~51 ms, which is over twice as fast, in comparison to 
 
 ### Summary
 
-| Implementation               | time \[ms\] |
-| ---------------------------- | ----------- |
-| Getter function (writable)   | 123         |
-| MappingProxyType (writable)  | 111         |
-| MappingProxyType (read-only) | 51          |
+| Implementation                    | time \[ms\] |
+| --------------------------------- | ----------- |
+| Getter function (always writable) | 123         |
+| MappingProxyType (writable copy)  | 111         |
+| MappingProxyType (read-only)      | 51          |
 
 Overall these are not drastic differences (think many orders of magnitude).
 The key takeaway here are the process improvements and safety guardrails.
