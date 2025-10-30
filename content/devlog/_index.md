@@ -8,9 +8,17 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-10-30
+
+Upgraded the firmware on my Netgear GS308Ev4 switch (v1.0.1.3 → v1.0.1.9).
+
+---
+
 ## 2025-10-29
 
 TIL about Python [MappingProxyType](https://docs.python.org/3/library/types.html#types.MappingProxyType), as a way to make tidy, actually read-only, dict-like objects.
+
+Wrote a post about it – [Read-only dictionaries with MappingProxyType](@/posts/mapping-proxy-type.md).
 
 ---
 
