@@ -1,6 +1,7 @@
 +++
 title = "Read-only dictionaries with MappingProxyType"
 date = 2025-10-30
+updated = 2025-10-30
 
 [taxonomies]
 tags = ["python", "stdlib", "programming", "performance", "benchmark"]
@@ -95,9 +96,9 @@ The guardrail needs to be codified into and enforced by the codebase itself.
 
 > Why not use [`typing.Final`](https://docs.python.org/3/library/typing.html#typing.Final) with a linter?
 
-Linters only go as far and do not reach into the runtime. They can lose track of the reference if there's enough indirection.
+Linters only go as far and do not reach into the runtime. They can lose track of the annotation, if there's enough indirection.
 
-> Ok then, intialize the `_DEFAULT_CONFIG` variable in the scope of the getter function.
+> Ok then, initialize the `_DEFAULT_CONFIG` variable in the scope of the getter function.
 
 We're getting somewhere. Moreover, we can now drop the `copy`, since the config will be initialized on every call anyway.
 
