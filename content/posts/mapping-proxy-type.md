@@ -44,7 +44,7 @@ print(_DEFAULT_CONFIG)
 ```
 
 The mutated default configuration will stick around until the module that initializes it gets reloaded,
-which most likely is the next startup.
+which is most likely until the next application startup.
 
 You might be thinking:
 
