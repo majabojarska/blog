@@ -8,6 +8,18 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-11-01
+
+TIL about the Linux [SysRq module](https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html).
+
+---
+
+## 2025-10-31
+
+🕯️👻🕸️🎃🧛
+
+---
+
 ## 2025-10-30
 
 Upgraded the firmware on my Netgear GS308Ev4 switch (v1.0.1.3 → v1.0.1.9).
