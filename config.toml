@@ -37,6 +37,7 @@ highlight_themes_css = [
 render_emoji = true
 smart_punctuation = true
 lazy_async_image = true
+bottom_footnotes = true
 
 [extra]
 toc = true
