@@ -10,7 +10,12 @@ comment = true
 
 ## 2025-11-01
 
-TIL about the Linux [SysRq module](https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html).
+TIL:
+
+- About the Linux [SysRq module](https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html).
+- Zola supports [Markdown footnotes](https://www.markdownguide.org/extended-syntax/#footnotes).
+
+I'm thinking it would be nice to have calendar-like means of navigation for the devlog. Perhaps something like a GitHub commit graph or a view of the month, with colored blocks on days with a devlog entry, and hyperlinks to the corresponding section on each of the blocks.
 
 ---
 
