@@ -48,7 +48,7 @@ Provided that [Kdump](https://wiki.archlinux.org/title/Kdump) (or equivalent) is
 - [Arch Linux](https://wiki.archlinux.org/title/Kdump),
 - [Fedora](https://fedoraproject.org/wiki/How_to_use_kdump_to_debug_kernel_crashes).
 
-Once Kdump is configured and enabled, enable all SysRq functions and trigger a system crash (just like above).
+Once Kdump is configured and enabled, enable all SysRq functions and trigger a system crash (just like above). Don't reset the machine immediately, as the crash dump takes a moment to finish, and I found that Kdump by default will reset the system right after. In case that doesn't happen, reset manually once you see a drop in CPU load.
 
 To find the crash dump log, first look into the last boot's kernel logs, where the `kdump` service will have emitted dump info – dmesg log and vmcore locations:
 
