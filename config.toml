@@ -6,9 +6,7 @@ description = "Maja's engineering blog"
 compile_sass = true
 minify_html = true
 
-taxonomies = [
-    {name = "tags"}
-]
+taxonomies = [{ name = "tags" }]
 
 # The theme supports feeds (RSS and ATOM)
 generate_feeds = true
@@ -27,15 +25,15 @@ index_format = "elasticlunr_json"
 
 [markdown]
 highlight_code = true
-highlight_theme = "boron"
+highlight_theme = "gruvbox-dark"
 
 [extra]
 toc = true
 use_cdn = false
 favicon = "/icon/favicon.png"
-theme = "toggle"              # light, dark, auto, toggle
+theme = "toggle"                    # light, dark, auto, toggle
 fancy_code = true
-dynamic_note = true           # a note that can be toggled
+dynamic_note = true                 # a note that can be toggled
 mathjax = true
 mathjax_dollar_inline_enable = true
 
@@ -47,9 +45,9 @@ menu = [
 ]
 
 socials = [
-    {name = "github", url = "https://github.com/majabojarska", icon="github", newtab = true},
-    {name = "linkedin", url = "https://linkedin.com/in/majabojarska", icon="linkedin", newtab = true},
-    {name = "mastodon", url = "https://mastodon.social/@majabojarska", icon="mastodon", newtab = true},
+    { name = "github", url = "https://github.com/majabojarska", icon = "github", newtab = true },
+    { name = "linkedin", url = "https://linkedin.com/in/majabojarska", icon = "linkedin", newtab = true },
+    { name = "mastodon", url = "https://mastodon.social/@majabojarska", icon = "mastodon", newtab = true },
 ]
 
 stylesheets = [
@@ -58,4 +56,3 @@ stylesheets = [
 
 [extra.analytics]
 enabled = false
-
