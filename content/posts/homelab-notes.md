@@ -78,3 +78,4 @@ nix run github:ryantm/agenix -- -e tailscale-auth-key.age
 - Setup [Renovate](https://github.com/renovatebot/renovate) for my infra, mainly for Helm chart autoupdate PRs.
 - O11y and alerting: [Grafana](https://github.com/renovatebot/renovate), [Prometheus](https://github.com/prometheus/prometheus), [ntfy](https://github.com/renovatebot/renovate).
 - Rework ZFS SSD pool to be managed by PVE, instead of by lifted-n-shifted guest VM via disk passthrough.
+- Deploy [copyparty](https://github.com/9001/copyparty), remove [Nextcloud](https://github.com/nextcloud/server).
