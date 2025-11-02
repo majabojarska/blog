@@ -8,6 +8,18 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-11-02
+
+- Learning Rust
+- Researching o11y options for my Netgear [GS308Ev4](https://www.netgear.com/business/wired/switches/plus/gs308e/) switch:
+  - [ha-netgear-plus](https://github.com/ckarrie/ha-netgear-plus) – HomeAssistant integration
+  - [py-netgear-plus](https://github.com/foxey/py-netgear-plus) – Python library
+  - [netgear-gs308e-exporter](https://github.com/AmoVanB/netgear-gs308e-exporter) – Prometheus exporter
+    - Scrapes the web UI, which isn't great, given [NSDP](https://en.wikipedia.org/wiki/Netgear_Switch_Discovery_Protocol) is well-documented by now, and has good library support ([go-nsdp](https://en.wikipedia.org/wiki/Netgear_Switch_Discovery_Protocol)).
+  - [prosafe_exporter](https://en.wikipedia.org/wiki/Netgear_Switch_Discovery_Protocol) – actively maintained, written in Rust :crab:
+
+---
+
 ## 2025-11-01
 
 TIL:
