@@ -7,21 +7,21 @@ tags = ["homelab", "notes", "reference", "infrastructure"]
 +++
 
 This is a living document.
+
 - Serves as a reference for my homelab.
 - Helps me grow my technical documentation skills.
 
 ## Physical hosts
 
 :construction:
+
 ## Networking
 
 :construction:
 
-
 ## Storage
 
 :construction:
-
 
 ## Secret management
 
@@ -44,7 +44,7 @@ When cloning the repo on a new machine, place the key at `<repo_root>/.vault_pas
 ### NixOS hosts
 
 - Secrets for NixOS hosts are encrypted at rest via [agenix](https://github.com/ryantm/agenix).
-  - Effectively, the encryption is based on SSH key pairs. 
+  - Effectively, the encryption is based on SSH key pairs.
 - During deployment, they're shipped encrypted, and decrypted on the target host, with its own private key.
 - For each host: both the developer's (mine), and the target host's public keys are enrolled in the encryption scheme. In consequence, any of the corresponding private keys can be used to decrypt the secret, in order to update its contents.
 
@@ -71,4 +71,10 @@ nix run github:ryantm/agenix -- -e tailscale-auth-key.age
 - Whenever new secrets are added, ESO might need a couple minutes to complete the secret reconciliation. Use longer timeouts to account for this when deploying new components requiring `Secrets`.
   - Planning to improve this with [Flux post-deployment jobs](https://fluxcd.io/flux/use-cases/running-jobs/).
 
+## Future plans & ongoing work
 
+- Deploy [AudioMuse-AI](https://github.com/NeptuneHub/AudioMuse-AI) and integrate it with Jellyfin
+- Setup [Authentik](https://goauthentik.io/) and SSO auth in services.
+- Setup [Renovate](https://github.com/renovatebot/renovate) for my infra, mainly for Helm chart autoupdate PRs.
+- O11y and alerting: [Grafana](https://github.com/renovatebot/renovate), [Prometheus](https://github.com/prometheus/prometheus), [ntfy](https://github.com/renovatebot/renovate).
+- Rework ZFS SSD pool to be managed by PVE, instead of by lifted-n-shifted guest VM via disk passthrough.
