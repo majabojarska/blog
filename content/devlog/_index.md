@@ -8,6 +8,26 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-11-09
+
+- Re-provisioning my main hypervisor's storage to have a PVE-managed zpool.
+- TIL about [esphome-miot](https://github.com/dhewg/esphome-miot), I'll be jailbreaking my purifier soon.
+
+---
+
+## 2025-11-08
+
+Backing up my whole `storage` ZFS pool from `kube-01` to the `nas` host, in preparation for a switch from a ZFS mirror (2x1TB) to RAID-Z (3x1TB striped).
+The `kube-01` host is a guest on the `pve-01` hypervisor, and was originally created via a lift-n-shift (sort of) from a bare metal installation, and it still manages its own zpool, with the disks mounted via QEMU device passthrough.
+I want to move away from this architecture, as it's very limiting:
+
+- The zpool is locked and available to a single host only.
+- The guest VM crashes and or/cannot start if a disk goes down. This is sort of good, as no further wear is put on the pool, but I do frequent backups need my service dang it!
+
+So the general idea is to have all zpools in my lab managed by the hypervisor, and expose the datasets as emulated storage devices, managed by Proxmox. The VM only sees a SCSI/SATA interface.
+
+---
+
 ## 2025-11-02
 
 - Learning Rust
