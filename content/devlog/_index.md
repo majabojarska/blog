@@ -12,6 +12,7 @@ comment = true
 
 - Re-provisioning my main hypervisor's storage to have a PVE-managed zpool.
   - PVE has really nice [documentation](https://pve.proxmox.com/wiki/Performance_Tweaks) on storage performance tweaks.
+  - Saving this [ZFS tuning cheat sheet by JRS Systems](https://jrs-s.net/2018/08/17/zfs-tuning-cheat-sheet/) so I can find it more easily in the future.
 - TIL about [esphome-miot](https://github.com/dhewg/esphome-miot), I'll be jailbreaking my purifier soon.
 
 ---
