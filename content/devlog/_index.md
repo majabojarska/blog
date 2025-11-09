@@ -11,6 +11,7 @@ comment = true
 ## 2025-11-09
 
 - Re-provisioning my main hypervisor's storage to have a PVE-managed zpool.
+  - PVE has really nice [documentation](https://pve.proxmox.com/wiki/Performance_Tweaks) on storage performance tweaks.
 - TIL about [esphome-miot](https://github.com/dhewg/esphome-miot), I'll be jailbreaking my purifier soon.
 
 ---
