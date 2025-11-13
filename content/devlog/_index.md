@@ -8,7 +8,11 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+---
+
 ## 2025-11-13
+
+Deployed [stakater/Reloader](https://github.com/stakater/Reloader) to my K3s cluster.
 
 Fixed the network switch sag:
 
