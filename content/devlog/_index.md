@@ -8,6 +8,44 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-11-13
+
+Fixed the network switch sag:
+
+{{ image(src="img/devlog/2025-11-13-network-switch-sag-pre-fix.webp", alt="", position="center") }}
+{{ image(src="img/devlog/2025-11-13-network-switch-sag-post-fix.webp", alt="", position="center") }}
+
+---
+
+## 2025-11-12
+
+I've completed my main server's disk pool rework. Ended up doing a ZFS mirror (2 disks) for critical data, and then simple ext4 for data I can afford to lose — re-download or re-rip from CDs. Learned many lessons along the way, most notably:
+
+- ZFS RAID-Z is as slow as a single disk for both reading and writing, as no two disks contain the same data (stripes, parity). Reportedly it can also butcher disks pretty fast.
+- [`rclone copy`](https://rclone.org/commands/rclone_copy/) does _not_ persist file permissions and ownership metadata, even if `--metadata` is used (that persists modification times), and even if both the source and target filesystems are the same kind. Use `rsync` when in need of preserving original file ownership and permissions. Had to restore my offsite backup to get the original metadata back.
+- PSU issues can manifest as slower disk speeds (slower response times) and intermittent, but recoverable dropouts. Switching from a 65W, to a 135W PSU miraculously solved what I initially suspected to be disk/controller issues. Turns out adding the 3rd disk pushed the smaller PSU right at around its limit.
+
+---
+
+## 2025-11-11
+
+My network switch rackmount is sagging a bit, presumably due to the extended low heat coming off of the machine right below it.
+I've desiged a simple frame that wedges right into the existing mount, straightening the whole assembly back up.
+
+{{ image(src="img/devlog/2025-11-11-slicer-preview.webp", alt="", position="center") }}
+
+---
+
+## 2025-11-10
+
+Got a ZigBee coordinator dongle for free (antenna too)!
+
+Need to order some sensors now :grin:.
+
+{{ image(src="img/devlog/2025-11-10-zigbee-coordinator.webp", alt="", position="center") }}
+
+---
+
 ## 2025-11-09
 
 - Re-provisioning my main hypervisor's storage to have a PVE-managed zpool.
