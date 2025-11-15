@@ -110,3 +110,32 @@ To enable this:
 ```sh
 !# zpool set snapdir=visible poolname/datasetname
 ```
+
+## Operations
+
+### Rollback
+
+List snapshots
+
+```sh
+!# zfs list -t snapshot
+```
+
+Rollback
+
+```sh
+!# zfs rollback storage/kubernetes@autosnap_2025-11-15_17:00:07_hourly
+```
+
+If there any newer snapshots present, you'll have to add the -r option, otherwise you'll hit the following error:
+
+```sh
+cannot rollback to 'storage/kubernetes@autosnap_2025-11-15_17:00:07_hourly': more recent snapshots or bookmarks exist
+use '-r' to force deletion of the following snapshots and bookmarks:
+storage/kubernetes@autosnap_2025-11-15_18:00:01_hourly
+storage/kubernetes@autosnap_2025-11-15_20:00:55_hourly
+```
+
+Per `zfs help rollback`:
+
+> -r Destroy any snapshots and bookmarks more recent than the one specified.
