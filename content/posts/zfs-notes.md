@@ -51,13 +51,12 @@ Set `ashift` when adding devices:
 
 This is a fairly complex topic, but the rule of thumb is:
 
-| Purpose  | `recordsize` |
-| -------- | ------------ |
-| Database | `64KiB`      |
-
-| VM disk image | `64KiB` |
-| Multi-MiB media files | `1M` |
-| Mixed-use (small and large files) | `128KiB` |
+| Purpose                           | `recordsize` |
+| --------------------------------- | ------------ |
+| Database                          | `64KiB`      |
+| VM disk image                     | `64KiB`      |
+| Multi-MiB media files             | `1M`         |
+| Mixed-use (small and large files) | `128KiB`     |
 
 If unset, ZFS will asume a default `recordsize` of `128KiB`.
 
