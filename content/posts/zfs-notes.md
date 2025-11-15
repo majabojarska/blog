@@ -97,10 +97,19 @@ What does **not** compress well:
   - media (movies, photos, music),
   - ZIP/BZ2/LZMA/RAR archives.
 
-Leaving compression enabled on a filesystem dedicated to storing already compressed files will mostly just chug electricity, while providing little to not benefit.
+Leaving compression enabled, on a filesystem dedicated to storing already compressed files, will mostly just waste CPU cycles, while providing little to no benefit.
+
+LZ4 is a good all-around compression algorithm, and ever since 2020 it's the new default in ZFS (when `on`). If you're wondering about optimising the choice of algorithm for your specific workload, you'll be better off looking at the [official OpenZFS docs](https://openzfs.github.io/openzfs-docs/Performance%20and%20Tuning/Workload%20Tuning.html#compression), they link benchmarks!
 
 ```sh
+# Enable default compression, effectively LZ4
+!# zfs set compression=on poolname/datasetname
+
+# Enable LZ4 explicitly
 !# zfs set compression=lz4 poolname/datasetname
+
+# Disable compression
+!# zfs set compression=off poolname/datasetname
 ```
 
 ### Enabling snapshot directory visibility
