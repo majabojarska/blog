@@ -8,7 +8,7 @@ tags = ["homelab", "zfs", "filesystems", "storage"]
 
 <!-- more -->
 
-My filesystem of choice for homelab purposes is ZFS. I tend to revisit certain configuration options every now and then, usually when working on my storage pools. This document aggregates it.
+My filesystem of choice for homelab purposes is ZFS. I tend to revisit certain configuration options every now and then, usually when working on my storage pools. This document aggregates all of that information.
 
 ## Configuration
 
@@ -34,6 +34,8 @@ I/O size (minimum/optimal): 512 bytes / 33553920 bytes
 Disklabel type: gpt
 Disk identifier: <obfuscated>
 ```
+
+Treat the output as a suggestion, as that's what ZFS would check to determine the default `ashift`. The best approach however, is to double check with your disk supplier's technical specification.
 
 Set `ashift` during pool creation as follows:
 
