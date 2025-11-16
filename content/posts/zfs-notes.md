@@ -25,7 +25,7 @@ Important considerations for choosing the `ashift` value:
 You can check your disk's sector size via `fdisk`:
 
 ```sh
-!# fdisk -l
+fdisk -l
 Disk /dev/sdd: 953,87 GiB, 1024209543168 bytes, 2000409264 sectors
 Disk model: <obfuscated>
 Units: sectors of 1 * 512 = 512 bytes
@@ -40,13 +40,13 @@ Treat the output as a suggestion, as that's what ZFS would check to determine th
 Set `ashift` during pool creation as follows:
 
 ```sh
-!# zpool create -o ashift=12 poolname mirror /dev/sdX /dev/sdY
+zpool create -o ashift=12 poolname mirror /dev/sdX /dev/sdY
 ```
 
 Set `ashift` when adding devices:
 
 ```sh
-!# zpool add -o ashift=12 poolname mirror /dev/sdA /dev/sdB
+zpool add -o ashift=12 poolname mirror /dev/sdA /dev/sdB
 ```
 
 ### Record size
@@ -67,7 +67,7 @@ If unset, ZFS will asume a default `recordsize` of `128KiB`.
 When `atime` is enabled (`on`), file access timestamps are written whenever a file is accessed. This increases the operational overhead and wears the disk out quicker. Unless you absolutely need to keep track of access times, disable this option:
 
 ```sh
-!# zfs set atime=off poolname/datasetname
+zfs set atime=off poolname/datasetname
 ```
 
 ### Linux extended attributes
@@ -77,7 +77,7 @@ This section is TODO
 TL;DR
 
 ```sh
-!# zfs set xattr=sa poolname/datasetname
+zfs set xattr=sa poolname/datasetname
 ```
 
 ### Compression
@@ -103,13 +103,13 @@ LZ4 is a good all-around compression algorithm, and ever since 2020 it's the new
 
 ```sh
 # Enable default compression, effectively LZ4
-!# zfs set compression=on poolname/datasetname
+zfs set compression=on poolname/datasetname
 
 # Enable LZ4 explicitly
-!# zfs set compression=lz4 poolname/datasetname
+zfs set compression=lz4 poolname/datasetname
 
 # Disable compression
-!# zfs set compression=off poolname/datasetname
+zfs set compression=off poolname/datasetname
 ```
 
 ### Enabling snapshot directory visibility
@@ -119,7 +119,7 @@ ZFS supports auto-mounting a `.zfs` directory, at the root of each dataset. The 
 To enable this:
 
 ```sh
-!# zpool set snapdir=visible poolname/datasetname
+zpool set snapdir=visible poolname/datasetname
 ```
 
 ## Operations
@@ -129,13 +129,13 @@ To enable this:
 List snapshots
 
 ```sh
-!# zfs list -t snapshot
+zfs list -t snapshot
 ```
 
 Rollback
 
 ```sh
-!# zfs rollback storage/kubernetes@autosnap_2025-11-15_17:00:07_hourly
+zfs rollback storage/kubernetes@autosnap_2025-11-15_17:00:07_hourly
 ```
 
 If there any newer snapshots present, you'll have to add the -r option, otherwise you'll hit the following error:
