@@ -13,7 +13,7 @@ comment = true
 ## 2025-11-15
 
 - Upgraded Immich to 2.2.3, hit issues with startup, reporting errors relating to the pgvecto.rs to VectorChord migration. Followed the [TrueCharts migration guide](https://trueforge.org/truetech/truecharts/charts/stable/immich/migrate-to-vectorchord/) to resolve this issue.
-- Wrote down some [notes on ZFS](@/posts/mapping-proxy-type.md).
+- Wrote down some [notes on ZFS](@/posts/zfs-notes.md)
 
 ---
 
