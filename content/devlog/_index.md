@@ -10,6 +10,12 @@ comment = true
 
 ---
 
+## 2025-11-21
+
+- Figuring out how to flash an [ESP-02S](https://templates.blakadder.com/ESP-02S.html), the same form factor, electrically compatible replacement (for the most part), for a [TYWE2S](https://tasmota.github.io/docs/Pinouts/#tywe2s).
+
+---
+
 ## 2025-11-20
 
 - Upgraded Immich to 2.3.1, as 2.2.3 happened to have a regression which cause the browser tab to become unresponsive.
