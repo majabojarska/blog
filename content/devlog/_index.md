@@ -13,6 +13,7 @@ comment = true
 ## 2025-11-21
 
 - Figuring out how to flash an [ESP-02S](https://templates.blakadder.com/ESP-02S.html), the same form factor, electrically compatible replacement (for the most part), for a [TYWE2S](https://tasmota.github.io/docs/Pinouts/#tywe2s).
+  - This [programming jig by Odani](https://www.thingiverse.com/thing:5679533) seems promising.
 
 ---
 
