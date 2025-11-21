@@ -10,6 +10,13 @@ comment = true
 
 ---
 
+## 2025-11-21
+
+- Upgraded Immich to 2.3.1, as 2.2.3 happened to have a regression which cause the browser tab to become unresponsive.
+- Configured iGPU PCIe passthrough into my Kubernetes VM, and configured HW acceleration on Jellyfin.
+
+---
+
 ## 2025-11-15
 
 - Upgraded Immich to 2.2.3, hit issues with startup, reporting errors relating to the pgvecto.rs to VectorChord migration. Followed the [TrueCharts migration guide](https://trueforge.org/truetech/truecharts/charts/stable/immich/migrate-to-vectorchord/) to resolve this issue.
