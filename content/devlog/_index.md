@@ -10,7 +10,7 @@ comment = true
 
 ---
 
-## 2025-11-21
+## 2025-11-20
 
 - Upgraded Immich to 2.3.1, as 2.2.3 happened to have a regression which cause the browser tab to become unresponsive.
 - Configured iGPU PCIe passthrough into my Kubernetes VM, and configured HW acceleration on Jellyfin.
