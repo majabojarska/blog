@@ -14,6 +14,7 @@ comment = true
 
 - Figuring out how to flash an [ESP-02S](https://templates.blakadder.com/ESP-02S.html), the same form factor, electrically compatible replacement (for the most part), for a [TYWE2S](https://tasmota.github.io/docs/Pinouts/#tywe2s).
   - This [programming jig by Odani](https://www.thingiverse.com/thing:5679533) seems promising.
+- Playing around with [agenix](https://github.com/ryantm/agenix) and [Tailscale](nixos.wiki/wiki/Tailscale) configuration on a NixOS node.
 
 ---
 
