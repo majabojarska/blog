@@ -21,6 +21,8 @@ comment = true
 
 Received my first batch of ZigBee devices for home automation. Yet to setup [Zigbee2MQTT](https://www.zigbee2mqtt.io/) and the [Mosquitto](https://mosquitto.org/) broker.
 
+{{ image(src="img/devlog/2025-11-24-env-sensor.webp", alt="", position="center") }}
+
 ---
 
 ## 2025-11-23
