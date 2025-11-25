@@ -14,6 +14,7 @@ comment = true
 
 - Deployed [Zigbee2MQTT](https://www.zigbee2mqtt.io/) and [Mosquitto](https://mosquitto.org/).
 - Migrating my [Tasmota](https://tasmota.github.io/docs/) smart plugs to [ESPHome](https://tasmota.github.io/docs/).
+- TIL [rss-bridge](https://github.com/RSS-Bridge/rss-bridge) – _The RSS feed for websites missing it_.
 
 ---
 
