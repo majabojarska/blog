@@ -10,6 +10,48 @@ comment = true
 
 ---
 
+## 2025-11-25
+
+- Deployed [Zigbee2MQTT](https://www.zigbee2mqtt.io/) and [Mosquitto](https://mosquitto.org/).
+- Migrating my [Tasmota](https://tasmota.github.io/docs/) smart plugs to [ESPHome](https://tasmota.github.io/docs/).
+
+---
+
+## 2025-11-24
+
+Received my first batch of ZigBee devices for home automation. Yet to setup [Zigbee2MQTT](https://www.zigbee2mqtt.io/) and the [Mosquitto](https://mosquitto.org/) broker.
+
+---
+
+## 2025-11-23
+
+Jailbroke [TYWE2S](https://developer.tuya.com/en/docs/iot/wifie2smodule?id=K9605u79tgxug)-based, Tuya-only smart plugs into local-only, ESP-based ([ESP8285](https://documentation.espressif.com/0a-esp8285_datasheet_en.html)), Tasmota smart plugs. I will be migrating these to [ESPHome](https://esphome.io/) later on, as that's my preferred ecosystem. Tasmota was just the first thing I happened to flash successfully on the day before :grin:.
+
+{{ image(src="img/devlog/2025-11-23-esp02s-plug-soldering.webp", alt="", position="center") }}
+{{ image(src="img/devlog/2025-11-23-tasmota-web-ui.webp", alt="", position="center") }}
+
+---
+
+Disassembling my [Xiaomi Mi Air Purifier 3H](https://www.mi.com/global/support/article/KA-04677/) in order to jailbreak the device and allow LAN-only operation via [esphome-miot](https://github.com/dhewg/esphome-miot/wiki/Xiaomi-Mi-Air-Purifier-3H).
+
+This [disassembly video on YouTube](https://www.youtube.com/watch?v=_rC2a6l0M2k) helps a lot, but I got stuck on prying open some of the deeper-seated tabs. Ordered some metal spudgers to get this done in a few weeks time.
+
+---
+
+## 2025-11-22
+
+Building a custom [ESP-02S](https://templates.blakadder.com/ESP-02S.html)/[TYWE2S](https://developer.tuya.com/en/docs/iot/wifie2smodule?id=K9605u79tgxug) flashing adapter. The device is based on [Odani's design](https://www.thingiverse.com/thing:5679533), but I couldn't get the pogo pin housing to print accurrately enough on a 0.4mm nozzle, for the pogo pins to fit properly. Despite many attempts to tweak the model, the resulting holes were either ill-fitting, or not durable enough. The pins would eventually work their way out as the material gradually fatigued, causing the pins to lose contact with the PCB.
+
+Luckily a friend from the [Hackerspace](https://hswro.org/) – who's a CNC machinist – saved the day by machining a fitting equivalent from a harder material.
+
+This was my first hands-on encounter with [pogo pins](https://en.wikipedia.org/wiki/Pogo_pin). They're great, but also quite delicate. Just holding them with pliers, while attempting to press-fit into a housing, can block the movement of the sprint-loaded mechanism, or at least cause it to not glide as smoothly. I'll definitely be getting some of these for my electronics lab.
+
+{{ image(src="img/devlog/2025-11-22-esp02s-adapter.webp", alt="", position="center") }}
+
+I will be making an in-depth post about this, once I take better pictures of the setup.
+
+---
+
 ## 2025-11-21
 
 - Figuring out how to flash an [ESP-02S](https://templates.blakadder.com/ESP-02S.html), the same form factor, electrically compatible replacement (for the most part), for a [TYWE2S](https://tasmota.github.io/docs/Pinouts/#tywe2s).
@@ -22,6 +64,16 @@ comment = true
 
 - Upgraded Immich to 2.3.1, as 2.2.3 happened to have a regression which cause the browser tab to become unresponsive.
 - Configured iGPU PCIe passthrough into my Kubernetes VM, and configured HW acceleration on Jellyfin.
+
+---
+
+## 2025-11-19
+
+I'm now officially a licenced ham radio amateur!
+
+{{ image(src="img/devlog/2025-11-19-callsign-sp6cat.webp", alt="", position="center") }}
+
+Looking forward to making my first QSO 🥳.
 
 ---
 

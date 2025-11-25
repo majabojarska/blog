@@ -1,7 +1,7 @@
 +++
 title = "What I've yet to blog about"
 date = 2025-10-26
-updated = 2025-10-26
+updated = 2025-11-25
 
 [taxonomies]
 tags = ["meta"]
@@ -16,3 +16,4 @@ This is a collection of topics I'd like to blog about next, in no specific order
 - My setup for Kubernetes application state backups.
 - How to automate clock-safe reboots for OpenWRT on boards without a RTC module.
 - A critique of GitHub's UX around configuring required PR workflow status checks.
+- Building a TYWE2S/ESP-02S adapter (see [devlog#2025-11-22](@/devlog/_index.md#2025-11-22))
