@@ -1,6 +1,7 @@
 +++
 title = "Notes on my homelab"
 date = 2025-11-02
+updated = 2025-11-26
 
 [taxonomies]
 tags = ["homelab", "notes", "reference", "infrastructure"]
@@ -22,6 +23,16 @@ This is a living document.
 ## Storage
 
 :construction:
+
+## Backups
+
+:construction:
+
+- Borgmatic backs up kubernetes volumes off-site.
+
+Ideas:
+
+- Run a k3s snapshot as part of the pre-backup borgmatic hook. This will ensure every application state backup is paired with a matching K3s state.
 
 ## Secret management
 
