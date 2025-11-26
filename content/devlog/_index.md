@@ -8,12 +8,23 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-11-28
+
+- Migrating my [Tasmota](https://tasmota.github.io/docs/) smart plugs to [ESPHome](https://tasmota.github.io/docs/).
+
+---
+
+## 2025-11-26
+
+- Finally got Zigbee2MQTT working. Still need to finish the Mosquitto deployment for Z2M to not exit on the first failed connection attempt.
+- Cleared and flashed my ZigBee dongle with fresh firmeware install. Zigbee2MQTT was having issues before that, and now it just works.
+  - This will be a cool writeup, adding to my list.
+
 ---
 
 ## 2025-11-25
 
-- Deployed [Zigbee2MQTT](https://www.zigbee2mqtt.io/) and [Mosquitto](https://mosquitto.org/).
-- Migrating my [Tasmota](https://tasmota.github.io/docs/) smart plugs to [ESPHome](https://tasmota.github.io/docs/).
+- Deploying [Zigbee2MQTT](https://www.zigbee2mqtt.io/) and [Mosquitto](https://mosquitto.org/).
 - TIL:
   - [rss-bridge](https://github.com/RSS-Bridge/rss-bridge) – _The RSS feed for websites missing it_.
   - Borgmatic supports intermittently available servers and removable devices by design – [docs link](https://torsion.org/borgmatic/how-to/backup-to-a-removable-drive-or-an-intermittent-server/).
