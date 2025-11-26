@@ -16,13 +16,19 @@ This is a living document.
 
 :construction:
 
+Broad-strokes description of the hosts here. Include the CPU/RAM specs, because I can never remember that for some reason.
+
 ## Networking
 
 :construction:
 
+Here VLANs, APs, devices, router, interfaces, VPNs
+
 ## Storage
 
 :construction:
+
+The different storage pools/devices on different hosts, their purposes.
 
 ## Backups
 
