@@ -14,6 +14,12 @@ comment = true
 
 ---
 
+## 2025-11-27
+
+Deploying [KEDA](https://keda.sh/) on my homelab cluster. I'll use it with the [Cron scaler](https://keda.sh/docs/2.18/scalers/cron/), in order to scale most of my workloads down to zero replicas during nighttime. The goal here is to reduce power consumption and slightly cut back on the energy bill throughout the year.
+
+---
+
 ## 2025-11-26
 
 - Finally got Zigbee2MQTT working. Still need to finish the Mosquitto deployment for Z2M to not exit on the first failed connection attempt.
