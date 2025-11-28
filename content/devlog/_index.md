@@ -18,6 +18,8 @@ comment = true
 
 Deploying [KEDA](https://keda.sh/) on my homelab cluster. I'll use it with the [Cron scaler](https://keda.sh/docs/2.18/scalers/cron/), in order to scale most of my workloads down to zero replicas during nighttime. The goal here is to reduce power consumption and slightly cut back on the energy bill throughout the year.
 
+TIL that while [CNPG](https://cloudnative-pg.io/documentation/current/) does not support scaling a PostgreSQL cluster to 0 replicas, there is a way to stop the DB's operation safely. It can be done through [declarative hiberation](https://cloudnative-pg.io/documentation/current/declarative_hibernation/). The DB's operation can then be resumed through rehydration (stopping hibernation).
+
 ---
 
 ## 2025-11-26
