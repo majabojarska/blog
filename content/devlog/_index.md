@@ -8,9 +8,24 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-12-07
+
+Flashing the Xiaomi 3H purifier mainboard with [esphome-miot](https://github.com/dhewg/esphome-miot)
+
+---
+
+## 2025-11-30
+
+Finished disassembling my [Xiaomi Mi Air Purifier 3H](https://www.mi.com/global/support/article/KA-04677/). I'll probably flash it sometime next weekend.
+
+{{ image(src="img/devlog/2025-11-30-xiaomi-3h-purifier-mainboard.webp", alt="", position="center") }}
+
+---
+
 ## 2025-11-28
 
 - Migrating my [Tasmota](https://tasmota.github.io/docs/) smart plugs to [ESPHome](https://tasmota.github.io/docs/).
+- Made my first QSOs as SP6CAT on the 80m band.
 
 ---
 
@@ -25,7 +40,7 @@ TIL that while [CNPG](https://cloudnative-pg.io/documentation/current/) does not
 ## 2025-11-26
 
 - Finally got Zigbee2MQTT working. Still need to finish the Mosquitto deployment for Z2M to not exit on the first failed connection attempt.
-- Cleared and flashed my ZigBee dongle with fresh firmeware install. Zigbee2MQTT was having issues before that, and now it just works.
+- Cleared and flashed my ZigBee dongle with fresh firmware install. Zigbee2MQTT was having issues before that, and now it just works.
   - This will be a cool writeup, adding to my list.
 
 ---
