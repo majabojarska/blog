@@ -12,6 +12,18 @@ comment = true
 
 Flashing the Xiaomi 3H purifier mainboard with [esphome-miot](https://github.com/dhewg/esphome-miot)
 
+## 2025-12-05
+
+Volunteered as an instructor at a soldering workshop for children. Taught basic soldering techniques and safety practices to 4 kids, while assembling a blinking PCB bear. I truly hope it piqued their interest in STEM ✨.
+
+{{ image(src="img/devlog/2025-12-05-lutowanie.webp", alt="", position="center") }}
+
+---
+
+## 2025-12-01
+
+Gave a guest lecture at Politechnika Wrocławska, on the topics of development environments, CI/CD, containerization and application security.
+
 ---
 
 ## 2025-11-30
