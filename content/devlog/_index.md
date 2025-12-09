@@ -8,9 +8,25 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-12-09
+
+Printing [load cell holders](https://www.printables.com/model/157473-load-cell-holder) in order to attach load cells underneath my cat's litterbox :cat:.
+
+---
+
+## 2025-12-08
+
+Finished modding the Xiaomi 3H purifier. Reassembled, added to Home Assistant, works like a charm. I took plenty of notes and will do a write-up about this process.
+
+{{ image(src="img/devlog/2025-12-09-esphome-hass-purifier.webp", alt="", position="center") }}
+
+---
+
 ## 2025-12-07
 
 Flashing the Xiaomi 3H purifier mainboard with [esphome-miot](https://github.com/dhewg/esphome-miot)
+
+---
 
 ## 2025-12-05
 
