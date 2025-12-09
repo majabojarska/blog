@@ -26,6 +26,8 @@ Finished modding the Xiaomi 3H purifier. Reassembled, added to Home Assistant, w
 
 Flashing the Xiaomi 3H purifier mainboard with [esphome-miot](https://github.com/dhewg/esphome-miot)
 
+{{ image(src="img/devlog/2025-12-08-esphome-purifier.webp", alt="", position="center") }}
+
 ---
 
 ## 2025-12-05
