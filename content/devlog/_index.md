@@ -8,9 +8,29 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-12-11
+
+- Deploying [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/) and [InfluxDB](https://www.influxdata.com/get-influxdb/). Planning to use them for MQTT integration, mainly geared towards my [Smart Cat Litter Box](https://github.com/majabojarska/smart-cat-litter-box), but will likely expand it to many other MQTT topics.
+
+---
+
+## 2025-12-10
+
+- Had trouble with word movements in [Kitty](https://github.com/kovidgoyal/kitty) on OSX, found [this fix](https://github.com/kovidgoyal/kitty/issues/838#issuecomment-417455803).
+- TIL about [YAPP_Box](https://github.com/mrWheel/YAPP_Box), a parametric, OpenSCAD project box framework.
+- Designing an enclosure for the mainboard of my [smart-cat-litter-box](https://github.com/majabojarska/smart-cat-litter-box).
+
+---
+
 ## 2025-12-09
 
-Printing [load cell holders](https://www.printables.com/model/157473-load-cell-holder) in order to attach load cells underneath my cat's litterbox :cat:.
+- Building a [Smart Cat Litter Box](https://github.com/majabojarska/smart-cat-litter-box):
+  - Printing [load cell holders](https://www.printables.com/model/157473-load-cell-holder) in order to attach load cells underneath my cat's litterbox :cat:.
+  - Assembling the platform.
+  - Developing the ESPHome-based firmware.
+
+{{ image(src="img/devlog/2025-12-09-load-cell-holder-prints.webp", alt="", position="center") }}
+{{ image(src="img/devlog/2025-12-09-cat-litter-box-platform-underside.webp", alt="", position="center") }}
 
 ---
 
@@ -18,7 +38,7 @@ Printing [load cell holders](https://www.printables.com/model/157473-load-cell-h
 
 Finished modding the Xiaomi 3H purifier. Reassembled, added to Home Assistant, works like a charm. I took plenty of notes and will do a write-up about this process.
 
-{{ image(src="img/devlog/2025-12-09-esphome-hass-purifier.webp", alt="", position="center") }}
+{{ image(src="img/devlog/2025-12-08-esphome-hass-purifier.webp", alt="", position="center") }}
 
 ---
 
@@ -26,7 +46,7 @@ Finished modding the Xiaomi 3H purifier. Reassembled, added to Home Assistant, w
 
 Flashing the Xiaomi 3H purifier mainboard with [esphome-miot](https://github.com/dhewg/esphome-miot)
 
-{{ image(src="img/devlog/2025-12-08-esphome-purifier.webp", alt="", position="center") }}
+{{ image(src="img/devlog/2025-12-07-esphome-purifier.webp", alt="", position="center") }}
 
 ---
 
