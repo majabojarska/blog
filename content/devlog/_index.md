@@ -20,6 +20,8 @@ comment = true
 - TIL about [YAPP_Box](https://github.com/mrWheel/YAPP_Box), a parametric, OpenSCAD project box framework.
 - Designing an enclosure for the mainboard of my [smart-cat-litter-box](https://github.com/majabojarska/smart-cat-litter-box).
 
+{{ image(src="img/devlog/2025-12-10-yapp-enclosure-design.webp", alt="", position="center") }}
+
 ---
 
 ## 2025-12-09
