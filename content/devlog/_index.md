@@ -8,6 +8,24 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-12-14
+
+Wrote a [guide for the ESP-02S/TYWE2S programming jig](https://forum.hswro.org/t/adapter-do-flashowania-modulow-esp-02s-tywe2s/631) that I've built last month ([2025-11-22](#2025-11-22)).
+
+---
+
+## 2025-12-13
+
+Printed some [silica gel containers](https://www.printables.com/model/65922-silica-gel-spool-container/) for drying filament.
+
+{{ image(src="img/devlog/2025-12-14-silica-gel-containers.webp", alt="", position="center") }}
+
+Tried using my balcony's railing as an improvised shortwave antenna. It appears it tunes quite nicely on the lower end of the 40m band. I've actually managed to receive an [FT8](https://en.wikipedia.org/wiki/FT8) transmission at around 7.077 MHz.
+
+{{ image(src="img/devlog/2025-12-13-balcony-railing-as-antenna.webp", alt="", position="center") }}
+
+---
+
 ## 2025-12-11
 
 - Deploying [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/) and [InfluxDB](https://www.influxdata.com/get-influxdb/). Planning to use them for MQTT integration, mainly geared towards my [Smart Cat Litter Box](https://github.com/majabojarska/smart-cat-litter-box), but will likely expand it to many other MQTT topics.
