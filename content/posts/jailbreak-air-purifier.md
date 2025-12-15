@@ -7,3 +7,5 @@ tags = ["hack", "jailbreak", "electronics"]
 +++
 
 <!-- more -->
+
+{{ image(src="img/air-purifier/psu-air-purifier-mobo.webp") }}
