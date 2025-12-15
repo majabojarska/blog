@@ -8,6 +8,14 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-12-15
+
+Finished designing the enclosure for my [Smart Cat Litter Box](https://github.com/majabojarska/smart-cat-litter-box) project.
+
+{{ image(src="img/devlog/2025-12-15-3d-enclosure.webp", alt="", position="center") }}
+
+---
+
 ## 2025-12-14
 
 Wrote a [guide for the ESP-02S/TYWE2S programming jig](https://forum.hswro.org/t/adapter-do-flashowania-modulow-esp-02s-tywe2s/631) that I've built last month ([2025-11-22](#2025-11-22)).
