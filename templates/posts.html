@@ -15,8 +15,9 @@
 %}
 <main class="post-list">
   <ul>
-    {% for page in posts_section.pages %} {{
-    post_macros::list_post(page=page) }} {% endfor -%}
+    {% for page in posts_section.pages %} 
+    {{ post_macros::list_post(page=page) }} 
+    {% endfor -%}
   </ul>
 </main>
 
