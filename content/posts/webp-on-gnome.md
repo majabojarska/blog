@@ -1,7 +1,7 @@
 +++
 title = "Working with WebP on Gnome"
 date = 2025-07-12
-updated = 2025-10-12
+updated = 2025-12-15
 
 [taxonomies]
 tags = ["linux", "gnome", "meta"]
@@ -38,8 +38,14 @@ while IFS= read -r PATH_INPUT; do
 done <<<"${NAUTILUS_SCRIPT_SELECTED_FILE_PATHS}"``
 ```
 
-Note that this does not recurse into directories.
+Note, that this does not recurse into directories.
 
-Now you'll get this dialog under _right-click_ → _Scripts_:
+Remember to make the script executable:
+
+```sh
+chmod +x ~/.local/share/nautilus/scripts/convert-to-webp.sh
+```
+
+Now, you'll get this dialog under _right-click_ → _Scripts_:
 
 {{ image(src="img/webp-on-gnome/dialog.webp", alt="New WebP conversion dialog in Nautilus") }}
