@@ -8,6 +8,15 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2025-12-16
+
+- Deployed [InfluxDB 2](https://github.com/influxdata/helm-charts/tree/master/charts/influxdb2) in my homelab. Hooked up Home Assistant as a data source via the [InfluxDB integration](https://www.home-assistant.io/integrations/influxdb/).
+- [smart-cat-litter-box](https://github.com/majabojarska/smart-cat-litter-box)
+  - Reworking the ESPHome config to achieve both level-driven and periodic state publishing.
+  - Adjusting the OpenSCAD enclosure design.
+
+---
+
 ## 2025-12-15
 
 Finished designing the enclosure for my [Smart Cat Litter Box](https://github.com/majabojarska/smart-cat-litter-box) project.
@@ -31,12 +40,6 @@ Printed some [silica gel containers](https://www.printables.com/model/65922-sili
 Tried using my balcony's railing as an improvised shortwave antenna. It appears it tunes quite nicely on the lower end of the 40m band. I've actually managed to receive an [FT8](https://en.wikipedia.org/wiki/FT8) transmission at around 7.077 MHz.
 
 {{ image(src="img/devlog/2025-12-13-balcony-railing-as-antenna.webp", alt="", position="center") }}
-
----
-
-## 2025-12-11
-
-- Deploying [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/) and [InfluxDB](https://www.influxdata.com/get-influxdb/). Planning to use them for MQTT integration, mainly geared towards my [Smart Cat Litter Box](https://github.com/majabojarska/smart-cat-litter-box), but will likely expand it to many other MQTT topics.
 
 ---
 
