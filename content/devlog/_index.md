@@ -8,12 +8,16 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
-## 2025-12-16
+## 2025-12-17
 
-- Deployed [InfluxDB 2](https://github.com/influxdata/helm-charts/tree/master/charts/influxdb2) in my homelab. Hooked up Home Assistant as a data source via the [InfluxDB integration](https://www.home-assistant.io/integrations/influxdb/).
 - [smart-cat-litter-box](https://github.com/majabojarska/smart-cat-litter-box)
   - Reworking the ESPHome config to achieve both level-driven and periodic state publishing.
   - Adjusting the OpenSCAD enclosure design.
+
+## 2025-12-16
+
+- Deployed [InfluxDB 2](https://github.com/influxdata/helm-charts/tree/master/charts/influxdb2) in my homelab. Hooked up Home Assistant as a data source via the [InfluxDB integration](https://www.home-assistant.io/integrations/influxdb/).
+- Deployed the [Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets) operator in my homelab. This is a potential alternative to using Bitwarden as my secret store, via [ESO](https://external-secrets.io/).
 
 ---
 
