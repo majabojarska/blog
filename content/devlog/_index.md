@@ -8,12 +8,23 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
-## 2025-12-18
+## 2025-12-21
 
-- Adopting [SOPS based on age](https://fluxcd.io/flux/guides/mozilla-sops/#encrypting-secrets-using-age) for a narrow part of my Kubernetes GitOps delivery model. The goal here is to try out both [SOPS](https://github.com/getsops/sops) and [Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets), and then decide on one. Facilitates dropping [ESO](https://external-secrets.io/), which is great by itself but is not the best solution for my needs at the moment.
 - [smart-cat-litter-box](https://github.com/majabojarska/smart-cat-litter-box)
   - Reworking the ESPHome config to achieve both level-driven and periodic state publishing.
   - Adjusting the OpenSCAD enclosure design.
+
+---
+
+## 2025-12-20
+
+- Woodworking a custom shelf unit for my home office.
+
+---
+
+## 2025-12-19
+
+- Adopting [SOPS based on age](https://fluxcd.io/flux/guides/mozilla-sops/#encrypting-secrets-using-age) for a narrow part of my Kubernetes GitOps delivery model. The goal here is to try out both [SOPS](https://github.com/getsops/sops) and [Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets), and then decide on one. Facilitates dropping [ESO](https://external-secrets.io/), which is great by itself but is not the best solution for my needs at the moment.
 
 ---
 
