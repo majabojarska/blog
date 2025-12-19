@@ -19,7 +19,7 @@ comment = true
 
 ## 2025-12-17
 
-- TIL [molly-guard](https://github.com/MegaMaddin/molly-guard) – protects machines from accidental shutdowns/reboots.
+- TIL [molly-guard](https://manpages.ubuntu.com/manpages/focal/man8/molly-guard.8.html) – protects machines from accidental shutdowns/reboots.
 
 ---
 
