@@ -30,7 +30,9 @@ comment = true
 
 ## 2025-12-17
 
-- TIL [molly-guard](https://manpages.ubuntu.com/manpages/focal/man8/molly-guard.8.html) – protects machines from accidental shutdowns/reboots.
+TIL [molly-guard](https://manpages.ubuntu.com/manpages/focal/man8/molly-guard.8.html) – protects machines from accidental shutdowns/reboots.
+
+> Originally a Plexiglas cover improvised for the Big Red Switch on an IBM 4341 mainframe after a programmer's toddler daughter (named Molly) tripped it twice in one day. Later generalised to covers over stop/reset switches on disk drives and networking equipment. [[1](https://en.wiktionary.org/wiki/molly-guard)]
 
 ---
 
