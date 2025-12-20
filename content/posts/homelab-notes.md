@@ -99,6 +99,10 @@ Most notably:
 
 - The SOPS age private key is deployed at `flux-system/sops-keys`. It is also backed up via the lab's Bitwarden vault.
 - The cluster's FluxCD config directory contains a `.sops.yaml` file, defining the file names and YAML keys allowlisted for encryption. It also contains the age public key – this key must match the deployed private key (they constitute a key pair).
+- The encryption scheme is based on the following resources:
+  - [FluxCD – Manage Kubernetes secrets with SOPS – Encrypting secrets using age](https://fluxcd.io/flux/guides/mozilla-sops/#encrypting-secrets-using-age)
+  - [SOPS – 2.14 Using .sops.yaml conf to select KMS, PGP and age for new files](https://github.com/getsops/sops?tab=readme-ov-file#using-sops-yaml-conf-to-select-kms-pgp-and-age-for-new-files)
+  - [FluxCD – Kustomization – Decryption](https://v2-0.docs.fluxcd.io/flux/components/kustomize/kustomization/)
 
 Handy `~/.zshrc` snippet to aid in secret handling:
 
