@@ -104,12 +104,12 @@ Most notably:
   - [SOPS – 2.14 Using .sops.yaml conf to select KMS, PGP and age for new files](https://github.com/getsops/sops?tab=readme-ov-file#using-sops-yaml-conf-to-select-kms-pgp-and-age-for-new-files)
   - [FluxCD – Kustomization – Decryption](https://v2-0.docs.fluxcd.io/flux/components/kustomize/kustomization/)
 
-Handy `~/.zshrc` snippet to aid in secret handling:
+Handy `~/.zshrc` snippet to aid with secret handling:
 
 ```sh
 export SOPS_AGE_KEY_FILE="${HOME}/.sops/age.agekey"
-alias sops-age-encrypt="sops --encrypt --age $(cat $SOPS_AGE_KEY_FILE |grep -oP "public key: \K(.*)") --encrypted-regex '^(data|stringData)$' --in-place"
-alias sops-age-decrypt="sops --decrypt --age $(cat $SOPS_AGE_KEY_FILE |grep -oP "public key: \K(.*)") --encrypted-regex '^(data|stringData)$' --in-place"
+alias sops-age-encrypt="sops --encrypt --age $(cat $SOPS_AGE_KEY_FILE | grep -oP "public key: \K(.*)") --encrypted-regex '^(data|stringData)$' --in-place"
+alias sops-age-decrypt="sops --decrypt --age $(cat $SOPS_AGE_KEY_FILE | grep -oP "public key: \K(.*)") --encrypted-regex '^(data|stringData)$' --in-place"
 ```
 
 ## Future plans & ongoing work
