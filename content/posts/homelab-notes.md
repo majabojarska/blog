@@ -1,7 +1,7 @@
 +++
 title = "Notes on my homelab"
 date = 2025-11-02
-updated = 2025-11-26
+updated = 2025-12-20
 
 [taxonomies]
 tags = ["homelab", "notes", "reference", "infrastructure"]
@@ -90,6 +90,23 @@ nix run github:ryantm/agenix -- -e foo-token.age
 - Network connectivity between ESO components and the Bitwarden server is governed by a `NetworkPolicy`, and enforced by the [Flannel](https://github.com/flannel-io/flannel) CNI.
 - Whenever new secrets are added, ESO might need a couple minutes to complete the secret reconciliation. Use longer timeouts to account for this when deploying new components requiring `Secrets`.
   - Planning to improve this with [Flux post-deployment jobs](https://fluxcd.io/flux/use-cases/running-jobs/).
+
+#### SOPS
+
+As of 2025-12-20, secrets are being migrated over to [SOPS](https://github.com/getsops/sops) backed by [age](https://github.com/FiloSottile/age), deployed via [FluxCD](https://fluxcd.io/flux/guides/mozilla-sops/#encrypting-secrets-using-age).
+
+Most notably:
+
+- The SOPS age private key is deployed at `flux-system/sops-keys`. It is also backed up via the lab's Bitwarden vault.
+- The cluster's FluxCD config directory contains a `.sops.yaml` file, defining the file names and YAML keys allowlisted for encryption. It also contains the age public key – this key must match the deployed private key (they constitute a key pair).
+
+Handy `~/.zshrc` snippet to aid in secret handling:
+
+```sh
+export SOPS_AGE_KEY_FILE="${HOME}/.sops/age.agekey"
+alias sops-age-encrypt="sops --encrypt --age $(cat $SOPS_AGE_KEY_FILE |grep -oP "public key: \K(.*)") --encrypted-regex '^(data|stringData)$' --in-place"
+alias sops-age-decrypt="sops --decrypt --age $(cat $SOPS_AGE_KEY_FILE |grep -oP "public key: \K(.*)") --encrypted-regex '^(data|stringData)$' --in-place"
+```
 
 ## Future plans & ongoing work
 
