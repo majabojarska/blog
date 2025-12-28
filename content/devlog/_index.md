@@ -8,6 +8,42 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+---
+
+## 2025-12-27
+
+Reflashing my Tasmota smart plugs with ESPHome. Working out the power measurement quirks.
+
+{{ image(src="img/devlog/2025-12-27-bl0937.webp", alt="", position="center") }}
+
+---
+
+## 2025-12-24
+
+Got the scanner up and running. Replaced the funky power connector with a common one with the same PCB footprint, installed the [drivers](https://wiki.archlinux.org/title/SANE/Scanner-specific_problems#Epson_Perfection_1670/2480/2580/3490/3590), and scanned some objects successfully.
+
+{{ image(src="img/devlog/2025-12-24-scanner.webp", alt="", position="center") }}
+
+---
+
+## 2025-12-23
+
+Building a new, Kallax-like cabinet for my office/lab. Same length as a 4x1 Kallax, but downsized in depth and height. Also, much better looking, as it's solid wood 😎.
+
+Shout out to my friend – who shall remain anonymous – for helping me cut the raw materials on a miter saw.
+
+{{ image(src="img/devlog/2025-12-23-cabinet-wip.webp", alt="", position="center") }}
+
+---
+
+## 2025-12-22
+
+Got a free document/photo scanner from e-waste – [Epson Perfection 3490 Photo](https://epson.com/Support/Scanners/Perfection-Series/Epson-Perfection-3490-Photo/s/SPT_B11B177011). Disassembling and performing an initial diagnosis.
+
+{{ image(src="img/devlog/2025-12-22-scanner-mainboard.webp", alt="", position="center") }}
+
+---
+
 ## 2025-12-21
 
 - [smart-cat-litter-box](https://github.com/majabojarska/smart-cat-litter-box)
@@ -18,7 +54,7 @@ comment = true
 
 ## 2025-12-20
 
-- Woodworking a custom shelf unit for my home office.
+- Starting out with building a custom shelf unit for my home office.
 
 ---
 
@@ -40,6 +76,9 @@ TIL [molly-guard](https://manpages.ubuntu.com/manpages/focal/man8/molly-guard.8.
 
 - Deployed [InfluxDB 2](https://github.com/influxdata/helm-charts/tree/master/charts/influxdb2) in my homelab. Hooked up Home Assistant as a data source via the [InfluxDB integration](https://www.home-assistant.io/integrations/influxdb/).
 - Deployed the [Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets) operator in my homelab. This is a potential alternative to using Bitwarden as my secret store, via [ESO](https://external-secrets.io/).
+- Printed and installed the mainboard enclosure for the [smart-cat-litter-box](https://github.com/majabojarska/smart-cat-litter-box) project
+
+  {{ image(src="img/devlog/2025-12-16-enclosure.webp", alt="", position="center") }}
 
 ---
 

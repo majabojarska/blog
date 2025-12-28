@@ -1,5 +1,5 @@
 {% if src %}
-  {%- if src is matching("[.](jpg|jpeg|png|webp)$") and not raw -%}
+  {%- if src is matching("[.](jpg|jpeg|png|webp)$") -%}
   
     {# The trick is to resize first, which provides the original size for the 1:1 size format conversion #}
     {% set converted_small = resize_image(path=src, width=1000, op="fit_width", format="webp", quality=95) %}
