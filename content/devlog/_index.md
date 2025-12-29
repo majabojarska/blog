@@ -20,7 +20,7 @@ Reflashing my Tasmota smart plugs with ESPHome. Working out the power measuremen
 
 ## 2025-12-24
 
-Got the scanner up and running. Replaced the funky power connector with a common one with the same PCB footprint, installed the [drivers](https://wiki.archlinux.org/title/SANE/Scanner-specific_problems#Epson_Perfection_1670/2480/2580/3490/3590), and scanned some objects successfully.
+Got the scanner up and running. Replaced the funky power connector with a common one with the same PCB footprint, installed the [drivers](https://wiki.archlinux.org/title/SANE/Scanner-specific_problems#Epson_Perfection_1670/2480/2580/3490/3590) ([sane-epson-perfection-firmware](https://aur.archlinux.org/packages/sane-epson-perfection-firmware)), and scanned some objects successfully.
 
 {{ image(src="img/devlog/2025-12-24-scanner.webp", alt="", position="center") }}
 
