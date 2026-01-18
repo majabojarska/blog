@@ -1,7 +1,7 @@
 +++
 title = "Notes on amateur radio"
 date = 2025-07-16
-updated = 2025-10-23
+updated = 2026-01-18
 
 [taxonomies]
 tags = ["radio", "ham", "antennas"]
@@ -60,6 +60,14 @@ This section covers the Polish ham radio license exams.
   - [AntScope2](https://rigexpert.com/software/antscope2/#) — VNA data analysis
 - Chokes
   - [Common-mode choke impedances (G3TXQ)](http://www.karinya.net/g3txq/chokes/)
+
+## Radio programming
+
+- Quansheng UV-K5/K6
+  - [K5TOOL](https://github.com/qrp73/K5TOOL) – UV-K5 toolkit utility to read/write EEPROM and flashing firmware for Quansheng UV-K5 and UV-R5 radios
+  - [F4HWN firmware](https://github.com/armel/uv-k5-firmware-custom)
+  - [CHIRP driver for F4HWN](https://github.com/armel/uv-k5-chirp-driver)
+  - [CHIRP project](https://github.com/kk7ds/chirp)
 
 ## Other
 
