@@ -8,6 +8,15 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-01-11
+
+- https://www.printables.com/model/1325938-h1-case-for-larger-antennas
+- TIL the `#` character is called an _octothorpe_.
+
+## 2026-01-03
+
+- TIL about [this KORAD lab PSU mod](https://github.com/profi-max/Modern_KORAD) adding networking and far better control features to the _KA3005\*_ PSUs.
+
 ---
 
 ## 2025-12-27
