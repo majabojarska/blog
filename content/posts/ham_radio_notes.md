@@ -45,6 +45,7 @@ This section covers the Polish ham radio license exams.
 - [SQ9JDO](https://sq9jdo.com.pl/) — personal page of Andrzej, the Polish [DMR](https://en.wikipedia.org/wiki/Digital_mobile_radio) mastermind.
 - [HamTetra](https://www.hamtetra.com/) — all about Tetra for amateur radio ops.
 - [M17](https://github.com/M17-Project) — free and open-source digital radio protocol for voice and data.
+- [Reticulum](https://reticulum.network/) – networking stack, which can run on cheap, COTS radio hardware.
 
 ## Radiosondes
 
@@ -68,6 +69,9 @@ This section covers the Polish ham radio license exams.
   - [F4HWN firmware](https://github.com/armel/uv-k5-firmware-custom)
   - [CHIRP driver for F4HWN](https://github.com/armel/uv-k5-chirp-driver)
   - [CHIRP project](https://github.com/kk7ds/chirp)
+
+- [Heltec V3](https://heltec.org/project/wifi-lora-32-v3/)
+  - [RNode](https://github.com/markqvist/RNode_Firmware) – Reticulum-capable transceiver firmware
 
 ## Other
 
