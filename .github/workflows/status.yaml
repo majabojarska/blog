@@ -6,15 +6,16 @@ on:
 
 jobs:
   status:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout the current branch
         uses: actions/checkout@v4
         with:
           submodules: recursive
 
-      - name: Install Zola
-        run: sudo snap install zola --edge
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: zola@0.21.0
 
       - name: Zola check
         run: zola check --skip-external-links

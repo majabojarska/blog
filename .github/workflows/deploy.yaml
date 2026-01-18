@@ -8,13 +8,13 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout the current branch
         uses: actions/checkout@v4
         with:
           submodules: recursive
-      
+
       - name: Initialize the ssh-agent
         uses: webfactory/ssh-agent@v0.9.1
         with:
@@ -22,6 +22,10 @@ jobs:
 
       - name: Install Zola
         run: sudo snap install zola --edge
+
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: zola@0.21.0
 
       - name: Build the website
         run: zola build --minify
@@ -42,4 +46,3 @@ jobs:
           SSH_PORT: ${{ secrets.SSH_PORT }}
           DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
           DEPLOY_USERNAME: ${{ secrets.DEPLOY_USERNAME }}
-
