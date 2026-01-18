@@ -36,7 +36,7 @@ This section covers the Polish ham radio license exams.
 - [lcamtuf – Radios, how do they work?](https://lcamtuf.substack.com/p/radios-how-do-they-work)
 - [Superheterodyne receivers](https://www.ire.pw.edu.pl/~wkazubski/Odbiornik1.pdf) (PL 🇵🇱) – dr inż. Wojciech Kazubski, Politechnika Warszawska
 
-## CW (morse code)
+## CW (telegraphy)
 
 - [LCWO](https://lcwo.net/main) — Online CW learning site.
 
@@ -60,3 +60,7 @@ This section covers the Polish ham radio license exams.
   - [AntScope2](https://rigexpert.com/software/antscope2/#) — VNA data analysis
 - Chokes
   - [Common-mode choke impedances (G3TXQ)](http://www.karinya.net/g3txq/chokes/)
+
+## Other
+
+- [Wytyczne do projektowania, wypełniania i druku kart QSL](http://sp3pow.pl/articles.php?article_id=65) (PL 🇵🇱) – `SP3AYA`
