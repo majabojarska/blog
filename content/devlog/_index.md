@@ -8,22 +8,100 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+---
+
 ## 2026-01-19
 
 - A weird SSL cert rotation issue caused one of my PVE nodes to become inaccessible via the web ui. [This PVE forum response](https://forum.proxmox.com/threads/added-ssl-certs-now-cannot-access-web-gui.126208/post-663885) helped me reset to self-signed certs and retry from there. Here's what I did:
+
   ```sh
   pvenode cert set  /etc/pve/local/pve-ssl.pem  /etc/pve/local/pve-ssl.key -f
   systemctl restart pveproxy
   ```
 
+- TIL ImageMagick can generate photo collages. Here's a 3x3 grid:
+  ```sh
+  montage 1.png 2.png 3.png 4.png 5.png 6.png 7.png 8.png 9.png \
+    -tile 3x3 \
+    -geometry +1+1 \
+    output.png
+  ```
+  More details on [_montage_](https://imagemagick.org/script/montage.php).
+
+---
+
 ## 2026-01-11
 
-- https://www.printables.com/model/1325938-h1-case-for-larger-antennas
+- Printing the [H1 case](https://www.printables.com/model/1325938-h1-case-for-larger-antennas) for the [Heltec V3](https://heltec.org/project/wifi-lora-32-v3/).
 - TIL the `#` character is called an _octothorpe_.
+
+---
+
+## 2026-01-06
+
+Finished printing rack mounts for my friend's homelab. One of the first prints I did on a PEI powder sheet. I'm very happy with how the bottom layers turned out.
+
+{{ image(src="img/devlog/2026-01-06-rackmount-prints.webp")}}
+
+---
+
+## 2026-01-04
+
+Testing how far I can go with overhangs at 0.3mm layer height, with a 0.6mm nozzle, before I start a 16 hour print. Skipping supports at 60° would cut down to ~3 hours of print time, not to mention the filament that will otherwise go to waste.
+
+I know, the print is not looking perfect around the digits, but I'm mostly printing functional objects. First and foremost they're supposed to be durable and print reasonably fast. Aesthetics are nice to have, but not really a priority.
+
+{{ image(src="img/devlog/2026-01-04-overhang-test.webp")}}
+
+---
 
 ## 2026-01-03
 
-- TIL about [this KORAD lab PSU mod](https://github.com/profi-max/Modern_KORAD) adding networking and far better control features to the _KA3005\*_ PSUs.
+- Charging my LiFePO4 battery for the first time. I've built a custom XT60M to banana plug adapter, in order to charge it from my bench PSU.
+  Disclaimers:
+  1. Generally, XT60F plugs are used for power sources (like a bench PSU, or battery). Conversely, XT60M plugs are used for power sinks (end devices). That is because it's far more difficult to accidentally short an XT60F. However, charging a battery is an acceptable exception to this rule.
+  2. LiFePO4 batteries must be first charged with a constant-current (CC) source, until they reach 3,6V per cell. The current must be chosen appropriately to the battery's capacity, best not to exceed 1C. Then, the battery should be topped up with a constant-voltage (CV) source. Sources vary on how long this should take. My battery's BMS takes care of balancing and CV cut-off at the end. RTFM before attempting this on your own!
+     {{ image(src="img/devlog/2026-01-03-xt60m-bananam-adapter.webp")}}
+     {{ image(src="img/devlog/2026-01-03-charging-lifepo4.webp")}}
+- Trying out a new PEI powder sheet for the print bed.
+  {{ image(src="img/devlog/2026-01-03-pei-sheet-print.webp")}}
+- TIL about [this KORAD lab PSU mod](https://github.com/profi-max/Modern_KORAD) adding networking and far better control features to the _KA3005_ PSUs.
+
+---
+
+## 2025-01-02
+
+- Used an abandoned shipping container on a hill as a makeshift shortwave antenna. Xiegu G90 managed to tune it to SWR < 1.2 across the 40m band. The weather was cold and damp, so I didn't stick around long, by managed to make a QSO with [SN3WWA](https://www.qrz.com/db/SN3WWA).
+
+  {{ image(src="img/devlog/2026-01-02-shipping-container-antenna.webp") }}
+
+- Printed some [plastic feet paddings](https://www.printables.com/model/1126958-just-another-50kg-load-cell-holderadapter-with-rub/comments) for the load cells in my [smart-cat-litter-box](https://github.com/majabojarska/smart-cat-litter-box) project. The metal feet were quite noisy at could potentially scratch my floors. Added some felt later on.
+
+  {{ image(src="img/devlog/2026-01-02-cat-litter-box-load-cell.webp") }}
+
+---
+
+## 2026-01-01
+
+- Used my balcony's railing as an antenna for shortwave radio reception, on the 80m band. Listened some Polish hams making contacts at night.
+
+  {{ image(src="img/devlog/2026-01-01-xiegu.webp" )}}
+
+---
+
+## 2025-12-31
+
+Happy new year :fireworks:!
+
+Participated in the [SP6ZHP](https://www.qrz.com/db/SP6ZHP) SSTV mission. Received a fair amount of the images encoded in [Scottie 1](https://radio.clubs.etsit.upm.es/blog/2019-08-10-sstv-scottie1-encoder/).
+
+The radiosonde reached an altitude of 16km and speeds of over 120km/h – and it's just a hot air balloon! It also got very cold, measuring under -80°C 🥶. It (crash) landed somewhere in Czechia.
+
+{{ image(src="img/devlog/2025-12-31-sstv-setup.webp")}}
+
+{{ image(src="img/devlog/2025-12-31-sstv-sp6zhp.webp")}}
+
+{{ image(src="img/devlog/2025-12-31-radio-sonde-map.webp")}}
 
 ---
 
