@@ -8,6 +8,14 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-01-19
+
+- A weird SSL cert rotation issue caused one of my PVE nodes to become inaccessible via the web ui. [This PVE forum response](https://forum.proxmox.com/threads/added-ssl-certs-now-cannot-access-web-gui.126208/post-663885) helped me reset to self-signed certs and retry from there. Here's what I did:
+  ```sh
+  pvenode cert set  /etc/pve/local/pve-ssl.pem  /etc/pve/local/pve-ssl.key -f
+  systemctl restart pveproxy
+  ```
+
 ## 2026-01-11
 
 - https://www.printables.com/model/1325938-h1-case-for-larger-antennas

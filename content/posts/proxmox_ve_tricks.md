@@ -59,7 +59,7 @@ Delete user from `/etc/pve/user.cfg` and `/etc/pve/priv/shadow.cfg`.
 
 ## Storage
 
-- [Passthrough Physical Disk to Virtual Machine (VM)](https://pve.proxmox.com/wiki/Passthrough_Physical_Disk_to_Virtual_Machine_(VM)#List_disk_by-id_with_lsblk)
+- [Passthrough Physical Disk to Virtual Machine (VM)](<https://pve.proxmox.com/wiki/Passthrough_Physical_Disk_to_Virtual_Machine_(VM)#List_disk_by-id_with_lsblk>)
 
 ## CLI
 
@@ -88,3 +88,14 @@ Delete user from `/etc/pve/user.cfg` and `/etc/pve/priv/shadow.cfg`.
 `pct config <id>` - Get container config.
 
 `pct enter <id>` - Open shell session on container.
+
+## Web UI (`pveproxy`)
+
+### Reset to self-signed certs
+
+In case of broken SSL certs and web UI lockout, this will reset the UI to using self-signed certs ([source](https://forum.proxmox.com/threads/added-ssl-certs-now-cannot-access-web-gui.126208/post-663885)):
+
+```
+pvenode cert set  /etc/pve/local/pve-ssl.pem  /etc/pve/local/pve-ssl.key -f
+systemctl restart pveproxy
+```
