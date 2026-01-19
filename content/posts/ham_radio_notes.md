@@ -1,7 +1,7 @@
 +++
 title = "Notes on amateur radio"
 date = 2025-07-16
-updated = 2026-01-18
+updated = 2026-01-19
 
 [taxonomies]
 tags = ["radio", "ham", "antennas"]
@@ -46,6 +46,7 @@ This section covers the Polish ham radio license exams.
 - [HamTetra](https://www.hamtetra.com/) — all about Tetra for amateur radio ops.
 - [M17](https://github.com/M17-Project) — free and open-source digital radio protocol for voice and data.
 - [Reticulum](https://reticulum.network/) – networking stack, which can run on cheap, COTS radio hardware.
+  - [markqvist/Reticulum – Awesome Reticulum](https://github.com/markqvist/Reticulum/wiki/Awesome-Reticulum)
 
 ## Radiosondes
 
