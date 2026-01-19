@@ -1,5 +1,5 @@
 +++
-title= "2025 Devlog"
+title= "Devlog"
 sort_by = "date"
 template = "devlog.html"
 insert_anchor_links = "heading"
