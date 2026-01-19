@@ -22,7 +22,8 @@ Living collection of notes on the topic of amateur radio.
 
 - [Parks on the Air](https://docs.pota.app)
 - [Summits on the Air](https://www.sota.org.uk/)
-- [SOTA Atlas](https://sotl.as/about)
+  - [SOTA Atlas](https://sotl.as/about)
+  - [sotamat.com](https://sotamat.com) – Summits-On-The-Air, Automated
 
 ## Exam prep
 
