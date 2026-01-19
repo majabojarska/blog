@@ -30,6 +30,16 @@ comment = true
 
 ---
 
+## 2026-01-17
+
+Finished and installed my DIY Kallax-style cabinet. Finally have a place to keep my lab gear neat and tidy.
+
+{{ image(src="img/devlog/2026-01-17-cabinet.webp")}}
+
+Lots of love to my friends, who helped and advised me throughout the project :heart:.
+
+---
+
 ## 2026-01-11
 
 - Printing the [H1 case](https://www.printables.com/model/1325938-h1-case-for-larger-antennas) for the [Heltec V3](https://heltec.org/project/wifi-lora-32-v3/).
@@ -37,9 +47,38 @@ comment = true
 
 ---
 
+## 2026-01-08
+
+- Got my own ultrasonic cleaner, to which I have several comments:
+  - Does a great job at cleaning fine particulates from sanded 3D prints. Plain water worked fine, but I'll have to try adding a surfactant on the next occasion. TL;DR they facilitate cavitation by reducing surface tension, and thus helping water penetrate deeper into cavities.
+  - EXCRUCIATING NOISES.
+  - The cat hates it, but tolerates it if I place it behind a closed door in another room.
+  - The noise is fairly high-pitched (duh), hence easy to further suppress with a blanket stuffed into the remaining gap under the door.
+
+---
+
+## 2026-01-07
+
+Calibrating the [smart-cat-litter-box](https://github.com/majabojarska/smart-cat-litter-box).
+
+{{ image(src="img/devlog/2026-01-07-calibrating-cat-litter-box.webp")}}
+
+The above is a time series of my cat doing her business in the litter box. The load cell array detects as low as a ~20g weight difference, which provides enough resolution to detect very minute movement. In the above picture:
+
+1. front paws go in,
+2. rear paws go in,
+3. turning, digging, searching for a good spot,
+4. _business_
+5. paws burying the _artifact_,
+6. cat jumps out, all paws at once.
+
+If only I knew how to build a statistical model to analyze different aspects of these data. Perhaps it's a good reason to study some machine learning and data analysis.
+
+---
+
 ## 2026-01-06
 
-Finished printing rack mounts for my friend's homelab. One of the first prints I did on a PEI powder sheet. I'm very happy with how the bottom layers turned out.
+Finished printing rack mounts for my friend's homelab. These are the first prints I did on a PEI powder sheet. I'm very happy with how the bottom layers turned out.
 
 {{ image(src="img/devlog/2026-01-06-rackmount-prints.webp")}}
 
@@ -65,6 +104,8 @@ I know, the print is not looking perfect around the digits, but I'm mostly print
      {{ image(src="img/devlog/2026-01-03-charging-lifepo4.webp")}}
 - Trying out a new PEI powder sheet for the print bed.
   {{ image(src="img/devlog/2026-01-03-pei-sheet-print.webp")}}
+- Working on my home office/workshop cabinet. First time I'm fitting hinges onto a cabinet door.
+  {{ image(src="img/devlog/2026-01-03-cabinet-hinges.webp")}}
 - TIL about [this KORAD lab PSU mod](https://github.com/profi-max/Modern_KORAD) adding networking and far better control features to the _KA3005_ PSUs.
 
 ---
