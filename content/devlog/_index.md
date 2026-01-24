@@ -8,6 +8,30 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-01-24
+
+- TIL about this [great guide on designing for 3D-Printing – blog.rahix.de](https://blog.rahix.de/design-for-3d-printing/).
+- Updating my resume.
+- Adding an "About me" section to the blog.
+
+---
+
+## 2026-01-22
+
+Here's a picture of Luna
+
+{{ image(src="img/devlog/2026-01-22-luna.webp" )}}
+
+## 2026-01-20
+
+Second attempt at QSO on the shortwave bands, with an abandoned shipping container's wall used as the antenna. My Xiegu G90's tuner managed to tune the entire 40m amateur band to a SWR < 1.3 (pretty crazy huh). Didn't make a contact this time, presumably due to the waning propagation conditions in the region and lots of active high-power stations.
+
+{{ image(src="img/devlog/2026-01-20-40m-xiegu.webp" )}}
+
+Tried to spot the northern aurora borealis caused by the [G4 geomagnetic storm](https://www.swpc.noaa.gov/news/g4-severe-geomagnetic-storm-levels-reached-19-jan-2026). Couldn't see any with the naked eye, saw something resembling the phenomenon through a long-exposure photo taken through my phone's tiny sensor.
+
+{{ image(src="img/devlog/2026-01-20-aurora.webp" )}}
+
 ---
 
 ## 2026-01-19
