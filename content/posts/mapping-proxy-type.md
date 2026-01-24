@@ -13,7 +13,7 @@ comment = true
 
 <!-- more -->
 
-## Socratic dialogue on dictionary mutability
+## A socratic dialogue on dictionary mutability
 
 Consider the following Python snippet:
 
