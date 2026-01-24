@@ -13,6 +13,7 @@ comment = true
 - TIL about this [great guide on designing for 3D-Printing – blog.rahix.de](https://blog.rahix.de/design-for-3d-printing/).
 - Updating my resume.
 - Adding an "About me" section to the blog.
+- Wrote a post on [clock-safe reboots in OpenWRT](@/posts/openwrt-clock-safe-reboot.md)
 
 ---
 
@@ -74,6 +75,7 @@ Lots of love to my friends, who helped and advised me throughout the project :he
 ## 2026-01-08
 
 Got my own ultrasonic cleaner, to which I have several comments:
+
 - Does a great job at cleaning fine particulates from sanded 3D prints. Plain water worked fine, but I'll have to try adding a surfactant on the next occasion. TL;DR they facilitate cavitation by reducing surface tension, and thus helping water penetrate deeper into cavities.
 - EXCRUCIATING NOISES.
 - The cat hates it, but tolerates it if I place it behind a closed door in another room.
@@ -92,7 +94,7 @@ The above is a time series of my cat doing her business in the litter box. The l
 1. front paws go in,
 2. rear paws go in,
 3. turning, digging, searching for a good spot™,
-4. _business_, 
+4. _business_,
 5. paws burying the _artifact_,
 6. cat jumps out, all paws at once.
 
