@@ -7,6 +7,8 @@ updated = 2025-12-20
 tags = ["homelab", "notes", "reference", "infrastructure"]
 +++
 
+{{ image(src="img/homelab-notes/rack.webp") }}
+
 This is a living document.
 
 - Serves as a reference for my homelab.
