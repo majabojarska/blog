@@ -12,7 +12,9 @@ comment = true
 
 - TIL about this [great guide on designing for 3D-Printing – blog.rahix.de](https://blog.rahix.de/design-for-3d-printing/).
 - Updating my resume.
-- Adding an "About me" section to the blog.
+- Added new blog sections:
+  - [/about](/about)
+  - [/cat](/cat)
 - Wrote a post on [clock-safe reboots in OpenWRT](@/posts/openwrt-clock-safe-reboot.md)
 
 ---
