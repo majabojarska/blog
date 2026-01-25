@@ -1,0 +1,63 @@
++++
+title= "About me"
+# template = "homepage.html"
+
+insert_anchor_links = "heading"
+
+[extra]
+comment = true
++++
+
+## Engineering
+
+- I'm a software engineer based in [Wrocław, Poland](https://www.openstreetmap.org/relation/451516).
+  - Currently working at [Akamai](https://www.akamai.com/) since Sep. 2023, where I'm developing [LKE](https://www.linode.com/products/kubernetes/) – a managed Kubernetes platform. I've recently become conflicted about this position, given the far-reaching, easily observable consequences of datacenter expansion in direct relation to generative AI.
+- I'm always open to new projects – scroll down for contact info.
+- I'm a member of the [Wrocław Hackerspace](https://hswro.org/), a non-profit society of engineering enthusiasts. We promote free (as in freedom) exchange of knowledge and skills, organize meetups, participate in conferences, and bring the wildest of ideas into existence with our own hands and minds.
+- I run a [homelab](@/posts/homelab-notes.md), through which I self-host services and hone my craft.
+- I'm a ham, in the amateur radio sense of the word. My callsign is [SP6CAT](https://www.qrz.com/db/SP6CAT).
+
+## Philosophy & Ethics (tech)
+
+- Technology by itself is neutral – it's a tool that amplifies the actions of the one who wields it. Value judgements should only be made about its application.
+- I believe in the right to repair, and consequently, in the right to own.
+  - Planned obsolescence is evil.
+- Software should be free (as in freedom).
+  - Big fan of FOSS software, with a paid service and support model. Examples include [Grafana](https://github.com/grafana) and [Sidero Labs (Talos Linux)](https://github.com/siderolabs).
+- Access to all scholarly knowledge should be completely free and open.
+
+## Music :notes:
+
+As a kid, I've played the violin (classical styles) for ~8 years. This undoubtedly helped me develop my motor skills, but the older I got, the more I felt bothered and constrained by the seemingly ultimate goal of accurate piece reproduction. This classical mindset never really resonated with me, which is why in my teenage years, I promptly fell in love with modern, guitar-based music genres. Unsurprisingly, I ditched the violin and taught myself to play the guitar (electric, mostly), which I played actively for 5+ years, and then on/off until today. I believe this shaped my present music taste, which clusters around progressive metal, math rock and modern jazz.
+
+I love complex harmony, rhythm and irregular time signatures. Here's a couple songs (roughly sorted from high to low energy):
+
+- Periphery – Prayer Position
+- TesseracT – Of Mind – Nocturne
+- Tool – The Pot
+- I Built the Sky, Jake Howsam Lowe – Coalesce
+- Leprous – From the Flame
+- Porcupine Tree – The Sound Of Muzak
+- Manuel Gardner Fernandes – Fifth
+- Waxamilion, Loam – Mezcalator
+- Snarky Puppy – Lingus
+- Snarky Puppy – Sing to the Moon
+- Chon – Rosewood
+- GoGo Penguin – Murmuration
+- Chick Corea – Crystal Silence
+
+## Other
+
+- I genuinely like using en-dashes – `U+2013`. Something about their width feels right to me. Not to be confused with em-dashes (`U+2014`), for which LLMs have a propensity.
+- I have a [cat named Luna](/cat), whom I love very much 🐾.
+- My editor of choice is neovim ([config](https://github.com/majabojarska/astronvim_config)).
+- My sport of choice is gravel cycling :bike:.
+
+## Contact
+
+Got an interesting job position or project idea? Just want to say hi? Send me an email :envelope: !
+
+- [majabojarska98@gmail.com](mailto:majabojarska98@gmail.com)
+- [mastodon.social/@majabojarska](https://mastodon.social/@majabojarska) – rarely
+
+Disclaimer: I do have LinkedIn, but I open it maybe twice a year.
