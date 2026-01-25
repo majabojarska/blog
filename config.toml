@@ -53,7 +53,8 @@ menu = [
     { name = "/devlog", url = "/devlog", weight = 1 },
     { name = "/posts", url = "/posts", weight = 2 },
     { name = "/about", url = "/about", weight = 3 },
-    { name = "/tags", url = "/tags", weight = 4 },
+    { name = "/cat", url = "/cat", weight = 4 },
+    { name = "/tags", url = "/tags", weight = 5 },
 ]
 
 socials = [
