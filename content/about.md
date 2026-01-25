@@ -23,7 +23,8 @@ Curious tinkerer, first and foremost.
 
 - Technology by itself is neutral – it's a tool that amplifies the actions of the one who wields it. Value judgements should only be made about its application.
 - I believe in the right to repair, and consequently, in the right to own.
-  - Planned obsolescence is evil.
+  - [Planned obsolescence](https://consumerrights.wiki/w/Planned_obsolescence) is evil,
+  - and so is [post-purchase EULA modification](https://consumerrights.wiki/w/Post-purchase_EULA_modification).
 - Software should be free (as in freedom).
   - Big fan of FOSS software, with a paid service and support model. Examples include [Grafana](https://github.com/grafana) and [Sidero Labs (Talos Linux)](https://github.com/siderolabs).
 - Access to all scholarly knowledge should be completely free and open.
