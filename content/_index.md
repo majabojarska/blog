@@ -8,7 +8,7 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
-I'm Maja, welcome to my digital garden 🌱.
+I'm [Maja](@/about.md), welcome to my digital garden 🌱.
 
 Check out my devlog [over here](@/devlog/_index.md)!
 
