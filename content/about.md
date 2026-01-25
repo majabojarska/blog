@@ -8,16 +8,18 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+Curious tinkerer, first and foremost.
+
 ## Engineering
 
-- I'm a software engineer based in [Wrocław, Poland](https://www.openstreetmap.org/relation/451516).
-  - Currently working at [Akamai](https://www.akamai.com/) since Sep. 2023, where I'm developing [LKE](https://www.linode.com/products/kubernetes/) – a managed Kubernetes platform. I've recently become conflicted about this position, given the far-reaching, easily observable consequences of datacenter expansion in direct relation to generative AI.
-- I'm always open to new projects – scroll down for contact info.
+- The object of my tinkering is most frequently either software or electronics, although I do venture into other crafts (e.g. woodworking).
+- Currently working at [Akamai](https://www.akamai.com/) since Sep. 2023, developing [LKE](https://www.linode.com/products/kubernetes/) – a managed Kubernetes platform. I've recently become somewhat conflicted about this position, given the far-reaching, easily observable consequences of datacenter expansion, that's aiming to satisfy the demands of generative AI.
+- I'm always open to new projects and ideas – scroll down for contact info.
 - I'm a member of the [Wrocław Hackerspace](https://hswro.org/), a non-profit society of engineering enthusiasts. We promote free (as in freedom) exchange of knowledge and skills, organize meetups, participate in conferences, and bring the wildest of ideas into existence with our own hands and minds.
 - I run a [homelab](@/posts/homelab-notes.md), through which I self-host services and hone my craft.
 - I'm a ham, in the amateur radio sense of the word. My callsign is [SP6CAT](https://www.qrz.com/db/SP6CAT).
 
-## Philosophy & Ethics (tech)
+## Philosophy & Ethics
 
 - Technology by itself is neutral – it's a tool that amplifies the actions of the one who wields it. Value judgements should only be made about its application.
 - I believe in the right to repair, and consequently, in the right to own.
@@ -25,6 +27,7 @@ comment = true
 - Software should be free (as in freedom).
   - Big fan of FOSS software, with a paid service and support model. Examples include [Grafana](https://github.com/grafana) and [Sidero Labs (Talos Linux)](https://github.com/siderolabs).
 - Access to all scholarly knowledge should be completely free and open.
+- To the best of my cognitive abilities, I will not knowingly contribute to an application of technology, whose explicit intent is to exploit, discriminate against, or otherwise harm people.
 
 ## Music :notes:
 
@@ -52,12 +55,13 @@ I love complex harmony, rhythm and irregular time signatures. Here's a couple so
 - I have a [cat named Luna](/cat), whom I love very much 🐾.
 - My editor of choice is neovim ([config](https://github.com/majabojarska/astronvim_config)).
 - My sport of choice is gravel cycling :bike:.
+- None of the content on this blog is created through generative AI.
 
 ## Contact
 
 Got an interesting job position or project idea? Just want to say hi? Send me an email :envelope: !
 
-- [majabojarska98@gmail.com](mailto:majabojarska98@gmail.com)
-- [mastodon.social/@majabojarska](https://mastodon.social/@majabojarska) – rarely
+- [majabojarska98@gmail.com](mailto:majabojarska98@gmail.com) – response within 48h.
+- [mastodon.social/@majabojarska](https://mastodon.social/@majabojarska) – slow response, could be weeks.
 
 Disclaimer: I do have LinkedIn, but I open it maybe twice a year.
