@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-01-28
+
+Setting up [Renovate](https://github.com/renovatebot/renovate) for my homelab.
+
+---
+
 ## 2026-01-24
 
 - TIL about this [great guide on designing for 3D-Printing – blog.rahix.de](https://blog.rahix.de/design-for-3d-printing/).
