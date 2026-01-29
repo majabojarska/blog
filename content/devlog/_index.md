@@ -12,7 +12,7 @@ comment = true
 
 Setting up [Renovate](https://github.com/renovatebot/renovate) for my homelab.
 
-- Guide for [setting up fine-grained token for repo maintenance](https://docs.renovatebot.com/modules/platform/github/#running-using-a-fine-grained-token)
+- Guide for [setting up a fine-grained token for repo maintenance](https://docs.renovatebot.com/modules/platform/github/#running-using-a-fine-grained-token).
 
 ---
 
