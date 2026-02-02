@@ -8,6 +8,18 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+---
+
+## 2026-02-01
+
+Accidentally dropped an [Amidon FT140-43](https://amidoncorp.com/ft-140-43/) when taking it off a high shelf. It broke in 4 pieces. I followed [this thread from the EEVblog forum](https://www.eevblog.com/forum/repair/how-to-fix-a-broken-ferrite-core/) and glued it back together with a very thin CA glue.
+
+I'll admit, it's not the cleanest job, but it's better than nothing. Planning to build a 49:1 unun with two of these.
+
+{{ image(src="img/devlog/2026-02-01-ferrite-core.webp") }}
+
+---
+
 ## 2026-01-28
 
 Setting up [Renovate](https://github.com/renovatebot/renovate) for my homelab.
