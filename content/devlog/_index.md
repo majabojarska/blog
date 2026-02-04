@@ -10,6 +10,12 @@ comment = true
 
 ---
 
+## 2026-02-03
+
+Deployed [Booklore](https://github.com/booklore-app/booklore) onto my homelab.
+
+---
+
 ## 2026-02-01
 
 Accidentally dropped an [Amidon FT140-43](https://amidoncorp.com/ft-140-43/) when taking it off a high shelf. It broke in 4 pieces. I followed [this thread from the EEVblog forum](https://www.eevblog.com/forum/repair/how-to-fix-a-broken-ferrite-core/) and glued it back together with a very thin CA glue. Wrapped in some electrical tape for added stiffness.
