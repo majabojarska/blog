@@ -25,7 +25,7 @@ Given the path compatibility, I've decided to add the trailing slash to the `pat
 kubectl replace --force --filename storage-class-local-path.yaml
 ```
 
-Then I committed, ensured new volumes are being created correctly and called it a day.
+Then I committed, confirmed new volumes are being provisioned correctly and called it a day.
 
 ---
 
