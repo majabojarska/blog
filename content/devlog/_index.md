@@ -8,7 +8,24 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
----
+## 2026-02-04
+
+Upgrading local-path-provisioner in my lab from [v0.0.32](https://github.com/rancher/local-path-provisioner/releases/tag/v0.0.32) to [v0.0.34](https://github.com/rancher/local-path-provisioner/releases/tag/v0.0.34).
+
+[v0.0.33](https://github.com/rancher/local-path-provisioner/releases/tag/v0.0.33) broke compatibility for the `StorageClass.parameters.pathPattern` through [#542](https://github.com/rancher/local-path-provisioner/pull/542), which was later remediated and worked around through [#547](https://github.com/rancher/local-path-provisioner/pull/547/changes#diff-f50d5f4e509fee9b204e5176dc444b2a532be073e11508c45930c71ee7cdf48f) and [#548](https://github.com/rancher/local-path-provisioner/pull/548).
+
+My original `pathPattern` was `{{ .PVC.Namespace }}/{{ .PVC.Name }}`, which is already compliant with the newly proposed safe prefix of `{{ .PVC.Namespace }}/{{ .PVC.Name }}/` — mine was just missing the trailing slash. Even if the internal path-joining implementation has changed, it was safe for me to switch to using the safe prefix as my new, complete `pathPattern`. This however posed two challenges:
+
+- `StorageClass.parameters` are immutable after creation.
+- A `StorageClass` cannot be deleted until all of the corresponding PVs are deleted, and so deletion and recreation was out of the picture.
+
+Given the path compatibility, I've decided to add the trailing slash to the `pathPattern` manifest, and just:
+
+```sh
+kubectl replace --force --filename storage-class-local-path.yaml
+```
+
+## Then I committed, ensured new volumes are being created correctly and called it a day.
 
 ## 2026-02-03
 
