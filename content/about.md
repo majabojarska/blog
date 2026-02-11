@@ -54,11 +54,14 @@ I love complex harmony, rhythm and irregular time signatures. Here's a couple so
 
 ## Other
 
-- I genuinely like using en-dashes – `U+2013`. Something about their width feels right to me. Not to be confused with em-dashes (`U+2014`), for which LLMs have a propensity.
+- I genuinely like using en-dashes and em-dashes (`U+2013` and `U+2014` respectively). Unfortunately LLMs have a propensity for using the latter, to which I can only hope I'm not confused with one :robot:.
 - I have a [cat named Luna](/cat), whom I love very much 🐾.
 - My editor of choice is neovim ([config](https://github.com/majabojarska/astronvim_config)).
+- Markdown is the superior standard for technical documentation (looking at you, Confluence).
 - My sport of choice is gravel cycling :bike:.
-- None of the content on this blog is created through generative AI.
+- None of the content on this blog is created through generative AI. I believe there are valid uses for this technology, but this blog is not one of them. Abstaining from using it benefits both of us.
+  - For me, the value is in the writing. In the practice of clear communication of complex technical concepts, and the self-reflection that comes with it.
+  - For you — I hope — it's in the carefully verified information, original thought, and freedom from _AI slop_.
 
 ## Contact
 

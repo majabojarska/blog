@@ -8,6 +8,16 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+##
+
+---
+
+## 2026-02-09
+
+- Updating my resume.
+
+---
+
 ## 2026-02-04
 
 Upgrading local-path-provisioner in my lab from [v0.0.32](https://github.com/rancher/local-path-provisioner/releases/tag/v0.0.32) to [v0.0.34](https://github.com/rancher/local-path-provisioner/releases/tag/v0.0.34).
@@ -56,7 +66,6 @@ Setting up [Renovate](https://github.com/renovatebot/renovate) for my homelab.
 ## 2026-01-24
 
 - TIL about this [great guide on designing for 3D-Printing – blog.rahix.de](https://blog.rahix.de/design-for-3d-printing/).
-- Updating my resume.
 - Added new blog sections:
   - [/about](/about)
   - [/cat](/cat)
