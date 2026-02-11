@@ -8,13 +8,22 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
-##
+## 2026-02-11
+
+- Finished updating my resume (find it [here](https://github.com/majabojarska/Resume/blob/main/Maja_Bojarska_CV.pdf)).
+- Expanding my [homelab notes](@/posts/homelab-notes.md).
+
+---
+
+## 2026-02-10
+
+Learned about [Typst](https://typst.app/) — a new, markup-based typesetting system. My first impression is the far better UX from the [LaTeX](https://www.latex-project.org/) the academic standard.
 
 ---
 
 ## 2026-02-09
 
-- Updating my resume.
+Updating my resume.
 
 ---
 
