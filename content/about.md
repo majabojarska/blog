@@ -12,6 +12,8 @@ Curious tinkerer, first and foremost.
 
 ## Engineering
 
+Find my [resume here](https://github.com/majabojarska/Resume/blob/main/Maja_Bojarska_CV.pdf).
+
 - The object of my tinkering is most frequently either software or electronics, although I do venture into other crafts (e.g. woodworking).
 - Currently working at [Akamai](https://www.akamai.com/) since Sep. 2023, developing [LKE](https://www.linode.com/products/kubernetes/) – a managed Kubernetes platform. I've recently become somewhat conflicted about this position, given the far-reaching, easily observable consequences of datacenter expansion, that's aiming to satisfy the demands of generative AI.
 - I'm always open to new projects and ideas – scroll down for contact info.
@@ -65,4 +67,4 @@ Got an interesting job position or project idea? Just want to say hi? Send me an
 - [majabojarska98@gmail.com](mailto:majabojarska98@gmail.com) – response within 48h.
 - [mastodon.social/@majabojarska](https://mastodon.social/@majabojarska) – slow response, could be weeks.
 
-Disclaimer: I do have LinkedIn, but I open it maybe twice a year.
+Disclaimer: I do have LinkedIn, but I open it maybe twice a year, at best.
