@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-02-13
+
+K3s shipped out patch release candidates for the excessive CPU utilization bug on first embedded ETCD cluster ([#13574](https://github.com/k3s-io/k3s/issues/13574)) --- v1.34.4-rc1+k3s1.
+
+---
+
 ## 2026-02-11
 
 - Finished updating my resume (find it [here](https://github.com/majabojarska/Resume/blob/main/Maja_Bojarska_CV.pdf)).
