@@ -41,6 +41,10 @@ Learned about [Typst](https://typst.app/) — a new, markup-based typesetting sy
 
 Updating my resume.
 
+Also, CAT8 cable:
+
+{{ image(src="img/devlog/2026-02-09-cat8-cable.webp") }}
+
 ---
 
 ## 2026-02-04
