@@ -18,6 +18,15 @@ TIL about the following K9s plugins:
 
 ---
 
+## 2026-02-15
+
+Seriously considering building these hot-swap disk bays with Dell Poweredge drive caddies:
+
+- [10" 2x 3.5" HDD](https://makerworld.com/en/models/1400538-10-inch-rack-1u-2-x-3-5-inch-hdd-hot-swap#profileId-2243810)
+- [10" 4x 2.5" HDD/SSD](https://makerworld.com/en/models/1648104-10-inch-rack-1u-4x-2-5-inch-hdd-ssd-hot-swap#profileId-1742141)
+
+---
+
 ## 2026-02-12
 
 K3s shipped out patch release candidates for the excessive CPU utilization bug on first embedded ETCD cluster ([#13574](https://github.com/k3s-io/k3s/issues/13574)) --- v1.34.4-rc1+k3s1.

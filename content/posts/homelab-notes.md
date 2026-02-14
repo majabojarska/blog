@@ -1,5 +1,5 @@
 +++
-title = "Notes on my homelab"
+title = "Homelab documentation"
 date = 2025-11-02
 updated = 2026-02-11
 
@@ -207,6 +207,8 @@ alias sops-age-decrypt="sops --decrypt --age $(cat $SOPS_AGE_KEY_FILE | grep -oP
 
 ## Future plans & ongoing work
 
+### Services
+
 - Deploy [AudioMuse-AI](https://github.com/NeptuneHub/AudioMuse-AI) and integrate it with Jellyfin
 - Setup [Authentik](https://goauthentik.io/) and SSO auth in services.
 - Setup [Renovate](https://github.com/renovatebot/renovate) for my infra, mainly for Helm chart autoupdate PRs.
@@ -214,3 +216,12 @@ alias sops-age-decrypt="sops --decrypt --age $(cat $SOPS_AGE_KEY_FILE | grep -oP
 - O11y and alerting: [Grafana](https://github.com/renovatebot/renovate), [Prometheus](https://github.com/prometheus/prometheus), [ntfy](https://github.com/renovatebot/renovate).
   - Just need to reinstate this and hook up ntfy.
 - Deploy [copyparty](https://github.com/9001/copyparty), remove [Nextcloud](https://github.com/nextcloud/server).
+
+### Hardware
+
+#### Disk bays
+
+Planning to migrate my 2.5"/3.5" disks to a PCIe SATA controller. I'll use the following designs for rack-mounting the disks:
+
+- [10" 2x 3.5" HDD](https://makerworld.com/en/models/1400538-10-inch-rack-1u-2-x-3-5-inch-hdd-hot-swap#profileId-2243810)
+- [10" 4x 2.5" HDD/SSD](https://makerworld.com/en/models/1648104-10-inch-rack-1u-4x-2-5-inch-hdd-ssd-hot-swap#profileId-1742141)
