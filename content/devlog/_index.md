@@ -8,6 +8,16 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-02-14
+
+TIL about the following K9s plugins:
+
+- [KEDA ScaledObject toggle](https://github.com/derailed/k9s/blob/79135a08f8e24e485f68a001feb68e0c879491d6/plugins/keda-toggle.yaml)
+- [Flux](https://github.com/derailed/k9s/blob/79135a08f8e24e485f68a001feb68e0c879491d6/plugins/flux.yaml)
+- [OpenSSL][https://github.com/derailed/k9s/blob/79135a08f8e24e485f68a001feb68e0c879491d6/plugins/openssl.yaml]
+
+---
+
 ## 2026-02-12
 
 K3s shipped out patch release candidates for the excessive CPU utilization bug on first embedded ETCD cluster ([#13574](https://github.com/k3s-io/k3s/issues/13574)) --- v1.34.4-rc1+k3s1.
