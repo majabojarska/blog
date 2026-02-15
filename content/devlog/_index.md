@@ -8,6 +8,15 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-02-15
+
+Published:
+
+- [majabojarska/infra](https://github.com/majabojarska/infra)
+- [majabojarska/blog](https://github.com/majabojarska/blog)
+
+---
+
 ## 2026-02-14
 
 TIL about the following K9s plugins:
