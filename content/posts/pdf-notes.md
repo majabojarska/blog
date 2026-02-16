@@ -1,6 +1,7 @@
 +++
 title = "Notes on working with PDFs on Linux"
 date = 2025-12-27
+updated = 2026-02-16
 
 [taxonomies]
 tags = ["pdf", "notes"]
@@ -54,3 +55,11 @@ pdftk input.pdf cat 1-2 3east 4-end output output.pdf
 ```
 
 Keep 1,2,4 as-is, rotate 3 90° clockwise.
+
+## Encryption
+
+### Decrypt a PDF
+
+```sh
+qpdf --password=YOURPASSWORD-HERE --decrypt input.pdf output.pdf
+```
