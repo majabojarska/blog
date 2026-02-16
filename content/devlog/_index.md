@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-02-16
+
+Enabled change grouping for Renovate PRs ([example](https://github.com/majabojarska/infra/pull/29)). The individual click-ops was getting a bit too much.
+
+---
+
 ## 2026-02-15
 
 Published:
