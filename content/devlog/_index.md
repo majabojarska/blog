@@ -23,7 +23,7 @@ TIL about the following K9s plugins:
 
 - [KEDA ScaledObject toggle](https://github.com/derailed/k9s/blob/79135a08f8e24e485f68a001feb68e0c879491d6/plugins/keda-toggle.yaml)
 - [Flux](https://github.com/derailed/k9s/blob/79135a08f8e24e485f68a001feb68e0c879491d6/plugins/flux.yaml)
-- [OpenSSL][https://github.com/derailed/k9s/blob/79135a08f8e24e485f68a001feb68e0c879491d6/plugins/openssl.yaml]
+- [OpenSSL](https://github.com/derailed/k9s/blob/79135a08f8e24e485f68a001feb68e0c879491d6/plugins/openssl.yaml)
 
 ---
 
