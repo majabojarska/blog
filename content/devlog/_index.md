@@ -10,7 +10,8 @@ comment = true
 
 ## 2026-02-16
 
-Enabled change grouping for Renovate PRs ([example](https://github.com/majabojarska/infra/pull/29)). The individual click-ops was getting a bit too much.
+- Enabled change grouping for Renovate PRs ([example](https://github.com/majabojarska/infra/pull/29)). The individual click-ops was getting a bit too much.
+- Reseraching PCIe disk controllers for my M920q machine. Found this [LSI Host Bus Adapter (HBA) Power Consumption Comparison](https://www.servethehome.com/lsi-host-bus-adapter-hba-power-consumption-comparison/) from ServeTheHome.
 
 ---
 
