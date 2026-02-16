@@ -13,6 +13,8 @@ comment = true
 - Enabled change grouping for Renovate PRs ([example](https://github.com/majabojarska/infra/pull/29)). The individual click-ops was getting a bit too much.
 - Researching PCIe disk controllers for my M920q machine. Found this [LSI Host Bus Adapter (HBA) Power Consumption Comparison](https://www.servethehome.com/lsi-host-bus-adapter-hba-power-consumption-comparison/) from ServeTheHome.
 - Choosing the appropriate ESP32-CAM kit for my cat monitoring needs.
+  - Enclosure options:
+    - [Antenna case](https://www.printables.com/model/860533-esp32-camera-case), based on [this design](https://www.printables.com/model/801363-esp32-camera-case). I'll have to modify the lens opening to accommodate the 160° lens, which has a 10.1mm diameter.
 
 ---
 
