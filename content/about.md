@@ -15,7 +15,7 @@ Curious tinkerer, first and foremost.
 Find my [resume here](https://github.com/majabojarska/Resume/blob/main/Maja_Bojarska_CV.pdf).
 
 - The object of my tinkering is most frequently either software or electronics, although I do venture into other crafts (e.g. woodworking).
-- Currently working at [Akamai](https://www.akamai.com/) since Sep. 2023, developing [LKE](https://www.linode.com/products/kubernetes/) – a managed Kubernetes platform. I've recently become somewhat conflicted about this position, given the far-reaching, easily observable consequences of datacenter expansion, that's aiming to satisfy the demands of generative AI.
+- Currently working at [Akamai](https://www.akamai.com/) since Sep. 2023, developing [LKE](https://www.linode.com/products/kubernetes/) – a managed Kubernetes platform.
 - I'm always open to new projects and ideas – scroll down for contact info.
 - I'm a member of the [Wrocław Hackerspace](https://hswro.org/), a non-profit society of engineering enthusiasts. We promote free (as in freedom) exchange of knowledge and skills, organize meetups, participate in conferences, and bring the wildest of ideas into existence with our own hands and minds.
 - I run a [homelab](@/posts/homelab-notes.md), through which I self-host services and hone my craft.
