@@ -10,7 +10,8 @@ comment = true
 
 ## 2026-02-18
 
-Printing [this Sensorbox internal carrier remix](https://www.printables.com/model/1198155-sensorbox-v2-serial-carrier-remix/files#preview.file.PsYSg). The [original one](https://www.printables.com/model/1079858-3d-printer-emission-sensor-array-sensorbox-v2#preview.file.opLGv) couldn't accomodate the [SCD40](https://sensirion.com/products/catalog/SCD40) CO₂ sensor.
+- Printing [this Sensorbox internal carrier remix](https://www.printables.com/model/1198155-sensorbox-v2-serial-carrier-remix/files#preview.file.PsYSg). The [original one](https://www.printables.com/model/1079858-3d-printer-emission-sensor-array-sensorbox-v2#preview.file.opLGv) couldn't accomodate the [SCD40](https://sensirion.com/products/catalog/SCD40) CO₂ sensor.
+- Reading about the inner workings of the [QEMU Guest Agent](https://wiki.qemu.org/Features/GuestAgent).
 
 ---
 
