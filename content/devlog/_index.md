@@ -16,7 +16,11 @@ Printing [this Sensorbox internal carrier remix](https://www.printables.com/mode
 
 ## 2026-02-17
 
-Reading about the [RED method] to service instrumentation.
+Reading about the [RED method](https://grafana.com/blog/the-red-method-how-to-instrument-your-services/) to service instrumentation.
+
+Also, an evening with [Leprous](https://leprous.net/) 🤟:fire:
+
+{{ image(src="/img/devlog/2026-02-17-leprous.webp")}}
 
 ---
 
