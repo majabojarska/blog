@@ -8,6 +8,22 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+---
+
+## 2026-02-20
+
+- TIL about [Retrosizer](https://retrosizer.com/?rg-35xx-h:0,0&credit-card:147,2) — a web reference for true retro handheld console sizes.
+- The [Anbernic RG35XX series](https://anbernic.com/products/rg35xx-h) has 1GB of RAM and a quad-core 1.5GHz ARM CPU. I think I could squeeze a K3s kubelet into it 🤔. Also, I totally dig transparent cases exposing the internal circuitry. I mean, just look at [this](https://anbernic.com/products/rg35xx-h):
+  {{ image(src="/img/devlog/2026-02-20-anbernic-rg35xx-h.webp")}}
+
+---
+
+## 2026-02-19
+
+- Assembling the [Sensorbox v2](https://www.printables.com/model/1079858-3d-printer-emission-sensor-array-sensorbox-v2).
+
+---
+
 ## 2026-02-18
 
 - Printing [this Sensorbox internal carrier remix](https://www.printables.com/model/1198155-sensorbox-v2-serial-carrier-remix/files#preview.file.PsYSg). The [original one](https://www.printables.com/model/1079858-3d-printer-emission-sensor-array-sensorbox-v2#preview.file.opLGv) couldn't accomodate the [SCD40](https://sensirion.com/products/catalog/SCD40) CO₂ sensor.
