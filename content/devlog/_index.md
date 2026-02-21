@@ -8,6 +8,16 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-02-21
+
+- Playing around with Talos
+- Migrated ESPHome (web) from K8s to HAOS, in order to consolidate all smart home management services into one VM.
+- Designing a magnetic mount for the ZG-101ZS ZigBee scene switch.
+  - Basing the OpenSCAD design on [model/1057464](https://www.printables.com/model/1057464-openscad-zg-101zs-wall-mount-frame-with-magnets).
+- Reading:
+  - [Turn Dependabot Off — words.filippo.io](https://words.filippo.io/dependabot/)
+  - [Approaches to writing two-sentence journal entries — alexanderbjoy.com](https://alexanderbjoy.com/two-sentence-journal-approaches/)
+
 ---
 
 ## 2026-02-20
@@ -15,6 +25,7 @@ comment = true
 - TIL about [Retrosizer](https://retrosizer.com/?rg-35xx-h:0,0&credit-card:147,2) — a web reference for true retro handheld console sizes.
 - The [Anbernic RG35XX series](https://anbernic.com/products/rg35xx-h) has 1GB of RAM and a quad-core 1.5GHz ARM CPU. I think I could squeeze a K3s kubelet into it 🤔. Also, I totally dig transparent cases exposing the internal circuitry. I mean, just look at [this](https://anbernic.com/products/rg35xx-h):
   {{ image(src="/img/devlog/2026-02-20-anbernic-rg35xx-h.webp")}}
+- TIL there's an active homebrew GBA development community — [gbadev.net](https://gbadev.net/getting-started.html).
 
 ---
 
