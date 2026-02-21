@@ -10,10 +10,15 @@ comment = true
 
 ## 2026-02-21
 
-- Playing around with Talos
-- Migrated ESPHome (web) from K8s to HAOS, in order to consolidate all smart home management services into one VM.
 - Designing a magnetic mount for the ZG-101ZS ZigBee scene switch.
   - Basing the OpenSCAD design on [model/1057464](https://www.printables.com/model/1057464-openscad-zg-101zs-wall-mount-frame-with-magnets).
+
+---
+
+## 2026-02-21
+
+- Playing around with Talos
+- Migrated ESPHome (web) from K8s to HAOS, in order to consolidate all smart home management services into one VM.
 - Reading:
   - [Turn Dependabot Off — words.filippo.io](https://words.filippo.io/dependabot/)
   - [Approaches to writing two-sentence journal entries — alexanderbjoy.com](https://alexanderbjoy.com/two-sentence-journal-approaches/)
