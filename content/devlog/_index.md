@@ -17,6 +17,7 @@ comment = true
 - Reading:
   - [Turn Dependabot Off — words.filippo.io](https://words.filippo.io/dependabot/)
   - [Approaches to writing two-sentence journal entries — alexanderbjoy.com](https://alexanderbjoy.com/two-sentence-journal-approaches/)
+  - [We Need To Rewild The Internet — noemamag.com](https://www.noemamag.com/we-need-to-rewild-the-internet/)
 
 ---
 
