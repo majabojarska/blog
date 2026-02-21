@@ -32,7 +32,10 @@ comment = true
 
 ## 2026-02-19
 
-- Assembling the [Sensorbox v2](https://www.printables.com/model/1079858-3d-printer-emission-sensor-array-sensorbox-v2).
+Assembled the [Sensorbox v2](https://www.printables.com/model/1079858-3d-printer-emission-sensor-array-sensorbox-v2).
+
+{{ image(src="img/devlog/2026-02-19-sensorbox-front.webp")}}
+{{ image(src="img/devlog/2026-02-19-sensorbox-inside.webp")}}
 
 ---
 
