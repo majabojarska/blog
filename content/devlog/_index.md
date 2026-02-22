@@ -18,6 +18,7 @@ comment = true
   - [kexec — wiki.archlinu.org](https://wiki.archlinux.org/title/Kexec)
   - [NixOS Series 4: "Stateless" Operating System — lantian.pub](https://lantian.pub/en/article/modify-computer/nixos-impermanence.lantian/)
 - Fiddling with [Omni](https://github.com/siderolabs/omni).
+- Deployed [copyparty](https://github.com/9001/copyparty) to my VPS.
 
 ---
 
