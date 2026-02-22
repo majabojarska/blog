@@ -15,7 +15,8 @@ comment = true
 - Designing a magnetic mount for the ZG-101ZS ZigBee scene switch.
   - Basing the OpenSCAD design on [model/1057464](https://www.printables.com/model/1057464-openscad-zg-101zs-wall-mount-frame-with-magnets).
 - Reading:
-  - [kexec](https://wiki.archlinux.org/title/Kexec)
+  - [kexec — wiki.archlinu.org](https://wiki.archlinux.org/title/Kexec)
+  - [NixOS Series 4: "Stateless" Operating System — lantian.pub](https://lantian.pub/en/article/modify-computer/nixos-impermanence.lantian/)
 - Fiddling with [Omni](https://github.com/siderolabs/omni).
 
 ---
