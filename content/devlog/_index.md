@@ -10,6 +10,12 @@ comment = true
 
 ---
 
+## 2026-02-23
+
+Watching [this webinar about Talos Linux security](https://opensourcesecurity.io/2025/2025-09-talos-andrey-smirnov).
+
+---
+
 ## 2026-02-22
 
 - Designing a magnetic mount for the ZG-101ZS ZigBee scene switch.
