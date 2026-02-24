@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-02-24
+
+- Refreshing the concepts of Kubernetes networking with [this KubeCon 2024 webinar](https://www.youtube.com/watch?v=Mj04QOqAaJ8)
+- Now that [nixpkgs #490142](https://github.com/NixOS/nixpkgs/pull/490142) is merged, I can revisit [upgrading K3s](https://github.com/NixOS/nixpkgs/pull/490914#issuecomment-3910941557).
+- TIL [cruster-api](https://github.com/rudoi/cruster-api) (lol).
+
 ---
 
 ## 2026-02-23
