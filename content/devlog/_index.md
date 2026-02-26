@@ -8,6 +8,14 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+---
+
+## 2026-02-25
+
+TIL [go-size-analyzer](https://github.com/Zxilly/go-size-analyzer)
+
+---
+
 ## 2026-02-24
 
 - Refreshing the concepts of Kubernetes networking with [this KubeCon 2024 webinar](https://www.youtube.com/watch?v=Mj04QOqAaJ8)
