@@ -8,9 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+---
+
 ## 2026-03-01
 
-TIL [lnxd/github-backup](https://hub.docker.com/r/lnxd/github-backup)
+- TIL [lnxd/github-backup](https://hub.docker.com/r/lnxd/github-backup).
+- Configured the [Proxmox VE integration for Home Assistant](https://www.home-assistant.io/integrations/proxmoxve/).
 
 ---
 
