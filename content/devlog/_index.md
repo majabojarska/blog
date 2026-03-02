@@ -8,6 +8,14 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-03-02
+
+TIL curl can do client-side rate limiting.
+
+```sh
+curl --limit-rate 10k https://majabojarska.dev/devlog/
+```
+
 ---
 
 ## 2026-03-01
