@@ -8,6 +8,28 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-03-03
+
+TIL about [pv](https://codeberg.org/ivarch/pv), a terminal-based tool for monitoring the progress of data through a pipe. Can do rate limiting as well!
+
+For example, limit the rate of reading `/dev/urandom`:
+
+```sh
+# TCP listener
+sudo nc -l 9999 | pv --rate >  /dev/null
+[90,7KiB/s]
+
+# TCP sender
+cat /dev/urandom | pv --rate-limit 100k | nc localhost 9999
+4,20MiB 0:00:43 [ 100KiB/s] [
+```
+
+Also, got a used stick of RAM for my hypervisor and it has bad regions :cry:. Luckily the sender agreed to take it back.
+
+{{ image(src="/img/devlog/2026-03-03-memtest.webp")}}
+
+---
+
 ## 2026-03-02
 
 TIL curl can do client-side rate limiting.
