@@ -8,6 +8,15 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-03-04
+
+Deployed to my homelab:
+
+- [node-feature-discovery](https://github.com/kubernetes-sigs/node-feature-discovery)
+- [intel-device-plugins-operator](https://www.intel.com/content/www/us/en/developer/articles/technical/device-plugins-operator.html)
+
+---
+
 ## 2026-03-03
 
 TIL about [pv](https://codeberg.org/ivarch/pv), a terminal-based tool for monitoring the progress of data through a pipe. Can do rate limiting as well!
