@@ -217,6 +217,11 @@ alias sops-age-decrypt="sops --decrypt --age $(cat $SOPS_AGE_KEY_FILE | grep -oP
   - Just need to reinstate this and hook up ntfy.
 - Deploy [copyparty](https://github.com/9001/copyparty), remove [Nextcloud](https://github.com/nextcloud/server).
 
+### Networking
+
+- Migrate to [Cilium](https://cilium.io/).
+- Control traffic flow with [Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/).
+
 ### Hardware
 
 #### Disk bays
