@@ -8,6 +8,22 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-03-06
+
+TIL [sbrin/lopaka](https://github.com/sbrin/lopaka) - a FOSS graphics editor for embedded devices.
+
+---
+
+## 2026-03-05
+
+Testing yet another set of used 32GB DDR4 SODIMM sticks. One is borked, one is fine. Sending one back.
+
+{{ image(src="img/devlog/2026-03-05-memtest.webp") }}
+
+Looking forward to the end of the rampocalypse.
+
+---
+
 ## 2026-03-04
 
 Deployed to my homelab:
