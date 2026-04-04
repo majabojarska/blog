@@ -8,9 +8,135 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-04-04
+
+Life has been super busy for me recently (in a good way). Finally catching up with the devlog.
+
+---
+
+## 2026-03-28
+
+Printing a couple under-desk cable management items:
+
+- [Rigol DHO800/900 PSU mount](https://www.printables.com/make/3344725)
+- [Under Desk Cable Management Hook](https://www.printables.com/make/3331490)
+- [Dell 130w Laptop PSU mount](https://www.printables.com/make/3331485)
+
+{{ image(src="img/devlog/2026-03-29-cable-mgmt-print.webp")}}
+
+---
+
+## 2026-03-26
+
+Last day of KubeCon, no booth duty today! Finally had more time to talk with some CNCF project maintainers, competitors, fish a bit for feedback, network with people, and grab tons of merch :grin:.
+
+Got a latest-gen sample of ASML's wafers:
+
+{{ image(src="img/devlog/2026-03-27-asml-stroopwafel.webp")}}
+
+Goodbye Amsterdam :airplane:!
+
+{{ image(src="img/devlog/2026-03-26-flight-back-home.webp")}}
+
+---
+
+## 2026-03-25
+
+KubeCon booth duty, day two. Demos, talks, hands-on labs. Lost my voice 😅.
+
+{{ image(src="img/devlog/2026-03-25-kubecon-lke-demo.webp" )}}
+
+Prusa made a collab with Grafana, demoing a MK4 printer with the [Prusa Prometheus exporter](https://github.com/pubeldev/prusa_exporter).
+
+{{ image(src="img/devlog/2026-03-25-prusa-grafana.webp")}}
+
+Also visited a cheese shop near the [_RAI exhibition centre_](https://www.rai.nl/en), called [_Zuivelhoeve by Kaashuis Tromp_](https://www.openstreetmap.org/node/2818007183#map=16/52.34709/4.89599). Left with ~2.5kg of 5 fancy cheeses 🤤.
+
+{{ image(src="img/devlog/2026-03-25-cheese-shop.webp")}}
+
+---
+
+## 2026-03-24
+
+Working the booth at KubeCon, doing live demos, discussing the customers' needs and use cases.
+
+This is equally fun and demanding. I'd totally do it again on a future conference, but I'll try to go easier on my voice.
+
+{{ image(src="2026-03-24-kubecon-akamai-booth.webp")}
+
+Also met my future team in person, hehe 😸. Not spoiling my destination just yet 🤫.
+
+---
+
+## 2026-03-23
+
+First day of KubeCon! Today it's all talks, the expo starts tomorrow.
+
+{{ image(src="img/devlog/2026-03-23-kubecon-lightning-talks.webp")}}
+
+Met the [Prusa Research](https://github.com/prusa3d) platform dev team over lunch!
+
+---
+
+## 2026-03-22
+
+Flying to Amsterdam for KubeCon Europe 2026 :airplane:!
+
+{{ image(src="img/devlog/2026-03-22-flying-to-kubecon.webp") }}
+
+{{ image(src="img/devlog/2026-03-22-amsterdam-rai-kubecon.webp" ) }}
+
+---
+
+## 2026-03-11
+
+Ran the first several-hour print on the Prusa MK4. The Prusa finished it not only quicker than the older Ender 3 (5,5 hours instead of 16 hours), it also executed the job at a higher resolution — 0.2mm layers with a 0.4mm nozzle, instead of 0.28mm layers with a 0.6mm nozzle. There are some [VFAs](https://web.archive.org/web/20260404143308/https://www.wevolver.com/article/3d-printing-vfa-vertical-fine-artifacts-and-how-to-control-them), which I couldn't care less about.
+
+{{ image(src="img/devlog/2026-03-11-lenovo-tiny-rackmount-print.webp" )}}
+
+---
+
+## 2026-03-08
+
+Got a Prusa MK4, with the MK4S upgrade kit and a [Sovol SH02](https://www.sovol3d.com/products/sovol-sh02-3d-printing-filament-dryer-box) filament dryer.
+
+{{ image(src="img/devlog/2026-03-08-prusa-mk4-luna.webp")}}
+
+The UX is genuinely amazing in comparison to the Ender 3, especially with built-in network connectivity and [PrusaLink](https://help.prusa3d.com/article/prusa-connect-and-prusalink-explained_302608).
+
+{{ image(src="img/devlog/2026-03-08-prusa-mk4-printing.webp")}}
+
+If you're in the world of 3D printing, you might be wondering why I didn't get a [Bambu Lab](https://bambulab.com/en) unit. I've considered that option, but Bambu Lab is missing or actively opposing several core qualities that Prusa _does_ have:
+
+- open by design;
+- manufactured, owned, and maintained in Europe (Czechia);
+- easily repairable, down to individual parts, instead of assemblies.
+
+I will support repairability and openness any day, over the anti-consumer practices \[[1](https://web.archive.org/web/20260207171422/https://itsfoss.com/news/bambu-lab-fiasco/)\] and closedness of Bambu's ecosystem.
+
+---
+
+## 2026-03-07
+
+ESP32-CAM arrived, but unfortunately the camera module is dead on arrival. The experience with ESP32-CAM overall is quite finicky, requires a bit of effort. To be honest, for future projects I might just spend a bit more money, but get a working LAN-only camera right away.
+
+{{ image(src="img/devlog/2026-03-07-esp32cam.webp")}}
+
+In other news, my Ender 3 messed up yet another 16h print towards the end of it 🫠. The Ender 3 had a good run since 2018, but upgrading it is just not-viable, and would require replacing most of the printer. Looking at used Prusa printers locally.
+
+---
+
 ## 2026-03-06
 
 TIL [sbrin/lopaka](https://github.com/sbrin/lopaka) - a FOSS graphics editor for embedded devices.
+
+Finally got a working 32GB DDR4 SODIMM stick of RAM!
+
+{{ image(src="img/devlog/2026-03-06-ram-good.webp")}}
+
+The `pve-01` hypervisor is now maxed out on RAM.
+
+{{ image(src="img/devlog/2026-03-06-pve-01-maxed-out.webp") }}
 
 ---
 
