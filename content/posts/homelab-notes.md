@@ -39,7 +39,8 @@ This is a living document.
   - CPU: i3-6100T (3 x 3.2GHz)
   - RAM: 8GB DDR4 SODIMM
   - Storage:
-    - OS, disk images: 240GB 2.5" SATA SSD
+    - OS, disk images: 128GB NVMe SSD
+    - 240GB 2.5" SATA SSD
 
 ### Virtual
 
