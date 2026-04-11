@@ -21,7 +21,7 @@ This is a living document.
 - `pve-01.home.majabojarska.dev` — Lenovo Tiny M920q
   - Role: Main hypervisor
   - CPU: i5-8500T (6 x 2.1GHz)
-  - RAM: 32GB DDR4 SODIMM, hoping to expand to 64GB once prices fall a bit (one can hope).
+  - RAM: 64GB DDR4 SODIMM.
   - Storage:
     - OS, disk images: 2TB M.2 NVMe
     - PCIe passthrough to virtual guests: 3 x 1TB 2.5" SATA SSD
