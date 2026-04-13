@@ -4,7 +4,7 @@ date = 2026-04-13
 updated = 2026-04-13
 
 [taxonomies]
-tags = ["cad"]
+tags = ["cad", "3d-printing"]
 +++
 
 <!-- more -->
