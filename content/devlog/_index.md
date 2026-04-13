@@ -62,7 +62,7 @@ Working the booth at KubeCon, doing live demos, discussing the customers' needs 
 
 This is equally fun and demanding. I'd totally do it again on a future conference, but I'll try to go easier on my voice.
 
-{{ image(src="2026-03-24-kubecon-akamai-booth.webp")}
+{{ image(src="2026-03-24-kubecon-akamai-booth.webp")}}
 
 Also met my future team in person, hehe 😸. Not spoiling my destination just yet 🤫.
 
