@@ -12,6 +12,10 @@ comment = true
 
 Started a [page for documenting useful CAD and 3D printing resources](@/posts/cad-design.md).
 
+Designing a replacement for this green BMW 7-Series part.
+
+{{ image(src="img/devlog/2026-04-13-part-mesasurement.webp")}}
+
 ---
 
 ## 2026-04-12
