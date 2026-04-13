@@ -8,6 +8,22 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-04-12
+
+Setting up a colocated lab setup at the [local Hackerspace](https://hswro.org/), in preparation for migrating off of [Linode](https://www.linode.com/).
+
+It's a bit janky (the ThinkCentre), but it gets the job done for now. It'll be hosting backups, this blog, and running some ephemeral jobs. Hoping to upgrade it to a mirrored ZFS pool in the future, once SSD prices get more reasonable.
+
+{{ image(src="img/devlog/2026-04-12-colo-hswro.webp")}}
+
+---
+
+## 2026-04-06
+
+{{ image(src="img/devlog/2026-04-06-amp-maintenance.webp")}}
+
+---
+
 ## 2026-04-04
 
 Life has been super busy for me recently (in a good way). Finally catching up with the devlog.
@@ -62,7 +78,7 @@ Working the booth at KubeCon, doing live demos, discussing the customers' needs 
 
 This is equally fun and demanding. I'd totally do it again on a future conference, but I'll try to go easier on my voice.
 
-{{ image(src="2026-03-24-kubecon-akamai-booth.webp")}}
+{{ image(src="img/devlog/2026-03-24-kubecon-akamai-booth.webp")}}
 
 Also met my future team in person, hehe 😸. Not spoiling my destination just yet 🤫.
 
