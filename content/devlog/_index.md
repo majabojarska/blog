@@ -30,6 +30,10 @@ It's a bit janky (the ThinkCentre), but it gets the job done for now. It'll be h
 
 ## 2026-04-06
 
+Started renovating my [Laney TF200-II](https://www.ultimate-guitar.com/reviews/guitar_amplifiers/laney/tf200-ii/) guitar amplifier in preparation for auctioning it off. Ordered a new input jack, printed some replacement nuts for other jack sockets, treated potentiometer oxidation and crackling with [Kontakt PR](https://termopasty.com/produkty/kontakt-pr/).
+
+Pausing this until the replacement socket arrives.
+
 {{ image(src="img/devlog/2026-04-06-amp-maintenance.webp")}}
 
 ---
