@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-04-13
+
+Started a [page for documenting useful CAD and 3D printing resources](@/posts/cad-design.md).
+
+---
+
 ## 2026-04-12
 
 Setting up a colocated lab setup at the [local Hackerspace](https://hswro.org/), in preparation for migrating off of [Linode](https://www.linode.com/).
