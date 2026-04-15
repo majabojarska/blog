@@ -8,6 +8,32 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-04-15
+
+TIL that an [IPv8 draft](https://www.ietf.org/archive/id/draft-thain-ipv8-00.html) exists.
+
+Printing this [air duct window vent](https://www.printables.com/model/1347394-air-duct-window-vent-r4) for my soldering fume extraction rig.
+
+{{ image(src="img/devlog/2026-04-15-fume-extraction-vent.webp")}}
+
+---
+
+## 2026-04-14
+
+Finished designing the BMW replacement part.
+
+{{ image(src="img/devlog/2026-04-14-bmw-series-7-final.webp")}}
+
+This was fun! The thread is a wonky M7x1, with the outer diameter measuring at 6.7mm. It's slightly scaled down, clocking at ~95% in the radial directions, but retaining the original 1mm pitch. This could've been done to accommodate injection molding production tolerances, as well as allowing easier movement of a matching, internally threaded element.
+
+Here's a close-up comparison of the threads on a FFF mockup, printed at 0.1mm layer height, oriented with the axis of rotation parallel to the printer's Z axis — optimizing for thread profile resolution.
+
+{{ image(src="img/devlog/2026-04-14-thread-comparison.webp")}}
+
+## This design will be later printed on a [SLA](https://en.wikipedia.org/wiki/Stereolithography) printer, capable of a Z step size as small as 10µm (0.01mm), vastly reducing rasterization artifacts.
+
+---
+
 ## 2026-04-13
 
 Started a [page for documenting useful CAD and 3D printing resources](@/posts/cad-design.md).
@@ -15,6 +41,11 @@ Started a [page for documenting useful CAD and 3D printing resources](@/posts/ca
 Designing a replacement for this green BMW 7-Series part.
 
 {{ image(src="img/devlog/2026-04-13-part-mesasurement.webp")}}
+
+- Green is the damaged, injection molded original that I received.
+- Yellow is an early [FFF](https://en.wikipedia.org/wiki/Fused_filament_fabrication) prototype of mine. Still need to improve the thread parameters and I've yet to incorporate modification requests.
+
+{{ image(src="img/devlog/2026-04-13-prototype-v3.webp")}}
 
 ---
 
