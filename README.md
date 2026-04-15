@@ -9,7 +9,7 @@ This website is built on [Zola](https://www.getzola.org/), the static site gener
 ## Development
 
 ```sh
-docker run --rm --name blog --network host -v $PWD:/blog ghcr.io/getzola/zola:v0.21.0 --root /blog serve
+make serve
 ```
 
 ---
