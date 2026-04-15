@@ -30,7 +30,7 @@ Here's a close-up comparison of the threads on a FFF mockup, printed at 0.1mm la
 
 {{ image(src="img/devlog/2026-04-14-thread-comparison.webp")}}
 
-## This design will be later printed on a [SLA](https://en.wikipedia.org/wiki/Stereolithography) printer, capable of a Z step size as small as 10µm (0.01mm), vastly reducing rasterization artifacts.
+This design will be later printed on a [SLA](https://en.wikipedia.org/wiki/Stereolithography) printer, capable of a Z step size as small as 10µm (0.01mm), vastly reducing rasterization artifacts.
 
 ---
 
