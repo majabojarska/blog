@@ -170,6 +170,13 @@ To edit an age secret or create a new one:
 nix run github:ryantm/agenix -- -e foo-token.age
 ```
 
+To rekey an existing age secret:
+
+```sh
+# From dir containing 'secrets.nix'
+nix run github:ryantm/agenix -- -r
+```
+
 ### Kubernetes
 
 - Kubernetes `Secret` objects are provisioned by the [External Secrets Operator](https://external-secrets.io/).
