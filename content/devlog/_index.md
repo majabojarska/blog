@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-04-23
+
+TIL about [blink(1)](https://blink1.thingm.com/).
+
+---
+
 ## 2026-04-22
 
 Preparing my new AP, the [Unifi U6+](https://techspecs.ui.com/unifi/wifi/u6-plus), for flashing with [OpenWRT](https://openwrt.org/toh/ubiquiti/unifi_6_plus). Gathering info about the current configuration, reading the OpenWRT flash process docs.
