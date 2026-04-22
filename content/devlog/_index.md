@@ -14,6 +14,20 @@ Preparing my new AP, the [Unifi U6+](https://techspecs.ui.com/unifi/wifi/u6-plus
 
 {{ image(src="img/devlog/2026-04-22-unifi.webp")}}
 
+Working on a complete rework of the logic board for my (my cat's 🤔?) automatic feeder. The original one uhh, experienced a _Ceritified BRRRT Moment™_, killing the onboard ESP chip in the process. I've realized that at it's core, this device is simply:
+
+- a brushed motor,
+- an endstop,
+- a button (feed),
+- a couple LEDs,
+- and the controls exposed via an API to Home Assistant.
+
+It will be far easier to solder a new custom board with a single logic-level N-MOSFET, than attempt to fix the original board. Luckily, I've stocked up on [IRL540Ns](https://www.infineon.com/part/IRL540N), which will be perfect for this project.
+
+{{ image(src="img/devlog/2026-04-22-esp32c3.webp")}}
+
+The USB charger that caused/experienced the zap goes in the electrical waste bin.
+
 ---
 
 ## 2026-04-21
