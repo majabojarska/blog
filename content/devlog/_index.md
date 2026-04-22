@@ -10,7 +10,9 @@ comment = true
 
 ## 2026-04-23
 
-TIL about [blink(1)](https://blink1.thingm.com/).
+TIL about:
+- [blink(1)](https://blink1.thingm.com/),
+- [OwnTone](https://github.com/owntone) — an open audio server
 
 ---
 
