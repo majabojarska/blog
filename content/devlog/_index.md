@@ -8,6 +8,82 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-04-22
+
+Preparing my new AP, the [Unifi U6+](https://techspecs.ui.com/unifi/wifi/u6-plus), for flashing with [OpenWRT](https://openwrt.org/toh/ubiquiti/unifi_6_plus). Gathering info about the current configuration, reading the OpenWRT flash process docs.
+
+{{ image(src="img/devlog/2026-04-22-unifi.webp")}}
+
+---
+
+## 2026-04-21
+
+Designed and printed a [replacement crank handle holder](https://www.printables.com/model/1696846-ikea-skarsta-crank-holder) for my Ikea SKARSTA desk.
+
+{{ image(src="img/devlog/2026-04-21-skarsta-crank-handle-holder.webp")}}
+
+Finished repairing the Laney TF200-II:
+
+- Replaced the input jack with a fresh one.
+- Reflowed a couple potentiometers.
+- Treated all switches and potentiometers with an anti-oxidizing and lubricating solution.
+- Glued several loosely attached through-hole components with hot glue, as stress relief, to increase the board's longevity.
+
+Look at this pretty vacuum tube (it's actually backlit by a red LED lol)!
+
+{{ image(src="img/devlog/2026-04-21-laney-tf200-tube.webp")}}
+
+---
+
+## 2026-04-20
+
+New dev machine arrived, the [Framework 13](https://frame.work/pl/en/laptop13). Assembling it 👩‍💻.
+
+{{ image(src="img/devlog/2026-04-20-framework-assembly.webp")}}
+
+---
+
+## 2026-04-19
+
+Fixing the lidar assembly for my Roborock S7 Max. Actually, by now I've ordered a complete assembly replacement for ~22 USD, and started looking inside the broken module out of sheer curiosity. There's a geared DC motor that rotates the laser/radar assembly, which was failing to start.
+
+I suspected the motor driver might've burnt out, but it was feeding voltage to the motor exactly when necessary, at 4,8V. So, I tried powering the motor directly from a bench PSU, while observing the current consumption. The motor twitched a bit at 2W, but it could not start (the energy was converted into heat). The issue was hence clearly rooted in the motor. Upon disassembling the enclosure further, I've noticed there was axle was tangled with heavily compressed cat hair.
+
+That was it! The cat hair was imposing enough friction to prevent motor startup. After just two minutes of picking at it with fine tweezers, loosened the shaft enough for the motor to start again. I've since returned the replacement to the seller, saving a bit of money in the process :grin:.
+
+Excuse the dusty modules, it is a vacuum after all.
+
+{{ image(src="img/devlog/2026-04-19-roborock-lidar.webp") }}
+
+---
+
+## 2026-04-18
+
+Modding this Philips Hue ambient light bar. It's equipped with a peculiar 6.5x2.5mm DC plug (on the sink side!). Turns out Philips Hue power sources are equipped with sockets, which is a departure from the "plug is source" convention.
+
+I've powered the bar with a generic 24V switching PSU for LEDs, and installed it on the back of my display via [this VESA adapter](https://www.printables.com/make/3375121).
+
+{{ image(src="img/devlog/2026-04-18-philips-hue.webp") }}
+
+---
+
+## 2026-04-17
+
+Printed [this 2x3.5 HDD Mount](https://www.printables.com/model/1320021-10-inch-rack-1u-2x-35-hdd-mount) in preparation for off-site server colocation.
+
+{{ image(src="img/devlog/2026-04-17-2xhdd-mount.webp")}}
+
+---
+
+## 2026-04-16
+
+TIL about these cool TUIs:
+
+- [pomo](https://github.com/Bahaaio/pomo), a Pomodoro timer.
+- [ctop](https://github.com/bcicen/ctop), a [_top_](https://www.man7.org/linux/man-pages/man1/top.1.html)-like interface for container metrics.
+
+---
+
 ## 2026-04-15
 
 TIL that an [IPv8 draft](https://www.ietf.org/archive/id/draft-thain-ipv8-00.html) exists.
