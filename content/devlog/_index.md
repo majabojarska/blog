@@ -24,6 +24,14 @@ Tinkering with the control and speed readouts of 4-wire PWM controlled fans](htt
 
 ---
 
+## 2026-04-26
+
+Planning a completely new logic board for the Petlibro PLAF101 feeder, after the original board got zapped.
+
+{{image(src="img/devlog/2026-04-26-planning-feeder-mobo.webp")}}
+
+---
+
 ## 2026-04-23
 
 TIL about:
