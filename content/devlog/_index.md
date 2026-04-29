@@ -16,6 +16,14 @@ TIL about the [OpenWRT firmware selector](https://firmware-selector.openwrt.org/
 
 ---
 
+## 2026-04-29
+
+Tinkering with the control and speed readouts of 4-wire PWM controlled fans](https://web.archive.org/web/20260309025446/https://www.konilabs.net/docs/standards/fan/intel_4wire_pwm_fans_specs_rev1_2.pdf).
+
+{{image(src="img/devlog/2026-04-29-4pin-fan-control.webp")}}
+
+---
+
 ## 2026-04-23
 
 TIL about:
