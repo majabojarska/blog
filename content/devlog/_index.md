@@ -8,9 +8,18 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-04-30
+
+TIL about the [OpenWRT firmware selector](https://firmware-selector.openwrt.org/). It's a much nicer way to navigate builds for several different devices, than through the corresponding wiki pages.
+
+{{ image(src="img/devlog/2026-04-30-openwrt-fw-selector.webp")}}
+
+---
+
 ## 2026-04-23
 
 TIL about:
+
 - [blink(1)](https://blink1.thingm.com/),
 - [OwnTone](https://github.com/owntone) — an open audio server
 
