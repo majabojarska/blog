@@ -14,6 +14,21 @@ TIL about the [OpenWRT firmware selector](https://firmware-selector.openwrt.org/
 
 {{ image(src="img/devlog/2026-04-30-openwrt-fw-selector.webp")}}
 
+Needed to pull approx. 250GiB of data from my Linode VPS, consisting of nested directory structures on an [ext4](https://www.kernel.org/doc/html/latest/admin-guide/ext4.html) FS. I needed to retain file ownership and permissions, in order to reinstate the data on a different host later on. [rsync](https://linux.die.net/man/1/rsync) meets these criteria, but it executes a single sequential transfer, which turned out to be a bad approach to keep the network link saturated. With some prompting, I've worked out the following:
+
+```sh
+ssh user@remote 'cd /remote/src && find . -mindepth 1 -maxdepth 4' | \
+  parallel --delay 0.2 -j 40 \
+  rsync -ravz user@remote:/remote/src/{} ./{}
+```
+
+- `-j 40` caps the number of active transfers to 40.
+- `--delay 0.2` reduces the risk of hitting rate limits for starting new SSH sessions.
+
+This approach helped me achieve a steady rate of ~40MiB/s (not to be confused with _Mb/s_), instead of ~3MiB/s with plain `rsync`.
+
+{{image(src="img/devlog/2026-04-30-rsync-parallel.webp")}}
+
 ---
 
 ## 2026-04-29
