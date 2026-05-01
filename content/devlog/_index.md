@@ -29,8 +29,6 @@ ubnt@192.168.1.20's password:
 bak_mmcblk0p3
 ```
 
-Please note that RCP is insecure, as it applies no encryption whatsoever, and its authentication scheme is easily spoofable.
-
 ---
 
 ## 2026-04-30
