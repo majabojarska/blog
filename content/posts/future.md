@@ -16,4 +16,6 @@ This is a collection of topics I'd like to blog about next, in no specific order
 - Building a TYWE2S/ESP-02S adapter (see [devlog#2025-11-22](@/devlog/_index.md#2025-11-22))
 - Flashing the CC2652P E72-2G4M20S1E ZStack ZigBee dongle.
 - Jailbreaking the Xiaomi 3H air purifier with ESPHome
-- Building cat furniture (past, present, future) 
+- Building cat furniture (past, present, future)
+- Building a soldering fume exhaust system
+- Flashing OpenWRT on Unifi U6+
