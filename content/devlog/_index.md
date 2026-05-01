@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-05-01
+
+TIL about [ESP-FLY](https://www.cnx-software.com/2026/05/01/esp-fly-diy-kit-tiny-esp32-s3-based-diy-micro-drone-kit/), a DIY micro drone kit based on the ESP32-S3.
+
+---
+
 ## 2026-04-30
 
 TIL about the [OpenWRT firmware selector](https://firmware-selector.openwrt.org/). It's a much nicer way to navigate builds for several different devices, than through the corresponding wiki pages.
