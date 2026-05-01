@@ -12,6 +12,25 @@ comment = true
 
 TIL about [ESP-FLY](https://www.cnx-software.com/2026/05/01/esp-fly-diy-kit-tiny-esp32-s3-based-diy-micro-drone-kit/), a DIY micro drone kit based on the ESP32-S3.
 
+Also, flashing OpenWRT on my [Unifi U6+](https://techspecs.ui.com/unifi/wifi/u6-plus). During this process, I've learned that OpenSSH started defaulting to SFTP just a couple years ago, in 2022, [with the 9.0 release](https://www.openssh.org/txt/release-9.0). Before that, [rcp](https://en.wikipedia.org/wiki/Berkeley_r-commands) (remote copy) was the default underlying transport protocol. The SFTP binary is understandably unavailable on the U6+, as these embedded systems are typically limited in storage, and thus the developers aim for lightweight builds by cutting out anything non-essential. I've stumbled upon this when attempting to transfer some eMMC partition backups from the device, to my local machine:
+
+```sh
+scp ubnt@192.168.1.20:~/bak_mmcblk0p3 .
+ubnt@192.168.1.20's password:
+ash: /usr/libexec/sftp-server: not found
+scp: Connection closed
+```
+
+The same release also introduces the `-O` flag (like Oscar, not the zero digit), which forces the `scp` client to use the legacy scp/rcp protocol. This is a workaround for the lacking SFTP server on the remote side:
+
+```sh
+scp -O ubnt@192.168.1.20:~/bak_mmcblk0p3 .
+ubnt@192.168.1.20's password:
+bak_mmcblk0p3
+```
+
+Please note that RCP is insecure, as it applies no encryption whatsoever, and its authentication scheme is easily spoofable.
+
 ---
 
 ## 2026-04-30
