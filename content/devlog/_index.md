@@ -8,6 +8,28 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-05-03
+
+[Protect Your Shed](https://dylanbutler.dev/blog/protect-your-shed/), by Dylan Butler.
+
+This article struck a chord with me, especially after experiencing burnout from my last full-time project. A friend shared it at just the right moment, as I'm about to start a new role after around two and a half weeks of vacation.
+
+---
+
+Did some cable management with these nifty 3D prints:
+
+{{ image(src="img/devlog/2026-05-03-cable-mgmt.webp")}}
+
+Here are the designs:
+
+- [Skadis cable channel (horizontal)](https://www.printables.com/model/631869-skadis-cable-channel)
+- [Skadis cable channel (vertical)](https://www.printables.com/model/1134783-skadis-cable-channel-vertical)
+- [Lenovo ThinkPad Thunderbolt 4 Dock Mount](https://www.printables.com/model/1555200-lenovo-thinkpad-thunderbolt-4-dock-mount-ikea-skad)
+
+By the way transparent PETG is really growing on me, as a neutral-looking material for functional prints!
+
+---
+
 ## 2026-05-01
 
 TIL about [ESP-FLY](https://www.cnx-software.com/2026/05/01/esp-fly-diy-kit-tiny-esp32-s3-based-diy-micro-drone-kit/), a DIY micro drone kit based on the ESP32-S3.
