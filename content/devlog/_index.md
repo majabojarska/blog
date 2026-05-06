@@ -8,6 +8,13 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-05-06
+
+- Repairing this [Mi Smart 3.5L Air Fryer](https://www.mi.com/global/product/mi-smart-air-fryer-3.5l/). It has a severe case of encoder twitchiness, but it was free and I have the skillz 🧑‍🏭. I'll post a brief guide once I figure it out.
+- Migrating my home Wi-Fi from the beat-up [Archer C6 V2](https://openwrt.org/toh/tp-link/archer_c6_v2) to the [Unifi U6+](https://openwrt.org/toh/ubiquiti/unifi_6_plus) (also modded with OpenWRT 🐱).
+
+---
+
 ## 2026-05-03
 
 [Protect Your Shed](https://dylanbutler.dev/blog/protect-your-shed/), by Dylan Butler.
