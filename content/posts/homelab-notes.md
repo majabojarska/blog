@@ -165,7 +165,7 @@ The implementation is based on the [NixOS Agenix documentation](https://nixos.wi
 To edit an age secret or create a new one:
 
 ```sh
-# From dir containing 'secrets.nix'
+# From dir containing 'secrets.nix' and the age secrets.
 # Alternatively, specify the path to the 'secrets.nix' file via the RULES env var.
 nix run github:ryantm/agenix -- -e foo-token.age
 ```
@@ -174,7 +174,7 @@ To rekey an existing age secret:
 
 ```sh
 # From dir containing 'secrets.nix'
-nix run github:ryantm/agenix -- -r
+nix run github:ryantm/agenix -- -r my-secret.age
 ```
 
 ### Kubernetes
