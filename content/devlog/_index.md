@@ -20,7 +20,7 @@ Migrated my online services from [Linode](https://www.linode.com/) to a communit
 
 ---
 
-## 2026-05-09
+## 2026-05-07
 
 The air fryer is now completely functional 🍟!
 
