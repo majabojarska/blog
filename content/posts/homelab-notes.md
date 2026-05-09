@@ -219,11 +219,9 @@ alias sops-age-decrypt="sops --decrypt --age $(cat $SOPS_AGE_KEY_FILE | grep -oP
 
 - Deploy [AudioMuse-AI](https://github.com/NeptuneHub/AudioMuse-AI) and integrate it with Jellyfin
 - Setup [Authentik](https://goauthentik.io/) and SSO auth in services.
-- Setup [Renovate](https://github.com/renovatebot/renovate) for my infra, mainly for Helm chart autoupdate PRs.
-  - This is already done, need to document the solution.
 - O11y and alerting: [Grafana](https://github.com/renovatebot/renovate), [Prometheus](https://github.com/prometheus/prometheus), [ntfy](https://github.com/renovatebot/renovate).
   - Just need to reinstate this and hook up ntfy.
-- Deploy [copyparty](https://github.com/9001/copyparty), remove [Nextcloud](https://github.com/nextcloud/server).
+- Front public services with anubis ([1](https://discourse.nixos.org/t/anubis-redirect-domain-not-allowed/74501), [2](https://mynixos.com/options/services.anubis.instances.%3Cname%3E))
 
 ### Networking
 
