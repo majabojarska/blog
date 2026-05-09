@@ -10,7 +10,11 @@ comment = true
 
 ## 2026-05-09
 
-Migrating my home Wi-Fi from the beat-up [Archer C6 V2](https://openwrt.org/toh/tp-link/archer_c6_v2) to the [Unifi U6+](https://openwrt.org/toh/ubiquiti/unifi_6_plus) (also modded with OpenWRT 🐱).
+- Migrating my home Wi-Fi from the beat-up [Archer C6 V2](https://openwrt.org/toh/tp-link/archer_c6_v2) to the [Unifi U6+](https://openwrt.org/toh/ubiquiti/unifi_6_plus) (also modded with OpenWRT 🐱).
+- Configured a cross-site link to a friend's homelab.
+- TIL about:
+  - [Anubis](https://github.com/TecharoHQ/anubis), a web challenge utility aiming to keep scrapers away.
+  - [Iocaine](https://iocaine.madhouse-project.org/), a dataset poisoning tool for web crawlers.
 
 ---
 
