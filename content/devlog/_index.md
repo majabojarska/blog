@@ -8,6 +8,14 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-05-10
+
+Deployed [anubis](https://github.com/TecharoHQ/anubis) onto my public-facing infra. You're now likely to see the following check when opening my blog:
+
+{{ image(src="img/devlog/2026-05-10-anubis.webp")}}
+
+---
+
 ## 2026-05-09
 
 - Migrating my home Wi-Fi from the beat-up [Archer C6 V2](https://openwrt.org/toh/tp-link/archer_c6_v2) to the [Unifi U6+](https://openwrt.org/toh/ubiquiti/unifi_6_plus) (also modded with OpenWRT 🐱).
