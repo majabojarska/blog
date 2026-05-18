@@ -8,9 +8,15 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-05-18
+
+TIL about [multitail](https://linux.die.net/man/1/multitail)
+
+---
+
 ## 2026-05-17
 
-Finally refactored my NixOS sources into a single flake [diff](https://github.com/majabojarska/infra/commit/d628c2fc2b531dcebdb3fc82baaacbaa71472b32).
+Finally refactored my NixOS sources into a single flake [(diff)](https://github.com/majabojarska/infra/commit/d628c2fc2b531dcebdb3fc82baaacbaa71472b32).
 
 The next step is to drop Ansible from the NixOS deploy path, and possibly setup a [remote builder](https://nix.dev/tutorials/nixos/distributed-builds-setup.html).
 
