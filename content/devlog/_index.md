@@ -8,6 +8,46 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-05-17
+
+Finally refactored my NixOS sources into a single flake [diff](https://github.com/majabojarska/infra/commit/d628c2fc2b531dcebdb3fc82baaacbaa71472b32).
+
+The next step is to drop Ansible from the NixOS deploy path, and possibly setup a [remote builder](https://nix.dev/tutorials/nixos/distributed-builds-setup.html).
+
+---
+
+## 2026-05-16
+
+Working on a pretty cool rack project, more to come!
+
+{{ image(src="img/devlog/2026-05-16-rack-rails.webp") }}
+
+---
+
+## 2026-05-15
+
+Printed and assembled the enclosure for the AJ-27-4L USB charger module.
+
+I'll share the design files next week.
+
+{{ image(src="img/devlog/2026-05-15-enclosure.webp") }}
+
+---
+
+## 2026-05-14
+
+TIL about the [Oxide 3D explorer](https://explorer.oxide.computer/), how cool is that!?
+
+---
+
+## 2026-05-13
+
+Designed an enclosure for the AJ-27-4L USB charger module.
+
+{{ image(src="img/devlog/2026-05-13-cad.webp")}}
+
+---
+
 ## 2026-05-10
 
 Deployed [anubis](https://github.com/TecharoHQ/anubis) onto my public-facing infra. You're now likely to see the following check when opening my blog:
