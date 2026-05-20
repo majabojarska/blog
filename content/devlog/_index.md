@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-05-21
+
+Published the [AJ-27-4L enclosure design on Printables](https://www.printables.com/model/1728316-aj-27-4l-usb-charger-board-enclosure).
+
+---
+
 ## 2026-05-18
 
 TIL about [multitail](https://linux.die.net/man/1/multitail)
