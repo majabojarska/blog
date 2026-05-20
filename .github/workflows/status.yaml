@@ -26,5 +26,11 @@ jobs:
         with:
           tool: zola@0.21.0
 
+      - name: Tree before
+        run: tree
+
       - name: Build the website
         run: zola build --minify
+
+      - name: Tree after
+        run: tree
