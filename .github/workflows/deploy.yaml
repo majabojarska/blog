@@ -20,6 +20,20 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
+      - name: Cache ./public
+        id: dir-public
+        uses: actions/cache@v5
+        with:
+          path: ./public
+          key: dir-public
+
+      - name: Cache ./static/processed_images
+        id: dir-processed-images
+        uses: actions/cache@v5
+        with:
+          path: ./static/processed_images
+          key: dir-processed-images
+
       - name: Install Zola
         run: sudo snap install zola --edge
 
