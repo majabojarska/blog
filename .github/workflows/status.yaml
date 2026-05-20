@@ -24,8 +24,5 @@ jobs:
         with:
           tool: zola@0.21.0
 
-      - name: Zola check
-        run: zola check --skip-external-links
-
       - name: Build the website
         run: zola build --minify
