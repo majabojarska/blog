@@ -26,6 +26,8 @@ jobs:
         with:
           path: ./static/processed_images
           key: processed-images-${{ hashFiles('./static/img/**') }}
+          restore-keys: |
+            processed-images-
 
       - uses: taiki-e/install-action@v2
         with:
