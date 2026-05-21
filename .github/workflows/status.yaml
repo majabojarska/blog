@@ -42,4 +42,5 @@ jobs:
       - name: Save cache
         uses: actions/cache/save@v5
         with:
+          path: ./static/processed_images
           key: processed-images-${{ hashFiles('./static/img/**') }}
