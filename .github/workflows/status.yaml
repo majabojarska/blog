@@ -29,6 +29,17 @@ jobs:
       - name: ls before
         run: ls -alh ./static/processed_images
 
+        # Lol the build regenerates all of the processed images.
+        # Need to figure out how to preprocess conditionally.
+        #
+        # From ls before build (with cache)
+        # 2026-05-21T00:18:50.5921730Z -rw-r--r-- 1 runner runner  380K May 20 23:45 2026-03-26-flight-back-home.04611ed68874a73b.webp
+        # 2026-05-21T00:18:50.5922233Z -rw-r--r-- 1 runner runner  3.1M May 20 23:45 2026-03-26-flight-back-home.5aeb29ef64603854.webp
+        # ...
+        # From ls after build
+        # 2026-05-21T00:21:06.5131629Z -rw-r--r-- 1 runner runner  380K May 21 00:20 2026-03-26-flight-back-home.04611ed68874a73b.webp
+        # 2026-05-21T00:21:06.5132177Z -rw-r--r-- 1 runner runner  3.1M May 21 00:19 2026-03-26-flight-back-home.5aeb29ef64603854.webp
+
       - name: Build the website
         run: zola build --minify
 
