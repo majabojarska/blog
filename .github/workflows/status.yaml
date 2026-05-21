@@ -13,8 +13,6 @@ jobs:
         with:
           submodules: recursive
 
-      - run: ls -alh processed_images
-
       - name: Cache ./static/processed_images
         id: dir-processed-images
         uses: actions/cache@v5
