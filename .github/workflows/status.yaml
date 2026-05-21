@@ -40,3 +40,8 @@ jobs:
         run: tree
 
       - run: ls -alh processed_images
+
+      - name: Save cache
+        uses: actions/cache/save@v5
+        with:
+          key: processed-images-${{ hashFiles('./static/img/**') }}
