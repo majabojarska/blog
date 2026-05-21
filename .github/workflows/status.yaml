@@ -26,19 +26,13 @@ jobs:
         with:
           tool: zola@0.21.0
 
-      - name: Tree before
-        run: tree
-
-      - name: ls after
+      - name: ls before
         run: ls -alh ./static/processed_images
 
       - name: Build the website
         run: zola build --minify
 
-      - name: Tree after
-        run: tree
-
-      - name: ls before
+      - name: ls after
         run: ls -alh ./static/processed_images
 
       - name: Save cache
