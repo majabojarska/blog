@@ -29,7 +29,8 @@ jobs:
       - name: Tree before
         run: tree
 
-      - run: ls -alh ./static/processed_images
+      - name: ls after
+        run: ls -alh ./static/processed_images
 
       - name: Build the website
         run: zola build --minify
@@ -37,7 +38,8 @@ jobs:
       - name: Tree after
         run: tree
 
-      - run: ls -alh ./static/processed_images
+      - name: ls before
+        run: ls -alh ./static/processed_images
 
       - name: Save cache
         uses: actions/cache/save@v5
