@@ -8,6 +8,30 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+
+## 2026-05-27
+
+- Automated Nix flake updates for my infra ([src](https://github.com/majabojarska/infra/blob/d27e7f429441086c0bdc60ff4b2f37666c6c08e3/.github/workflows/deps.yaml)).
+- First attempts at ditching Ansible for remote NixOS deployment.
+
+---
+
+## 2026-05-26
+
+This is appropriate commentary for how some orgs started operating with the rise of vibe coding:
+
+[Approve merge requests with your eyes closed](https://blog.jse.li/posts/approval/)
+
+---
+
+## 2026-05-24
+
+Making progress on building a 10" rack in a 19" rack.
+
+{{ image(src="img/devlog/2026-05-24-rackception.webp")}}
+
+---
+
 ## 2026-05-21
 
 Published the [AJ-27-4L enclosure design on Printables](https://www.printables.com/model/1728316-aj-27-4l-usb-charger-board-enclosure).
