@@ -8,6 +8,17 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-06-01
+
+Rebuilding the `pve-02` hypervisor (Proxmox VE). I'll need to recreate the NixOS-based NAS VM. However, this time around I want to build a fully ready [qcow2 disk image](https://github.com/NixOS/nixpkgs/blob/master/nixos/lib/make-disk-image.nix).
+
+---
+
+## 2026-05-31
+
+Found out about [these structures that shrink when pulled](https://amolf.nl/news/these-structures-shrink-when-pulled). I'd love to apply this concept to a future 3D-printed design.
+
+---
 
 ## 2026-05-27
 
