@@ -32,23 +32,24 @@ This is a living document.
   - Storage:
     - OS, disk images: 120GB 2.5" SATA SSD
     - General purpose storage, VM passthrough:
-      - 2 x 2TB 3.5" SATA HDD
+      - (to be migrated) 2 x 2TB 3.5" SATA HDD
       - 1 x 640GB 3.5" SATA HDD
-- `pve-03.home.majabojarska.dev` — Lenovo Tiny M720q
-  - Role: Secondary hypervisor, backup in case of `pve-01` failure.
+- `sp6cat-01.hswro.majabojarska.dev` — Lenovo Tiny M720q
+  - Role: Off-site (colo) hypervisor.
   - CPU: i3-6100T (3 x 3.2GHz)
   - RAM: 8GB DDR4 SODIMM
   - Storage:
     - OS, disk images: 128GB NVMe SSD
     - 240GB 2.5" SATA SSD
+    - (planned) 2x2TB 3.5" HDD in a ZFS mirror configuration.
 
 ### Virtual
 
 - `opnsense.home.majabojarska.dev`
-  - Role: homelab router
+  - Role: home router
   - Hypervisor: `pve-01.home.majabojarska.dev`
 - `kube-01.home.majabojarska.dev`
-  - Role: Single-node Kubernetes (K3s) cluster, bulk of self-hosted services.
+  - Role: single-node Kubernetes (K3s) cluster, bulk of self-hosted services.
   - Hypervisor: `pve-01.home.majabojarska.dev`
 - `hass.home.majabojarska.dev`
   - Role: [Home Assistant OS](https://www.home-assistant.io/installation/alternative/)
@@ -56,9 +57,9 @@ This is a living document.
 - `nas.home.majabojarska.dev`
   - Role: NAS
   - Hypervisor: `pve-02.home.majabojarska.dev`
-- `majabojarska.dev`
-  - Role: general purpose VPS
-  - Hypervisor: Linode Cloud
+- `sp6cat-vm-01.hswro.majabojarska.dev`
+  - Role: multi-purpose, runs some services, hosts the blog.
+  - Hypervisor: `sp6cat-01.hswro.majabojarska.dev`
 
 ## Networking
 
@@ -68,10 +69,11 @@ This is a living document.
   - Handles port-based, VLAN-aware switching ([802.1Q](https://en.wikipedia.org/wiki/IEEE_802.1Q)).
   - Facilitates running a router over a single ethernet interface in a secure fashion, via tagged VLANs.
 
-- Archer C6 v2
+- UniFi U6+
+  - Converted to OpenWRT
   - Dumb, VLAN-aware AP with multiple software-defined APs
   - 2.4GHz, 5GHz
-  - Uplinked to the router a single trunk with tagged VLANs.
+  - Uplinked to the router through a single trunk with tagged VLANs.
 
 - OPNsense, virtualized on `pve-01.home.majabojarska.dev`.
 
@@ -134,9 +136,11 @@ This section will describe the different storage pools/devices on different host
   - Schedule: N/A
   - Trigger: any configuration change
 
-## Secret management
+## Encryption
 
-### Ansible
+### Secret management
+
+#### Ansible
 
 Ansible secrets are encrypted via [ansible-vault](ansible-vault decrypt group_vars/all/secrets.yaml).
 
@@ -152,7 +156,7 @@ The encryption key is not tracked by VCS, but it's kept in the homelab's passwor
 
 When cloning the repo on a new machine, place the key at `<repo_root>/.vault_pass` (defined via `ansible.cfg`).
 
-### NixOS hosts
+#### Nix
 
 - Secrets for NixOS hosts are encrypted at rest via [agenix](https://github.com/ryantm/agenix).
   - Effectively, the encryption is based on SSH key pairs.
@@ -177,24 +181,9 @@ To rekey an existing age secret:
 nix run github:ryantm/agenix -- -r my-secret.age
 ```
 
-### Kubernetes
+#### Kubernetes
 
-- Kubernetes `Secret` objects are provisioned by the [External Secrets Operator](https://external-secrets.io/).
-- `ExternalSecrets` define the `Secrets` to be provisioned (and managed).
-  - Think of them as `Secret` recipes.
-  - They only contain entry IDs and field names, referencing the backing secret store.
-- Bitwarden is the secret store of choice, and it's defined via a [ClusterSecretStore](https://external-secrets.io/latest/api/clustersecretstore/) resource (cluster-wide).
-- No plain-text secrets are stored in the `infra` Git repository, nor should they ever be.
-- Bitwarden connectivity is provided by a Bitwarden CLI instance, running in-cluster, in HTTP server mode.
-  - Docker image provided by [majabojarska/bitwarden-cli-docker](https://github.com/majabojarska/bitwarden-cli-docker).
-  - Deployed using the ESO [Bitwarden Helm chart](https://github.com/majabojarska/bitwarden-cli-docker). Eventually to be replaced with [majabojarska/bitwarden-cli-helm](https://github.com/majabojarska/bitwarden-cli-helm), once that's ready. Also hoping to add this Helm chart as a recommendation to ESO docs, once the project matures (both implementation, and maintenance wise).
-- Network connectivity between ESO components and the Bitwarden server is governed by a `NetworkPolicy`, and enforced by the [Flannel](https://github.com/flannel-io/flannel) CNI.
-- Whenever new secrets are added, ESO might need a couple minutes to complete the secret reconciliation. Use longer timeouts to account for this when deploying new components requiring `Secrets`.
-  - Planning to improve this with [Flux post-deployment jobs](https://fluxcd.io/flux/use-cases/running-jobs/).
-
-#### SOPS
-
-As of 2025-12-20, secrets are being migrated over to [SOPS](https://github.com/getsops/sops) backed by [age](https://github.com/FiloSottile/age), deployed via [FluxCD](https://fluxcd.io/flux/guides/mozilla-sops/#encrypting-secrets-using-age).
+Secrets are encrypted through [SOPS](https://github.com/getsops/sops) backed by [age](https://github.com/FiloSottile/age), deployed via [FluxCD](https://fluxcd.io/flux/guides/mozilla-sops/#encrypting-secrets-using-age).
 
 Most notably:
 
@@ -213,15 +202,83 @@ alias sops-age-encrypt="sops --encrypt --age $(cat $SOPS_AGE_KEY_FILE | grep -oP
 alias sops-age-decrypt="sops --decrypt --age $(cat $SOPS_AGE_KEY_FILE | grep -oP "public key: \K(.*)") --encrypted-regex '^(data|stringData)$' --in-place"
 ```
 
+### Disk Encryption
+
+#### Benchmarks
+
+Cipher and KDF performance is mostly relevant for disk encryption. Out of curiosity, I've benchmarked my hypervisors to see whether full-disk encryption would bottleneck storage throughput.
+
+Nowadays (2026), most Linux distributions default to the `aes-xts-plain64` cipher with a 512 bits keysize, when enabling full-disk encryption via [LUKS](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/8/html/security_hardening/encrypting-block-devices-using-luks_security-hardening).
+Therefore, the most relevant row in `cryptsetup benchmark` is the one with `aes-xts`;`512b`.
+
+#### pve-01
+
+```sh
+root@pve-01:~# cryptsetup benchmark
+# Tests are approximate using memory only (no storage IO).
+PBKDF2-sha1      1562706 iterations per second for 256-bit key
+PBKDF2-sha256    1913459 iterations per second for 256-bit key
+PBKDF2-sha512    1405597 iterations per second for 256-bit key
+PBKDF2-ripemd160  773286 iterations per second for 256-bit key
+PBKDF2-whirlpool  557160 iterations per second for 256-bit key
+argon2i       4 iterations, 1048576 memory, 4 parallel threads (CPUs) for 256-bit key (requested 2000 ms time)
+argon2id      4 iterations, 1048576 memory, 4 parallel threads (CPUs) for 256-bit key (requested 2000 ms time)
+#     Algorithm |       Key |      Encryption |      Decryption
+        aes-cbc        128b       855.2 MiB/s      2380.0 MiB/s
+    serpent-cbc        128b        74.6 MiB/s       590.7 MiB/s
+    twofish-cbc        128b       171.7 MiB/s       312.7 MiB/s
+        aes-cbc        256b       688.4 MiB/s      1933.1 MiB/s
+    serpent-cbc        256b        80.4 MiB/s       586.6 MiB/s
+    twofish-cbc        256b       185.3 MiB/s       318.7 MiB/s
+        aes-xts        256b      2373.3 MiB/s      2380.8 MiB/s
+    serpent-xts        256b       510.5 MiB/s       525.8 MiB/s
+    twofish-xts        256b       290.6 MiB/s       300.8 MiB/s
+        aes-xts        512b      1996.1 MiB/s      2006.5 MiB/s
+    serpent-xts        512b       513.3 MiB/s       527.4 MiB/s
+    twofish-xts        512b       295.6 MiB/s       296.0 MiB/s
+```
+
+#### pve-02
+
+> Yet to come
+
+#### sp6cat-01
+
+```sh
+sp6cat-01# cryptsetup benchmark
+# Tests are approximate using memory only (no storage IO).
+PBKDF2-sha1      1579180 iterations per second for 256-bit key
+PBKDF2-sha256    1931079 iterations per second for 256-bit key
+PBKDF2-sha512    1401839 iterations per second for 256-bit key
+PBKDF2-ripemd160  781353 iterations per second for 256-bit key
+PBKDF2-whirlpool  557753 iterations per second for 256-bit key
+argon2i       4 iterations, 958355 memory, 4 parallel threads (CPUs) for 256-bit key (requested 2000 ms time)
+argon2id      4 iterations, 964484 memory, 4 parallel threads (CPUs) for 256-bit key (requested 2000 ms time)
+#     Algorithm |       Key |      Encryption |      Decryption
+        aes-cbc        128b       871.5 MiB/s      2317.2 MiB/s
+    serpent-cbc        128b        78.3 MiB/s       589.9 MiB/s
+    twofish-cbc        128b       179.2 MiB/s       317.6 MiB/s
+        aes-cbc        256b       687.5 MiB/s      1946.7 MiB/s
+    serpent-cbc        256b        80.6 MiB/s       582.2 MiB/s
+    twofish-cbc        256b       185.0 MiB/s       317.8 MiB/s
+        aes-xts        256b      2255.7 MiB/s      2320.7 MiB/s
+    serpent-xts        256b       509.9 MiB/s       519.2 MiB/s
+    twofish-xts        256b       293.6 MiB/s       297.4 MiB/s
+        aes-xts        512b      1944.7 MiB/s      1938.5 MiB/s
+    serpent-xts        512b       515.6 MiB/s       519.5 MiB/s
+    twofish-xts        512b       295.7 MiB/s       297.2 MiB/s
+
+```
+
 ## Future plans & ongoing work
 
 ### Services
 
+- Redeploy off-site hypervisors with full-disk encryption ([guide](https://forum.proxmox.com/threads/adding-full-disk-encryption-to-proxmox.137051/)).
 - Deploy [AudioMuse-AI](https://github.com/NeptuneHub/AudioMuse-AI) and integrate it with Jellyfin
 - Setup [Authentik](https://goauthentik.io/) and SSO auth in services.
 - O11y and alerting: [Grafana](https://github.com/renovatebot/renovate), [Prometheus](https://github.com/prometheus/prometheus), [ntfy](https://github.com/renovatebot/renovate).
   - Just need to reinstate this and hook up ntfy.
-- Front public services with anubis ([1](https://discourse.nixos.org/t/anubis-redirect-domain-not-allowed/74501), [2](https://mynixos.com/options/services.anubis.instances.%3Cname%3E))
 
 ### Networking
 
@@ -229,6 +286,11 @@ alias sops-age-decrypt="sops --decrypt --age $(cat $SOPS_AGE_KEY_FILE | grep -oP
 - Control traffic flow with [Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/).
 
 ### Hardware
+
+#### Colocation
+
+- Installed some hardware in a community-maintained colo.
+- Working on a custom power regulation circuit that will allow me to power both a Lenovo Tiny, and 3 SATA drives from a single Lenovo 135W slim-tip PSU.
 
 #### Disk bays
 
