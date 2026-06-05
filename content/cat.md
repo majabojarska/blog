@@ -40,3 +40,4 @@ comment = true
 {{ image(src="img/cat/22.webp") }}
 {{ image(src="img/cat/23.webp") }}
 {{ image(src="img/cat/24.webp") }}
+{{ image(src="img/cat/25.webp") }}
