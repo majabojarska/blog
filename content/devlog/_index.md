@@ -8,6 +8,21 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+
+## 2026-06-05
+
+TIL about [SPOIWO](https://spoiwo.tech/), or in English, the _Alliance of Friends of Open and Free Software_.
+
+Designing a circuit for powering SATA HDDs off of a Lenovo slim-tip PSU. The goal is to have a single power supply for the entire 10" rack mounted setup, consisting of a Lenovo Tiny and 2x 3.5" HDDs.
+
+---
+
+## 2026-06-04
+
+Deployed [Vikunja](https://vikunja.io/), the self-hosted task manager.
+
+---
+
 ## 2026-06-01
 
 Rebuilding the `pve-02` hypervisor (Proxmox VE). I'll need to recreate the NixOS-based NAS VM. However, this time around I want to build a fully ready [qcow2 disk image](https://github.com/NixOS/nixpkgs/blob/master/nixos/lib/make-disk-image.nix).
