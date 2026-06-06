@@ -8,6 +8,11 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-06-06
+
+Setting up [remote disk unlocking](https://nixos.wiki/wiki/Remote_disk_unlocking) on my remote NixOS machine.
+
+---
 
 ## 2026-06-05
 
