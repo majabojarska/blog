@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-06-07
+
+Working on a DC SATA PSU. Started a GitHub repo at [majabojarska/sata-psu](https://github.com/majabojarska/sata-psu).
+
+---
+
 ## 2026-06-06
 
 Setting up [remote disk unlocking](https://nixos.wiki/wiki/Remote_disk_unlocking) on my remote NixOS machine.
