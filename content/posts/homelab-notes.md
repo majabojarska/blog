@@ -177,8 +177,8 @@ nix run github:ryantm/agenix -- -e foo-token.age
 To rekey an existing age secret:
 
 ```sh
-# From dir containing 'secrets.nix'
-nix run github:ryantm/agenix -- -r my-secret.age
+# From dir containing 'secrets.nix' listing *.age secrets.
+nix run github:ryantm/agenix -- -r 
 ```
 
 #### Kubernetes
