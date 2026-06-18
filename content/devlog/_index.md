@@ -8,6 +8,14 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-06-19
+
+Integrated my hypervisors into Home Assistant via the [Proxmox VE integration](https://www.home-assistant.io/integrations/proxmoxve/).
+
+{{ image(src="img/devlog/2026-06-19-hass.webp")}}
+
+---
+
 ## 2026-06-18
 
 - Refactoring nix-managed age secrets for my infra.
