@@ -8,6 +8,13 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-06-18
+
+- Refactoring nix-managed age secrets for my infra.
+- Tidying up SSH keys.
+
+---
+
 ## 2026-06-07
 
 Working on a DC SATA PSU. Started a GitHub repo at [majabojarska/sata-psu](https://github.com/majabojarska/sata-psu).
