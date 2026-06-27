@@ -8,6 +8,13 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-06-28
+
+TIL about systemd unit [RequiresMountsFor=](https://www.man7.org/linux/man-pages/man5/systemd.unit.5.html#:~:text=RequiresMountsFor).
+It's a convenient equivalent for setting `Requires=` for the relevant `.mount` units.
+
+---
+
 ## 2026-06-19
 
 Integrated my hypervisors into Home Assistant via the [Proxmox VE integration](https://www.home-assistant.io/integrations/proxmoxve/).
