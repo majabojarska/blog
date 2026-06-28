@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-06-29
+
+Learned about and applied [NixOS preCommitChecks](@/posts/nixos-precommitchecks.md) to some of my infra.
+
+---
+
 ## 2026-06-28
 
 Deployed Redlib at [redlib.cloud.majabojarska.dev](https://redlib.cloud.majabojarska.dev/)
