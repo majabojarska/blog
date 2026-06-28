@@ -10,7 +10,7 @@ comment = true
 
 ## 2026-06-29
 
-Learned about and applied [NixOS preCommitChecks](@/posts/nixos-precommitchecks.md) to some of my infra.
+Learned about and applied [NixOS preSwitchChecks](@/posts/nixos-preswitchchecks.md) to some of my infra.
 
 ---
 
