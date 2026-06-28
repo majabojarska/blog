@@ -10,6 +10,26 @@ comment = true
 
 ## 2026-06-28
 
+Deployed Redlib at [redlib.cloud.majabojarska.dev](https://redlib.cloud.majabojarska.dev/)
+
+TIL there's `systemctl cat`.
+
+```sh
+[maja@hostname:~]$ systemctl cat redlib
+# /etc/systemd/system/redlib.service -> /nix/store/bv1f4npzhehehehedxkvr9qdyyi2fj-redlib-0.36.0-unstable-2026-04-24-vendor/lib/systemd/system/redlib.service
+[Unit]
+Description=redlib daemon
+After=network.service
+
+[Service]
+DynamicUser=yes
+# ...
+```
+
+---
+
+## 2026-06-27
+
 TIL about systemd unit [RequiresMountsFor=](https://www.man7.org/linux/man-pages/man5/systemd.unit.5.html#:~:text=RequiresMountsFor).
 It's a convenient equivalent for setting `Requires=` for the relevant `.mount` units.
 
