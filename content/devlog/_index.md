@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-07-02
+
+Deployed Uptime Kuma at [uptime.cloud.majabojarska.dev](https://uptime.cloud.majabojarska.dev)
+
+---
+
 ## 2026-07-01
 
 I've recently switched to [Zed](https://zed.dev/) and I quite like it. It's snappy, pretty light on resources, and mostly in line with my preferences. The Git integration is a bit lacking at the moment, so I just use [lazygit](https://github.com/jesseduffield/lazygit) instead. I'm sure Git support will be improved down the road, so I'll just check on it every couple of updates. [Here's my config](https://github.com/majabojarska/zed-config) if you're interested ⚙️.
