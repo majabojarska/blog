@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-07-01
+
+I've recently switched to [Zed](https://zed.dev/) and I quite like it. It's snappy, pretty light on resources, and mostly in line with my preferences. The Git integration is a bit lacking at the moment, so I just use [lazygit](https://github.com/jesseduffield/lazygit) instead. I'm sure there will be further developments in the git area, so I'll check it every couple of updates. [Here's my config](https://github.com/majabojarska/zed-config) if you're interested.
+
+---
+
 ## 2026-06-29
 
 Learned about and applied [NixOS preSwitchChecks](@/posts/nixos-preswitchchecks.md) to some of my infra.
