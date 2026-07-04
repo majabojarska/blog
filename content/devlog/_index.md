@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-07-04
+
+Deployed [ntfy](https://github.com/binwiederhier/ntfy) to my homelab.
+
+---
+
 ## 2026-07-02
 
 Deployed Uptime Kuma at [uptime.cloud.majabojarska.dev](https://uptime.cloud.majabojarska.dev)
