@@ -8,6 +8,26 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-07-08
+
+TIL journalctl can show log disk usage:
+```sh
+$ journalctl --disk-usage
+Archived and active journals take up 128M in the file system.
+```
+
+In case these take up too much space, you can easily clean them up by time, or by size.
+
+```sh
+# Keep latest 2 weeks of logs
+journalctl --vacuum-time=2weeks
+
+# By size, keep latest 500M
+journalctl --vacuum-size=500M
+```
+
+---
+
 ## 2026-07-04
 
 Deployed [ntfy](https://github.com/binwiederhier/ntfy) to my homelab.
