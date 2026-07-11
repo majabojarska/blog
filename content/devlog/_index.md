@@ -8,6 +8,14 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-07-11
+
+Performing major homelab maintenance:
+- New o11y, more Prometheus instances, Grafana datasources & dashboards.
+- General upgrades.
+- Setting up alerting through [ntfy](https://ntfy.sh/).
+
+---
 
 ## 2026-07-10
 
