@@ -8,6 +8,15 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+
+## 2026-07-10
+
+{{ image(src="img/devlog/2026-07-10-archer-c6v2.webp")}}
+
+Unbricked my [TP-Link Archer C6 v2](https://openwrt.org/toh/tp-link/archer_c6_v2?s[]=op&s[]=fi), after accidentally overwriting the bootloader with the system firmware. This was a fun fix! Definitely something to write about in detail, with a step-by-step guide. 
+
+---
+
 ## 2026-07-09
 
 Today's finds:
