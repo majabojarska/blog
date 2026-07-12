@@ -10,6 +10,10 @@ comment = true
 
 ## 2026-07-11
 
+
+{{ image(src="img/devlog/2026-07-11-node-exporter.webp")}}
+
+
 Performing major homelab maintenance:
 - New o11y, more Prometheus instances, Grafana datasources & dashboards.
 - General upgrades.
