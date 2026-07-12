@@ -34,7 +34,7 @@ Unbricked my [TP-Link Archer C6 v2](https://openwrt.org/toh/tp-link/archer_c6_v2
 Today's finds:
 - [A Roomba recorded a woman on the toilet. How did screenshots end up on Facebook?](https://www.technologyreview.com/2022/12/19/1065306/roomba-irobot-robot-vacuums-artificial-intelligence-training-data-privacy/) – yet another case of "the S in IoT stands for security", or why you shouldn't connect vision-capable devices to _the cloud_. Consider looking into [Valetudo](https://valetudo.cloud/) as a cloud-free alternative for robot vacuums.
 - [TabFont](https://philatype.com/tabfont/) – a font that renders chords into vectorized guitar tabs, cool huh?
-- [learngenomics.dev](https://learngenomics.dev/docs/biological-foundations/cells-genomes-dna-chromosomes/) – a genomics for computer scientists and engineers.
+- [learngenomics.dev](https://learngenomics.dev/docs/biological-foundations/cells-genomes-dna-chromosomes/) – an open genomics course for computer scientists and engineers.
 
 
 In other news, I'd like to build a game with [Godot](https://godotengine.org/), just to learn something new and build something fun. I don't have any ideas at the moment, but I might just start with a general introductory course and continue from there.
