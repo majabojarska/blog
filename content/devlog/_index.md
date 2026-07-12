@@ -11,7 +11,7 @@ comment = true
 
 ## 2026-07-12
 
-TIL curl has built-in retry via [`--retry`](https://everything.curl.dev/usingcurl/downloads/retry.html). The retry behavior can be futher tweaked with:
+TIL curl has built-in retry via `--retry` [(docs)](https://everything.curl.dev/usingcurl/downloads/retry.html). The retry behavior can be futher tweaked with:
 - `--retry-delay` – interval between attempts;
 - `--retry-max-time` – max total time allowed for retries;
 - `--retry-connrefused` – consider only `ECONNREFUSED` as a reason for retry. Any other failure mode is treated as non-retryable. This is perfect for checking that a server started listening, when the actual HTTP response is irrelevant.
