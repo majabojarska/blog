@@ -8,6 +8,19 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+
+## 2026-07-12
+
+TIL curl has built-in retry via [`--retry`](https://everything.curl.dev/usingcurl/downloads/retry.html). The retry behavior can be futher tweaked with:
+- `--retry-delay` – interval between attempts;
+- `--retry-max-time` – max total time allowed for retries;
+- `--retry-connrefused` – consider only `ECONNREFUSED` as a reason for retry. Any other failure mode is treated as non-retryable. This is perfect for checking that a server started listening, when the actual HTTP response is irrelevant.
+- `--retry-all-errors` – pretty self-explanatory :) .
+
+The default retry intervals follow an exponential backoff (unless modified through `--retry-delay`). The first retry is done after 1 second, the next one after 2 seconds, then 4, 8, and so on until it reaches 10 minutes in total (or `--retry-max-time` if specified).
+
+---
+
 ## 2026-07-11
 
 
