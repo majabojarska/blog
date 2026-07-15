@@ -10,7 +10,9 @@ comment = true
 
 ## 2026-07-15
 
-TIL [natefinch/lumberjack](https://github.com/natefinch/lumberjack), a log rolling package for Go.
+TIL 
+- [natefinch/lumberjack](https://github.com/natefinch/lumberjack), a log rolling package for Go.
+- [serokell/deploy-rs](https://github.com/serokell/deploy-rs), a simple multi-profile Nix-flake deploy tool.
 
 ---
 
