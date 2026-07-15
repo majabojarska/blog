@@ -8,6 +8,11 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-07-15
+
+TIL [natefinch/lumberjack](https://github.com/natefinch/lumberjack), a log rolling package for Go.
+
+---
 
 ## 2026-07-12
 
