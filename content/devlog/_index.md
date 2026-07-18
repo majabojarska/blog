@@ -8,6 +8,16 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-07-18
+
+Working with a friend on a highly-available power supply prototype, based on the HPE common slot standard. The goal is to effectively emulate a server backplane, allowing us to hot-swap any of the two PSUs at any given time. This also implies resiliency to a single supply fault.
+
+{{ image(src="img/devlog/2026-07-18-psu.webp") }}
+
+Once we figure out proper load sharing, instead of the current A/B failover mode, we'll design a proper PCB. The goal is to have the supplies side by side in a 10" rack-mount enclosure.
+
+---
+
 ## 2026-07-16
 
 Made a whole lot of fixes and improvements to my [infra](github.com/majabojarska/infra) repo:
