@@ -8,6 +8,23 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-07-16
+
+Made a whole lot of fixes and improvements to my [infra](github.com/majabojarska/infra) repo:
+- Fixed some annoying domain resolution issues through my colo's `dnsmasq`.
+- Hooked up [Borgmatic](https://torsion.org/borgmatic/) to my [ntfy](https://docs.ntfy.sh/) instance. Now I'll get notifications for any failed backup attempt. For successful ones too, but with lower severity.
+- Configured [logrotate](https://www.man7.org/linux/man-pages/man8/logrotate.8.html) on all my NixOS hosts. Logs won't gobble up my precious disk space ever again!
+- Finally, and completely, ditched Ansible for my NixOS host deployment process. It's all pure Nix now, I can build from anywhere, and deploy to anywhere:
+
+  ```sh
+  nixos-rebuild build \
+    --flake ./nix#sp6cat-vm-01 \
+    --build-host <user>@<host-or-ip> \
+    --target-host <user>@<host-or-ip> \
+    --sudo
+  ```
+---
+
 ## 2026-07-15
 
 TIL 
