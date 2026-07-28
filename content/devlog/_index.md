@@ -8,6 +8,19 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-07-28
+
+Finally fronted all of my public-facing services with [Anubis](https://anubis.techaro.lol/). You'd be surprised how much of the traffic is just bots.
+
+---
+
+## 2026-07-21
+
+TIL external display settings can be controlled via [DDC/CI](https://en.wikipedia.org/wiki/Display_Data_Channel). I use the [gddccontrol](https://github.com/ddccontrol/ddccontrol) graphical client to interface with these settings from Linux.
+
+---
+
+
 ## 2026-07-18
 
 Working with a friend on a highly-available power supply prototype, based on the HPE common slot standard. The goal is to effectively emulate a server backplane, allowing us to hot-swap any of the two PSUs at any given time. This also implies resiliency to a single supply fault.
