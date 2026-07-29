@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-07-29
+
+TIL about the [Una project](https://unawatch.com/products/una-watch), the repairable GPS watch. It's a promising concept, but the product seems to be _very_ new, with [<1K units shipped just recently](https://www.kickstarter.com/projects/unawatch/meet-una-the-modular-gps-sports-watch/posts). At this time I have all the watches I need (one :grin:), but I'll be following this development closely.
+
+---
+
 ## 2026-07-28
 
 Finally fronted all of my public-facing services with [Anubis](https://anubis.techaro.lol/). You'd be surprised how much of the traffic is just bots.
