@@ -10,7 +10,9 @@ comment = true
 
 ## 2026-07-29
 
-TIL about the [Una project](https://unawatch.com/products/una-watch), the repairable GPS watch. It's a promising concept, but the product seems to be _very_ new, with [<1K units shipped just recently](https://www.kickstarter.com/projects/unawatch/meet-una-the-modular-gps-sports-watch/posts). At this time I have all the watches I need (one :grin:), but I'll be following this development closely.
+TIL:
+- [Una project](https://unawatch.com/products/una-watch), the repairable GPS watch. It's a promising concept, but the product seems to be _very_ new, with [<1K units shipped just recently](https://www.kickstarter.com/projects/unawatch/meet-una-the-modular-gps-sports-watch/posts). At this time I have all the watches I need (one :grin:), but I'll be following this development closely.
+- [Cooking For Engineers®](https://www.cookingforengineers.com/), the recipe site for analytical minds. No ads, no life stories to scroll through, clear ingredient lists and pictures.
 
 ---
 
