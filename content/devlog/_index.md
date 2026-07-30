@@ -26,6 +26,8 @@ Finally fronted all of my public-facing services with [Anubis](https://anubis.te
 
 TIL external display settings can be controlled via [DDC/CI](https://en.wikipedia.org/wiki/Display_Data_Channel). I use the [gddccontrol](https://github.com/ddccontrol/ddccontrol) graphical client to interface with these settings from Linux.
 
+{{ image(src="img/devlog/2026-07-21-gddccontrol.webp") }}
+
 ---
 
 
