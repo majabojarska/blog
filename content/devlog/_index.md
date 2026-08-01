@@ -12,6 +12,12 @@ comment = true
 
 Migrated [Renovate](https://docs.renovatebot.com/) from Kubernetes, to NixOS ([src](https://github.com/majabojarska/infra/compare/7259f84777c46048ceb4812f6f63bb36e6f2b27c...66967cd0400deb1d48ec46732902511bc7ca2bec)). I'm thinking of ditching K3s altogether from my homelab. Just 4 relatively simple services remain, and my fleet is now predominantly NixOS-based, so unifying the toolchain only makes sense.
 
+TIL Immich has a [cursed knowledge blog](https://immich.app/cursed-knowledge). Here are my favorites :grin::
+
+> The bcrypt implementation only uses the first 72 bytes of a string. Any characters after that are ignored.
+
+> The dimensions in EXIF metadata can be different from the actual dimensions of the image, causing issues with cropping and resizing.
+
 ---
 
 ## 2026-07-29
