@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-08-02
+
+Deployed [Ollama](https://ollama.com/) with some lightweight models. It will power digital document analysis for my [Paperless-ngx](https://docs.paperless-ngx.com/) instance, and playlist generation through [Audiomuse-AI](https://github.com/NeptuneHub/AudioMuse-AI).
+
+---
+
 ## 2026-08-01
 
 Migrated [Renovate](https://docs.renovatebot.com/) from Kubernetes, to NixOS ([src](https://github.com/majabojarska/infra/compare/7259f84777c46048ceb4812f6f63bb36e6f2b27c...66967cd0400deb1d48ec46732902511bc7ca2bec)). I'm thinking of ditching K3s altogether from my homelab. Just 4 relatively simple services remain, and my fleet is now predominantly NixOS-based, so unifying the toolchain only makes sense.
