@@ -8,6 +8,31 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-08-06
+
+TIL [systemd-tmpfiles](https://www.man7.org/linux/man-pages/man8/systemd-tmpfiles.8.html) can create, delete and clean up files and directories, based on the provided configuration. You can use this to pre-provision directories for services, alongside their ownership (user, group, chmod). The exact format is outlined in [tmpfiles.d](https://www.man7.org/linux/man-pages/man5/tmpfiles.d.5.html), but here's a simple example:
+
+```sh
+d /storage/ntfy/ 0700 ntfy-sh ntfy-sh -"
+```
+
+This configuration will run automatically on the next boot, but it can also be executed immediately with (requires superuser privileges):
+```sh
+systemd-tmpfiles --create
+```
+
+Here's a matching NixOS [configuration example](https://mynixos.com/nixpkgs/option/systemd.tmpfiles.rules):
+
+```nix
+systemd.tmpfiles.rules = [
+  "d /storage/ntfy/ 0700 ntfy-sh ntfy-sh -"
+];
+```
+
+Creates the `/storage/ntfy` directory (`d`), with chmod `0700`, owned by the `ntfy-sh` user, and the `ntfy-sh` group. The dash at the and defines the cleanup age threshold, `-` meaning no cleanup ever, but this could be for example `10d` (10 days). After that period passes, the next `systemd-tmpfiles` clean timer will sweep the defined directory/file.
+
+---
+
 ## 2026-08-02
 
 Deployed [Ollama](https://ollama.com/) with some lightweight models. It will power digital document analysis for my [Paperless-ngx](https://docs.paperless-ngx.com/) instance, and playlist generation through [Audiomuse-AI](https://github.com/NeptuneHub/AudioMuse-AI).
