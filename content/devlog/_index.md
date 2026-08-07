@@ -8,6 +8,14 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-08-07
+
+TIL about [usbtree](https://github.com/gnomeria/usbtree), a live USB device tree TUI.
+
+{{image(src="img/devlog/2026-08-07-usbtree.webp")}}
+
+---
+
 ## 2026-08-06
 
 TIL [systemd-tmpfiles](https://www.man7.org/linux/man-pages/man8/systemd-tmpfiles.8.html) can create, delete and clean up files and directories, based on the provided configuration. You can use this to pre-provision directories for services, alongside their ownership (user, group, chmod). The exact format is outlined in [tmpfiles.d](https://www.man7.org/linux/man-pages/man5/tmpfiles.d.5.html), but here's a simple example:
