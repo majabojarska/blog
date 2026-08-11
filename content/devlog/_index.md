@@ -21,7 +21,7 @@ TIL about [usbtree](https://github.com/gnomeria/usbtree), a live USB device tree
 TIL [systemd-tmpfiles](https://www.man7.org/linux/man-pages/man8/systemd-tmpfiles.8.html) can create, delete and clean up files and directories, based on the provided configuration. You can use this to pre-provision directories for services, alongside their ownership (user, group, chmod). The exact format is outlined in [tmpfiles.d](https://www.man7.org/linux/man-pages/man5/tmpfiles.d.5.html), but here's a simple example:
 
 ```sh
-d /storage/ntfy/ 0700 ntfy-sh ntfy-sh -"
+d /storage/ntfy/ 0700 ntfy-sh ntfy-sh -
 ```
 
 This configuration will run automatically on the next boot, but it can also be executed immediately with (requires superuser privileges):
