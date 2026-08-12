@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-08-11
+
+TIL about [lazyjournal](https://github.com/Lifailon/lazyjournal).
+
+---
+
 ## 2026-08-07
 
 TIL about [usbtree](https://github.com/gnomeria/usbtree), a live USB device tree TUI.
