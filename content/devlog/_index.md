@@ -10,7 +10,7 @@ comment = true
 
 ## 2026-08-11
 
-TIL about [lazyjournal](https://github.com/Lifailon/lazyjournal).
+TIL about [lazyjournal](https://github.com/Lifailon/lazyjournal), a log browsing TUI for journalctl, systemd, docker and more.
 
 ---
 
