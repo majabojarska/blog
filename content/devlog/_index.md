@@ -12,6 +12,10 @@ comment = true
 
 TIL that [Bluetooth Low Energy (BLE) supports MIDI](https://midi.org/midi-over-bluetooth-low-energy-ble-midi)! This is great for wireless audio controllers, although I'd prefer not to use it in a live gig scenario, as interference on the 2.4GHz band can become an issue, especially in crowded metropolitan areas.
 
+On a different note, remember Winamp? Here's a [Winamp Skin Museum](https://skins.webamp.org/) - the previews are functional!
+
+{{ image(src="img/devlog/2026-08-19-winamp-skins-museum.webp")}}
+
 ---
 
 ## 2026-08-11
