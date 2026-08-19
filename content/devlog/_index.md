@@ -8,6 +8,12 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-08-19
+
+TIL that [Bluetooth Low Energy (BLE) supports MIDI](https://midi.org/midi-over-bluetooth-low-energy-ble-midi)! This is great for wireless audio controllers, although I'd prefer not to use it in a live gig scenario, as interference on the 2.4GHz band can become an issue, especially in crowded metropolitan areas.
+
+---
+
 ## 2026-08-11
 
 TIL about [lazyjournal](https://github.com/Lifailon/lazyjournal), a log browsing TUI for journalctl, systemd, docker and more.
