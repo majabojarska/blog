@@ -8,6 +8,21 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-08-29
+
+Thrilled by [NAM A2](https://www.tone3000.com/guides/nam-a2-the-complete-guide), I've recently purchased the [Valeton GP-180](https://www.valeton.net/product/gp-180/), capable of loading NAM A2 lite models. I was aware of the fact that the PC-side software supported only Windows and Mac - a typical case for music hardware. I was hoping that I'd manage to make the Windows app work through [Bottles](https://usebottles.com/), at which I've succeeded only partially. Preset and settings management worked fine, but NAM/IR loading and firmware updates were completely broken. My hunch is that these operations involve more complex MIDI handling, requiring the device to reconfigure, tripping up Wine MIDI I/O in the process. This is supported by the fact that the USB device "flickers" when these operations are attempted.
+
+I've really wanted to load a couple NAM models, so I've resorted to creating a Windows 10 VM via [virt-manager](https://virt-manager.org/), and USB passthrough of the Valeton device. It worked, but I gotta say that I hate this solution. Moreover, for some reason the Valeton Suite is chugging CPU like crazy, even when seemingly idle.
+
+Starting today, I will be reverse engineering the MIDI SysEx protocol of the GP180 unit, with the end goal of building a complete, platform-agnostic alternative to the Valeton Suite. You can follow my journey at [majabojarska/Valeton-GP180-Rev-Eng](github.com/majabojarska/Valeton-GP180-Rev-Eng).
+
+{{ image(src="img/devlog/2026-08-29-valeton-rev-eng.webp") }}
+
+Long term, I'd love to add support to the entire late-2025 lineup of Valeton multi-effects - GP-5, GP-50, GP-150, GP-180.
+
+---
+
+
 ## 2026-08-20
 
 Deployed [DumbPad](https://github.com/DumbWareio/DumbPad), a minimalist, collaborative text editor.
