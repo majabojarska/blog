@@ -8,6 +8,14 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-08-30
+
+Learned about and deployed [StemDeck](https://github.com/stemdeckapp/stemdeck) to my infra. This is a game changer for music covers, just extract stems and reassemble into a backing track.
+
+{{ image(src="img/devlog/2026-08-30-stemdeck.webp") }}
+
+---
+
 ## 2026-08-29
 
 Thrilled by [NAM A2](https://www.tone3000.com/guides/nam-a2-the-complete-guide), I've recently purchased the [Valeton GP-180](https://www.valeton.net/product/gp-180/), capable of loading NAM A2 lite models. I was aware of the fact that the PC-side software supported only Windows and Mac - a typical case for music hardware. I was hoping that I'd manage to make the Windows app work through [Bottles](https://usebottles.com/), at which I've succeeded only partially. Preset and settings management worked fine, but NAM/IR loading and firmware updates were completely broken. My hunch is that these operations involve more complex MIDI handling, requiring the device to reconfigure, tripping up Wine MIDI I/O in the process. This is supported by the fact that the USB device "flickers" when these operations are attempted.
