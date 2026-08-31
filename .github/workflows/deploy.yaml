@@ -20,8 +20,14 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Install Zola
-        run: sudo snap install zola --edge
+      - name: Cache ./static/processed_images
+        id: dir-processed-images
+        uses: actions/cache@v5
+        with:
+          path: ./static/processed_images
+          key: processed-images-${{ hashFiles('./static/img/**') }}
+          restore-keys: |
+            processed-images-
 
       - uses: taiki-e/install-action@v2
         with:
