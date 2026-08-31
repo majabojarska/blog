@@ -16,6 +16,23 @@ Learned about and deployed [StemDeck](https://github.com/stemdeckapp/stemdeck) t
 
 ---
 
+Made huge progress in reverse engineering the communication protocols and data formats of the Valeton GP-180. This required me a metric crap-ton of USB captures via [Wireshark](https://www.wireshark.org/) (with [USBPcap](https://desowin.org/usbpcap/)), each covering a very precisely executed set of operations, annotated for further analysis. To be exact, at the time of writing I have 219 captures, some of which have been quite demanding and complex. 
+
+On the upside, these captures enabled the cracking of:
+- The `.prst` data format.
+- The _SnapTone_ data format, NAM uploads (as _SnapTone_), and the corresponding VSTI conversion algorithm.
+- Complete map of the signal chain, effects, their variants, and all of their parameters, including the ranges and other misc. constraints.
+- IR WAV file uploads.
+- The MIDI SysEx write protocol, including CRCs, _magic_ bits, and ordinal tracking. This might require a bit more exploration, by I'm getting there.
+- Partially solved NAM A2 lite -> BMAN conversion.
+- Partially solved firmware update process.
+
+This is FUN! I can't wait to build a fully open, extensible, and platform-agnostic Valeton management utility :grin:.
+
+You can find the up-to-date results at [majabojarska/Valeton-GP180-Rev-Eng](https://github.com/majabojarska/Valeton-GP180-Rev-Eng).
+
+---
+
 ## 2026-08-29
 
 Thrilled by [NAM A2](https://www.tone3000.com/guides/nam-a2-the-complete-guide), I've recently purchased the [Valeton GP-180](https://www.valeton.net/product/gp-180/), capable of loading NAM A2 lite models. I was aware of the fact that the PC-side software supported only Windows and Mac - a typical case for music hardware. I was hoping that I'd manage to make the Windows app work through [Bottles](https://usebottles.com/), at which I've succeeded only partially. Preset and settings management worked fine, but NAM/IR loading and firmware updates were completely broken. My hunch is that these operations involve more complex MIDI handling, requiring the device to reconfigure, tripping up Wine MIDI I/O in the process. This is supported by the fact that the USB device "flickers" when these operations are attempted.
