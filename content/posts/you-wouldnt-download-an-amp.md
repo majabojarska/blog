@@ -20,8 +20,9 @@ Fast-forward to June 2026, NAM hit a major technological breakthrough with [the 
 
 Nowadays, there's a massive community involvement with the project. Collaborators took part in the blind listening tests for A2 candidates, helping perfect the formula. Previously, you could only run NAM as a plugin in your digital audio workstation. But because the toolchain is open, everybody can use it to develop new applications of the technology. People are building all kinds of NAM loaders, even for phones. Audio gear manufacturers are adopting NAM into their (commercial) products. Most notably, there's [TONE3000](https://www.tone3000.com/), a community-driven library of NAM profiles and IR responses, containing just about any kind of amplifier, cabinet, and space you could wish for. 
 
-
 {{ image(src="static/img/you-wouldnt-download-an-amp/you-wouldnt-download-an-amp.webp", alt="Meme generated with https://youwouldntsteala.website/editor.html")}}
+
+> Generated with [youwouldntsteala.website](https://youwouldntsteala.website/editor.html)
 
 Shortly after NAM A2 was announced, I purchased a [Valeton GP-180](https://www.valeton.net/product/gp-180/) for ~730PLN. With the latest firmware upgrade, this unit is capable of natively loading NAM A2 lite models, making it a great value for the price. It's become my daily practice rig, I love it haha :grin:. 
 
@@ -33,3 +34,4 @@ Anyway, try it out! If you'd like to support the project, you can:
 ---
 
 In other news, as much as I like playing through the GP-180, the computer-side Valeton software is subpar, to put it lightly. I was hoping it'll run through [Wine](https://www.winehq.org/) on Linux, but NAM/IR uploads kept failing, presumably due to MIDI handling (all comms are MIDI SysEx). I'm currently reverse engineering the communication protocol in order to build a FOSS, platform-agnostic alternative leveraging [Web MIDI](https://developer.mozilla.org/en-US/docs/Web/API/Web_MIDI_API). Until that happens, I'm doing my upgrades and uploads through a Windows 10 VM, with USB passthrough 😭.
+
