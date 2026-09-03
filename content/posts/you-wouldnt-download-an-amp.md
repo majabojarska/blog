@@ -24,7 +24,7 @@ Nowadays, there's a massive community involvement with the project. Collaborator
 
 > Generated with [youwouldntsteala.website](https://youwouldntsteala.website/editor.html)
 
-Shortly after NAM A2 was announced, I purchased a [Valeton GP-180](https://www.valeton.net/product/gp-180/) for ~730PLN. With the latest firmware upgrade, this unit is capable of natively loading NAM A2 lite models, making it a great value for the price. It's become my daily practice rig, I love it haha :grin:. 
+Shortly after NAM A2 was announced, I purchased a [Valeton GP-180](https://www.valeton.net/product/gp-180/) for ~730PLN (~170EUR). With the latest firmware upgrade, this unit is capable of natively loading NAM A2 lite models, making it a great value for the price. It's become my daily practice rig, I love it haha :grin:.
 
 Anyway, try it out! If you'd like to support the project, you can:
 - share the word with other fellow musicians,
