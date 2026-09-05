@@ -20,7 +20,7 @@ Fast-forward to June 2026, NAM hit a major technological breakthrough with [the 
 
 Nowadays, there's a massive community involvement with the project. Collaborators took part in the blind listening tests for A2 candidates, helping perfect the formula. Previously, you could only run NAM as a plugin in your digital audio workstation. But because the toolchain is open, everybody can use it to develop new applications of the technology. People are building all kinds of NAM loaders, even for phones. Audio gear manufacturers are adopting NAM into their (commercial) products. Most notably, there's [TONE3000](https://www.tone3000.com/), a community-driven library of NAM profiles and IR responses, containing just about any kind of amplifier, cabinet, and space you could wish for. 
 
-{{ image(src="static/img/you-wouldnt-download-an-amp/you-wouldnt-download-an-amp.webp", alt="Meme generated with https://youwouldntsteala.website/editor.html")}}
+{{ image(src="static/img/you-wouldnt-download-an-amp/you-wouldnt-download-an-amp.webp", alt="Meme generated with https://youwouldntsteala.website/editor.html", href="https://www.tone3000.com/")}}
 
 > Generated with [youwouldntsteala.website](https://youwouldntsteala.website/editor.html)
 
