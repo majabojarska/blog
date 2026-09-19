@@ -16,4 +16,4 @@ Currently working on/learning about/tinkering with:
 
 - Continuously developing and reshaping my [homelab](@/posts/homelab-notes.md) 🖥
 - Playing around with shortwave ham radios [_(SP6CAT)_](https://www.qrz.com/db/SP6CAT) :radio:
-- Starting out at [Sidero Labs](https://www.siderolabs.com/)
+- Developing [Talos Linux](https://www.siderolabs.com/talos-linux) :penguin:
