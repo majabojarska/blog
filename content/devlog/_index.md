@@ -8,6 +8,49 @@ insert_anchor_links = "heading"
 comment = true
 +++
 
+## 2026-10-18
+
+TIL about [spuder/10-Inch-Rack-OpenSCAD](https://github.com/spuder/10-Inch-Rack-OpenSCAD), awesome tool for generating 10" rack mounts!
+
+---
+
+## 2026-10-16
+
+
+{{ image(src="img/devlog/2026-10-16-flight.webp")}}
+
+Goodbye Amsterdam 🌷!
+
+---
+
+## 2026-10-15
+
+{{ image(src="img/devlog/2026-10-15-talk.webp")}}
+
+Gave a talk at [TalosCon 2026](https://www.taloscon.com/) about _Talos Containers_. It's a feature set I've designed and have been developing since August.
+
+The recordings should become available on YouTube in ~2 weeks. Until then, check out the [API docs](https://docs.siderolabs.com/talos/v1.15/reference/configuration/container/containerconfig#containerconfig)!
+
+---
+
+## 2026-10-13
+
+{{ image(src="img/devlog/2026-10-13-flight.webp")}}
+
+Flying to TalosCon 2026 ✈️
+
+---
+
+## 2026-10-11
+
+{{ image(src="img/devlog/2026-10-11-gp-180.webp")}}
+
+Peeking at the internals of the [Valeton GP-180](https://www.valeton.net/product/gp-180/). I'm trying to figure out a way to safely backup the entire EEPROM (including the bootloader), in case I brick the device through experimentation with homebrew client software.
+
+This device features an [i.MX RT1046](https://www.nxp.com/part/MIMXRT1046DFQ6B) MCU, and a [W25Q128JVSIM](https://www.digikey.com/en/products/detail/winbond-electronics/W25Q128JVSIM/6819721) flash chip, which I believe stores the bootloader, firmware, presets, and possibly SnapTone/NAM models.
+
+---
+
 ## 2026-08-30
 
 Learned about and deployed [StemDeck](https://github.com/stemdeckapp/stemdeck) to my infra. This is a game changer for music covers, just extract stems and reassemble into a backing track.
