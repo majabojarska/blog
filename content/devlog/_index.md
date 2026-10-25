@@ -16,7 +16,6 @@ TIL about [spuder/10-Inch-Rack-OpenSCAD](https://github.com/spuder/10-Inch-Rack-
 
 ## 2026-10-16
 
-
 {{ image(src="img/devlog/2026-10-16-flight.webp")}}
 
 Goodbye Amsterdam 🌷!
@@ -25,6 +24,7 @@ Goodbye Amsterdam 🌷!
 
 ## 2026-10-15
 
+{{ image(src="img/devlog/2026-10-15-talk-closeup.webp")}}
 {{ image(src="img/devlog/2026-10-15-talk.webp")}}
 
 Gave a talk at [TalosCon 2026](https://www.taloscon.com/) about _Talos Containers_. It's a feature set I've designed and have been developing since August.
@@ -59,9 +59,10 @@ Learned about and deployed [StemDeck](https://github.com/stemdeckapp/stemdeck) t
 
 ---
 
-Made huge progress in reverse engineering the communication protocols and data formats of the Valeton GP-180. This required me a metric crap-ton of USB captures via [Wireshark](https://www.wireshark.org/) (with [USBPcap](https://desowin.org/usbpcap/)), each covering a very precisely executed set of operations, annotated for further analysis. To be exact, at the time of writing I have 219 captures, some of which have been quite demanding and complex. 
+Made huge progress in reverse engineering the communication protocols and data formats of the Valeton GP-180. This required me a metric crap-ton of USB captures via [Wireshark](https://www.wireshark.org/) (with [USBPcap](https://desowin.org/usbpcap/)), each covering a very precisely executed set of operations, annotated for further analysis. To be exact, at the time of writing I have 219 captures, some of which have been quite demanding and complex.
 
 On the upside, these captures enabled the cracking of:
+
 - The `.prst` data format.
 - The _SnapTone_ data format, NAM uploads (as _SnapTone_), and the corresponding VSTI conversion algorithm.
 - Complete map of the signal chain, effects, their variants, and all of their parameters, including the ranges and other misc. constraints.
@@ -89,7 +90,6 @@ Starting today, I will be reverse engineering the MIDI SysEx protocol of the GP1
 Long term, I'd love to add support to the entire late-2025 lineup of Valeton multi-effects - GP-5, GP-50, GP-150, GP-180.
 
 ---
-
 
 ## 2026-08-20
 
@@ -130,6 +130,7 @@ d /storage/ntfy/ 0700 ntfy-sh ntfy-sh -
 ```
 
 This configuration will run automatically on the next boot, but it can also be executed immediately with (requires superuser privileges):
+
 ```sh
 systemd-tmpfiles --create
 ```
@@ -167,6 +168,7 @@ TIL Immich has a [cursed knowledge blog](https://immich.app/cursed-knowledge). H
 ## 2026-07-29
 
 TIL:
+
 - [Una project](https://unawatch.com/products/una-watch), the repairable GPS watch. It's a promising concept, but the product seems to be _very_ new, with [<1K units shipped just recently](https://www.kickstarter.com/projects/unawatch/meet-una-the-modular-gps-sports-watch/posts). At this time I have all the watches I need (one :grin:), but I'll be following this development closely.
 - [Cooking For Engineers®](https://www.cookingforengineers.com/), the recipe site for analytical minds. No ads, no life stories to scroll through, clear ingredient lists and pictures.
 
@@ -186,7 +188,6 @@ TIL external display settings can be controlled via [DDC/CI](https://en.wikipedi
 
 ---
 
-
 ## 2026-07-18
 
 Working with a friend on a highly-available power supply prototype, based on the HPE common slot standard. The goal is to effectively emulate a server backplane, allowing us to hot-swap any of the two PSUs at any given time. This also implies resiliency to a single supply fault.
@@ -200,6 +201,7 @@ Once we figure out proper load sharing, instead of the current A/B failover mode
 ## 2026-07-16
 
 Made a whole lot of fixes and improvements to my [infra](github.com/majabojarska/infra) repo:
+
 - Fixed some annoying domain resolution issues through my colo's `dnsmasq`.
 - Hooked up [Borgmatic](https://torsion.org/borgmatic/) to my [ntfy](https://docs.ntfy.sh/) instance. Now I'll get notifications for any failed backup attempt. For successful ones too, but with lower severity.
 - Configured [logrotate](https://www.man7.org/linux/man-pages/man8/logrotate.8.html) on all my NixOS hosts. Logs won't gobble up my precious disk space ever again!
@@ -212,11 +214,13 @@ Made a whole lot of fixes and improvements to my [infra](github.com/majabojarska
     --target-host <user>@<host-or-ip> \
     --sudo
   ```
+
 ---
 
 ## 2026-07-15
 
-TIL 
+TIL
+
 - [natefinch/lumberjack](https://github.com/natefinch/lumberjack), a log rolling package for Go.
 - [serokell/deploy-rs](https://github.com/serokell/deploy-rs), a simple multi-profile Nix-flake deploy tool.
 
@@ -225,6 +229,7 @@ TIL
 ## 2026-07-12
 
 TIL curl has built-in retry via `--retry` [(docs)](https://everything.curl.dev/usingcurl/downloads/retry.html). The retry behavior can be futher tweaked with:
+
 - `--retry-delay` – interval between attempts;
 - `--retry-max-time` – max total time allowed for retries;
 - `--retry-connrefused` – consider only `ECONNREFUSED` as a reason for retry. Any other failure mode is treated as non-retryable. This is perfect for checking that a server started listening, when the actual HTTP response is irrelevant.
@@ -236,11 +241,10 @@ The default retry intervals follow an exponential backoff (unless modified throu
 
 ## 2026-07-11
 
-
 {{ image(src="img/devlog/2026-07-11-node-exporter.webp")}}
 
-
 Performing major homelab maintenance:
+
 - New o11y, more Prometheus instances, Grafana datasources & dashboards.
 - General upgrades.
 - Setting up alerting through [ntfy](https://ntfy.sh/).
@@ -251,17 +255,17 @@ Performing major homelab maintenance:
 
 {{ image(src="img/devlog/2026-07-10-archer-c6v2.webp")}}
 
-Unbricked my [TP-Link Archer C6 v2](https://openwrt.org/toh/tp-link/archer_c6_v2?s[]=op&s[]=fi), after accidentally overwriting the bootloader with the system firmware. This was a fun fix! Definitely something to write about in detail, with a step-by-step guide. 
+Unbricked my [TP-Link Archer C6 v2](https://openwrt.org/toh/tp-link/archer_c6_v2?s[]=op&s[]=fi), after accidentally overwriting the bootloader with the system firmware. This was a fun fix! Definitely something to write about in detail, with a step-by-step guide.
 
 ---
 
 ## 2026-07-09
 
 Today's finds:
+
 - [A Roomba recorded a woman on the toilet. How did screenshots end up on Facebook?](https://www.technologyreview.com/2022/12/19/1065306/roomba-irobot-robot-vacuums-artificial-intelligence-training-data-privacy/) – yet another case of "the S in IoT stands for security", or why you shouldn't connect vision-capable devices to _the cloud_. Consider looking into [Valetudo](https://valetudo.cloud/) as a cloud-free alternative for robot vacuums.
 - [TabFont](https://philatype.com/tabfont/) – a font that renders chords into vectorized guitar tabs, cool huh?
 - [learngenomics.dev](https://learngenomics.dev/docs/biological-foundations/cells-genomes-dna-chromosomes/) – an open genomics course for computer scientists and engineers.
-
 
 In other news, I'd like to build a game with [Godot](https://godotengine.org/), just to learn something new and build something fun. I don't have any ideas at the moment, but I might just start with a general introductory course and continue from there.
 
@@ -270,6 +274,7 @@ In other news, I'd like to build a game with [Godot](https://godotengine.org/), 
 ## 2026-07-08
 
 TIL journalctl can show log disk usage:
+
 ```sh
 $ journalctl --disk-usage
 Archived and active journals take up 128M in the file system.
